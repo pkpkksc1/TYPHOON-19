@@ -4,7 +4,9 @@ from datetime import datetime
 from email.message import EmailMessage
 from pathlib import Path
 from zoneinfo import ZoneInfo
+import json
 import os
+import re
 import smtplib
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,6 +15,7 @@ if not (ROOT / "output").exists():
 
 OFFLINE_HTML = ROOT / "output" / "typhoon_dashboard_offline.html"
 CAPTURE_PNG = ROOT / "output" / "typhoon_dashboard_capture.png"
+DASHBOARD_JSON = ROOT / "data" / "dashboard.json"
 SUBJECT = "[물류] SBLC 태풍 물류대시보드 | {time}"
 PLAIN_BODY = """안녕하세요.
 
@@ -37,6 +40,49 @@ def parse_recipients(raw: str) -> list[str]:
     return [x for x in values if x]
 
 
+def load_typhoon_identity() -> tuple[str, str]:
+    """Read current typhoon number/name from data/dashboard.json.
+
+    Returns:
+      display_label: e.g. "19호 NARRA"
+      file_label:    e.g. "19호_NARRA"
+    """
+    if not DASHBOARD_JSON.exists():
+        return "태풍", "태풍"
+
+    try:
+        data = json.loads(DASHBOARD_JSON.read_text(encoding="utf-8"))
+        typhoon = data.get("typhoon") or {}
+
+        number = str(typhoon.get("number") or "").strip()
+        name = str(typhoon.get("name") or "").strip().upper()
+
+        if len(number) == 4 and number.isdigit():
+            storm_no = str(int(number[2:]))
+        else:
+            storm_no = number
+
+        if storm_no and name:
+            display_label = f"{storm_no}호 {name}"
+            file_label = f"{storm_no}호_{name}"
+        elif storm_no:
+            display_label = f"{storm_no}호"
+            file_label = f"{storm_no}호"
+        elif name:
+            display_label = name
+            file_label = name
+        else:
+            display_label = "태풍"
+            file_label = "태풍"
+
+        file_label = re.sub(r"[^0-9A-Za-z가-힣_-]+", "_", file_label)
+        return display_label, file_label
+
+    except Exception as e:
+        print(f"WARNING: Could not read typhoon identity from {DASHBOARD_JSON}: {e}")
+        return "태풍", "태풍"
+
+
 def build_html_body() -> str:
     return """<!doctype html>
 <html lang="ko">
@@ -52,7 +98,7 @@ def build_html_body() -> str:
           <tr>
             <td style="padding:18px 20px 12px 20px;">
               <div style="font-size:11px;letter-spacing:1.2px;color:#67b9ff;font-weight:700;">SBLC · TYPHOON LOGISTICS CONTROL</div>
-              <div style="margin-top:6px;font-size:24px;line-height:1.25;font-weight:900;color:#ffffff;">태풍 물류대시보드</div>
+              <div style="margin-top:6px;font-size:24px;line-height:1.25;font-weight:900;color:#ffffff;">__TYPHOON_LABEL__ 태풍 물류대시보드</div>
               <div style="margin-top:6px;font-size:12px;line-height:1.6;color:#99afc5;">
                 메일 본문에는 최신 대시보드 화면 캡처가 포함되어 있습니다.<br>
                 자세한 확인은 첨부된 오프라인 HTML 파일을 열어 주세요.
@@ -110,19 +156,31 @@ def main() -> int:
         return 4
 
     china_now = datetime.now(ZoneInfo("Asia/Shanghai"))
-    global SUBJECT
-    SUBJECT = SUBJECT.format(time=china_now.strftime("%Y-%m-%d %H:%M"))
-    attachment_name = f"SBLC_태풍_물류대시보드_{china_now:%Y%m%d_%H%M}_CN.html"
+    typhoon_label, typhoon_file_label = load_typhoon_identity()
+
+    subject = (
+        f"[물류][{typhoon_label}] "
+        f"SBLC 태풍 물류대시보드 | {china_now:%Y-%m-%d %H:%M}"
+    )
+
+    attachment_name = (
+        f"SBLC_태풍{typhoon_file_label}_물류대시보드_"
+        f"{china_now:%Y%m%d_%H%M}_CN.html"
+    )
 
     msg = EmailMessage()
     msg["From"] = email_user
     msg["To"] = ", ".join(recipients)
-    msg["Subject"] = SUBJECT
+    msg["Subject"] = subject
     msg.set_content(PLAIN_BODY)
 
-    html_body = build_html_body().replace(
-        "SBLC_태풍_물류대시보드_YYYYMMDD_HHMM_CN.html",
-        attachment_name,
+    html_body = (
+        build_html_body()
+        .replace("__TYPHOON_LABEL__", typhoon_label)
+        .replace(
+            "SBLC_태풍_물류대시보드_YYYYMMDD_HHMM_CN.html",
+            attachment_name,
+        )
     )
     msg.add_alternative(html_body, subtype="html")
     html_part = msg.get_payload()[-1]
@@ -146,7 +204,7 @@ def main() -> int:
     print("Preparing image-body email")
     print(" From:", email_user)
     print(" To:", ", ".join(recipients))
-    print(" Subject:", SUBJECT)
+    print(" Subject:", subject)
     print(" Inline image:", CAPTURE_PNG.name, CAPTURE_PNG.stat().st_size, "bytes")
     print(" Attachment:", attachment_name, len(html_data), "bytes")
 
