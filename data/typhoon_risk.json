@@ -6,15 +6,15 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-25T21:57:25.169462+00:00",
-    "weather": "2026-08-25T21:57:26.315916+00:00"
+    "impact": "2026-08-25T22:38:40.604914+00:00",
+    "weather": "2026-08-25T22:38:41.623451+00:00"
   },
   "typhoon": {
     "number": "2619",
     "name": "NARRA",
     "observation_status": "ACTIVE",
     "last_known": false,
-    "last_observation_time": "2026-08-26T03:00:00+09:00",
+    "last_observation_time": "2026-08-26T06:00:00+09:00",
     "jtwc_id": "18W",
     "jtwc_warning_number": 21,
     "jtwc_issue_time_utc": "2026-08-25T21:00:00Z"
@@ -22,7 +22,7 @@
   "forecast_confidence": {
     "emoji": "🟡",
     "label_ko": "차이 있음",
-    "average_difference_km": 86
+    "average_difference_km": 56
   },
   "locations": {
     "SUZHOU": {
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 05:45",
+        "current_last_updated": "2026-08-26 06:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.8,
+        "current_wind_mps": 2.9,
         "max_72h_rain_mm": 1.69,
         "max_72h_rain_time": "2026-08-28 13:00",
         "max_72h_wind_mps": 6.3,
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 05:45",
+        "current_last_updated": "2026-08-26 06:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.5,
+        "current_wind_mps": 2.0,
         "max_72h_rain_mm": 0.77,
         "max_72h_rain_time": "2026-08-28 05:00",
         "max_72h_wind_mps": 6.1,
@@ -113,7 +113,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 06:45",
+        "current_last_updated": "2026-08-26 07:30",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 0.4,
@@ -147,9 +147,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 05:45",
-        "current_rain_mm": 0.02,
-        "current_wind_mps": 4.8,
+        "current_last_updated": "2026-08-26 06:30",
+        "current_rain_mm": 0.03,
+        "current_wind_mps": 6.2,
         "max_72h_rain_mm": 29.8,
         "max_72h_rain_time": "2026-08-28 19:00",
         "max_72h_wind_mps": 12.6,
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 04:45",
-        "current_rain_mm": 0.67,
-        "current_wind_mps": 1.4,
+        "current_last_updated": "2026-08-26 05:30",
+        "current_rain_mm": 0.86,
+        "current_wind_mps": 2.2,
         "max_72h_rain_mm": 1.05,
         "max_72h_rain_time": "2026-08-26 06:00",
         "max_72h_wind_mps": 4.7,
@@ -198,7 +198,7 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -215,9 +215,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 05:45",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 1.9,
+        "current_last_updated": "2026-08-26 06:30",
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 2.1,
         "max_72h_rain_mm": 31.93,
         "max_72h_rain_time": "2026-08-28 23:00",
         "max_72h_wind_mps": 8.6,
@@ -225,7 +225,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     }
@@ -266,13 +266,13 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "클락 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-25T21:57:26.366936+00:00"
+  "generated_at_utc": "2026-08-25T22:38:41.680626+00:00"
 }
