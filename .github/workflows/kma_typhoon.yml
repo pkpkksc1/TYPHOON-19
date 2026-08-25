@@ -1,0 +1,52 @@
+name: KMA Typhoon Fetch
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "12,42 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kma-typhoon-fetch
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch KMA typhoon data
+        env:
+          KMA_API_KEY: ${{ secrets.KMA_API_KEY }}
+        run: python src/fetch_kma_typhoon.py
+
+      - name: Commit changed data
+        shell: bash
+        run: |
+          if [ ! -f data/kma_typhoon.json ]; then
+            echo "data/kma_typhoon.json was not created."
+            exit 1
+          fi
+
+          git add data/kma_typhoon.json
+
+          if git diff --cached --quiet; then
+            echo "No KMA data change. Nothing to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Update KMA typhoon data"
+          git push

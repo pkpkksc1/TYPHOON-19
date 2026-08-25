@@ -1,0 +1,83 @@
+name: SBLC Auto Mail Send v8.70.1
+
+
+on:
+
+  workflow_dispatch:
+
+  schedule:
+    # 한국시간(KST)
+    # 01:00 / 07:00 / 13:00 / 19:00
+    # GitHub Actions UTC 기준
+    - cron: "0 4,10,16,22 * * *"
+
+
+permissions:
+  contents: write
+
+
+concurrency:
+  group: sblc-auto-mail-send
+  cancel-in-progress: false
+
+
+jobs:
+
+  send-dashboard-mail:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y             fonts-noto-cjk             fonts-noto-cjk-extra
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install chromium
+
+      - name: Build dashboard data v8.70.1
+        run: |
+          python src/build_dashboard.py
+
+      - name: Build offline dashboard
+        run: |
+          python src/build_offline_dashboard.py
+
+      - name: Capture dashboard image
+        run: |
+          python src/capture_dashboard.py
+
+      - name: Send dashboard email
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+        run: |
+          python src/send_dashboard_email.py
+
+      - name: Commit dashboard data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add data/dashboard.json
+
+          git diff --cached --quiet || git commit -m "Update dashboard mail v8.70.1"
+
+          git pull --rebase origin main
+
+          git push

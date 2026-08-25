@@ -1,0 +1,50 @@
+name: Typhoon Compare
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "17,47 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: typhoon-compare
+  cancel-in-progress: true
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compare JMA and KMA
+        run: python src/compare_typhoon.py
+
+      - name: Commit changed comparison
+        shell: bash
+        run: |
+          if [ ! -f data/typhoon_compare.json ]; then
+            echo "data/typhoon_compare.json was not created."
+            exit 1
+          fi
+
+          git add data/typhoon_compare.json
+
+          if git diff --cached --quiet; then
+            echo "No comparison data change. Nothing to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Update typhoon comparison"
+          git push

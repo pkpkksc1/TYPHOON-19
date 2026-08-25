@@ -1,0 +1,39 @@
+name: CMA Impact Crosscheck
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crosscheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Add CMA cross-check
+        run: python src/add_cma_impact.py
+
+      - name: Commit impact data
+        shell: bash
+        run: |
+          git add data/typhoon_impact.json
+
+          if git diff --cached --quiet; then
+            echo "No impact data change."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Add CMA impact crosscheck"
+          git push

@@ -1,0 +1,83 @@
+name: "▶ TYPHOON AUTO START"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Turn AUTO mode ON
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("data/typhoon_auto_mode.json")
+
+          try:
+              data = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+          except Exception:
+              data = {}
+
+          data["enabled"] = True
+
+          p.parent.mkdir(parents=True, exist_ok=True)
+          p.write_text(
+              json.dumps(data, ensure_ascii=False, indent=2),
+              encoding="utf-8",
+          )
+          PY
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/typhoon_auto_mode.json
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Turn typhoon AUTO mode ON"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      - name: Disable old individual automatic workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          old_workflows=(
+            "jma_typhoon.yml"
+            "kma_typhoon.yml"
+            "compare_typhoon.yml"
+            "CMA_TYPHOON_FETCH.yml"
+            "CMA_IMPACT_CROSSCHECK.yml"
+            "jtwc_typhoon.yml"
+            "weather.yml"
+            "typhoon_impact.yml"
+            "typhoon_risk.yml"
+            "dashboard.yml"
+          )
+
+          for old in "${old_workflows[@]}"; do
+            gh workflow disable "$old" || true
+          done
+
+      - name: Enable integrated updater
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow enable "TYPHOON_AUTO_UPDATE.yml"
+
+      - name: Run first update now
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run "TYPHOON_AUTO_UPDATE.yml" --ref main

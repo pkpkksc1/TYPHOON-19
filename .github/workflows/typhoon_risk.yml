@@ -1,0 +1,50 @@
+name: Typhoon Risk
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "32 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: typhoon-risk
+  cancel-in-progress: true
+
+jobs:
+  risk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Calculate combined risk
+        run: python src/typhoon_risk.py
+
+      - name: Commit changed risk
+        shell: bash
+        run: |
+          if [ ! -f data/typhoon_risk.json ]; then
+            echo "data/typhoon_risk.json was not created."
+            exit 1
+          fi
+
+          git add data/typhoon_risk.json
+
+          if git diff --cached --quiet; then
+            echo "No combined risk change. Nothing to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Update combined typhoon risk"
+          git push

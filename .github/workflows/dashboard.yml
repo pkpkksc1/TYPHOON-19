@@ -1,0 +1,46 @@
+name: Dashboard Summary
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build dashboard summary
+        run: python src/build_dashboard.py
+
+      - name: Commit dashboard summary
+        shell: bash
+        run: |
+          if [ ! -f data/dashboard.json ]; then
+            echo "data/dashboard.json was not created."
+            exit 1
+          fi
+
+          git add data/dashboard.json
+
+          if git diff --cached --quiet; then
+            echo "No dashboard change. Nothing to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Update dashboard summary"
+          git pull --rebase origin main
+
+          git push

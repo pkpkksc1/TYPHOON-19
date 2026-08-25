@@ -1,0 +1,266 @@
+name: "TYPHOON AUTO UPDATE"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "7 * * * *"
+    - cron: "37 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: typhoon-auto-update
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout latest repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check AUTO mode
+        id: mode
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          p = Path("data/typhoon_auto_mode.json")
+          enabled = False
+
+          if p.exists():
+              try:
+                  enabled = bool(json.loads(p.read_text(encoding="utf-8")).get("enabled"))
+              except Exception:
+                  enabled = False
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+              f.write(f"enabled={'true' if enabled else 'false'}\n")
+
+          print("AUTO MODE:", "ON" if enabled else "OFF")
+          PY
+
+      - name: AUTO mode is OFF
+        if: steps.mode.outputs.enabled != 'true'
+        run: |
+          echo "AUTO mode is OFF."
+          echo "No typhoon data will be updated."
+
+      - name: Set up Python
+        if: steps.mode.outputs.enabled == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        if: steps.mode.outputs.enabled == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Fetch JMA
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          timeout 120s python src/fetch_jma_typhoon.py || {
+            echo "::warning::JMA fetch failed/timed out. Previous JMA data will be used."
+          }
+
+      - name: Fetch KMA
+        if: steps.mode.outputs.enabled == 'true'
+        env:
+          KMA_API_KEY: ${{ secrets.KMA_API_KEY }}
+        shell: bash
+        run: |
+          timeout 120s python src/fetch_kma_typhoon.py || {
+            echo "::warning::KMA fetch failed/timed out. Previous KMA data will be used."
+          }
+
+      - name: Compare JMA KMA
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          timeout 90s python src/compare_typhoon.py || {
+            echo "::warning::JMA/KMA compare failed. Previous comparison will be used."
+          }
+
+      - name: Fetch CMA
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          timeout 120s python src/fetch_cma_typhoon.py || {
+            echo "::warning::CMA fetch failed/timed out. Previous CMA data will be used."
+          }
+
+      - name: Fetch JTWC
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          timeout 120s python src/fetch_jtwc.py || {
+            echo "::warning::JTWC fetch failed/timed out. Previous JTWC data will be used."
+          }
+
+      - name: Calculate NARRA typhoon impact
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: timeout 90s python src/typhoon_impact.py
+
+      - name: Verify NARRA impact hard lock
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("data/typhoon_impact.json")
+
+          if not p.exists():
+              raise SystemExit("ERROR: data/typhoon_impact.json missing")
+
+          data = json.loads(p.read_text(encoding="utf-8"))
+          ty = data.get("typhoon") or {}
+
+          number = str(ty.get("number") or "").strip()
+          name = str(ty.get("name") or "").strip().upper()
+          parser = str(data.get("parser_version") or "")
+
+          print("Impact parser:", parser)
+          print("Impact typhoon:", number, name)
+
+          if number != "2619" or name != "NARRA":
+              raise SystemExit(
+                  "ERROR: NARRA HARD LOCK FAILED. "
+                  f"number={number!r}, name={name!r}"
+              )
+
+          if not parser.startswith("4.6-NARRA"):
+              raise SystemExit(
+                  "ERROR: old typhoon_impact.py is still running. "
+                  f"parser_version={parser!r}"
+              )
+
+          print("OK: impact is locked to 2619 NARRA")
+          PY
+
+      - name: Add CMA impact cross-check
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          if [ -f src/add_cma_impact.py ]; then
+            timeout 90s python src/add_cma_impact.py || {
+              echo "::warning::CMA impact cross-check failed/timed out. Continue."
+            }
+          else
+            echo "src/add_cma_impact.py not found - skip"
+          fi
+
+      - name: Fetch hub weather
+        if: steps.mode.outputs.enabled == 'true'
+        env:
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+        shell: bash
+        run: |
+          timeout 180s python src/fetch_weather.py || {
+            echo "::warning::WeatherAPI fetch failed/timed out. Previous weather data will be used."
+          }
+
+      - name: Calculate NARRA combined risk
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: timeout 90s python src/typhoon_risk.py
+
+      - name: Verify NARRA risk hard lock
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("data/typhoon_risk.json")
+          data = json.loads(p.read_text(encoding="utf-8"))
+          ty = data.get("typhoon") or {}
+
+          number = str(ty.get("number") or "").strip()
+          name = str(ty.get("name") or "").strip().upper()
+
+          print("Risk typhoon:", number, name)
+
+          if number != "2619" or name != "NARRA":
+              raise SystemExit(
+                  "ERROR: risk is not 2619 NARRA. "
+                  "Dashboard will NOT be rebuilt."
+              )
+
+          print("OK: risk is locked to 2619 NARRA")
+          PY
+
+
+      - name: Build dashboard
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: timeout 90s python src/build_dashboard.py
+
+      - name: Record successful automatic run time
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          p = Path("data/typhoon_auto_mode.json")
+
+          try:
+              data = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+          except Exception:
+              data = {}
+
+          data["enabled"] = True
+          data["last_run_at_utc"] = datetime.now(timezone.utc).isoformat()
+          data["last_run_status"] = "success"
+
+          p.parent.mkdir(parents=True, exist_ok=True)
+          p.write_text(
+              json.dumps(data, ensure_ascii=False, indent=2),
+              encoding="utf-8",
+          )
+
+          print("AUTO update completed:", data["last_run_at_utc"])
+          PY
+
+      - name: Commit latest data
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/
+
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+
+          git commit -m "Auto update typhoon logistics data"
+
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push origin main; then
+              echo "Update completed."
+              exit 0
+            fi
+            sleep 10
+          done
+
+          exit 1

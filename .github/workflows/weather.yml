@@ -1,0 +1,52 @@
+name: Weather Fetch
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "27,57 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weather-fetch
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch weather data
+        env:
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+        run: python src/fetch_weather.py
+
+      - name: Commit changed weather
+        shell: bash
+        run: |
+          if [ ! -f data/weather.json ]; then
+            echo "data/weather.json was not created."
+            exit 1
+          fi
+
+          git add data/weather.json
+
+          if git diff --cached --quiet; then
+            echo "No weather data change. Nothing to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Update weather data"
+          git push

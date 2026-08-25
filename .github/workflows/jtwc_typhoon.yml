@@ -1,0 +1,37 @@
+name: JTWC Typhoon Fetch
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-jtwc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch JTWC typhoon data
+        run: python src/fetch_jtwc.py
+
+      - name: Commit updated JTWC data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/jtwc_typhoon.json
+
+          if git diff --cached --quiet; then
+            echo "No JTWC data changes."
+          else
+            git commit -m "Update JTWC typhoon data"
+            git push
+          fi
