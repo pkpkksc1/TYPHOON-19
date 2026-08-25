@@ -8,8 +8,8 @@
     "name": "NARRA"
   },
   "summary": {
-    "average_difference_km": 78,
-    "max_difference_km": 157,
+    "average_difference_km": 86,
+    "max_difference_km": 133,
     "overall": {
       "level": "YELLOW",
       "emoji": "🟡",
@@ -19,18 +19,18 @@
   "comparisons": [
     {
       "forecast_hour": 12,
-      "jma_time": "2026-08-26T12:00:00+09:00",
+      "jma_time": "2026-08-26T15:00:00+09:00",
       "kma_time": "202608261500",
-      "time_gap_hours": 3.0,
+      "time_gap_hours": 0,
       "jma": {
-        "lat": 21.5,
-        "lon": 110.1
+        "lat": 21.8,
+        "lon": 110.3
       },
       "kma": {
         "lat": 21.5,
         "lon": 110.1
       },
-      "difference_km": 0,
+      "difference_km": 39,
       "status": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -39,24 +39,24 @@
     },
     {
       "forecast_hour": 24,
-      "jma_time": "2026-08-27T00:00:00+09:00",
+      "jma_time": "2026-08-27T03:00:00+09:00",
       "kma_time": "202608261500",
-      "time_gap_hours": 9.0,
+      "time_gap_hours": 12.0,
       "jma": {
-        "lat": 22.7,
-        "lon": 109.3
+        "lat": 22.5,
+        "lon": 109.4
       },
       "kma": {
         "lat": 21.5,
         "lon": 110.1
       },
-      "difference_km": 157,
+      "difference_km": 133,
       "status": {
-        "level": "RED",
-        "emoji": "🔴",
-        "label_ko": "차이 큼"
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "차이 있음"
       }
     }
   ],
-  "generated_at_utc": "2026-08-25T16:17:13.783253+00:00"
+  "generated_at_utc": "2026-08-25T19:15:53.613553+00:00"
 }
