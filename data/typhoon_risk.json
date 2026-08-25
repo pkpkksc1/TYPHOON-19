@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-25T19:40:27.110191+00:00",
-    "weather": "2026-08-25T19:40:27.765606+00:00"
+    "impact": "2026-08-25T19:59:29.297884+00:00",
+    "weather": "2026-08-25T19:59:29.969233+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -16,8 +16,8 @@
     "last_known": false,
     "last_observation_time": "2026-08-26T03:00:00+09:00",
     "jtwc_id": "18W",
-    "jtwc_warning_number": 20,
-    "jtwc_issue_time_utc": "2026-08-25T15:00:00Z"
+    "jtwc_warning_number": 21,
+    "jtwc_issue_time_utc": "2026-08-25T21:00:00Z"
   },
   "forecast_confidence": {
     "emoji": "🟡",
@@ -37,15 +37,15 @@
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "current_distance_km": 1758,
-        "closest_distance_km": 1408,
-        "closest_time": "2026-08-27T00:00:00Z",
-        "closest_forecast_hour": 36,
+        "current_distance_km": 1668,
+        "closest_distance_km": 1440,
+        "closest_time": "2026-08-26T18:00:00Z",
+        "closest_forecast_hour": 24,
         "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 03:30",
+        "current_last_updated": "2026-08-26 03:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 3.0,
         "max_72h_rain_mm": 1.69,
@@ -71,15 +71,15 @@
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "current_distance_km": 1830,
-        "closest_distance_km": 1484,
-        "closest_time": "2026-08-27T00:00:00Z",
-        "closest_forecast_hour": 36,
+        "current_distance_km": 1740,
+        "closest_distance_km": 1515,
+        "closest_time": "2026-08-26T18:00:00Z",
+        "closest_forecast_hour": 24,
         "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 03:30",
+        "current_last_updated": "2026-08-26 03:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.4,
         "max_72h_rain_mm": 0.77,
@@ -105,15 +105,15 @@
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "current_distance_km": 2622,
-        "closest_distance_km": 2270,
-        "closest_time": "2026-08-27T00:00:00Z",
-        "closest_forecast_hour": 36,
+        "current_distance_km": 2534,
+        "closest_distance_km": 2303,
+        "closest_time": "2026-08-26T18:00:00Z",
+        "closest_forecast_hour": 24,
         "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 04:30",
+        "current_last_updated": "2026-08-26 04:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 0.4,
@@ -139,15 +139,15 @@
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "current_distance_km": 1403,
-        "closest_distance_km": 1322,
-        "closest_time": "2026-08-26T00:00:00Z",
+        "current_distance_km": 1357,
+        "closest_distance_km": 1339,
+        "closest_time": "2026-08-26T06:00:00Z",
         "closest_forecast_hour": 12,
-        "trend_ko": "접근 중"
+        "trend_ko": "멀어지는 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 03:30",
+        "current_last_updated": "2026-08-26 03:45",
         "current_rain_mm": 0.05,
         "current_wind_mps": 5.9,
         "max_72h_rain_mm": 29.8,
@@ -164,24 +164,24 @@
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 33,
+      "score": 23,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 375 km",
+      "reason_ko": "태풍 최접근 417 km",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "current_distance_km": 375,
-        "closest_distance_km": 375,
-        "closest_time": "2026-08-25T12:00:00Z",
+        "current_distance_km": 417,
+        "closest_distance_km": 417,
+        "closest_time": "2026-08-25T18:00:00Z",
         "closest_forecast_hour": 0,
         "trend_ko": "멀어지는 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 02:30",
+        "current_last_updated": "2026-08-26 02:45",
         "current_rain_mm": 0.33,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 1.05,
@@ -190,7 +190,7 @@
         "max_72h_wind_time": "2026-08-27 13:00"
       },
       "score_detail": {
-        "distance": 30,
+        "distance": 20,
         "rain": 3,
         "wind": 0
       }
@@ -207,15 +207,15 @@
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "current_distance_km": 1327,
-        "closest_distance_km": 1241,
-        "closest_time": "2026-08-26T00:00:00Z",
+        "current_distance_km": 1279,
+        "closest_distance_km": 1257,
+        "closest_time": "2026-08-26T06:00:00Z",
         "closest_forecast_hour": 12,
-        "trend_ko": "접근 중"
+        "trend_ko": "멀어지는 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 03:30",
+        "current_last_updated": "2026-08-26 03:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 2.2,
         "max_72h_rain_mm": 31.93,
@@ -250,13 +250,13 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 33,
+      "score": 23,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "하노이 노이바이 국제공항 낮음 (태풍 최접근 375 km)",
+      "reason_ko": "하노이 노이바이 국제공항 낮음 (태풍 최접근 417 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-25T19:40:27.833354+00:00"
+  "generated_at_utc": "2026-08-25T19:59:30.030880+00:00"
 }
