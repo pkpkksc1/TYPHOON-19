@@ -1,6 +1,6 @@
 {
   "parser_version": "1.0",
-  "generated_at_utc": "2026-08-25T13:58:29.483813Z",
+  "generated_at_utc": "2026-08-25T14:25:41.677812Z",
   "source": "NOAA/NWS public relay of JTWC tropical cyclone warnings",
   "source_note": "JTWC maximum sustained winds are one-minute averages. JTWC wind radii are valid over open water only.",
   "active_count": 3,
@@ -8,7 +8,7 @@
     {
       "bulletin": "WTPN31",
       "issue_time_utc": "2026-08-25T15:00:00Z",
-      "age_hours": -1.0,
+      "age_hours": -0.6,
       "jtwc_id": "17W",
       "name": "SAUDEL",
       "storm_type": "TYPHOON",
@@ -524,69 +524,33 @@
     },
     {
       "bulletin": "WTPN32",
-      "issue_time_utc": "2026-08-25T09:00:00Z",
-      "age_hours": 5.0,
+      "issue_time_utc": "2026-08-25T15:00:00Z",
+      "age_hours": -0.6,
       "jtwc_id": "18W",
       "name": "NARRA",
-      "storm_type": "TROPICAL STORM",
-      "warning_number": 19,
+      "storm_type": "TROPICAL DEPRESSION",
+      "warning_number": 20,
       "source_url": "https://tgftp.nws.noaa.gov/data/raw/wt/wtpn32.pgtw..txt",
       "current": {
-        "valid_time_raw": "250600Z",
-        "lat": 19.4,
-        "lon": 108.2,
+        "valid_time_raw": "251200Z",
+        "lat": 19.5,
+        "lon": 108.9,
         "movement_degrees": 80,
         "movement_speed_kt": 7,
         "movement_speed_kmh": 13.0,
-        "pressure_hpa": 991,
-        "max_wind_kt": 40,
-        "max_wind_mps": 20.6,
-        "gust_kt": 50,
-        "gust_mps": 25.7,
-        "wind_radii": {
-          "34kt": {
-            "threshold_kt": 34,
-            "threshold_mps": 17.5,
-            "quadrants": {
-              "NE": {
-                "nm": 0,
-                "km": 0.0
-              },
-              "SE": {
-                "nm": 55,
-                "km": 101.9
-              },
-              "SW": {
-                "nm": 35,
-                "km": 64.8
-              },
-              "NW": {
-                "nm": 0,
-                "km": 0.0
-              }
-            },
-            "max_radius_nm": 55,
-            "max_radius_km": 101.9
-          }
-        }
+        "pressure_hpa": 994,
+        "max_wind_kt": 30,
+        "max_wind_mps": 15.4,
+        "gust_kt": 40,
+        "gust_mps": 20.6,
+        "wind_radii": {}
       },
       "forecast": [
         {
           "forecast_hour": 12,
-          "valid_time_raw": "251800Z",
-          "lat": 20.2,
-          "lon": 109.5,
-          "max_wind_kt": 30,
-          "max_wind_mps": 15.4,
-          "gust_kt": 40,
-          "gust_mps": 20.6,
-          "wind_radii": {}
-        },
-        {
-          "forecast_hour": 24,
-          "valid_time_raw": "260600Z",
-          "lat": 21.1,
-          "lon": 110.2,
+          "valid_time_raw": "260000Z",
+          "lat": 20.6,
+          "lon": 110.3,
           "max_wind_kt": 25,
           "max_wind_mps": 12.9,
           "gust_kt": 35,
@@ -594,14 +558,25 @@
           "wind_radii": {}
         },
         {
-          "forecast_hour": 36,
-          "valid_time_raw": "261800Z",
-          "lat": 22.3,
+          "forecast_hour": 24,
+          "valid_time_raw": "261200Z",
+          "lat": 21.5,
           "lon": 110.6,
           "max_wind_kt": 20,
           "max_wind_mps": 10.3,
           "gust_kt": 30,
           "gust_mps": 15.4,
+          "wind_radii": {}
+        },
+        {
+          "forecast_hour": 36,
+          "valid_time_raw": "270000Z",
+          "lat": 22.2,
+          "lon": 110.7,
+          "max_wind_kt": 15,
+          "max_wind_mps": 7.7,
+          "gust_kt": 25,
+          "gust_mps": 12.9,
           "wind_radii": {}
         }
       ]
@@ -609,7 +584,7 @@
     {
       "bulletin": "WTPN33",
       "issue_time_utc": "2026-08-25T09:00:00Z",
-      "age_hours": 5.0,
+      "age_hours": 5.4,
       "jtwc_id": "19W",
       "name": "ATSANI",
       "storm_type": "TROPICAL DEPRESSION",
