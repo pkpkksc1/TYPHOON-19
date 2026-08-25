@@ -37,7 +37,7 @@ IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 WEATHER_PATH = BASE_DIR / "data" / "weather.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 
-PARSER_VERSION = "6.6-CURRENT-DISTANCE"
+PARSER_VERSION = "6.7-CURRENT-WEATHER"
 
 TARGET_TYPHOON_NUMBER = "2619"
 TARGET_TYPHOON_NAME = "NARRA"
@@ -203,8 +203,16 @@ def make_location_risk(
     )
 
     d_score = distance_score(closest_distance)
-    r_score = rain_score(weather["max_72h_rain_mm"])
-    w_score = wind_score(weather["max_72h_wind_mps"])
+
+    # WeatherAPI is a SUPPORTING risk factor.
+    # Use the latest/current observation for the risk score.
+    # The 72h maximum values remain in the output for the
+    # separate "거점 영향 전망" display only.
+    current_rain = weather["current_rain_mm"] or 0.0
+    current_wind = weather["current_wind_mps"] or 0.0
+
+    r_score = rain_score(current_rain)
+    w_score = wind_score(current_wind)
 
     total = min(100, d_score + r_score + w_score)
     risk = risk_label(total)
@@ -218,12 +226,12 @@ def make_location_risk(
 
     if r_score >= 15:
         reasons.append(
-            f"최대 시간당 강수 {weather['max_72h_rain_mm']} mm"
+            f"현재 시간당 강수 {round(current_rain, 2)} mm"
         )
 
     if w_score >= 10:
         reasons.append(
-            f"최대 풍속 {weather['max_72h_wind_mps']} m/s"
+            f"현재 풍속 {round(current_wind, 1)} m/s"
         )
 
     if not reasons:
@@ -502,6 +510,8 @@ def main() -> int:
         "status": "OK",
         "note_ko": (
             "내부 물류 판단용 위험도입니다. "
+            "태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. "
+            "72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. "
             "공항 공식 결항/지연 기준이 아닙니다."
         ),
         "attribution": "Powered by WeatherAPI.com",
