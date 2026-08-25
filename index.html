@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SESS 태풍 물류 현황판</title>
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
 <style>
 :root{
   --bg:#0b1624;
@@ -532,16 +534,10 @@ td{
 
 .footer{
   display:flex;
-  justify-content:flex-end;
-  align-items:center;
+  justify-content:space-between;
   color:#64748b;
   font-size:10px;
   padding:12px 4px 0;
-}
-
-.footer #sources{
-  white-space:nowrap;
-  text-align:right;
 }
 
 @media(max-width:1100px){
@@ -1044,18 +1040,6 @@ td{
   color:#c7d9ec;
 }
 
-.nanning-risk-logic{
-  margin-top:4px;
-  color:#8fa9c3;
-  font-size:9px;
-  line-height:1.45;
-}
-
-.nanning-risk-logic b{
-  color:#c7d9ec;
-  font-weight:800;
-}
-
 .agency-inline{
   width:100%;
   height:100%;
@@ -1194,6 +1178,90 @@ td{
 
 
 
+
+
+
+/* v8.72.2 - online tile map enhancement */
+#leafletMap{
+  display:none;
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.map.leaflet-enhanced #leafletMap{
+  display:block;
+}
+
+.map.leaflet-enhanced .map-bg,
+.map.leaflet-enhanced #trackSvg,
+.map.leaflet-enhanced #mapPoints{
+  display:none;
+}
+
+.leaflet-container{
+  width:100%;
+  height:100%;
+  background:#dce8ef;
+  font:inherit;
+}
+
+.leaflet-control-zoom{
+  border:none !important;
+  box-shadow:0 8px 18px rgba(0,0,0,.22) !important;
+}
+
+.leaflet-control-zoom a{
+  background:rgba(255,255,255,.92) !important;
+  color:#1a2a3a !important;
+  border:none !important;
+}
+
+.leaflet-control-zoom a:hover{
+  background:#ffffff !important;
+}
+
+.leaflet-control-attribution{
+  background:rgba(8,17,29,.62) !important;
+  color:#dbe7f3 !important;
+  font-size:10px !important;
+}
+
+.leaflet-control-attribution a{
+  color:#bfe1ff !important;
+}
+
+.track-day-label{
+  transform:translate(-50%, 10px);
+  padding:1px 5px;
+  border-radius:10px;
+  background:rgba(35,46,61,.82);
+  border:1px solid rgba(255,255,255,.22);
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  line-height:1.4;
+  white-space:nowrap;
+  box-shadow:0 2px 6px rgba(0,0,0,.22);
+}
+
+.typhoon-now-icon{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:radial-gradient(circle at 38% 38%, #bff7ff 0 18%, #12d7cb 19% 60%, #0aa66f 61% 100%);
+  border:3px solid #ffffff;
+  box-shadow:0 0 0 4px rgba(73, 180, 255, .28), 0 4px 10px rgba(0,0,0,.35);
+}
+
+.typhoon-forecast-icon{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#7ad7ff;
+  border:3px solid rgba(255,255,255,.96);
+  box-shadow:0 2px 6px rgba(0,0,0,.28);
+}
 
 /* v8.23 - exact static map overlay */
 #trackSvg{
@@ -2068,117 +2136,6 @@ h1,h2,h3,.typhoon-title,.flight-no{
 
 </style>
 
-
-<style id="v873-impact-outlook">
-/* v8.73 : right-side hub outlook panel - display only */
-.outlook-panel{
-  padding:13px;
-}
-.outlook-panel h2{
-  margin-bottom:7px;
-}
-.outlook-meta{
-  margin-bottom:9px;
-  padding:7px 9px;
-  border:1px solid rgba(100,135,170,.25);
-  border-radius:9px;
-  background:#0d1a29;
-  color:#9fb4ca;
-  font-size:9px;
-  line-height:1.45;
-}
-.outlook-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:8px;
-}
-.outlook-card{
-  min-width:0;
-  padding:10px 11px;
-  border:1px solid #29445f;
-  border-radius:11px;
-  background:#14263a;
-}
-.outlook-card-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  gap:8px;
-  margin-bottom:7px;
-}
-.outlook-card-name{
-  min-width:0;
-  color:#ffffff;
-  font-size:12px;
-  font-weight:900;
-}
-.outlook-card-code{
-  flex:0 0 auto;
-  color:#75c8ff;
-  font-size:9px;
-  font-weight:800;
-}
-.outlook-distance{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  padding:7px 8px;
-  border:1px solid rgba(100,135,170,.20);
-  border-radius:8px;
-  background:#102236;
-  color:#c5d6e8;
-  font-size:9px;
-  line-height:1.35;
-}
-.outlook-distance b{
-  color:#ffffff;
-  font-size:11px;
-}
-.outlook-arrow{
-  color:#75c8ff;
-  font-weight:900;
-}
-.outlook-closest-time{
-  margin-top:4px;
-  color:#8fa8bf;
-  font-size:8px;
-}
-.outlook-weather{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:6px;
-  margin-top:7px;
-}
-.outlook-weather-item{
-  padding:6px 7px;
-  border:1px solid rgba(100,135,170,.18);
-  border-radius:8px;
-  background:#102236;
-}
-.outlook-weather-item span{
-  display:block;
-  color:#8fa8bf;
-  font-size:8px;
-}
-.outlook-weather-item b{
-  display:block;
-  margin-top:3px;
-  color:#f4f8ff;
-  font-size:11px;
-}
-.outlook-weather-time{
-  margin-top:2px;
-  color:#7892aa;
-  font-size:7px;
-  line-height:1.3;
-}
-@media(max-width:900px){
-  .outlook-grid{
-    grid-template-columns:1fr;
-  }
-}
-</style>
-
 </head>
 
 <body>
@@ -2356,24 +2313,6 @@ h1,h2,h3,.typhoon-title,.flight-no{
 </section>
 
 
-<section class="panel outlook-panel">
-
-  <div class="kicker" data-i18n="outlookKicker">
-    향후 72시간
-  </div>
-
-  <h2 data-i18n="outlookTitle">
-    거점 영향 전망
-  </h2>
-
-  <div class="outlook-meta" data-i18n="outlookMeta">
-    태풍 최접근 + WeatherAPI 72시간 최대 강수·풍속
-  </div>
-
-  <div id="impactOutlookGrid" class="outlook-grid">
-  </div>
-
-</section>
 
 
 </div>
@@ -2482,12 +2421,6 @@ h1,h2,h3,.typhoon-title,.flight-no{
     <strong>강수/풍속(WeatherAPI)</strong>는 보조 판단 기준
   </div>
 
-  <div class="nanning-risk-logic" data-i18n-html="landRiskCriteria">
-    <b>난닝 육로 위험도</b> · 태풍거리 25점 + 현재강수 50점 + 현재풍속 25점
-    · 가까울수록, 비·바람이 강할수록 점수 상승
-    · 🟢 낮음 0~34 | 🟡 주의 35~69 | 🔴 위험 70~100
-  </div>
-
 </section>
 
 </div>
@@ -2509,6 +2442,8 @@ h1,h2,h3,.typhoon-title,.flight-no{
   <div class="track-wrap">
 
     <div class="map" id="map">
+
+      <div id="leafletMap"></div>
 
       <img
         class="map-bg"
@@ -2607,6 +2542,10 @@ h1,h2,h3,.typhoon-title,.flight-no{
 
 <footer class="footer">
 
+  <div id="footerUpdated" data-i18n="footerUpdatedPlaceholder">
+    최종 업데이트 -
+  </div>
+
   <div id="sources" data-i18n="sourcesPlaceholder">
     데이터 출처 -
   </div>
@@ -2616,6 +2555,7 @@ h1,h2,h3,.typhoon-title,.flight-no{
 </div>
 
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 
 const DATA_URL =
@@ -2642,7 +2582,6 @@ const I18N = {
     currentTyphoon:"현재 태풍", pressure:"중심기압", maxWind:"최대풍속", direction:"이동방향", speed:"이동속도",
     hubRisk:"주요 거점 위험도", hubStatus:"물류 거점 상태",
     routeRisk:"물류 노선 위험도", majorRoutes:"주요 노선",
-    outlookKicker:"향후 72시간", outlookTitle:"거점 영향 전망", outlookMeta:"태풍 최접근 + WeatherAPI 72시간 최대 강수·풍속",
     agencyStatus:"태풍 데이터 사용 현황",
     jmaCountry:"일본기상청", kmaCountry:"한국기상청", cmaCountry:"중국기상국", jtwcCountry:"합동태풍경보센터",
     jmaRole:"현재위치 · 예상경로<br>기압 · 최대풍속",
@@ -2662,16 +2601,13 @@ const I18N = {
     locationsMetaPlaceholder:"태풍 예보 · 날씨 관측 · 위험도 기준 확인중",
     similarityStatusPlaceholder:"현재 예보값 기준 단순 비교", similarityCurrentPlaceholder:"현재 태풍 비교값 불러오는 중...",
     similarityCardPlaceholder:"과거 태풍 비교값 불러오는 중...", similarityBestPlaceholder:"예보가 갱신되면 유사도도 함께 변경됩니다.",
-    footerUpdatedPlaceholder:"최종 업데이트 -",
-    landRiskCriteria:"<b>난닝 육로 위험도</b> · 태풍거리 25점 + 현재강수 50점 + 현재풍속 25점 · 가까울수록, 비·바람이 강할수록 점수 상승 · 🟢 낮음 0~34 | 🟡 주의 35~69 | 🔴 위험 70~100",
-    sourcesPlaceholder:"데이터 출처 -"
+    footerUpdatedPlaceholder:"최종 업데이트 -", sourcesPlaceholder:"데이터 출처 -"
   },
   zh:{
     dashboardTitle:"台风物流仪表板",
     currentTyphoon:"当前台风", pressure:"中心气压", maxWind:"最大风速", direction:"移动方向", speed:"移动速度",
     hubRisk:"主要节点风险", hubStatus:"物流节点状态",
     routeRisk:"物流路线风险", majorRoutes:"主要路线",
-    outlookKicker:"未来72小时", outlookTitle:"节点影响展望", outlookMeta:"台风最近距离 + WeatherAPI 72小时最大降水·风速",
     agencyStatus:"台风数据使用情况",
     jmaCountry:"日本气象厅", kmaCountry:"韩国气象厅", cmaCountry:"中国气象局", jtwcCountry:"联合台风警报中心",
     jmaRole:"当前位置 · 预报路径<br>气压 · 最大风速",
@@ -2691,9 +2627,7 @@ const I18N = {
     locationsMetaPlaceholder:"台风预报 · 天气观测 · 正在确认风险判定标准",
     similarityStatusPlaceholder:"基于当前预报值的简单比较", similarityCurrentPlaceholder:"正在加载当前台风比较值...",
     similarityCardPlaceholder:"正在加载历史台风比较值...", similarityBestPlaceholder:"预报更新后，相似度也会同步变化。",
-    footerUpdatedPlaceholder:"最后更新 -",
-    landRiskCriteria:"<b>南宁陆运风险</b> · 台风距离25分 + 当前降水50分 + 当前风速25分 · 距离越近、雨风越强，分数越高 · 🟢 低 0~34 | 🟡 注意 35~69 | 🔴 危险 70~100",
-    sourcesPlaceholder:"数据来源 -"
+    footerUpdatedPlaceholder:"最后更新 -", sourcesPlaceholder:"数据来源 -"
   }
 };
 
@@ -3294,6 +3228,164 @@ function xy(
 }
 
 
+
+
+let leafletMap = null;
+let leafletTileLayer = null;
+let leafletRenderGroup = null;
+
+function destroyLeafletMap(){
+  if(leafletMap){
+    try{ leafletMap.remove(); }catch(_e){}
+    leafletMap = null;
+    leafletTileLayer = null;
+    leafletRenderGroup = null;
+  }
+  const mapEl = $("map");
+  if(mapEl){
+    mapEl.classList.remove("leaflet-enhanced");
+  }
+}
+
+function getTrackLabelText(p){
+  const mapped = mapDateLabel(p);
+  if(mapped){
+    return mapped;
+  }
+  const time = String(p?.time || "");
+  const m = time.match(/^\d{4}-(\d{2})-(\d{2})/);
+  if(m){
+    return `${Number(m[1])}/${Number(m[2])}`;
+  }
+  return label(p?.forecast_hour);
+}
+
+function renderLeafletTrack(track,currentPoint){
+  const mapWrap = $("map");
+  const mapDiv = $("leafletMap");
+
+  if(!mapWrap || !mapDiv || !window.L || !Array.isArray(track) || !track.length){
+    destroyLeafletMap();
+    return;
+  }
+
+  if(!leafletMap){
+    leafletMap = L.map(mapDiv, {
+      zoomControl:true,
+      attributionControl:true,
+      scrollWheelZoom:true,
+      dragging:true,
+      doubleClickZoom:true,
+      boxZoom:false,
+      keyboard:false,
+      preferCanvas:true
+    });
+
+    leafletTileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 8,
+      minZoom: 3,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(leafletMap);
+
+    leafletRenderGroup = L.layerGroup().addTo(leafletMap);
+    mapWrap.classList.add("leaflet-enhanced");
+  }
+
+  leafletRenderGroup.clearLayers();
+
+  const latlngs = track
+    .filter(p => p && p.lat != null && p.lon != null)
+    .map(p => [Number(p.lat), Number(p.lon)]);
+
+  if(!latlngs.length){
+    return;
+  }
+
+  const activeCurrent = currentPoint && currentPoint.lat != null && currentPoint.lon != null
+    ? [Number(currentPoint.lat), Number(currentPoint.lon)]
+    : latlngs[0];
+
+  L.polyline(latlngs, {
+    color:'#f2f5f8',
+    weight:44,
+    opacity:0.55,
+    lineCap:'round',
+    lineJoin:'round'
+  }).addTo(leafletRenderGroup);
+
+  L.polyline(latlngs, {
+    color:'#d6dde3',
+    weight:34,
+    opacity:0.42,
+    lineCap:'round',
+    lineJoin:'round'
+  }).addTo(leafletRenderGroup);
+
+  L.polyline(latlngs, {
+    color:'#7ad7ff',
+    weight:4,
+    opacity:0.95,
+    lineCap:'round',
+    lineJoin:'round'
+  }).addTo(leafletRenderGroup);
+
+  L.circle(activeCurrent, {
+    radius: 140000,
+    color:'#1e7dff',
+    weight:1,
+    opacity:0.45,
+    fillColor:'#2f8cff',
+    fillOpacity:0.16
+  }).addTo(leafletRenderGroup);
+
+  track.forEach((p, idx) => {
+    if(p.lat == null || p.lon == null) return;
+    const ll = [Number(p.lat), Number(p.lon)];
+    const isCurrent = idx === 0;
+
+    const icon = L.divIcon({
+      className:'',
+      html: isCurrent
+        ? '<div class="typhoon-now-icon"></div>'
+        : '<div class="typhoon-forecast-icon"></div>',
+      iconSize: isCurrent ? [24,24] : [14,14],
+      iconAnchor: isCurrent ? [12,12] : [7,7]
+    });
+
+    const labelText = getTrackLabelText(p);
+    const titleText = `${labelText} · ${Number(p.lat).toFixed(1)}°N / ${Number(p.lon).toFixed(1)}°E`;
+
+    L.marker(ll, {icon, keyboard:false, title:titleText})
+      .bindTooltip(isCurrent ? (isZh() ? '当前位置' : '현재 위치') : labelText, {
+        direction:'top',
+        offset:[0,-10],
+        opacity:0.95,
+        sticky:false
+      })
+      .addTo(leafletRenderGroup);
+
+    if(labelText){
+      L.marker(ll, {
+        icon: L.divIcon({
+          className:'',
+          html:`<div class="track-day-label">${labelText}</div>`,
+          iconSize:[52,20],
+          iconAnchor:[26,-8]
+        }),
+        keyboard:false,
+        interactive:false
+      }).addTo(leafletRenderGroup);
+    }
+  });
+
+  const bounds = L.latLngBounds(latlngs);
+  leafletMap.fitBounds(bounds.pad(0.35), {
+    animate:false,
+    padding:[24,24],
+    maxZoom:6
+  });
+}
+
 // ==========================================
 // 데이터 로드
 // ==========================================
@@ -3698,17 +3790,6 @@ async function load(){
     t.current || {};
 
 
-  const currentObsMs = Date.parse(c.time || "");
-  const lastKnown = (
-    t.last_known === true
-    || t.observation_status === "LAST_KNOWN"
-    || (
-      Number.isFinite(currentObsMs)
-      && (Date.now() - currentObsMs) > (12 * 60 * 60 * 1000)
-    )
-  );
-
-
   $("typhoonTitle")
     .textContent =
       displayTyphoon(
@@ -3719,8 +3800,8 @@ async function load(){
 
   $("baseTime")
     .textContent = isZh()
-      ? `${lastKnown ? "最后观测" : "基准时间"} ${full(c.time)}`
-      : `${lastKnown ? "마지막 관측" : "기준 시각"} ${full(c.time)}`;
+      ? `基准时间 ${full(c.time)}`
+      : `기준 시각 ${full(c.time)}`;
 $("pressure")
     .textContent =
       fmt(
@@ -3935,6 +4016,8 @@ $("pressure")
       }
     }
   );
+
+  renderLeafletTrack(displayTrack, c);
 
 
   // ========================================
@@ -4217,123 +4300,6 @@ $("pressure")
 
 
   // ========================================
-  // 거점 영향 전망 (기존 dashboard.json 데이터만 사용)
-  // ========================================
-
-  function outlookWeatherTime(ts){
-    if(!ts){
-      return "-";
-    }
-
-    const s = String(ts).trim();
-    const m = s.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);
-
-    if(!m){
-      return s;
-    }
-
-    return `${m[2]}.${m[3]} ${m[4]}:${m[5]}`;
-  }
-
-
-  function renderImpactOutlook(){
-
-    const grid = $("impactOutlookGrid");
-
-    if(!grid){
-      return;
-    }
-
-    grid.innerHTML = "";
-
-    const locations = d.locations || {};
-    const order = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"];
-
-    order.forEach(code => {
-
-      const item = locations[code];
-
-      if(!item){
-        return;
-      }
-
-      const f = item.forecast_72h || {};
-      const currentDistance = item.current_distance_km;
-      const closestDistance = lastKnown
-        ? currentDistance
-        : item.closest_distance_km;
-
-      let arrow = "→";
-      if(
-        Number.isFinite(Number(currentDistance)) &&
-        Number.isFinite(Number(closestDistance))
-      ){
-        if(Number(closestDistance) < Number(currentDistance)){
-          arrow = "↘";
-        }
-        else if(Number(closestDistance) > Number(currentDistance)){
-          arrow = "↗";
-        }
-      }
-
-      const card = document.createElement("div");
-      card.className = "outlook-card";
-
-      card.innerHTML = `
-        <div class="outlook-card-head">
-          <div class="outlook-card-name">${locationNameText(code,item)}</div>
-          <div class="outlook-card-code">${code}</div>
-        </div>
-
-        <div class="outlook-distance">
-          ${
-            lastKnown
-              ? `
-                <span>${isZh() ? "最后位置" : "마지막 위치"}</span>
-                <b>${fmt(currentDistance," km")}</b>
-              `
-              : `
-                <span>${isZh() ? "当前" : "현재"}</span>
-                <b>${fmt(currentDistance," km")}</b>
-                <span class="outlook-arrow">${arrow}</span>
-                <span>${isZh() ? "最近" : "최접근"}</span>
-                <b>${fmt(closestDistance," km")}</b>
-              `
-          }
-        </div>
-
-        <div class="outlook-closest-time">
-          ${
-            lastKnown
-              ? `${isZh() ? "最后观测" : "마지막 관측"} · ${riskMetaTime(c.time)}`
-              : `${isZh() ? "最近时刻" : "최접근 시각"} · ${riskMetaTime(item.closest_time)}`
-          }
-        </div>
-
-        <div class="outlook-weather">
-          <div class="outlook-weather-item">
-            <span>${isZh() ? "72小时最大降水" : "72시간 최대강수"}</span>
-            <b>${fmt(f.max_rain_mm," mm")}</b>
-            <div class="outlook-weather-time">${outlookWeatherTime(f.max_rain_time)}</div>
-          </div>
-
-          <div class="outlook-weather-item">
-            <span>${isZh() ? "72小时最大风速" : "72시간 최대풍속"}</span>
-            <b>${fmt(f.max_wind_mps," m/s")}</b>
-            <div class="outlook-weather-time">${outlookWeatherTime(f.max_wind_time)}</div>
-          </div>
-        </div>
-      `;
-
-      grid.appendChild(card);
-    });
-  }
-
-
-  renderImpactOutlook();
-
-
-  // ========================================
   // 거점
   // ========================================
 
@@ -4422,7 +4388,7 @@ $("pressure")
         <div class="stats">
 
           <div class="stat">
-            <span>${lastKnown ? (isZh() ? "最后位置" : "마지막 위치") : (isZh() ? "当前" : "현재")}</span>
+            <span>${isZh() ? "当前" : "현재"}</span>
             <b>
               ${
                 fmt(
@@ -4434,15 +4400,13 @@ $("pressure")
           </div>
 
           <div class="stat">
-            <span>${lastKnown ? (isZh() ? "预报" : "예보") : (isZh() ? "最接近" : "최접근")}</span>
+            <span>${isZh() ? "5日" : "5일"}</span>
             <b>
               ${
-                lastKnown
-                  ? (isZh() ? "已结束" : "종료")
-                  : fmt(
-                      item.closest_distance_km,
-                      " km"
-                    )
+                fmt(
+                  item.closest_distance_km,
+                  " km"
+                )
               }
             </b>
           </div>
@@ -4584,6 +4548,12 @@ $("pressure")
   // ========================================
   // 하단
   // ========================================
+
+  $("footerUpdated")
+    .textContent = isZh()
+      ? `最后更新 ${full(d.generated_at_utc)}`
+      : `최종 업데이트 ${full(d.generated_at_utc)}`;
+
 
   $("sources")
     .textContent =
