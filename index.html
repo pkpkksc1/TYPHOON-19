@@ -3674,6 +3674,17 @@ async function load(){
     t.current || {};
 
 
+  const currentObsMs = Date.parse(c.time || "");
+  const lastKnown = (
+    t.last_known === true
+    || t.observation_status === "LAST_KNOWN"
+    || (
+      Number.isFinite(currentObsMs)
+      && (Date.now() - currentObsMs) > (12 * 60 * 60 * 1000)
+    )
+  );
+
+
   $("typhoonTitle")
     .textContent =
       displayTyphoon(
@@ -3684,8 +3695,8 @@ async function load(){
 
   $("baseTime")
     .textContent = isZh()
-      ? `基准时间 ${full(c.time)}`
-      : `기준 시각 ${full(c.time)}`;
+      ? `${lastKnown ? "最后观测" : "基准时间"} ${full(c.time)}`
+      : `${lastKnown ? "마지막 관측" : "기준 시각"} ${full(c.time)}`;
 $("pressure")
     .textContent =
       fmt(
@@ -4224,7 +4235,9 @@ $("pressure")
 
       const f = item.forecast_72h || {};
       const currentDistance = item.current_distance_km;
-      const closestDistance = item.closest_distance_km;
+      const closestDistance = lastKnown
+        ? currentDistance
+        : item.closest_distance_km;
 
       let arrow = "→";
       if(
@@ -4249,15 +4262,28 @@ $("pressure")
         </div>
 
         <div class="outlook-distance">
-          <span>${isZh() ? "当前" : "현재"}</span>
-          <b>${fmt(currentDistance," km")}</b>
-          <span class="outlook-arrow">${arrow}</span>
-          <span>${isZh() ? "最近" : "최접근"}</span>
-          <b>${fmt(closestDistance," km")}</b>
+          ${
+            lastKnown
+              ? `
+                <span>${isZh() ? "最后位置" : "마지막 위치"}</span>
+                <b>${fmt(currentDistance," km")}</b>
+              `
+              : `
+                <span>${isZh() ? "当前" : "현재"}</span>
+                <b>${fmt(currentDistance," km")}</b>
+                <span class="outlook-arrow">${arrow}</span>
+                <span>${isZh() ? "最近" : "최접근"}</span>
+                <b>${fmt(closestDistance," km")}</b>
+              `
+          }
         </div>
 
         <div class="outlook-closest-time">
-          ${isZh() ? "最近时刻" : "최접근 시각"} · ${riskMetaTime(item.closest_time)}
+          ${
+            lastKnown
+              ? `${isZh() ? "最后观测" : "마지막 관측"} · ${riskMetaTime(c.time)}`
+              : `${isZh() ? "最近时刻" : "최접근 시각"} · ${riskMetaTime(item.closest_time)}`
+          }
         </div>
 
         <div class="outlook-weather">
@@ -4372,7 +4398,7 @@ $("pressure")
         <div class="stats">
 
           <div class="stat">
-            <span>${isZh() ? "当前" : "현재"}</span>
+            <span>${lastKnown ? (isZh() ? "最后位置" : "마지막 위치") : (isZh() ? "当前" : "현재")}</span>
             <b>
               ${
                 fmt(
@@ -4384,13 +4410,15 @@ $("pressure")
           </div>
 
           <div class="stat">
-            <span>${isZh() ? "5日" : "5일"}</span>
+            <span>${lastKnown ? (isZh() ? "预报" : "예보") : (isZh() ? "最接近" : "최접근")}</span>
             <b>
               ${
-                fmt(
-                  item.closest_distance_km,
-                  " km"
-                )
+                lastKnown
+                  ? (isZh() ? "已结束" : "종료")
+                  : fmt(
+                      item.closest_distance_km,
+                      " km"
+                    )
               }
             </b>
           </div>
