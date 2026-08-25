@@ -157,6 +157,25 @@ def parse_iso(value: Any) -> Optional[datetime]:
         return None
 
 
+LAST_KNOWN_AFTER_HOURS = 12.0
+
+
+def is_last_known_jma_item(item: Dict[str, Any]) -> bool:
+    """True when the target is a retained/final item rather than live current data."""
+    if str(item.get("retention_status") or "") == "LAST_KNOWN_JMA_BULLETIN":
+        return True
+
+    analysis = item.get("analysis") or {}
+    analysis_dt = parse_iso(analysis.get("time"))
+    if analysis_dt is None:
+        return False
+
+    age_hours = (
+        datetime.now(timezone.utc) - analysis_dt.astimezone(timezone.utc)
+    ).total_seconds() / 3600.0
+    return age_hours > LAST_KNOWN_AFTER_HOURS
+
+
 def infer_jtwc_valid_time(raw: Any, issue_time_utc: Any) -> Optional[str]:
     """
     Convert JTWC DDHHMMZ (e.g. 250600Z) to ISO UTC using
@@ -908,13 +927,34 @@ def main() -> int:
         return 0
 
     locations_meta = get_locations(jma)
-    jtwc_storm = find_matching_jtwc_storm(
-        jtwc, jma_typhoon
+    last_known = is_last_known_jma_item(jma_typhoon)
+
+    # Once the target is no longer live, do not keep using an old future
+    # forecast/JTWC path as if it were still a current forecast.
+    # Use only the last official JMA analysis position.
+    jtwc_storm = (
+        None
+        if last_known
+        else find_matching_jtwc_storm(jtwc, jma_typhoon)
     )
 
     locations: Dict[str, Dict[str, Any]] = {}
 
-    if jtwc_storm:
+    if last_known:
+        mode = "JMA_LAST_KNOWN_POSITION"
+        timeline = build_jma_distance_timeline(jma_typhoon)[:1]
+
+        for code in LOCATION_ORDER:
+            locations[code] = location_summary_fallback(
+                code,
+                locations_meta[code],
+                timeline,
+            )
+            locations[code]["trend"] = "ENDED"
+            locations[code]["trend_ko"] = "마지막 위치"
+            locations[code]["trend_emoji"] = "•"
+
+    elif jtwc_storm:
         mode = "JTWC_WIND_RADII"
         timeline = build_jtwc_timeline(jtwc_storm)
 
@@ -958,6 +998,13 @@ def main() -> int:
         "typhoon": {
             "number": typhoon_meta.get("number"),
             "name": typhoon_meta.get("name"),
+            "observation_status": (
+                "LAST_KNOWN" if last_known else "ACTIVE"
+            ),
+            "last_known": last_known,
+            "last_observation_time": (
+                (jma_typhoon.get("analysis") or {}).get("time")
+            ),
             "jtwc_id": (
                 jtwc_storm.get("jtwc_id")
                 if jtwc_storm

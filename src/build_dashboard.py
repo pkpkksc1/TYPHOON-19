@@ -82,6 +82,40 @@ def simplify_location(item: Dict[str, Any], code: str = "") -> Dict[str, Any]:
 
 
 
+
+LAST_KNOWN_AFTER_HOURS = 12.0
+
+
+def _parse_iso(value: Any):
+    if not value:
+        return None
+    try:
+        s = str(value).strip()
+        if s.endswith("Z"):
+            s = s[:-1] + "+00:00"
+        dt = datetime.fromisoformat(s)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
+    except Exception:
+        return None
+
+
+def is_last_known_jma_item(item: Dict[str, Any]) -> bool:
+    if str(item.get("retention_status") or "") == "LAST_KNOWN_JMA_BULLETIN":
+        return True
+
+    analysis = item.get("analysis") or {}
+    dt = _parse_iso(analysis.get("time"))
+    if dt is None:
+        return False
+
+    age_hours = (
+        datetime.now(timezone.utc) - dt.astimezone(timezone.utc)
+    ).total_seconds() / 3600.0
+    return age_hours > LAST_KNOWN_AFTER_HOURS
+
+
 def get_typhoon_track(jma: Dict[str, Any]) -> Dict[str, Any]:
     typhoons = jma.get("typhoons", [])
 
@@ -108,10 +142,15 @@ def get_typhoon_track(jma: Dict[str, Any]) -> Dict[str, Any]:
 
     meta = item.get("typhoon", {})
     analysis = item.get("analysis", {}) or {}
+    last_known = is_last_known_jma_item(item)
 
     forecast_points: List[Dict[str, Any]] = []
 
-    for p in item.get("forecast", []):
+    # A final/retained bulletin is historical. Do not expose its old
+    # future forecast as if it were still a live forecast.
+    forecast_source = [] if last_known else item.get("forecast", [])
+
+    for p in forecast_source:
         if not isinstance(p, dict):
             continue
 
@@ -128,6 +167,12 @@ def get_typhoon_track(jma: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "number": meta.get("number"),
         "name": meta.get("name"),
+        "observation_status": (
+            "LAST_KNOWN" if last_known else "ACTIVE"
+        ),
+        "last_known": last_known,
+        "last_observation_time": analysis.get("time"),
+        "retention_note_ko": item.get("retention_note_ko"),
         "current": {
             "time": analysis.get("time"),
             "lat": analysis.get("lat"),
