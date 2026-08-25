@@ -531,11 +531,44 @@ td{
 }
 
 .footer{
-  display:flex;
-  justify-content:space-between;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:10px;
   color:#64748b;
   font-size:10px;
   padding:12px 4px 0;
+}
+
+.land-risk-criteria{
+  min-width:0;
+  text-align:center;
+  white-space:nowrap;
+  font-size:9px;
+  line-height:1.2;
+  color:#7f94a8;
+}
+
+.land-risk-criteria b{
+  color:#a8bed2;
+  font-weight:800;
+}
+
+@media(max-width:1100px){
+  .land-risk-criteria{
+    font-size:8px;
+  }
+}
+
+@media(max-width:760px){
+  .footer{
+    grid-template-columns:1fr;
+    gap:4px;
+  }
+  .land-risk-criteria{
+    white-space:normal;
+    text-align:left;
+  }
 }
 
 @media(max-width:1100px){
@@ -2587,6 +2620,13 @@ h1,h2,h3,.typhoon-title,.flight-no{
     최종 업데이트 -
   </div>
 
+  <div class="land-risk-criteria" data-i18n-html="landRiskCriteria">
+    <b>난닝 육로 기준</b> · 거리25: ≤150/25 · ≤300/20 · ≤500/15 · ≤800/10 · ≤1200/5
+    | 강수50: ≥20/50 · ≥10/35 · ≥5/20 · ≥2/10 · ≥0.5/5
+    | 풍속25: ≥25/25 · ≥20/18 · ≥15/10 · ≥10/5
+    | 🟢0~34 🟡35~69 🔴70~100
+  </div>
+
   <div id="sources" data-i18n="sourcesPlaceholder">
     데이터 출처 -
   </div>
@@ -2642,7 +2682,9 @@ const I18N = {
     locationsMetaPlaceholder:"태풍 예보 · 날씨 관측 · 위험도 기준 확인중",
     similarityStatusPlaceholder:"현재 예보값 기준 단순 비교", similarityCurrentPlaceholder:"현재 태풍 비교값 불러오는 중...",
     similarityCardPlaceholder:"과거 태풍 비교값 불러오는 중...", similarityBestPlaceholder:"예보가 갱신되면 유사도도 함께 변경됩니다.",
-    footerUpdatedPlaceholder:"최종 업데이트 -", sourcesPlaceholder:"데이터 출처 -"
+    footerUpdatedPlaceholder:"최종 업데이트 -",
+    landRiskCriteria:"<b>난닝 육로 기준</b> · 거리25: ≤150/25 · ≤300/20 · ≤500/15 · ≤800/10 · ≤1200/5 | 강수50: ≥20/50 · ≥10/35 · ≥5/20 · ≥2/10 · ≥0.5/5 | 풍속25: ≥25/25 · ≥20/18 · ≥15/10 · ≥10/5 | 🟢0~34 🟡35~69 🔴70~100",
+    sourcesPlaceholder:"데이터 출처 -"
   },
   zh:{
     dashboardTitle:"台风物流仪表板",
@@ -2669,7 +2711,9 @@ const I18N = {
     locationsMetaPlaceholder:"台风预报 · 天气观测 · 正在确认风险判定标准",
     similarityStatusPlaceholder:"基于当前预报值的简单比较", similarityCurrentPlaceholder:"正在加载当前台风比较值...",
     similarityCardPlaceholder:"正在加载历史台风比较值...", similarityBestPlaceholder:"预报更新后，相似度也会同步变化。",
-    footerUpdatedPlaceholder:"最后更新 -", sourcesPlaceholder:"数据来源 -"
+    footerUpdatedPlaceholder:"最后更新 -",
+    landRiskCriteria:"<b>南宁陆运标准</b> · 距离25: ≤150/25 · ≤300/20 · ≤500/15 · ≤800/10 · ≤1200/5 | 降水50: ≥20/50 · ≥10/35 · ≥5/20 · ≥2/10 · ≥0.5/5 | 风速25: ≥25/25 · ≥20/18 · ≥15/10 · ≥10/5 | 🟢0~34 🟡35~69 🔴70~100",
+    sourcesPlaceholder:"数据来源 -"
   }
 };
 
