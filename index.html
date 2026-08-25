@@ -2050,6 +2050,117 @@ h1,h2,h3,.typhoon-title,.flight-no{
 
 </style>
 
+
+<style id="v873-impact-outlook">
+/* v8.73 : right-side hub outlook panel - display only */
+.outlook-panel{
+  padding:13px;
+}
+.outlook-panel h2{
+  margin-bottom:7px;
+}
+.outlook-meta{
+  margin-bottom:9px;
+  padding:7px 9px;
+  border:1px solid rgba(100,135,170,.25);
+  border-radius:9px;
+  background:#0d1a29;
+  color:#9fb4ca;
+  font-size:9px;
+  line-height:1.45;
+}
+.outlook-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+.outlook-card{
+  min-width:0;
+  padding:10px 11px;
+  border:1px solid #29445f;
+  border-radius:11px;
+  background:#14263a;
+}
+.outlook-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:8px;
+  margin-bottom:7px;
+}
+.outlook-card-name{
+  min-width:0;
+  color:#ffffff;
+  font-size:12px;
+  font-weight:900;
+}
+.outlook-card-code{
+  flex:0 0 auto;
+  color:#75c8ff;
+  font-size:9px;
+  font-weight:800;
+}
+.outlook-distance{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:7px 8px;
+  border:1px solid rgba(100,135,170,.20);
+  border-radius:8px;
+  background:#102236;
+  color:#c5d6e8;
+  font-size:9px;
+  line-height:1.35;
+}
+.outlook-distance b{
+  color:#ffffff;
+  font-size:11px;
+}
+.outlook-arrow{
+  color:#75c8ff;
+  font-weight:900;
+}
+.outlook-closest-time{
+  margin-top:4px;
+  color:#8fa8bf;
+  font-size:8px;
+}
+.outlook-weather{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+  margin-top:7px;
+}
+.outlook-weather-item{
+  padding:6px 7px;
+  border:1px solid rgba(100,135,170,.18);
+  border-radius:8px;
+  background:#102236;
+}
+.outlook-weather-item span{
+  display:block;
+  color:#8fa8bf;
+  font-size:8px;
+}
+.outlook-weather-item b{
+  display:block;
+  margin-top:3px;
+  color:#f4f8ff;
+  font-size:11px;
+}
+.outlook-weather-time{
+  margin-top:2px;
+  color:#7892aa;
+  font-size:7px;
+  line-height:1.3;
+}
+@media(max-width:900px){
+  .outlook-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -2227,6 +2338,24 @@ h1,h2,h3,.typhoon-title,.flight-no{
 </section>
 
 
+<section class="panel outlook-panel">
+
+  <div class="kicker" data-i18n="outlookKicker">
+    향후 72시간
+  </div>
+
+  <h2 data-i18n="outlookTitle">
+    거점 영향 전망
+  </h2>
+
+  <div class="outlook-meta" data-i18n="outlookMeta">
+    태풍 최접근 + WeatherAPI 72시간 최대 강수·풍속
+  </div>
+
+  <div id="impactOutlookGrid" class="outlook-grid">
+  </div>
+
+</section>
 
 
 </div>
@@ -2493,6 +2622,7 @@ const I18N = {
     currentTyphoon:"현재 태풍", pressure:"중심기압", maxWind:"최대풍속", direction:"이동방향", speed:"이동속도",
     hubRisk:"주요 거점 위험도", hubStatus:"물류 거점 상태",
     routeRisk:"물류 노선 위험도", majorRoutes:"주요 노선",
+    outlookKicker:"향후 72시간", outlookTitle:"거점 영향 전망", outlookMeta:"태풍 최접근 + WeatherAPI 72시간 최대 강수·풍속",
     agencyStatus:"태풍 데이터 사용 현황",
     jmaCountry:"일본기상청", kmaCountry:"한국기상청", cmaCountry:"중국기상국", jtwcCountry:"합동태풍경보센터",
     jmaRole:"현재위치 · 예상경로<br>기압 · 최대풍속",
@@ -2519,6 +2649,7 @@ const I18N = {
     currentTyphoon:"当前台风", pressure:"中心气压", maxWind:"最大风速", direction:"移动方向", speed:"移动速度",
     hubRisk:"主要节点风险", hubStatus:"物流节点状态",
     routeRisk:"物流路线风险", majorRoutes:"主要路线",
+    outlookKicker:"未来72小时", outlookTitle:"节点影响展望", outlookMeta:"台风最近距离 + WeatherAPI 72小时最大降水·风速",
     agencyStatus:"台风数据使用情况",
     jmaCountry:"日本气象厅", kmaCountry:"韩国气象厅", cmaCountry:"中国气象局", jtwcCountry:"联合台风警报中心",
     jmaRole:"当前位置 · 预报路径<br>气压 · 最大风速",
@@ -4051,6 +4182,108 @@ $("pressure")
 
 
   // ========================================
+  // 거점 영향 전망 (기존 dashboard.json 데이터만 사용)
+  // ========================================
+
+  function outlookWeatherTime(ts){
+    if(!ts){
+      return "-";
+    }
+
+    const s = String(ts).trim();
+    const m = s.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);
+
+    if(!m){
+      return s;
+    }
+
+    return `${m[2]}.${m[3]} ${m[4]}:${m[5]}`;
+  }
+
+
+  function renderImpactOutlook(){
+
+    const grid = $("impactOutlookGrid");
+
+    if(!grid){
+      return;
+    }
+
+    grid.innerHTML = "";
+
+    const locations = d.locations || {};
+    const order = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"];
+
+    order.forEach(code => {
+
+      const item = locations[code];
+
+      if(!item){
+        return;
+      }
+
+      const f = item.forecast_72h || {};
+      const currentDistance = item.current_distance_km;
+      const closestDistance = item.closest_distance_km;
+
+      let arrow = "→";
+      if(
+        Number.isFinite(Number(currentDistance)) &&
+        Number.isFinite(Number(closestDistance))
+      ){
+        if(Number(closestDistance) < Number(currentDistance)){
+          arrow = "↘";
+        }
+        else if(Number(closestDistance) > Number(currentDistance)){
+          arrow = "↗";
+        }
+      }
+
+      const card = document.createElement("div");
+      card.className = "outlook-card";
+
+      card.innerHTML = `
+        <div class="outlook-card-head">
+          <div class="outlook-card-name">${locationNameText(code,item)}</div>
+          <div class="outlook-card-code">${code}</div>
+        </div>
+
+        <div class="outlook-distance">
+          <span>${isZh() ? "当前" : "현재"}</span>
+          <b>${fmt(currentDistance," km")}</b>
+          <span class="outlook-arrow">${arrow}</span>
+          <span>${isZh() ? "最近" : "최접근"}</span>
+          <b>${fmt(closestDistance," km")}</b>
+        </div>
+
+        <div class="outlook-closest-time">
+          ${isZh() ? "最近时刻" : "최접근 시각"} · ${riskMetaTime(item.closest_time)}
+        </div>
+
+        <div class="outlook-weather">
+          <div class="outlook-weather-item">
+            <span>${isZh() ? "72小时最大降水" : "72시간 최대강수"}</span>
+            <b>${fmt(f.max_rain_mm," mm")}</b>
+            <div class="outlook-weather-time">${outlookWeatherTime(f.max_rain_time)}</div>
+          </div>
+
+          <div class="outlook-weather-item">
+            <span>${isZh() ? "72小时最大风速" : "72시간 최대풍속"}</span>
+            <b>${fmt(f.max_wind_mps," m/s")}</b>
+            <div class="outlook-weather-time">${outlookWeatherTime(f.max_wind_time)}</div>
+          </div>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  }
+
+
+  renderImpactOutlook();
+
+
+  // ========================================
   // 거점
   // ========================================
 
@@ -4151,7 +4384,7 @@ $("pressure")
           </div>
 
           <div class="stat">
-            <span>${isZh() ? "5日" : "최접근"}</span>
+            <span>${isZh() ? "5日" : "5일"}</span>
             <b>
               ${
                 fmt(
