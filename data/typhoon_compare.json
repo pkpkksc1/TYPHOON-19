@@ -1,0 +1,72 @@
+{
+  "source": "JMA + KMA",
+  "product": "Typhoon Forecast Comparison",
+  "parser_version": "3.2-NARRA-HARDLOCK",
+  "status": "OK",
+  "typhoon": {
+    "number": "2619",
+    "name": "NARRA"
+  },
+  "summary": {
+    "average_difference_km": 42,
+    "max_difference_km": 69,
+    "overall": {
+      "level": "GREEN",
+      "emoji": "🟢",
+      "label_ko": "거의 일치"
+    }
+  },
+  "comparisons": [
+    {
+      "forecast_hour": 15,
+      "jma_time": "2026-08-26T09:00:00+09:00",
+      "kma_time": "202608260300",
+      "time_gap_hours": 6.0,
+      "jma": {
+        "lat": 21.0,
+        "lon": 109.9
+      },
+      "kma": {
+        "lat": 20.5,
+        "lon": 109.5
+      },
+      "difference_km": 69,
+      "status": {
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "차이 있음"
+      }
+    },
+    {
+      "forecast_hour": 24,
+      "jma_time": "2026-08-26T18:00:00+09:00",
+      "kma_time": "202608261500",
+      "time_gap_hours": 3.0,
+      "jma": {
+        "lat": 21.6,
+        "lon": 110.2
+      },
+      "kma": {
+        "lat": 21.5,
+        "lon": 110.1
+      },
+      "difference_km": 15,
+      "status": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "거의 일치"
+      }
+    },
+    {
+      "forecast_hour": 39,
+      "jma_time": "2026-08-27T09:00:00+09:00",
+      "status": {
+        "level": "NO_DATA",
+        "emoji": "⚪",
+        "label_ko": "KMA 비교자료 없음"
+      },
+      "time_gap_hours": 18.0
+    }
+  ],
+  "generated_at_utc": "2026-08-25T12:19:03.471875+00:00"
+}

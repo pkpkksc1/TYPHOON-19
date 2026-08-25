@@ -1,0 +1,242 @@
+:root{
+  --bg:#0b1220;
+  --panel:#121c2d;
+  --panel2:#172337;
+  --line:#26364e;
+  --text:#eef4ff;
+  --muted:#91a2ba;
+  --accent:#62a8ff;
+  --green:#41d18a;
+  --yellow:#ffc857;
+  --red:#ff6577;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#08111f 0%,#0d1625 100%);
+  color:var(--text);
+  font-family:Inter,"Noto Sans KR","Malgun Gothic",sans-serif;
+}
+.shell{max-width:1440px;margin:0 auto;padding:28px}
+.topbar{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:24px}
+.eyebrow,.section-title{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+h1{font-size:30px;margin:6px 0 4px}
+h2,h3{margin:5px 0 14px}
+h2{font-size:27px}
+h3{font-size:20px}
+.muted,.hint{color:var(--muted);font-size:13px}
+.refresh-btn{
+  background:#1b6fd1;border:0;color:#fff;font-weight:700;padding:11px 16px;border-radius:10px;cursor:pointer
+}
+.card{
+  background:rgba(18,28,45,.95);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 12px 30px rgba(0,0,0,.14);
+}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-bottom:18px}
+.typhoon-head{display:flex;align-items:center;gap:16px}
+.storm-icon{font-size:48px}
+.big-line{font-size:18px;font-weight:700;color:#c8d8ee}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.metric,.compare-stats>div{
+  background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px
+}
+.metric span,.compare-stats span{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}
+.metric b,.compare-stats b{font-size:17px}
+.big-badge{
+  display:inline-flex;align-items:center;min-height:56px;padding:0 18px;border-radius:14px;
+  background:var(--panel2);font-size:24px;font-weight:800;margin:12px 0 14px
+}
+.compare-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.section-row{display:flex;justify-content:space-between;align-items:flex-end;margin:24px 0 10px}
+.track{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px}
+.track-item{
+  min-width:150px;background:var(--panel2);border:1px solid var(--line);border-radius:13px;padding:13px
+}
+.track-item .hour{font-weight:800;font-size:16px}
+.track-item .coord{color:#bcd0e8;margin:8px 0}
+.track-item .sub{font-size:12px;color:var(--muted)}
+.location-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.location-card{
+  background:rgba(18,28,45,.95);border:1px solid var(--line);border-radius:16px;padding:16px
+}
+.location-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.location-name{font-size:17px;font-weight:800}
+.risk-pill{padding:6px 9px;border-radius:999px;font-size:12px;font-weight:800;white-space:nowrap}
+.risk-green{background:rgba(65,209,138,.14);color:var(--green)}
+.risk-yellow{background:rgba(255,200,87,.14);color:var(--yellow)}
+.risk-red{background:rgba(255,101,119,.14);color:var(--red)}
+.location-distance{font-size:26px;font-weight:900;margin:16px 0 2px}
+.location-distance small{font-size:12px;color:var(--muted);font-weight:600}
+.weather-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}
+.weather-row div{background:var(--panel2);padding:8px;border-radius:9px;text-align:center}
+.weather-row span{display:block;color:var(--muted);font-size:10px}
+.weather-row b{font-size:13px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.list{display:flex;flex-direction:column;gap:9px}
+.list-row{
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+  padding:13px;background:var(--panel2);border:1px solid var(--line);border-radius:12px
+}
+.list-main{font-weight:800}
+.list-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.flight-times{font-size:12px;color:#bcd0e8;text-align:right;line-height:1.5}
+footer{color:var(--muted);font-size:11px;padding:20px 2px 5px}
+@media(max-width:1050px){
+  .location-grid{grid-template-columns:repeat(2,1fr)}
+  .metric-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .shell{padding:16px}
+  .hero-grid,.two-col{grid-template-columns:1fr}
+  .location-grid{grid-template-columns:1fr}
+  .topbar{align-items:flex-start}
+}
+
+
+
+/* v8.16 - stable independent left/right stacks */
+.grid{
+  display:grid;
+  grid-template-columns:minmax(360px,30%) minmax(0,70%);
+  gap:12px;
+  align-items:start;
+}
+
+.left-stack,
+.right-stack{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-width:0;
+}
+
+.current,
+.locations,
+.flights,
+.routes{
+  grid-column:auto !important;
+  grid-row:auto !important;
+  margin-top:0 !important;
+  width:100%;
+}
+
+.current{
+  padding:12px;
+}
+.current .typhoon-title{
+  font-size:24px;
+  margin:7px 0 2px;
+}
+.current .sub{font-size:10px}
+.current .metrics{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+  margin-top:9px;
+}
+.current .metric{padding:8px 9px}
+.current .metric b{
+  margin-top:4px;
+  font-size:14px;
+}
+
+.locations{padding:12px}
+.locations .loc-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+}
+.locations .loc-card{padding:8px}
+.locations .name{font-size:12px}
+.locations .stats{
+  gap:4px;
+  margin-top:6px;
+}
+.locations .stat{padding:5px}
+.locations .stat b{font-size:11px}
+
+.flights{padding:13px}
+.flights .list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+.flights .flight-card{padding:9px}
+.flights .flight-no{font-size:18px}
+.flights .times{
+  grid-template-columns:1fr 18px 1fr;
+  gap:4px;
+  margin-top:7px;
+}
+.flights .timebox{padding:6px}
+.flights .timebox span{font-size:8px}
+.flights .timebox b{font-size:11px}
+
+.routes{padding:13px}
+.routes .list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+.routes .route-card{
+  padding:9px;
+  min-height:72px;
+}
+
+.track{
+  grid-column:1/-1 !important;
+  grid-row:auto !important;
+  width:100%;
+}
+.track-wrap{display:block !important}
+.track-wrap .map{width:100%}
+
+.agency-bottom{
+  grid-column:1/-1 !important;
+  grid-row:auto !important;
+  width:100%;
+  display:block !important;
+}
+.agency-bottom .agency-left{width:100%}
+.agency-bottom .compact-left-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.agency-bottom .compare-row{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+@media(max-width:1200px){
+  .grid{
+    grid-template-columns:minmax(320px,40%) minmax(0,60%);
+  }
+  .flights .list,
+  .routes .list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:760px){
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .left-stack,
+  .right-stack,
+  .track,
+  .agency-bottom{
+    grid-column:1/-1;
+  }
+  .left-stack,
+  .right-stack{gap:10px}
+  .flights .list,
+  .routes .list,
+  .locations .loc-grid{
+    grid-template-columns:1fr;
+  }
+  .agency-bottom .compact-left-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+

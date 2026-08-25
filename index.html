@@ -1,0 +1,4357 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SESS 태풍 물류 현황판</title>
+
+<style>
+:root{
+  --bg:#0b1624;
+  --panel:#12263a;
+  --panel2:#162d44;
+  --line:#29445f;
+  --text:#f4f8ff;
+  --muted:#b8c7d9;
+  --blue:#5ec8ff;
+  --green:#37d67a;
+  --yellow:#ffc832;
+  --red:#ff5a5f;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  padding:14px;
+  background:linear-gradient(180deg,#0b1624,#08111d);
+  color:var(--text);
+  font-family:"Malgun Gothic","Noto Sans KR",Arial,sans-serif;
+}
+
+.shell{
+  max-width:1800px;
+  margin:auto;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:12px;
+}
+
+.brand{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+
+h1{
+  margin:4px 0 0;
+  font-size:25px;
+}
+
+h2{
+  margin:4px 0 12px;
+  font-size:18px;
+}
+
+.panel-title-row{
+  display:flex;
+  align-items:baseline;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
+.panel-title-row h2{
+  margin:4px 0 0;
+}
+
+.flight-inline-meta{
+  font-size:9px;
+  color:var(--muted);
+  white-space:normal;
+  line-height:1.35;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.updated{
+  font-size:11px;
+  text-align:right;
+  line-height:1.5;
+}
+
+.current-clock{
+  color:#f4f8ff;
+  font-weight:800;
+}
+
+.data-time{
+  color:var(--muted);
+  margin-top:2px;
+}
+
+button{
+  background:#155ca5;
+  color:white;
+  border:0;
+  border-radius:8px;
+  padding:9px 13px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1.05fr 1.05fr .9fr;
+  gap:12px;
+}
+
+.panel{
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+}
+
+.current{grid-column:1/2}
+.compare{grid-column:2/4}
+.track{grid-column:1/4}
+.locations{grid-column:1/2}
+.routes{grid-column:2/3}
+.flights{grid-column:3/4}
+
+.kicker{
+  font-size:12px;
+  color:var(--blue);
+  font-weight:800;
+}
+
+.typhoon-title{
+  font-size:30px;
+  font-weight:900;
+  margin:12px 0 4px;
+}
+
+.sub{
+  color:var(--muted);
+  font-size:11px;
+}
+
+.locations-meta{
+  margin:-5px 0 11px;
+  padding:8px 10px;
+  color:#9fb4ca;
+  font-size:9px;
+  line-height:1.55;
+  background:rgba(248,250,252,.95);
+  border:1px solid rgba(100,135,170,.22);
+  border-radius:9px;
+}
+
+.locations-meta strong{
+  color:#dbe7f3;
+  font-weight:800;
+}
+
+.locations-meta .ok{
+  color:#73d69a;
+  font-weight:800;
+}
+
+.locations-meta .wait{
+  color:#f1c15b;
+  font-weight:800;
+}
+
+.locations-meta .ver{
+  color:#b8cce0;
+  font-weight:700;
+}
+
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+  margin-top:16px;
+}
+
+.metric{
+  background:var(--panel2);
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:11px;
+}
+
+.metric span{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.metric b{
+  display:block;
+  margin-top:7px;
+  font-size:17px;
+}
+
+.agency-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+  margin-top:8px;
+}
+
+.agency{
+  background:var(--panel2);
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:8px 9px;
+}
+
+.agency.jma{border-color:#2478bb}
+.agency.kma{border-color:#2ca65a}
+.agency.cma{border-color:#c88716}
+.agency.jtwc{border-color:#8c62c8}
+
+.agency strong{
+  display:block;
+  font-size:14px;
+}
+
+.agency-country{
+  margin-top:1px;
+  font-size:8px;
+  color:var(--muted);
+}
+
+.agency-role{
+  margin-top:5px;
+  padding-top:5px;
+  border-top:1px solid var(--line);
+  font-size:8px;
+  line-height:1.4;
+}
+
+.agency-main{
+  display:block;
+  margin-top:5px;
+  padding:3px 5px;
+  border-radius:7px;
+  background:#eaf2ff;
+  color:#9fd2ff;
+  font-size:8px;
+  font-weight:900;
+}
+
+.compare-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:8px;
+}
+
+.compare-definition{
+  margin-top:6px;
+  background:#12263a;
+  border:1px dashed var(--line);
+  border-radius:8px;
+  padding:6px 8px;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.6;
+}
+
+.compare-definition b{
+  color:var(--text);
+}
+
+.compare-box{
+  background:var(--panel2);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:10px;
+  text-align:center;
+}
+
+.compare-box span{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.compare-box b{
+  display:block;
+  font-size:20px;
+  margin-top:5px;
+}
+
+.track-wrap{
+  display:block;
+}
+
+.track-wrap .map{
+  width:100%;
+}
+
+.map{
+  position:relative;
+  width:100%;
+  aspect-ratio:3 / 2;
+  height:auto;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#162d44;
+}
+
+.map-bg{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  user-select:none;
+  pointer-events:none;
+}
+
+.map-label{
+  display:none;
+}
+
+.china{left:8%;top:22%}
+.korea{left:28%;top:24%}
+.japan{left:40%;top:26%}
+.ph{left:24%;top:68%}
+.pacific{left:67%;top:47%;font-size:18px}
+
+#trackSvg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+.point{
+  position:absolute;
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  border:3px solid white;
+  z-index:3;
+}
+
+.plabel{
+  position:absolute;
+  transform:translate(-50%,13px);
+  font-size:9px;
+  white-space:nowrap;
+  color:#dbe7f3;
+  z-index:4;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12px;
+}
+
+th{
+  background:#102139;
+  color:#64748b;
+  text-align:left;
+  padding:10px;
+}
+
+td{
+  padding:11px 10px;
+  border-bottom:1px solid #1b3049;
+}
+
+.loc-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+}
+
+.loc-card,
+.route-card,
+.flight-card{
+  background:var(--panel2);
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:11px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+}
+
+.name{
+  font-size:14px;
+  font-weight:900;
+}
+
+.code{
+  font-size:10px;
+  color:var(--muted);
+}
+
+.pill{
+  font-size:10px;
+  font-weight:900;
+  padding:5px 8px;
+  border-radius:999px;
+  border:1px solid;
+}
+
+.low{
+  color:var(--green);
+  border-color:#1a9d54;
+}
+
+.warn{
+  color:var(--yellow);
+  border-color:#b98d0a;
+}
+
+.flight-active{
+  color:#73b9ff;
+  border-color:#2f8bd5;
+}
+
+.high{
+  color:var(--red);
+  border-color:#bd3439;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:9px;
+}
+
+.stat{
+  background:#12263a;
+  border-radius:8px;
+  padding:7px;
+}
+
+.stat span{
+  display:block;
+  font-size:9px;
+  color:var(--muted);
+}
+
+.stat b{
+  display:block;
+  margin-top:3px;
+  font-size:12px;
+}
+
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.flights .list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+
+.flight-group{
+  display:inline-block;
+  margin-top:3px;
+  padding:2px 6px;
+  border-radius:5px;
+  background:#eaf2ff;
+  color:#9fd2ff;
+  font-size:9px;
+  font-weight:900;
+}
+
+.route-title{
+  font-weight:900;
+  font-size:13px;
+}
+
+.reason{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.flight-no{
+  font-size:22px;
+  font-weight:900;
+  color:var(--blue);
+}
+
+.times{
+  display:grid;
+  grid-template-columns:1fr 30px 1fr;
+  gap:6px;
+  align-items:center;
+  margin-top:9px;
+}
+
+.timebox{
+  background:#12263a;
+  border-radius:8px;
+  padding:8px;
+}
+
+.timebox span{
+  display:block;
+  font-size:9px;
+  color:var(--muted);
+}
+
+.timebox b{
+  display:block;
+  margin-top:3px;
+  font-size:12px;
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  color:#64748b;
+  font-size:10px;
+  padding:12px 4px 0;
+}
+
+@media(max-width:1100px){
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .current{grid-column:1/2}
+  .compare{grid-column:2/3}
+  .track{grid-column:1/3}
+  .locations{grid-column:1/2}
+  .routes{grid-column:2/3}
+  .flights{grid-column:1/3}
+}
+
+@media(max-width:760px){
+
+  body{
+    padding:8px;
+  }
+
+  .grid{
+    display:block;
+  }
+
+  .panel{
+    margin-bottom:10px;
+  }
+
+  .metrics{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .agency-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .arrow{
+    display:none;
+  }
+
+  .track-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .loc-grid{
+    grid-template-columns:1fr;
+  }
+
+  .flights .list{
+    grid-template-columns:1fr;
+  }
+
+  .agency-grid{
+    grid-template-columns:1fr;
+  }
+
+  .header{
+    align-items:flex-start;
+  }
+
+  .header-right{
+    flex-direction:column;
+    align-items:flex-end;
+  }
+}
+
+/* v8.5 compact left-side agency reference block */
+.compact-agency-panel{
+  display:grid;
+  grid-template-columns:minmax(360px, 48%) 1fr;
+  gap:12px;
+  align-items:start;
+}
+
+.agency-left{
+  min-width:0;
+}
+
+.compact-left-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+}
+
+.compact-left-grid .agency{
+  min-height:112px;
+  padding:8px 9px;
+}
+
+.compact-left-grid .agency strong{
+  font-size:14px;
+}
+
+.compact-left-grid .agency-country{
+  font-size:8px;
+}
+
+.compact-left-grid .agency-role{
+  font-size:8px;
+  line-height:1.4;
+}
+
+.compact-left-grid .agency-main{
+  font-size:8px;
+}
+
+.compare-title{
+  margin-top:8px;
+  font-size:11px;
+  font-weight:900;
+  color:#8fc8ff;
+}
+
+.agency-reserved-space{
+  min-height:250px;
+  border:1px dashed transparent;
+  border-radius:10px;
+}
+
+@media(max-width:900px){
+  .compact-agency-panel{
+    grid-template-columns:1fr;
+  }
+
+  .agency-reserved-space{
+    display:none;
+  }
+}
+
+@media(max-width:560px){
+  .compact-left-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+
+/* Browser-safe flag badges (do not depend on emoji flag support) */
+.flag{
+  display:inline-flex;
+  width:22px;
+  height:15px;
+  margin-right:5px;
+  border-radius:2px;
+  vertical-align:-2px;
+  align-items:center;
+  justify-content:center;
+  box-sizing:border-box;
+  overflow:hidden;
+  font-size:9px;
+  line-height:1;
+  font-weight:900;
+}
+.flag-jp{
+  border:1px solid #cfd8e3;
+  background:radial-gradient(circle at 50% 50%, #d7193f 0 31%, #fff 33% 100%);
+  color:transparent;
+}
+.flag-kr{
+  border:1px solid #cfd8e3;
+  background:
+    radial-gradient(circle at 50% 42%, #cd2e3a 0 22%, transparent 23%),
+    radial-gradient(circle at 50% 58%, #0047a0 0 22%, transparent 23%),
+    #fff;
+  color:transparent;
+  position:relative;
+}
+.flag-kr::before,
+.flag-kr::after{
+  content:"";
+  position:absolute;
+  width:5px;
+  height:1px;
+  background:#111;
+  box-shadow:0 2px 0 #111;
+}
+.flag-kr::before{
+  left:2px;
+  top:3px;
+  transform:rotate(-35deg);
+}
+.flag-kr::after{
+  right:2px;
+  bottom:3px;
+  transform:rotate(-35deg);
+}
+.flag-cn{
+  background:#de2910;
+  color:#ffde00;
+  justify-content:flex-start;
+  padding-left:3px;
+}
+.flag-us{
+  border:1px solid #cfd8e3;
+  color:#fff;
+  justify-content:flex-start;
+  align-items:flex-start;
+  padding:1px 0 0 2px;
+  background:
+    linear-gradient(to bottom,
+      #b22234 0 14%, #fff 14% 28%,
+      #b22234 28% 42%, #fff 42% 56%,
+      #b22234 56% 70%, #fff 70% 84%,
+      #b22234 84% 100%);
+  position:relative;
+}
+.flag-us::before{
+  content:"";
+  position:absolute;
+  left:0; top:0;
+  width:9px; height:8px;
+  background:#3c3b6e;
+}
+.flag-us{ text-indent:-9999px; }
+
+
+.flag-svg{
+  display:inline-flex;
+  width:24px;
+  height:16px;
+  margin-right:5px;
+  vertical-align:-3px;
+  border:1px solid #cfd8e3;
+  border-radius:2px;
+  overflow:hidden;
+  background:#fff;
+}
+.flag-svg svg{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+
+/* v8.11: move 주요 노선 into the reserved right-side area */
+.routes-side{
+  min-height:0;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px;
+  background:var(--panel2);
+}
+
+.routes-side .kicker{
+  margin-bottom:8px;
+}
+
+.routes-side .list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:7px;
+}
+
+.routes-side .list-item{
+  padding:9px 10px;
+}
+
+@media(max-width:900px){
+  .agency-reserved-space.routes-side{
+    display:block;
+  }
+}
+
+
+
+/* v8.16 - stable independent left/right stacks */
+.grid{
+  display:grid;
+  grid-template-columns:minmax(360px,30%) minmax(0,70%);
+  gap:12px;
+  align-items:start;
+}
+
+.left-stack,
+.right-stack{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-width:0;
+}
+
+.current,
+.locations,
+.flights,
+.routes{
+  grid-column:auto !important;
+  grid-row:auto !important;
+  margin-top:0 !important;
+  width:100%;
+}
+
+.current{
+  padding:12px;
+}
+.current .typhoon-title{
+  font-size:24px;
+  margin:7px 0 2px;
+}
+.current .sub{font-size:10px}
+.current .metrics{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+  margin-top:9px;
+}
+.current .metric{padding:8px 9px}
+.current .metric b{
+  margin-top:4px;
+  font-size:14px;
+}
+
+.locations{padding:12px}
+.locations .loc-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+}
+.locations .loc-card{padding:8px}
+.locations .name{font-size:12px}
+.locations .stats{
+  gap:4px;
+  margin-top:6px;
+}
+.locations .stat{padding:5px}
+.locations .stat b{font-size:11px}
+
+.flights{padding:13px}
+.flights .list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+.flights .flight-card{padding:9px}
+.flights .flight-no{font-size:18px}
+.flights .times{
+  grid-template-columns:1fr 18px 1fr;
+  gap:4px;
+  margin-top:7px;
+}
+.flights .timebox{padding:6px}
+.flights .timebox span{font-size:8px}
+.flights .timebox b{font-size:11px}
+
+.routes{padding:13px}
+.routes .list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+.routes .route-card{
+  padding:9px;
+  min-height:72px;
+}
+
+
+/* ==========================================================
+   v8.59 - 지도 예보 범위 회청색 + 하늘색 중심선
+   낮음/주의/높음 색상과 72×30 형태 유지
+   ========================================================== */
+.routes .route-card > .row{
+  min-width:0;
+}
+
+.routes .route-card > .row > div:first-child{
+  min-width:0;
+}
+
+.routes .pill{
+  width:72px;
+  min-width:72px;
+  max-width:72px;
+  height:30px;
+  min-height:30px;
+  max-height:30px;
+  box-sizing:border-box;
+  padding:0 7px;
+  margin:0;
+  flex:0 0 72px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  border-width:1px !important;
+  border-style:solid !important;
+  border-radius:999px;
+  white-space:nowrap;
+  overflow:hidden;
+  line-height:28px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.routes .pill.low{
+  color:var(--green);
+  border-color:#1a9d54 !important;
+  background:rgba(55,214,122,.06);
+}
+
+.routes .pill.warn{
+  color:var(--yellow);
+  border-color:#b98d0a !important;
+  background:rgba(255,200,50,.06);
+}
+
+.routes .pill.high{
+  color:var(--red);
+  border-color:#bd3439 !important;
+  background:rgba(255,90,95,.06);
+}
+
+/* v8.41 - risk guide + agency status aligned row */
+.bottom-info-row{
+  display:grid;
+  grid-template-columns:minmax(300px,370px) minmax(0,1fr);
+  gap:12px;
+  align-items:stretch;
+  width:100%;
+  min-width:0;
+}
+
+.bottom-info-row > section{
+  min-width:0;
+  height:100%;
+  box-sizing:border-box;
+}
+
+/* v8.40 - risk guide */
+.risk-guide-panel{
+  width:100%;
+  align-self:stretch;
+  box-sizing:border-box;
+  overflow:hidden;
+  padding:10px 13px;
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+
+.risk-guide-title{
+  margin:0 0 7px;
+  font-size:15px;
+  font-weight:900;
+}
+
+.risk-guide-row{
+  display:grid;
+  grid-template-columns:62px minmax(0,1fr);
+  align-items:center;
+  gap:8px;
+  padding:4px 0;
+  border-top:1px solid rgba(90,120,155,.16);
+}
+
+.risk-guide-row:first-of-type{
+  border-top:0;
+}
+
+.risk-guide-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  padding:4px 7px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.risk-guide-badge.low{
+  color:#67e69b;
+  border:1px solid rgba(55,214,122,.45);
+  background:rgba(55,214,122,.08);
+}
+
+.risk-guide-badge.warn{
+  color:#ffd75e;
+  border:1px solid rgba(255,200,50,.45);
+  background:rgba(255,200,50,.08);
+}
+
+.risk-guide-badge.high{
+  color:#ff7b80;
+  border:1px solid rgba(255,90,95,.45);
+  background:rgba(255,90,95,.08);
+}
+
+.risk-guide-desc{
+  color:#d9e5f3;
+  font-size:10px;
+  line-height:1.45;
+}
+
+.risk-guide-logic{
+  margin-top:6px;
+  padding-top:6px;
+  border-top:1px dashed rgba(100,140,180,.28);
+  color:#8fa9c3;
+  font-size:9px;
+  line-height:1.5;
+}
+
+.risk-guide-logic strong{
+  color:#c7d9ec;
+}
+
+.agency-inline{
+  width:100%;
+  height:100%;
+  padding:10px 12px;
+  overflow:hidden;
+}
+
+.agency-inline .agency-left{
+  width:100%;
+  min-width:0;
+}
+
+.agency-inline .agency-status-title{
+  margin:0 0 5px;
+  font-size:15px;
+  font-weight:900;
+}
+
+.agency-inline .compact-left-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+  margin-top:0;
+}
+
+.agency-inline .compact-left-grid .agency{
+  min-height:0;
+  padding:7px 8px;
+}
+
+.agency-inline .agency strong{
+  font-size:13px;
+  line-height:1.08;
+}
+
+.agency-inline .agency-country,
+.agency-inline .agency-role,
+.agency-inline .agency-main{
+  font-size:8px;
+}
+
+.agency-inline .agency-country{
+  margin-top:0;
+  line-height:1.08;
+}
+
+.agency-inline .agency-role{
+  margin-top:1px;
+  padding-top:1px;
+  line-height:1.15;
+}
+
+.agency-inline .agency-main{
+  margin-top:1px;
+  padding:1px 4px;
+  line-height:1.08;
+}
+
+.agency-inline .compare-title{
+  margin-top:7px;
+  font-size:9px;
+}
+
+.agency-inline .compare-row{
+  margin-top:5px;
+  gap:5px;
+}
+
+.agency-inline .compare-box{
+  padding:6px 8px;
+}
+
+.agency-inline .compare-box span{
+  font-size:8px;
+}
+
+.agency-inline .compare-box b{
+  margin-top:3px;
+  font-size:14px;
+}
+
+.agency-inline .compare-definition{
+  margin-top:5px;
+  padding:5px 7px;
+  font-size:8px;
+  line-height:1.4;
+}
+
+.track{
+  grid-column:1/-1 !important;
+  grid-row:auto !important;
+  width:100%;
+}
+.track-wrap{display:block !important}
+.track-wrap .map{width:100%}
+
+
+@media(max-width:1100px){
+  .bottom-info-row{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:1200px){
+  .grid{
+    grid-template-columns:minmax(320px,40%) minmax(0,60%);
+  }
+  .flights .list,
+  .routes .list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:760px){
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .left-stack,
+  .right-stack,
+  .track{
+    grid-column:1/-1;
+  }
+  .left-stack,
+  .right-stack{gap:10px}
+  .flights .list,
+  .routes .list,
+  .locations .loc-grid{
+    grid-template-columns:1fr;
+  }
+  .agency-bottom .compact-left-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+
+
+
+
+/* v8.23 - exact static map overlay */
+#trackSvg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+#mapPoints{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:3;
+  pointer-events:none;
+}
+
+.map::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:rgba(3,10,20,.05);
+}
+
+.point{
+  z-index:4;
+}
+
+.plabel{
+  z-index:5;
+  text-shadow:0 1px 3px #000,0 0 4px #000;
+}
+
+
+.title-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.title-row h1{
+  margin:4px 0 0;
+}
+
+.dashboard-version{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  margin-top:4px;
+  font-size:11px;
+  font-weight:800;
+  line-height:1;
+  color:#d9e7f7;
+  background:rgba(18,42,68,.88);
+  border:1px solid rgba(140,170,205,.32);
+  border-radius:8px;
+  padding:6px 9px;
+  white-space:nowrap;
+}
+
+.auto-last-run{
+  margin-top:5px;
+  font-size:10px;
+  color:var(--muted);
+}
+
+.auto-control-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:4px;
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,.16);
+  font-size:10px;
+  font-weight:900;
+  line-height:1;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.auto-control-btn.stop{
+  color:#ffd8da;
+  background:rgba(145,36,43,.72);
+  border-color:rgba(255,90,95,.38);
+}
+
+.auto-control-btn.start{
+  color:#d8ffe8;
+  background:rgba(24,106,63,.72);
+  border-color:rgba(55,214,122,.38);
+}
+
+.auto-dot{
+  display:inline-block;
+  width:12px;
+  text-align:center;
+  font-weight:900;
+}
+
+.auto-dot.on{
+  color:#37d67a;
+}
+
+.auto-dot.off{
+  color:#ff8a8f;
+}
+
+.language-switch{
+  display:inline-flex;
+  align-items:center;
+  margin-top:4px;
+  padding:2px;
+  border:1px solid rgba(115,185,255,.28);
+  border-radius:8px;
+  background:rgba(10,28,48,.82);
+  white-space:nowrap;
+}
+
+.language-switch .lang-btn{
+  appearance:none;
+  border:0;
+  border-radius:6px;
+  background:transparent;
+  color:#8fa9c3;
+  padding:4px 8px;
+  font-size:10px;
+  font-weight:900;
+  line-height:1;
+  cursor:pointer;
+}
+
+.language-switch .lang-btn.active{
+  background:#155ca5;
+  color:#ffffff;
+  box-shadow:0 0 0 1px rgba(115,185,255,.16) inset;
+}
+
+
+
+/* ==========================================================
+   v8.44 - 물류 거점 카드 / 위험도 배지 고정
+   UI ONLY
+   ========================================================== */
+
+/* 2열 카드의 모든 행 높이를 동일하게 고정 */
+.locations .loc-grid{
+  grid-auto-rows:132px;
+  align-items:stretch;
+}
+
+/* 모든 물류 거점 카드 크기 고정 */
+.locations .loc-card{
+  height:132px;
+  min-height:132px;
+  max-height:132px;
+  box-sizing:border-box;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+/* 상단: 공항명 영역 + 위험도 배지 영역을 고정된 2칸으로 사용 */
+.locations .loc-card > .row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 72px;
+  gap:8px;
+  align-items:start;
+  min-height:43px;
+  height:43px;
+}
+
+/* 공항명이 길어도 오른쪽 배지를 밀지 않음 */
+.locations .loc-card > .row > div:first-child{
+  min-width:0;
+  overflow:hidden;
+}
+
+/* 공항명은 최대 2줄, 영역 높이는 항상 동일 */
+.locations .name{
+  line-height:1.2;
+  min-height:28px;
+  max-height:28px;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+
+/* 코드/상태 줄도 위치 고정 */
+.locations .code{
+  margin-top:1px;
+  height:12px;
+  line-height:12px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* 낮음/주의/높음 배지: 크기와 테두리 완전 고정 */
+.locations .pill{
+  width:72px;
+  min-width:72px;
+  max-width:72px;
+  height:30px;
+  min-height:30px;
+  max-height:30px;
+
+  box-sizing:border-box;
+  padding:0 7px;
+  margin:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+
+  border-width:1px;
+  border-style:solid;
+  border-radius:999px;
+
+  white-space:nowrap;
+  word-break:keep-all;
+  overflow:hidden;
+
+  line-height:28px;
+  font-size:10px;
+  font-weight:900;
+}
+
+/* 아래 통계 영역도 동일한 위치에서 시작 */
+.locations .stats{
+  flex:1 1 auto;
+  margin-top:5px;
+  align-content:start;
+  grid-auto-rows:42px;
+}
+
+/* 거리/강수/풍속 칸 높이 고정 */
+.locations .stat{
+  height:42px;
+  min-height:42px;
+  max-height:42px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+
+/* 모바일 1열에서도 카드/배지 크기는 동일 유지 */
+@media(max-width:760px){
+  .locations .loc-grid{
+    grid-auto-rows:132px;
+  }
+
+  .locations .loc-card{
+    height:132px;
+    min-height:132px;
+    max-height:132px;
+  }
+
+  .locations .pill{
+    width:72px;
+    min-width:72px;
+    max-width:72px;
+    height:30px;
+    min-height:30px;
+    max-height:30px;
+  }
+}
+
+
+
+/* ==========================================================
+   v8.45 - 하단 레이아웃 통합
+   왼쪽: 태풍 데이터 사용 현황
+   오른쪽: 물류 위험도 판단
+   v8.44 카드/배지 고정 규칙 유지
+   ========================================================== */
+
+.grid{
+  align-items:stretch;
+}
+
+.left-stack,
+.right-stack{
+  height:100%;
+  align-self:stretch;
+}
+
+/* 위쪽 좌/우 스택의 하단선도 같은 위치까지 채움 */
+.left-stack .locations,
+.right-stack .routes{
+  flex:1 1 auto;
+}
+
+/* 메인 30:70 비율과 동일한 하단 2칸 */
+.bottom-info-row{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:minmax(360px,30%) minmax(0,70%);
+  gap:12px;
+  align-items:stretch;
+  width:100%;
+  min-width:0;
+  margin:0;
+}
+
+/* 두 박스 테두리의 윗선/아랫선/높이 동일 */
+.bottom-info-row > section{
+  width:100%;
+  min-width:0;
+  height:100%;
+  min-height:218px;
+  align-self:stretch;
+  box-sizing:border-box;
+  margin:0;
+  overflow:hidden;
+}
+
+/* 왼쪽 데이터 사용 현황 */
+.bottom-info-row .agency-inline{
+  grid-column:auto !important;
+  width:100%;
+  height:100%;
+  padding:10px 12px;
+}
+
+.bottom-info-row .agency-inline .compact-left-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+}
+
+.bottom-info-row .agency-inline .agency{
+  min-width:0;
+  height:64px;
+  min-height:64px;
+  max-height:64px;
+  box-sizing:border-box;
+  overflow:hidden;
+  padding:3px 7px;
+}
+
+.bottom-info-row .agency-inline .agency strong{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.bottom-info-row .agency-inline .agency-role{
+  min-height:20px;
+  max-height:20px;
+  overflow:hidden;
+}
+
+.bottom-info-row .agency-inline .agency-main{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.bottom-info-row .agency-inline .compare-row{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+}
+
+/* 오른쪽 위험도 판단 */
+.bottom-info-row .risk-guide-panel{
+  grid-column:auto !important;
+  width:100%;
+  height:100%;
+  min-height:218px;
+  align-self:stretch;
+  padding:10px 13px;
+}
+
+.bottom-info-row .risk-guide-row{
+  min-height:38px;
+  box-sizing:border-box;
+}
+
+/* 태블릿에서도 메인 40:60과 동일 */
+@media(max-width:1200px) and (min-width:761px){
+  .bottom-info-row{
+    grid-template-columns:minmax(320px,40%) minmax(0,60%);
+  }
+}
+
+/* 모바일만 세로 배치 */
+@media(max-width:760px){
+  .bottom-info-row{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .bottom-info-row > section,
+  .bottom-info-row .risk-guide-panel{
+    min-height:auto;
+    height:auto;
+  }
+}
+
+
+
+/* ==========================================================
+   v8.47 - 과거 태풍 유사도 참고 영역 추가
+   계산 로직 변경 없음
+   ========================================================== */
+
+/* 6개 물류 거점 카드 외곽선/크기를 모두 동일하게 유지 */
+.locations .loc-grid{
+  grid-auto-rows:146px !important;
+  align-items:stretch !important;
+}
+
+.locations .loc-card{
+  height:146px !important;
+  min-height:146px !important;
+  max-height:146px !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+}
+
+/* 상단 제목/배지는 기존 고정값 유지 */
+.locations .loc-card > .row{
+  min-height:43px !important;
+  height:43px !important;
+}
+
+/* 풍속 줄까지 카드 안에 완전히 들어오도록 통계 영역 조정 */
+.locations .stats{
+  flex:1 1 auto !important;
+  margin-top:5px !important;
+  row-gap:5px !important;
+  align-content:start !important;
+  overflow:visible !important;
+}
+
+.locations .stat{
+  height:44px !important;
+  min-height:44px !important;
+  max-height:44px !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+  padding-top:5px !important;
+  padding-bottom:5px !important;
+}
+
+/* 낮음/주의/높음 테두리는 v8.44 규격 그대로 고정 */
+.locations .pill{
+  width:72px !important;
+  min-width:72px !important;
+  max-width:72px !important;
+  height:30px !important;
+  min-height:30px !important;
+  max-height:30px !important;
+  white-space:nowrap !important;
+}
+
+/* JMA/KMA 위치 차이: 큰 2칸 영역 대신 한 줄 요약 */
+.compare-compact{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:100%;
+  min-width:0;
+  margin-top:5px;
+  padding:7px 9px;
+  box-sizing:border-box;
+  border:1px dashed rgba(100,140,180,.28);
+  border-radius:9px;
+  background:rgba(5,18,35,.22);
+  white-space:nowrap;
+  overflow:hidden;
+  line-height:1.2;
+}
+
+.compare-compact-label{
+  color:#9fc2e8;
+  font-size:9px;
+  font-weight:800;
+  flex:0 0 auto;
+}
+
+.compare-compact-item{
+  color:#cbdcf0;
+  font-size:9px;
+  flex:0 0 auto;
+}
+
+.compare-compact-item b{
+  margin-left:2px;
+  color:#ffffff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.compare-compact-divider{
+  color:#56718e;
+  font-size:9px;
+  flex:0 0 auto;
+}
+
+/* 태풍 데이터 사용 현황 / 위험도 판단 외곽선 정렬 유지 */
+.bottom-info-row{
+  align-items:stretch !important;
+}
+
+.bottom-info-row > section{
+  height:100% !important;
+  align-self:stretch !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+}
+
+/* 기존 비교영역이 줄어든 만큼 기관 패널 내부도 자연스럽게 채움 */
+.bottom-info-row .agency-inline{
+  justify-content:flex-start !important;
+}
+
+/* 모바일에서도 카드 테두리와 풍속 줄 유지 */
+@media(max-width:760px){
+  .locations .loc-grid{
+    grid-auto-rows:146px !important;
+  }
+
+  .locations .loc-card{
+    height:146px !important;
+    min-height:146px !important;
+    max-height:146px !important;
+  }
+
+  .compare-compact{
+    gap:5px;
+    padding:6px 7px;
+  }
+
+  .compare-compact-label,
+  .compare-compact-item,
+  .compare-compact-divider{
+    font-size:8px;
+  }
+
+  .compare-compact-item b{
+    font-size:10px;
+  }
+}
+
+
+/* v8.47 - historical typhoon similarity reference */
+.historical-similarity{
+  grid-column:1/-1 !important;
+  width:100%;
+  padding:13px 15px;
+}
+
+.similarity-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:9px;
+}
+
+.similarity-title-wrap{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.similarity-title{
+  margin:0;
+  font-size:16px;
+  font-weight:900;
+}
+
+.similarity-reference-badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:22px;
+  padding:3px 8px;
+  border-radius:999px;
+  border:1px solid rgba(115,185,255,.32);
+  background:rgba(56,162,255,.07);
+  color:#a9d2ff;
+  font-size:9px;
+  font-weight:800;
+}
+
+.similarity-note{
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.45;
+}
+
+.similarity-current{
+  margin-bottom:8px;
+  padding:7px 9px;
+  border:1px dashed rgba(100,140,180,.25);
+  border-radius:9px;
+  background:rgba(5,18,35,.22);
+  color:#b9cce0;
+  font-size:9px;
+  line-height:1.5;
+}
+
+.similarity-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+
+.similarity-card{
+  min-width:0;
+  padding:10px 11px;
+  border:1px solid rgba(96,129,166,.24);
+  border-radius:11px;
+  background:rgba(11,27,46,.68);
+}
+
+.similarity-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.similarity-name{
+  min-width:0;
+  color:#f4f8ff;
+  font-size:12px;
+  font-weight:900;
+}
+
+.similarity-score{
+  flex:0 0 auto;
+  color:#73b9ff;
+  font-size:20px;
+  font-weight:900;
+}
+
+.similarity-details{
+  margin-top:6px;
+  color:#a9bdd2;
+  font-size:9px;
+  line-height:1.6;
+}
+
+.similarity-best{
+  margin-top:8px;
+  color:#c7d9eb;
+  font-size:9px;
+  line-height:1.5;
+}
+
+.similarity-best b{
+  color:#ffffff;
+}
+
+@media(max-width:760px){
+  .similarity-grid{
+    grid-template-columns:1fr;
+  }
+  .similarity-head{
+    align-items:flex-start;
+  }
+  .similarity-score{
+    font-size:18px;
+  }
+}
+
+
+/* v8.69.7 AIR CONTROL CENTER DARK THEME */
+.v865-theme,
+body {
+  background: #08111d !important;
+  color: #f4f8ff !important;
+}
+
+.card,
+.panel,
+.box,
+.section,
+.route-card,
+.flight-card {
+  background: #12263a !important;
+  color: #f4f8ff !important;
+  border-color: #274866 !important;
+}
+
+h1,h2,h3,h4,
+.title,
+.label {
+  color: #ffffff !important;
+}
+
+small,
+.sub,
+.description {
+  color: #b7c7d9 !important;
+}
+
+.value,
+.number {
+  color: #8ed8ff !important;
+}
+
+
+/* v8.69.7 EXTRA DARK CONTROL CENTER */
+html, body {
+  background: #050b12 !important;
+}
+
+.v865-theme,
+main,
+.container,
+.dashboard,
+.content {
+  background: #050b12 !important;
+}
+
+.card,
+.panel,
+.box,
+.section,
+.route-card,
+.flight-card,
+.summary-card,
+.info-card,
+.table-card {
+  background: #0b1724 !important;
+  color: #f2f7ff !important;
+  border-color: #1d3a55 !important;
+  box-shadow: none !important;
+}
+
+.card *,
+.panel *,
+.box *,
+.section * {
+  background-color: transparent;
+}
+
+.header,
+.top,
+.nav,
+.toolbar {
+  background: #07111c !important;
+}
+
+table,
+th,
+td {
+  background: #0b1724 !important;
+  color: #eaf3ff !important;
+}
+
+th {
+  background: #10243a !important;
+}
+
+input,
+select,
+button {
+  background: #10243a !important;
+  color: #ffffff !important;
+  border-color: #274866 !important;
+}
+
+</style>
+
+
+
+<style id="v8697-dark-color-only">
+/* v8.69.7 : color only - keep layout unchanged */
+:root{
+  --bg:#08111d;
+  --panel:#101d2c;
+  --panel2:#14263a;
+  --line:#29445f;
+  --text:#f4f8ff;
+  --muted:#b8c7d9;
+}
+
+body{
+  background:linear-gradient(180deg,#08111d,#050b12) !important;
+  color:#f4f8ff !important;
+}
+
+.panel{
+  background:#101d2c !important;
+  color:#f4f8ff !important;
+  border-color:#29445f !important;
+}
+
+.locations-meta,
+.risk-guide-panel{
+  background:#0d1a29 !important;
+  color:#c5d6e8 !important;
+}
+
+.metric,
+.agency,
+.loc-card,
+.route-card,
+.flight-card,
+.stat,
+.timebox,
+.routes-side,
+.compare-box{
+  background:#14263a !important;
+  color:#f4f8ff !important;
+  border-color:#29445f !important;
+}
+
+.flight-group,
+.agency-main{
+  background:#16304d !important;
+  color:#9fd2ff !important;
+}
+
+h1,h2,h3,.typhoon-title,.flight-no{
+  color:#ffffff !important;
+}
+
+.sub,.code,.reason,.flight-inline-meta{
+  color:#b8c7d9 !important;
+}
+
+.dashboard-version,
+.language-switch{
+  background:#10243a !important;
+}
+
+/* v8.69.9 flight control improvements */
+.flight-status-legend{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-left:10px;
+  font-size:10px;
+  color:#b8c7d9;
+}
+.flight-status-legend span{
+  padding:3px 7px;
+  border-radius:999px;
+  border:1px solid #29445f;
+  background:#10243a;
+  font-weight:800;
+}
+.flight-group{
+  display:inline-flex !important;
+  align-items:center;
+}
+.flight-group.import{
+  color:#9fd2ff !important;
+  border:1px solid rgba(94,200,255,.35);
+}
+.flight-group.export{
+  color:#c7d9ec !important;
+  border:1px solid rgba(199,217,236,.25);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="shell">
+
+<header class="header">
+
+  <div>
+
+    <div class="brand">
+      SBLC · TYPHOON LOGISTICS CONTROL
+    </div>
+
+    <div class="title-row">
+      <h1 data-i18n="dashboardTitle">
+        SESS 태풍 물류 현황판
+      </h1>
+
+      <div id="dashboardVersion" class="dashboard-version">
+        <span id="autoModeDot" class="auto-dot off">○</span>
+        <span id="autoModeText">AUTO ?</span>
+        <span>· v8.69.7</span>
+      </div>
+
+      <a
+        id="autoControlBtn"
+        class="auto-control-btn stop"
+        href="https://github.com/pkpkksc1/TYPHOON/actions/workflows/TYPHOON_AUTO_STOP.yml"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ■ AUTO 종료
+      </a>
+
+      <div class="language-switch" aria-label="Language selector">
+        <button type="button" id="langKo" class="lang-btn active">한국어</button>
+        <button type="button" id="langZh" class="lang-btn">中文</button>
+      </div>
+    </div>
+
+    <div id="autoLastRun" class="auto-last-run" data-i18n="lastAutoPlaceholder">
+      마지막 자동실행 -
+    </div>
+
+  </div>
+
+
+  <div class="header-right">
+
+    <div id="updatedTop" class="updated">
+
+      <div id="currentClock" class="current-clock" data-i18n="currentTimePlaceholder">
+        현재시간 -
+      </div>
+
+      <div id="dataClock" class="data-time" data-i18n="jmaUpdatedPlaceholder">
+        JMA 갱신 -
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main class="grid">
+
+
+<div class="left-stack">
+
+<section class="panel current">
+
+  <div class="kicker" data-i18n="currentTyphoon">
+    현재 태풍
+  </div>
+
+  <div id="typhoonTitle" class="typhoon-title">
+    -
+  </div>
+
+  <div id="baseTime" class="sub" data-i18n="baseTimePlaceholder">
+    기준 시각 -
+  </div>
+
+
+  <div class="metrics">
+
+    <div class="metric">
+      <span data-i18n="pressure">중심기압</span>
+      <b id="pressure">-</b>
+    </div>
+
+    <div class="metric">
+      <span data-i18n="maxWind">최대풍속</span>
+      <b id="wind">-</b>
+    </div>
+
+    <div class="metric">
+      <span data-i18n="direction">이동방향</span>
+      <b id="direction">-</b>
+    </div>
+
+    <div class="metric">
+      <span data-i18n="speed">이동속도</span>
+      <b id="speed">-</b>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="panel locations">
+
+  <div class="kicker" data-i18n="hubRisk">
+    주요 거점 위험도
+  </div>
+
+  <h2 data-i18n="hubStatus">
+    물류 거점 상태
+  </h2>
+
+  <div
+    id="locationsMeta"
+    class="locations-meta"
+    data-i18n="locationsMetaPlaceholder"
+  >
+    태풍 예보 · 날씨 관측 · 위험도 기준 확인중
+  </div>
+
+  <div
+    id="locationsGrid"
+    class="loc-grid"
+  >
+  </div>
+
+</section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="right-stack">
+
+<section class="panel routes">
+
+  <div class="kicker" data-i18n="routeRisk">
+    물류 노선 위험도
+  </div>
+
+  <h2 data-i18n="majorRoutes">
+    주요 노선
+  </h2>
+
+  <div
+    id="routesList"
+    class="list"
+  >
+  </div>
+
+</section>
+
+
+
+
+</div>
+
+<div class="bottom-info-row">
+
+<section class="panel compare agency-inline">
+
+<div class="agency-left">
+
+    <div class="agency-status-title" data-i18n="agencyStatus">
+      태풍 데이터 사용 현황
+    </div>
+
+    <div class="agency-grid compact-left-grid">
+
+      <div class="agency jma">
+        <strong>JP JMA</strong>
+        <div class="agency-country" data-i18n="jmaCountry">일본기상청</div>
+        <div class="agency-role" data-i18n-html="jmaRole">
+          현재위치 · 예상경로<br>
+          기압 · 최대풍속
+        </div>
+        <span class="agency-main" data-i18n="jmaMain">기본 태풍 경로</span>
+      </div>
+
+      <div class="agency kma">
+        <strong>KR KMA</strong>
+        <div class="agency-country" data-i18n="kmaCountry">한국기상청</div>
+        <div class="agency-role" data-i18n-html="kmaRole">
+          예상경로<br>
+          JMA 경로 편차 확인
+        </div>
+        <span class="agency-main" data-i18n="kmaMain">예상경로 비교</span>
+      </div>
+
+      <div class="agency cma">
+        <strong>CN CMA</strong>
+        <div class="agency-country" data-i18n="cmaCountry">중국기상국</div>
+        <div class="agency-role" data-i18n-html="cmaRole">
+          현재위치 · 기압 · 풍속<br>
+          강풍반경
+        </div>
+        <span class="agency-main" data-i18n="cmaMain">중국 측 현재 정보</span>
+      </div>
+
+      <div class="agency jtwc">
+        <strong>US JTWC</strong>
+        <div class="agency-country" data-i18n="jtwcCountry">합동태풍경보센터</div>
+        <div class="agency-role" data-i18n-html="jtwcRole">
+          예상경로 · 강풍반경<br>
+          거점·노선 위험도
+        </div>
+        <span class="agency-main" data-i18n="jtwcMain">위험도 계산 핵심</span>
+      </div>
+
+    </div>
+
+    <div class="compare-compact">
+      <span class="compare-compact-label" data-i18n="forecastDiff">예상경로 위치 차이</span>
+      <span class="compare-compact-item"><span data-i18n="average">평균</span> <b id="avgDiff">-</b></span>
+      <span class="compare-compact-divider">|</span>
+      <span class="compare-compact-item"><span data-i18n="maximum">최대</span> <b id="maxDiff">-</b></span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="risk-guide-panel">
+
+  <div class="risk-guide-title" data-i18n="riskJudgment">
+    물류 위험도 판단
+  </div>
+
+  <div class="risk-guide-row">
+    <div class="risk-guide-badge low" data-i18n="riskLowBadge">
+      🟢 낮음
+    </div>
+    <div class="risk-guide-desc" data-i18n-html="riskLowDesc">
+      태풍 최접근 거리가 <b>태풍 반경 밖</b>이고, 강수/풍속 영향도 작음
+    </div>
+  </div>
+
+  <div class="risk-guide-row">
+    <div class="risk-guide-badge warn" data-i18n="riskWarnBadge">
+      🟡 주의
+    </div>
+    <div class="risk-guide-desc" data-i18n-html="riskWarnDesc">
+      태풍 최접근 거리가 <b>태풍 반경 근처</b>이거나, 강수/풍속 영향 가능성 있음
+    </div>
+  </div>
+
+  <div class="risk-guide-row">
+    <div class="risk-guide-badge high" data-i18n="riskHighBadge">
+      🔴 높음
+    </div>
+    <div class="risk-guide-desc" data-i18n-html="riskHighDesc">
+      태풍 최접근 거리가 <b>태풍 반경 안</b>이거나, 강수/풍속 영향이 큼
+    </div>
+  </div>
+
+  <div class="risk-guide-logic" data-i18n-html="riskLogic">
+    <strong>기준 로직</strong>: 태풍 <strong>최접근 거리 + 태풍 반경</strong> 비교하고,
+    <strong>강수/풍속(WeatherAPI)</strong>는 보조 판단 기준
+  </div>
+
+</section>
+
+</div>
+
+
+
+
+<section class="panel track">
+
+  <div class="kicker" data-i18n="forecast5day">
+    5일 예상 경로
+  </div>
+
+  <h2 data-i18n="typhoonTrack">
+    태풍 이동 경로
+  </h2>
+
+
+  <div class="track-wrap">
+
+    <div class="map" id="map">
+
+      <img
+        class="map-bg"
+        src="./assets/typhoon-map-clean.png"
+        alt="동아시아 태풍 경로 지도"
+      >
+<svg
+        id="trackSvg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+
+        <!-- v8.59: 예보 범위 = 연한 회청색 반투명 + 밝은 회색 외곽 + 하늘색 중심선 -->
+        <polyline
+          id="trackOutline"
+          fill="none"
+          stroke="#e1eaf2"
+          stroke-opacity="0.72"
+          stroke-width="6.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+        </polyline>
+
+        <polyline
+          id="trackBand"
+          fill="none"
+          stroke="#c7d3df"
+          stroke-opacity="0.29"
+          stroke-width="6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+        </polyline>
+
+        <polyline
+          id="trackLine"
+          fill="none"
+          stroke="#7ad7ff"
+          stroke-opacity="0.96"
+          stroke-width="0.55"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+        </polyline>
+
+      </svg>
+
+
+      <div id="mapPoints">
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+</section>
+
+
+
+
+<section class="panel historical-similarity">
+
+  <div class="similarity-head">
+    <div class="similarity-title-wrap">
+      <h2 class="similarity-title" data-i18n="similarityTitle">과거 태풍 유사도</h2>
+      <span class="similarity-reference-badge" data-i18n="similarityBadge">참고용 · 실제 영향 예측 아님</span>
+    </div>
+    <div id="similarityStatus" class="similarity-note" data-i18n="similarityStatusPlaceholder">
+      현재 예보값 기준 단순 비교
+    </div>
+  </div>
+
+  <div id="similarityCurrent" class="similarity-current" data-i18n="similarityCurrentPlaceholder">
+    현재 태풍 비교값 불러오는 중...
+  </div>
+
+  <div id="similarityCards" class="similarity-grid">
+    <div class="similarity-card">
+      <div class="similarity-name" data-i18n="similarityCardPlaceholder">과거 태풍 비교값 불러오는 중...</div>
+    </div>
+  </div>
+
+  <div id="similarityBest" class="similarity-best" data-i18n="similarityBestPlaceholder">
+    예보가 갱신되면 유사도도 함께 변경됩니다.
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+  <div id="footerUpdated" data-i18n="footerUpdatedPlaceholder">
+    최종 업데이트 -
+  </div>
+
+  <div id="sources" data-i18n="sourcesPlaceholder">
+    데이터 출처 -
+  </div>
+
+</footer>
+
+</div>
+
+
+<script>
+
+const DATA_URL =
+  "./data/dashboard.json";
+
+const AUTO_MODE_URL =
+  "./data/typhoon_auto_mode.json";
+
+const SIMILARITY_URL =
+  "./data/typhoon_similarity.json";
+
+const $ =
+  id =>
+    document.getElementById(id);
+
+
+// ==========================================
+// v8.60 한국어 / 中文 전체 전환
+// ==========================================
+
+const I18N = {
+  ko:{
+    dashboardTitle:"SESS 태풍 물류 현황판",
+    currentTyphoon:"현재 태풍", pressure:"중심기압", maxWind:"최대풍속", direction:"이동방향", speed:"이동속도",
+    hubRisk:"주요 거점 위험도", hubStatus:"물류 거점 상태",
+    routeRisk:"물류 노선 위험도", majorRoutes:"주요 노선",
+    agencyStatus:"태풍 데이터 사용 현황",
+    jmaCountry:"일본기상청", kmaCountry:"한국기상청", cmaCountry:"중국기상국", jtwcCountry:"합동태풍경보센터",
+    jmaRole:"현재위치 · 예상경로<br>기압 · 최대풍속",
+    kmaRole:"예상경로<br>JMA 경로 편차 확인",
+    cmaRole:"현재위치 · 기압 · 풍속<br>강풍반경",
+    jtwcRole:"예상경로 · 강풍반경<br>거점·노선 위험도",
+    jmaMain:"기본 태풍 경로", kmaMain:"예상경로 비교", cmaMain:"중국 측 현재 정보", jtwcMain:"위험도 계산 핵심",
+    forecastDiff:"예상경로 위치 차이", average:"평균", maximum:"최대",
+    riskJudgment:"물류 위험도 판단", riskLowBadge:"🟢 낮음", riskWarnBadge:"🟡 주의", riskHighBadge:"🔴 높음",
+    riskLowDesc:"태풍 최접근 거리가 <b>태풍 반경 밖</b>이고, 강수/풍속 영향도 작음",
+    riskWarnDesc:"태풍 최접근 거리가 <b>태풍 반경 근처</b>이거나, 강수/풍속 영향 가능성 있음",
+    riskHighDesc:"태풍 최접근 거리가 <b>태풍 반경 안</b>이거나, 강수/풍속 영향이 큼",
+    riskLogic:"<strong>기준 로직</strong>: 태풍 <strong>최접근 거리 + 태풍 반경</strong> 비교하고, <strong>강수/풍속(WeatherAPI)</strong>는 보조 판단 기준",
+    forecast5day:"5일 예상 경로", typhoonTrack:"태풍 이동 경로",
+    similarityTitle:"과거 태풍 유사도", similarityBadge:"참고용 · 실제 영향 예측 아님",
+    lastAutoPlaceholder:"마지막 자동실행 -", currentTimePlaceholder:"현재시간 -", jmaUpdatedPlaceholder:"JMA 갱신 -", baseTimePlaceholder:"기준 시각 -",
+    locationsMetaPlaceholder:"태풍 예보 · 날씨 관측 · 위험도 기준 확인중",
+    similarityStatusPlaceholder:"현재 예보값 기준 단순 비교", similarityCurrentPlaceholder:"현재 태풍 비교값 불러오는 중...",
+    similarityCardPlaceholder:"과거 태풍 비교값 불러오는 중...", similarityBestPlaceholder:"예보가 갱신되면 유사도도 함께 변경됩니다.",
+    footerUpdatedPlaceholder:"최종 업데이트 -", sourcesPlaceholder:"데이터 출처 -"
+  },
+  zh:{
+    dashboardTitle:"台风物流仪表板",
+    currentTyphoon:"当前台风", pressure:"中心气压", maxWind:"最大风速", direction:"移动方向", speed:"移动速度",
+    hubRisk:"主要节点风险", hubStatus:"物流节点状态",
+    routeRisk:"物流路线风险", majorRoutes:"主要路线",
+    agencyStatus:"台风数据使用情况",
+    jmaCountry:"日本气象厅", kmaCountry:"韩国气象厅", cmaCountry:"中国气象局", jtwcCountry:"联合台风警报中心",
+    jmaRole:"当前位置 · 预报路径<br>气压 · 最大风速",
+    kmaRole:"预报路径<br>确认与JMA路径偏差",
+    cmaRole:"当前位置 · 气压 · 风速<br>强风半径",
+    jtwcRole:"预报路径 · 强风半径<br>节点·路线风险",
+    jmaMain:"基础台风路径", kmaMain:"预报路径对比", cmaMain:"中国侧当前信息", jtwcMain:"风险计算核心",
+    forecastDiff:"预报路径位置差异", average:"平均", maximum:"最大",
+    riskJudgment:"物流风险判断", riskLowBadge:"🟢 低", riskWarnBadge:"🟡 注意", riskHighBadge:"🔴 高",
+    riskLowDesc:"台风最近距离位于<b>台风半径之外</b>，降水/风速影响也较小",
+    riskWarnDesc:"台风最近距离<b>接近台风半径边缘</b>，或可能受到降水/风速影响",
+    riskHighDesc:"台风最近距离位于<b>台风半径以内</b>，或降水/风速影响较大",
+    riskLogic:"<strong>判定逻辑</strong>：比较台风<strong>最近距离 + 台风半径</strong>，<strong>降水/风速（WeatherAPI）</strong>作为辅助判断依据",
+    forecast5day:"5日预报路径", typhoonTrack:"台风移动路径",
+    similarityTitle:"历史台风相似度", similarityBadge:"仅供参考 · 非实际影响预测",
+    lastAutoPlaceholder:"上次自动运行 -", currentTimePlaceholder:"当前时间 -", jmaUpdatedPlaceholder:"JMA 更新 -", baseTimePlaceholder:"基准时间 -",
+    locationsMetaPlaceholder:"台风预报 · 天气观测 · 正在确认风险判定标准",
+    similarityStatusPlaceholder:"基于当前预报值的简单比较", similarityCurrentPlaceholder:"正在加载当前台风比较值...",
+    similarityCardPlaceholder:"正在加载历史台风比较值...", similarityBestPlaceholder:"预报更新后，相似度也会同步变化。",
+    footerUpdatedPlaceholder:"最后更新 -", sourcesPlaceholder:"数据来源 -"
+  }
+};
+
+let currentLang = "ko";
+try{
+  currentLang =
+    localStorage.getItem("sblc_dashboard_lang") === "zh"
+      ? "zh"
+      : "ko";
+}
+catch(e){
+  currentLang = "ko";
+}
+
+function isZh(){ return currentLang === "zh"; }
+function tr(key){ return (I18N[currentLang] && I18N[currentLang][key]) || (I18N.ko[key] || key); }
+
+function applyStaticLanguage(){
+  document.documentElement.lang = isZh() ? "zh-CN" : "ko";
+  document.title = isZh() ? "SESS 台风物流现况板" : "SESS 태풍 물류 현황판";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    el.textContent = tr(el.dataset.i18n);
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+    el.innerHTML = tr(el.dataset.i18nHtml);
+  });
+
+  const koBtn = $("langKo");
+  const zhBtn = $("langZh");
+  if(koBtn) koBtn.classList.toggle("active", !isZh());
+  if(zhBtn) zhBtn.classList.toggle("active", isZh());
+
+  const mapBg = document.querySelector(".map-bg");
+  if(mapBg){
+    mapBg.alt = isZh() ? "东亚台风路径地图" : "동아시아 태풍 경로 지도";
+  }
+}
+
+function setLanguage(lang){
+  currentLang = lang === "zh" ? "zh" : "ko";
+  try{
+    localStorage.setItem("sblc_dashboard_lang", currentLang);
+  }
+  catch(e){}
+  applyStaticLanguage();
+  updateCurrentClock();
+  load().catch(e => {
+    const dc = $("dataClock");
+    if(dc){
+      dc.textContent = isZh()
+        ? `数据加载失败: ${e.message}`
+        : `데이터 로드 실패: ${e.message}`;
+    }
+  });
+}
+
+function riskLabelText(label){
+  if(!isZh()) return safe(label);
+  const map = {"낮음":"低","주의":"注意","높음":"高"};
+  return map[label] || safe(label);
+}
+
+function trendText(v){
+  if(!isZh()) return safe(v);
+  const map = {"접근 중":"接近中","멀어지는 중":"远离中","영향 중":"影响中","정체":"停滞"};
+  return map[v] || translateKoText(v);
+}
+
+function locationNameText(code,item){
+  if(!isZh()) return safe(item && item.name_ko,code);
+  const map = {
+    SUZHOU:"苏州", PVG:"上海浦东国际机场", ICN:"仁川国际机场",
+    MNL:"马尼拉国际机场", HAN:"河内内排国际机场", CRK:"克拉克国际机场"
+  };
+  return map[code] || translateKoText(item && item.name_ko) || code;
+}
+
+function translateKoText(v){
+  if(!isZh()) return safe(v);
+  let s = String(v ?? "");
+  const pairs = [
+    ["하노이 노이바이 국제공항","河内内排国际机场"],
+    ["푸동 국제공항","浦东国际机场"], ["인천 국제공항","仁川国际机场"],
+    ["마닐라 국제공항","马尼拉国际机场"], ["클락 국제공항","克拉克国际机场"],
+    ["태풍 최접근","台风最近距离"], ["접근 중","接近中"],
+    ["쑤저우","苏州"], ["하노이","河内"], ["마닐라","马尼拉"], ["클락","克拉克"], ["한국","韩国"],
+    ["낮음","低"], ["주의","注意"], ["높음","高"],
+    ["강풍반경","强风半径"], ["강수","降水"], ["풍속","风速"]
+  ];
+  pairs.forEach(([a,b]) => { s = s.split(a).join(b); });
+  return s;
+}
+
+function flightStatusText(v){
+  if(!isZh()) return safe(v);
+  const map = {
+    "출발 예정":"预计起飞", "도착 완료":"已到达", "운항 중":"飞行中",
+    "지연":"延误", "결항":"取消", "조회 결과 없음":"无查询结果",
+    "도착 확인 대기":"等待确认到达", "운항 문제":"航班异常"
+  };
+  return map[v] || translateKoText(v);
+}
+
+function flightGroupText(v,route){
+  const fallback = String(route || "").startsWith("ICN") ? "WF수입" : "수출";
+  const raw = safe(v,fallback);
+  if(!isZh()) return raw;
+  return raw === "WF수입" ? "WF进口" : (raw === "수출" ? "出口" : translateKoText(raw));
+}
+
+function flightDisplayLabelText(v,fallback){
+  const raw = safe(v,fallback);
+  if(!isZh()) return raw;
+  const map = {"예정 출발":"计划起飞","예상 출발":"计划起飞","실제 출발":"实际起飞","예정 도착":"计划到达","예상 도착":"计划到达","실제 도착":"实际到达","출발":"起飞","도착":"到达"};
+  return map[raw] || translateKoText(raw);
+}
+
+function timezoneText(v){
+  const raw = safe(v);
+  if(!isZh()) return raw;
+  const map = {"한국시간":"韩国时间","중국시간":"中国时间","필리핀시간":"菲律宾时间","베트남시간":"越南时间"};
+  return map[raw] || raw;
+}
+
+function similarityText(key){
+  const zh = {
+    noActive:"当前无可比较的活跃台风",
+    noTyphoon:"当前没有可比较的台风。",
+    nextActive:"历史台风基准值将在下一次活跃台风出现时重新比较。",
+    provisional:"当前预报基准 · 最近接近尚未确定",
+    currentForecast:"当前预报基准",
+    noResult:"无比较结果",
+    bestPrefix:"最相似",
+    fiveCriteria:"5项指标简单数值比较",
+    autoChange:"预报更新时自动变化",
+    updateSimilarity:"预报更新后，相似度也会同步变化。",
+    refUnavailable:"参考数据无法确认",
+    loadFailed:"无法加载历史台风相似度数据。",
+    noRiskImpact:"不会影响现有物流风险计算。"
+  };
+  const ko = {
+    noActive:"현재 비교할 활성 태풍 없음",
+    noTyphoon:"현재 비교할 태풍이 없습니다.",
+    nextActive:"과거 태풍 기준값은 다음 활성 태풍 발생 시 다시 비교됩니다.",
+    provisional:"현재 예보 기준 · 최접근 확정 전",
+    currentForecast:"현재 예보 기준",
+    noResult:"비교 결과 없음",
+    bestPrefix:"가장 유사",
+    fiveCriteria:"5개 기준 단순 수치 비교",
+    autoChange:"예보 갱신 시 자동 변경",
+    updateSimilarity:"예보가 갱신되면 유사도도 함께 변경됩니다.",
+    refUnavailable:"참고 데이터 확인 불가",
+    loadFailed:"과거 태풍 유사도 데이터를 불러오지 못했습니다.",
+    noRiskImpact:"기존 물류 위험도 계산에는 영향을 주지 않습니다."
+  };
+  return (isZh() ? zh : ko)[key];
+}
+
+function similarityMetricLabel(key){
+  const ko = {distance:"거리",windRange:"강풍범위",impactTime:"영향시간",intensity:"강도",moveSpeed:"이동속도"};
+  const zh = {distance:"距离",windRange:"强风范围",impactTime:"影响时间",intensity:"强度",moveSpeed:"移动速度"};
+  return (isZh() ? zh : ko)[key];
+}
+
+function bindLanguageButtons(){
+  const koBtn = $("langKo");
+  const zhBtn = $("langZh");
+  if(koBtn) koBtn.addEventListener("click",() => setLanguage("ko"));
+  if(zhBtn) zhBtn.addEventListener("click",() => setLanguage("zh"));
+}
+
+applyStaticLanguage();
+bindLanguageButtons();
+
+
+// ==========================================
+// 기본 함수
+// ==========================================
+
+function safe(v,f="-"){
+
+  return(
+    v===null ||
+    v===undefined ||
+    v===""
+  )
+    ? f
+    : v;
+}
+
+
+function fmt(v,s=""){
+
+  return(
+    v===null ||
+    v===undefined
+  )
+    ? "-"
+    : `${v}${s}`;
+}
+
+
+function short(v){
+
+  if(!v){
+    return "-";
+  }
+
+  return String(v)
+    .replace("T"," ")
+    .slice(5,16);
+}
+
+
+function full(v){
+
+  if(!v){
+    return "-";
+  }
+
+  return String(v)
+    .replace("T"," ")
+    .slice(0,16);
+}
+
+
+// ==========================================
+// 중국 현재시간
+// ==========================================
+
+function updateCurrentClock(){
+
+  const now =
+    new Date();
+
+
+  const chinaTime =
+    now.toLocaleString(
+      isZh() ? "zh-CN" : "ko-KR",
+      {
+        timeZone:
+          "Asia/Shanghai",
+
+        month:
+          "2-digit",
+
+        day:
+          "2-digit",
+
+        hour:
+          "2-digit",
+
+        minute:
+          "2-digit",
+
+        second:
+          "2-digit",
+
+        hour12:
+          false
+      }
+    );
+
+
+  const clock =
+    $("currentClock");
+
+
+  if(clock){
+
+    clock.textContent = isZh()
+      ? `当前时间 ${chinaTime} 中国`
+      : `현재시간 ${chinaTime} 중국`;
+  }
+}
+
+
+// 페이지 열자마자 실행
+updateCurrentClock();
+
+
+// 1초마다 현재시간 갱신
+setInterval(
+  updateCurrentClock,
+  1000
+);
+
+
+// ==========================================
+// 데이터 생성시간 표시
+// ==========================================
+
+function updateDataClock(
+  generatedAt
+){
+
+  const dataClock =
+    $("dataClock");
+
+
+  if(
+    !dataClock ||
+    !generatedAt
+  ){
+
+    if(dataClock){
+      dataClock.textContent = isZh()
+        ? "JMA 更新 -"
+        : "JMA 갱신 -";
+    }
+
+    return;
+  }
+
+
+  const dataTime =
+    new Date(
+      generatedAt
+    );
+
+
+  const chinaDataTime =
+    dataTime.toLocaleString(
+      isZh() ? "zh-CN" : "ko-KR",
+      {
+        timeZone:
+          "Asia/Shanghai",
+
+        month:
+          "2-digit",
+
+        day:
+          "2-digit",
+
+        hour:
+          "2-digit",
+
+        minute:
+          "2-digit",
+
+        hour12:
+          false
+      }
+    );
+
+
+  dataClock.textContent = isZh()
+    ? `JMA 更新 ${chinaDataTime}`
+    : `JMA 갱신 ${chinaDataTime}`;
+}
+
+
+// ==========================================
+// 태풍 번호
+// 2619 → 26년 19호
+// ==========================================
+
+function displayTyphoon(
+  n,
+  name
+){
+
+  const s =
+    String(
+      n || ""
+    );
+
+
+  if(
+    s.length === 4
+  ){
+
+    const no = parseInt(
+      s.slice(2),
+      10
+    );
+
+    return isZh()
+      ? `${s.slice(0,2)}年 ${no}号 ${safe(name,"")}`.trim()
+      : `${s.slice(0,2)}년 ${no}호 ${safe(name,"")}`.trim();
+  }
+
+
+  return `${safe(
+    n
+  )} ${safe(
+    name,
+    ""
+  )}`.trim();
+}
+
+
+
+// ==========================================
+// 이동방향 한글 변환
+// ==========================================
+
+function directionKo(v){
+
+  const s =
+    String(v || "").trim();
+
+  const koMap = {
+    "北":"북", "东北":"북동", "东":"동", "东南":"남동", "南":"남", "西南":"남서", "西":"서", "西北":"북서",
+    "北北东":"북북동", "东北东":"동북동", "东南东":"동남동", "南南东":"남남동", "南南西":"남남서", "西南西":"서남서", "西北西":"서북서", "北北西":"북북서",
+    "N":"북", "NNE":"북북동", "NE":"북동", "ENE":"동북동", "E":"동", "ESE":"동남동", "SE":"남동", "SSE":"남남동", "S":"남", "SSW":"남남서", "SW":"남서", "WSW":"서남서", "W":"서", "WNW":"서북서", "NW":"북서", "NNW":"북북서"
+  };
+
+  const zhMap = {
+    "北":"北", "东北":"东北", "东":"东", "东南":"东南", "南":"南", "西南":"西南", "西":"西", "西北":"西北",
+    "北北东":"北东北", "东北东":"东东北", "东南东":"东东南", "南南东":"南东南", "南南西":"南西南", "西南西":"西西南", "西北西":"西西北", "北北西":"北西北",
+    "N":"北", "NNE":"北东北", "NE":"东北", "ENE":"东东北", "E":"东", "ESE":"东东南", "SE":"东南", "SSE":"南东南", "S":"南", "SSW":"南西南", "SW":"西南", "WSW":"西西南", "W":"西", "WNW":"西西北", "NW":"西北", "NNW":"北西北",
+    "북":"北", "북동":"东北", "동":"东", "남동":"东南", "남":"南", "남서":"西南", "서":"西", "북서":"西北"
+  };
+
+  return (isZh() ? zhMap[s] : koMap[s]) || s || "-";
+}
+
+// ==========================================
+// 위험도
+// ==========================================
+
+function riskClass(
+  label
+){
+
+  if(
+    label === "높음"
+  ){
+    return "high";
+  }
+
+
+  if(
+    label === "주의"
+  ){
+    return "warn";
+  }
+
+
+  return "low";
+}
+
+
+function flightClass(
+  label
+){
+
+  const t =
+    String(
+      label || ""
+    );
+
+
+  if(
+    t.includes("결항") ||
+    t.includes("운항 문제")
+  ){
+    return "high";
+  }
+
+
+  if(
+    t.includes("지연") ||
+    t.includes("도착 확인 대기")
+  ){
+    return "warn";
+  }
+
+
+  if(
+    t.includes("운항 중")
+  ){
+    return "flight-active";
+  }
+
+
+  return "low";
+}
+
+
+// ==========================================
+// 태풍 경로 색상
+// ==========================================
+
+function color(
+  hour
+){
+
+  // 현재 위치만 빨간색, 모든 예보 지점은 밝은 하늘색
+  if(Number(hour)===0){
+    return "#ff5b52";
+  }
+
+  return "#7ad7ff";
+}
+
+
+function label(
+  hour
+){
+
+  if(hour===0){
+    return isZh() ? "当前" : "현재";
+  }
+
+  if(hour===12){
+    return isZh() ? "12小时后" : "12시간 후";
+  }
+
+  if(hour===24){
+    return isZh() ? "1天后" : "1일 후";
+  }
+
+  if(hour===48){
+    return isZh() ? "2天后" : "2일 후";
+  }
+
+  if(hour===72){
+    return isZh() ? "3天后" : "3일 후";
+  }
+
+  if(hour===96){
+    return isZh() ? "4天后" : "4일 후";
+  }
+
+  if(hour===120){
+    return isZh() ? "5天后" : "5일 후";
+  }
+
+  return isZh() ? `${hour}小时后` : `${hour}시간 후`;
+}
+
+
+// 지도 표시용: 시간 대신 실제 예보 일자(M/D) 사용
+function mapDateLabel(p){
+  const hour = Number(p?.forecast_hour || 0);
+
+  if(hour === 0){
+    return isZh() ? "当前" : "현재";
+  }
+
+  // 12시간 지점은 경로점으로 유지하되, 24시간 지점과 날짜가 겹쳐 라벨만 생략
+  if(hour === 12){
+    return "";
+  }
+
+  const time = String(p?.time || "");
+  const m = time.match(/^\d{4}-(\d{2})-(\d{2})/);
+  if(m){
+    return `${Number(m[1])}/${Number(m[2])}`;
+  }
+
+  return label(hour);
+}
+
+
+// ==========================================
+// 지도 좌표
+// ==========================================
+
+function xy(
+  lat,
+  lon
+){
+
+  /*
+    assets/typhoon-map-clean.png 와 정확히 같은 지도 범위
+
+      왼쪽  : 100°E
+      오른쪽: 160°E
+      위쪽  : 45°N
+      아래쪽: 5°N
+
+    dashboard.json의 JMA 위도/경도를
+    별도 추정값 없이 바로 % 좌표로 변환한다.
+  */
+
+  const WEST  = 100;
+  const EAST  = 160;
+  const SOUTH = 5;
+  const NORTH = 45;
+
+  const nLat = Number(lat);
+  const nLon = Number(lon);
+
+  const x =
+    ((nLon - WEST) / (EAST - WEST)) * 100;
+
+  const y =
+    ((NORTH - nLat) / (NORTH - SOUTH)) * 100;
+
+  return{
+    x:Math.max(0,Math.min(100,x)),
+    y:Math.max(0,Math.min(100,y))
+  };
+}
+
+
+// ==========================================
+// 데이터 로드
+// ==========================================
+
+
+async function updateAutoModeBadge(){
+
+  const dot =
+    $("autoModeDot");
+
+  const txt =
+    $("autoModeText");
+
+  const lastRun =
+    $("autoLastRun");
+
+  const controlBtn =
+    $("autoControlBtn");
+
+  if(
+    !dot ||
+    !txt
+  ){
+    return;
+  }
+
+  try{
+
+    const res =
+      await fetch(
+        `${AUTO_MODE_URL}?t=${Date.now()}`
+      );
+
+    if(
+      !res.ok
+    ){
+      throw new Error(
+        `auto_mode ${res.status}`
+      );
+    }
+
+    const m =
+      await res.json();
+
+    const enabled =
+      !!(
+        m &&
+        m.enabled
+      );
+
+    dot.textContent =
+      enabled ? "●" : "○";
+
+    dot.className =
+      `auto-dot ${
+        enabled ? "on" : "off"
+      }`;
+
+    txt.textContent =
+      enabled ? "AUTO ON" : "AUTO OFF";
+
+
+    if(
+      controlBtn
+    ){
+
+      if(
+        enabled
+      ){
+
+        controlBtn.textContent = isZh()
+          ? "■ 结束 AUTO"
+          : "■ AUTO 종료";
+
+        controlBtn.className =
+          "auto-control-btn stop";
+
+        controlBtn.href =
+          "https://github.com/pkpkksc1/TYPHOON/actions/workflows/TYPHOON_AUTO_STOP.yml";
+      }
+
+      else{
+
+        controlBtn.textContent = isZh()
+          ? "▶ 启动 AUTO"
+          : "▶ AUTO 시작";
+
+        controlBtn.className =
+          "auto-control-btn start";
+
+        controlBtn.href =
+          "https://github.com/pkpkksc1/TYPHOON/actions/workflows/TYPHOON_AUTO_START.yml";
+      }
+    }
+
+
+    if(
+      lastRun
+    ){
+
+      if(
+        m.last_run_at_utc
+      ){
+
+        const runTime =
+          new Date(
+            m.last_run_at_utc
+          );
+
+        if(
+          !Number.isNaN(
+            runTime.getTime()
+          )
+        ){
+
+          const chinaRun =
+            runTime.toLocaleString(
+              isZh() ? "zh-CN" : "ko-KR",
+              {
+                timeZone:
+                  "Asia/Shanghai",
+
+                month:
+                  "2-digit",
+
+                day:
+                  "2-digit",
+
+                hour:
+                  "2-digit",
+
+                minute:
+                  "2-digit",
+
+                hour12:
+                  false
+              }
+            );
+
+          lastRun.textContent = isZh()
+            ? `上次自动运行 ${chinaRun} · 中国时间`
+            : `마지막 자동실행 ${chinaRun} · 중국시간`;
+        }
+
+        else{
+          lastRun.textContent = isZh()
+            ? "上次自动运行 -"
+            : "마지막 자동실행 -";
+        }
+      }
+
+      else{
+        lastRun.textContent = isZh()
+          ? "上次自动运行 -"
+          : "마지막 자동실행 -";
+      }
+    }
+
+  }
+
+  catch(e){
+
+    dot.textContent =
+      "○";
+
+    dot.className =
+      "auto-dot off";
+
+    txt.textContent =
+      "AUTO ?";
+
+    if(
+      controlBtn
+    ){
+
+      controlBtn.textContent = isZh()
+        ? "确认 AUTO 状态"
+        : "AUTO 상태 확인";
+
+      controlBtn.className =
+        "auto-control-btn stop";
+
+      controlBtn.href =
+        "https://github.com/pkpkksc1/TYPHOON/actions";
+    }
+
+    if(
+      lastRun
+    ){
+      lastRun.textContent = isZh()
+        ? "无法确认上次自动运行"
+        : "마지막 자동실행 확인불가";
+    }
+  }
+}
+
+
+
+// ==========================================
+// 과거 태풍 유사도 · 참고용
+// ==========================================
+
+function similarityDisplayName(id,name){
+  const labels = {
+    INFA_2021:"2021 烟花 (IN-FA)",
+    DOLPHIN_2026:"2026 Dolphin"
+  };
+
+  return labels[id] || safe(name,isZh() ? "历史台风" : "과거 태풍");
+}
+
+function similarityMetric(details,key){
+  const item = (details || {})[key] || {};
+  const value = item.similarity_pct;
+
+  return value===null || value===undefined
+    ? "-"
+    : `${Math.round(Number(value))}%`;
+}
+
+function similarityValue(value,suffix=""){
+  if(value===null || value===undefined || value===""){
+    return "-";
+  }
+
+  const n = Number(value);
+  if(Number.isFinite(n)){
+    const shown = Number.isInteger(n) ? n : Math.round(n * 10) / 10;
+    return `${shown}${suffix}`;
+  }
+
+  return `${value}${suffix}`;
+}
+
+async function loadHistoricalSimilarity(){
+  const statusEl = $("similarityStatus");
+  const currentEl = $("similarityCurrent");
+  const cardsEl = $("similarityCards");
+  const bestEl = $("similarityBest");
+
+  if(!statusEl || !currentEl || !cardsEl || !bestEl){
+    return;
+  }
+
+  try{
+    const res = await fetch(`${SIMILARITY_URL}?t=${Date.now()}`);
+
+    if(!res.ok){
+      throw new Error(`typhoon_similarity.json ${res.status}`);
+    }
+
+    const s = await res.json();
+
+    if(s.status === "NO_ACTIVE_TYPHOON"){
+      statusEl.textContent = similarityText("noActive");
+      currentEl.textContent = isZh() ? similarityText("noTyphoon") : safe(s.message_ko,similarityText("noTyphoon"));
+      cardsEl.innerHTML = "";
+      bestEl.textContent = similarityText("nextActive");
+      return;
+    }
+
+    const ty = s.current_typhoon || {};
+    const m = s.current_metrics || {};
+    const provisional = s.status === "PROVISIONAL";
+
+    statusEl.textContent = provisional
+      ? similarityText("provisional")
+      : similarityText("currentForecast");
+
+    currentEl.innerHTML = isZh()
+      ? `
+        <b>${displayTyphoon(ty.number,ty.name)}</b>
+        · 最近距离 ${similarityValue(m.closest_distance_km," km")}
+        · 强风影响范围 ${similarityValue(m.wind_radius_34kt_km," km")}
+        · 强风影响持续时间 ${similarityValue(m.strong_wind_impact_hours,"小时")}
+        · 最大风速 ${similarityValue(m.max_wind_mps_at_closest," m/s")}
+        · 移动速度 ${similarityValue(m.movement_speed_kmh_at_closest," km/h")}
+      `
+      : `
+        <b>${displayTyphoon(ty.number,ty.name)}</b>
+        · 최접근거리 ${similarityValue(m.closest_distance_km," km")}
+        · 강풍 영향 범위 ${similarityValue(m.wind_radius_34kt_km," km")}
+        · 강풍 영향 지속시간 ${similarityValue(m.strong_wind_impact_hours,"시간")}
+        · 최대풍속 ${similarityValue(m.max_wind_mps_at_closest," m/s")}
+        · 이동속도 ${similarityValue(m.movement_speed_kmh_at_closest," km/h")}
+      `;
+
+    const comparisons = Array.isArray(s.comparisons) ? [...s.comparisons] : [];
+    const displayOrder = {INFA_2021:1,DOLPHIN_2026:2};
+    comparisons.sort((a,b) =>
+      (displayOrder[a.benchmark_id] || 99) -
+      (displayOrder[b.benchmark_id] || 99)
+    );
+
+    cardsEl.innerHTML = "";
+
+    comparisons.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "similarity-card";
+
+      const score = item.similarity_pct;
+      const d = item.details || {};
+
+      card.innerHTML = `
+        <div class="similarity-card-top">
+          <div class="similarity-name">
+            ${similarityDisplayName(item.benchmark_id,item.benchmark_name)}
+          </div>
+          <div class="similarity-score">
+            ${score===null || score===undefined ? "-" : `${Number(score).toFixed(1)}%`}
+          </div>
+        </div>
+        <div class="similarity-details">
+          ${similarityMetricLabel("distance")} ${similarityMetric(d,"closest_distance_km")}
+          · ${similarityMetricLabel("windRange")} ${similarityMetric(d,"wind_radius_34kt_km")}
+          · ${similarityMetricLabel("impactTime")} ${similarityMetric(d,"strong_wind_impact_hours")}
+          · ${similarityMetricLabel("intensity")} ${similarityMetric(d,"max_wind_mps_at_closest")}
+          · ${similarityMetricLabel("moveSpeed")} ${similarityMetric(d,"movement_speed_kmh_at_closest")}
+        </div>
+      `;
+
+      cardsEl.appendChild(card);
+    });
+
+    if(!comparisons.length){
+      cardsEl.innerHTML = `
+        <div class="similarity-card">
+          <div class="similarity-name">${similarityText("noResult")}</div>
+        </div>
+      `;
+    }
+
+    const best = s.most_similar || comparisons[0] || null;
+
+    if(best){
+      bestEl.innerHTML = `
+        ${similarityText("bestPrefix")}: <b>${similarityDisplayName(best.benchmark_id,best.benchmark_name)} ${similarityValue(best.similarity_pct,"%")}</b>
+        · ${similarityText("fiveCriteria")}
+        · ${similarityText("autoChange")}
+      `;
+    }
+    else{
+      bestEl.textContent = similarityText("updateSimilarity");
+    }
+  }
+  catch(e){
+    statusEl.textContent = similarityText("refUnavailable");
+    currentEl.textContent = similarityText("loadFailed");
+    cardsEl.innerHTML = "";
+    bestEl.textContent = similarityText("noRiskImpact");
+  }
+}
+
+
+async function load(){
+
+  await updateAutoModeBadge();
+
+  const res =
+    await fetch(
+      `${DATA_URL}?t=${Date.now()}`
+    );
+
+
+  if(
+    !res.ok
+  ){
+
+    throw new Error(
+      `dashboard.json ${res.status}`
+    );
+  }
+
+
+  const d =
+    await res.json();
+
+
+  // ========================================
+  // 오른쪽 상단 데이터 시간
+  // ========================================
+
+  updateDataClock(
+    (
+      d.source_updated_at_utc &&
+      d.source_updated_at_utc.jma
+    )
+      ? d.source_updated_at_utc.jma
+      : d.generated_at_utc
+  );
+
+
+  // ========================================
+  // 현재 태풍
+  // ========================================
+
+  const t =
+    d.typhoon || {};
+
+
+  const c =
+    t.current || {};
+
+
+  $("typhoonTitle")
+    .textContent =
+      displayTyphoon(
+        t.number,
+        t.name
+      );
+
+
+  $("baseTime")
+    .textContent = isZh()
+      ? `基准时间 ${full(c.time)}`
+      : `기준 시각 ${full(c.time)}`;
+$("pressure")
+    .textContent =
+      fmt(
+        c.pressure_hpa,
+        " hPa"
+      );
+
+
+  $("wind")
+    .textContent =
+      fmt(
+        c.max_wind_mps,
+        " m/s"
+      );
+
+
+  $("direction")
+    .textContent =
+      directionKo(
+        c.movement_direction
+      );
+
+
+  $("speed")
+    .textContent =
+      fmt(
+        c.movement_speed_kmh,
+        " km/h"
+      );
+
+
+  // ========================================
+  // JMA ↔ KMA
+  // ========================================
+
+  const comp =
+    d.forecast_comparison || {};
+
+
+  $("avgDiff")
+    .textContent =
+      fmt(
+        comp.average_difference_km,
+        " km"
+      );
+
+
+  $("maxDiff")
+    .textContent =
+      fmt(
+        comp.max_difference_km,
+        " km"
+      );
+
+
+  // ========================================
+  // 경로
+  // ========================================
+
+  const rawTrack =
+    [
+      {
+        forecast_hour:0,
+        time:c.time,
+        lat:c.lat,
+        lon:c.lon,
+        pressure_hpa:c.pressure_hpa,
+        max_wind_mps:c.max_wind_mps
+      },
+      ...(t.forecast_track || [])
+    ]
+    .filter(
+      p =>
+        p.lat != null &&
+        p.lon != null
+    );
+
+  // 시간순 정렬 + 같은 forecast_hour 중복 제거
+  const seenHours = new Set();
+  const track = rawTrack
+    .sort(
+      (a,b) =>
+        Number(a.forecast_hour || 0) -
+        Number(b.forecast_hour || 0)
+    )
+    .filter(
+      p => {
+        const h = Number(p.forecast_hour || 0);
+        if(seenHours.has(h)){
+          return false;
+        }
+        seenHours.add(h);
+        return true;
+      }
+    );
+
+
+  $("mapPoints")
+    .innerHTML = "";
+
+
+  const pts = [];
+
+  // 화면에는 현재 ~ 120시간(5일)까지 표시
+  const displayTrack =
+    track.filter(
+      p => Number(p.forecast_hour || 0) <= 120
+    );
+
+
+  displayTrack.forEach(
+    p => {
+
+      const a =
+        xy(
+          Number(p.lat),
+          Number(p.lon)
+        );
+
+
+      const dot =
+        document.createElement(
+          "div"
+        );
+
+
+      dot.className =
+        "point";
+
+
+      dot.style.left =
+        `${a.x}%`;
+
+
+      dot.style.top =
+        `${a.y}%`;
+
+
+      dot.style.background =
+        color(
+          p.forecast_hour
+        );
+
+
+      $("mapPoints")
+        .appendChild(
+          dot
+        );
+
+
+      const pl =
+        document.createElement(
+          "div"
+        );
+
+
+      pl.className =
+        "plabel";
+
+
+      pl.style.left =
+        `${a.x}%`;
+
+
+      pl.style.top =
+        `${a.y}%`;
+
+
+      const mapLabel = mapDateLabel(p);
+
+      pl.textContent = mapLabel;
+
+      pl.title =
+        `${Number(p.lat).toFixed(1)}°N / ${Number(p.lon).toFixed(1)}°E`;
+
+      const tooltipLabel =
+        mapLabel || (() => {
+          const time = String(p.time || "");
+          const m = time.match(/^\d{4}-(\d{2})-(\d{2})/);
+          return m ? `${Number(m[1])}/${Number(m[2])}` : label(p.forecast_hour);
+        })();
+
+      dot.title =
+        `${tooltipLabel} · ${Number(p.lat).toFixed(1)}°N / ${Number(p.lon).toFixed(1)}°E`;
+
+
+      if(mapLabel){
+        $("mapPoints")
+          .appendChild(
+            pl
+          );
+      }
+
+
+      pts.push(`${a.x},${a.y}`);
+}
+  );
+
+
+  [
+    "trackOutline",
+    "trackBand",
+    "trackLine"
+  ].forEach(
+    id => {
+      const el = $(id);
+      if(el){
+        el.setAttribute(
+          "points",
+          pts.join(" ")
+        );
+      }
+    }
+  );
+
+
+  // ========================================
+  // 거점 위험도 기준 / 갱신 상태
+  // ========================================
+
+  function riskMetaTime(ts){
+
+    if(!ts){
+      return "-";
+    }
+
+    const dt =
+      new Date(ts);
+
+    if(
+      Number.isNaN(
+        dt.getTime()
+      )
+    ){
+      return "-";
+    }
+
+    return dt.toLocaleString(
+      isZh() ? "zh-CN" : "ko-KR",
+      {
+        timeZone:
+          "Asia/Shanghai",
+
+        month:
+          "2-digit",
+
+        day:
+          "2-digit",
+
+        hour:
+          "2-digit",
+
+        minute:
+          "2-digit",
+
+        hour12:
+          false
+      }
+    );
+  }
+
+
+  function locationForecastSource(raw){
+
+    const s =
+      String(
+        raw || ""
+      ).toUpperCase();
+
+    if(
+      s.includes("JTWC")
+    ){
+      return isZh() ? "JTWC 预报" : "JTWC 예보";
+    }
+
+    if(
+      s.includes("JMA")
+    ){
+      return isZh() ? "JMA 预报" : "JMA 예보";
+    }
+
+    return isZh() ? "台风预报" : "태풍 예보";
+  }
+
+
+  function localWeatherTime(ts){
+
+    if(!ts){
+      return "-";
+    }
+
+    const s =
+      String(ts).trim();
+
+    const m =
+      s.match(
+        /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/
+      );
+
+    if(!m){
+      return s;
+    }
+
+    return `${m[2]}.${m[3]} ${m[4]}:${m[5]}`;
+  }
+
+
+  function weatherAgeClass(ts){
+
+    if(!ts){
+      return "";
+    }
+
+    const s =
+      String(ts).trim();
+
+    const m =
+      s.match(
+        /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/
+      );
+
+    if(!m){
+      return "";
+    }
+
+    /*
+      WeatherAPI current.last_updated is the local time of each hub.
+      We do not force a single timezone here; this class is only a
+      conservative visual warning. Exact source fetch time is shown
+      separately in the panel header.
+    */
+
+    return "";
+  }
+
+
+  function renderLocationsMeta(){
+
+    const el =
+      $("locationsMeta");
+
+    if(!el){
+      return;
+    }
+
+
+    const m =
+      d.risk_meta || {};
+
+
+    const locations =
+      d.locations || {};
+
+
+    const referenceLocation =
+      locations.SUZHOU ||
+      Object.values(locations)[0] ||
+      {};
+
+
+    const refWeather =
+      referenceLocation.current_weather || {};
+
+
+    const typhoonForecastSource =
+      locationForecastSource(
+        referenceLocation.closest_source
+      );
+
+
+    const closestTime =
+      referenceLocation.closest_time
+        ? riskMetaTime(
+            referenceLocation.closest_time
+          )
+        : "-";
+
+
+    const weatherObservation =
+      localWeatherTime(
+        refWeather.last_updated
+      );
+
+
+    const typhoonBase =
+      riskMetaTime(
+        m.typhoon_reference_time
+      );
+
+
+    const riskTime =
+      riskMetaTime(
+        m.risk_updated_at_utc
+      );
+
+
+    const jmaMs =
+      Date.parse(
+        m.jma_updated_at_utc || ""
+      );
+
+
+    const weatherMs =
+      Date.parse(
+        m.weather_updated_at_utc || ""
+      );
+
+
+    const riskMs =
+      Date.parse(
+        m.risk_updated_at_utc || ""
+      );
+
+
+    const latestInputMs =
+      Math.max(
+        Number.isFinite(jmaMs)
+          ? jmaMs
+          : 0,
+
+        Number.isFinite(weatherMs)
+          ? weatherMs
+          : 0
+      );
+
+
+    let stateText = isZh()
+      ? "无法确认更新"
+      : "업데이트 확인불가";
+
+    let stateClass =
+      "wait";
+
+
+    if(
+      latestInputMs > 0 &&
+      Number.isFinite(riskMs)
+    ){
+
+      if(
+        riskMs >= latestInputMs
+      ){
+
+        stateText = isZh()
+          ? "已更新"
+          : "최신 반영";
+
+        stateClass =
+          "ok";
+      }
+
+      else{
+
+        stateText = isZh()
+          ? "等待重新计算"
+          : "재계산 대기";
+
+        stateClass =
+          "wait";
+      }
+    }
+
+
+    const version =
+      safe(
+        m.risk_version,
+        "-"
+      );
+
+
+    el.innerHTML = isZh()
+      ? `
+        台风预报
+        &nbsp;|&nbsp;
+        <strong>天气</strong> ${safe(refWeather.source, "WeatherAPI.com")}
+        &nbsp;|&nbsp;
+        台风基准 ${typhoonBase}
+        · 风险计算 ${riskTime}
+        · 中国时间
+      `
+      : `
+        태풍 예보
+        &nbsp;|&nbsp;
+        <strong>날씨</strong> ${safe(refWeather.source, "WeatherAPI.com")}
+        &nbsp;|&nbsp;
+        태풍 기준 ${typhoonBase}
+        · 위험도 계산 ${riskTime}
+        · 중국시간
+      `;
+  }
+
+
+  renderLocationsMeta();
+
+
+  // ========================================
+  // 거점
+  // ========================================
+
+  $("locationsGrid")
+    .innerHTML = "";
+
+
+  Object.entries(
+    d.locations || {}
+  )
+  .forEach(
+    ([code,item]) => {
+
+      const r =
+        item.risk || {};
+
+
+      const w =
+        item.current_weather || {};
+
+
+      const el =
+        document.createElement(
+          "div"
+        );
+
+
+      el.className =
+        "loc-card";
+
+
+      el.innerHTML = `
+
+        <div class="row">
+
+          <div>
+
+            <div class="name">
+              ${
+                safe(
+                  locationNameText(code,item),
+                  code
+                )
+              }
+            </div>
+
+            <div class="code">
+              ${code}
+              ·
+              ${
+                trendText(
+                  item.trend_ko
+                )
+              }
+            </div>
+
+          </div>
+
+
+          <div
+            class="
+              pill
+              ${
+                riskClass(
+                  r.label_ko
+                )
+              }
+            "
+          >
+            ${
+              safe(
+                r.emoji
+              )
+            }
+
+            ${
+              riskLabelText(
+                r.label_ko
+              )
+            }
+          </div>
+
+        </div>
+
+
+        <div class="stats">
+
+          <div class="stat">
+            <span>${isZh() ? "当前" : "현재"}</span>
+            <b>
+              ${
+                fmt(
+                  item.current_distance_km,
+                  " km"
+                )
+              }
+            </b>
+          </div>
+
+          <div class="stat">
+            <span>${isZh() ? "5日" : "5일"}</span>
+            <b>
+              ${
+                fmt(
+                  item.closest_distance_km,
+                  " km"
+                )
+              }
+            </b>
+          </div>
+
+          <div class="stat">
+            <span>${isZh() ? "降水" : "강수"}</span>
+            <b>
+              ${
+                fmt(
+                  w.rain_mm,
+                  " mm"
+                )
+              }
+            </b>
+          </div>
+
+          <div class="stat">
+            <span>${isZh() ? "风速" : "풍속"}</span>
+            <b>
+              ${
+                fmt(
+                  w.wind_mps,
+                  " m/s"
+                )
+              }
+            </b>
+          </div>
+
+        </div>
+
+
+
+
+      `;
+
+
+      $("locationsGrid")
+        .appendChild(
+          el
+        );
+
+    }
+  );
+
+
+
+  // ========================================
+  // 노선
+  // ========================================
+
+  $("routesList")
+    .innerHTML = "";
+
+
+  (
+    d.routes || []
+  )
+  .forEach(
+    r => {
+
+      const risk =
+        r.risk || {};
+
+
+      const el =
+        document.createElement(
+          "div"
+        );
+
+
+      el.className =
+        "route-card";
+
+
+      el.innerHTML = `
+
+        <div class="row">
+
+          <div>
+
+            <div class="route-title">
+              ${
+                isZh()
+                  ? translateKoText(r.name_ko)
+                  : safe(r.name_ko)
+              }
+            </div>
+
+            <div class="reason">
+              ${
+                isZh()
+                  ? translateKoText(r.reason_ko)
+                  : safe(r.reason_ko)
+              }
+            </div>
+
+          </div>
+
+
+          <div
+            class="
+              pill
+              ${
+                riskClass(
+                  risk.label_ko
+                )
+              }
+            "
+          >
+            ${
+              safe(
+                risk.emoji
+              )
+            }
+
+            ${
+              riskLabelText(
+                risk.label_ko
+              )
+            }
+          </div>
+
+        </div>
+
+      `;
+
+
+      $("routesList")
+        .appendChild(
+          el
+        );
+
+    }
+  );
+
+
+
+
+  // ========================================
+  // 하단
+  // ========================================
+
+  $("footerUpdated")
+    .textContent = isZh()
+      ? `最后更新 ${full(d.generated_at_utc)}`
+      : `최종 업데이트 ${full(d.generated_at_utc)}`;
+
+
+  $("sources")
+    .textContent =
+      `${isZh() ? "数据来源" : "데이터 출처"}: ${(d.attribution || []).join(" · ")}`;
+
+
+  await loadHistoricalSimilarity();
+
+
+}
+
+
+
+// ==========================================
+// 최초 데이터 로드
+// ==========================================
+
+load()
+  .catch(
+    e => {
+
+      $("dataClock")
+        .textContent = isZh()
+          ? `数据加载失败: ${e.message}`
+          : `데이터 로드 실패: ${e.message}`;
+
+  }
+);
+
+
+function formatKST(value){
+  if(!value) return "-";
+  const d = new Date(value);
+  if(isNaN(d)) return value;
+  return d.toLocaleString("ko-KR",{
+    timeZone:"Asia/Seoul",
+    year:"numeric",
+    month:"2-digit",
+    day:"2-digit",
+    hour:"2-digit",
+    minute:"2-digit",
+    hour12:false
+  });
+}
+
+</script>
+
+
+</body>
+</html>

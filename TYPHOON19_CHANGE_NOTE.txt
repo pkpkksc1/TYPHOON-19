@@ -1,0 +1,21 @@
+TYPHOON-19 NARRA conversion
+
+Target:
+- JMA typhoon number: 2619
+- Name: NARRA
+
+Requested changes applied:
+1. Changed all active 18th-typhoon hard locks (2618 / SAUDEL) to 19th typhoon (2619 / NARRA).
+2. Removed representative-flight panel from the dashboard.
+3. Removed Aviationstack / FlightAware API workflows and source files.
+4. Removed flight data from dashboard.json generation and attribution.
+5. Removed flight workflow references from AUTO START / STOP.
+6. Regenerated compare / impact / risk / dashboard / similarity data using the supplied current source JSONs.
+7. Kept the JMA v1.3 current-position + long-forecast merge logic unchanged.
+
+Deleted files:
+- .github/workflows/FLIGHTAWARE_STATUS_FETCH.yml
+- .github/workflows/flights.yml
+- data/flights.json
+- src/fetch_flightaware.py
+- src/fetch_flights.py

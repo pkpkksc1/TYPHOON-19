@@ -1,0 +1,75 @@
+{
+  "product": "Shanghai Historical Typhoon Similarity Benchmarks",
+  "version": "1.1",
+  "target_location": {
+    "name_ko": "상하이",
+    "lat": 31.2304,
+    "lon": 121.4737
+  },
+  "weights_pct": {
+    "closest_distance_km": 30,
+    "wind_radius_34kt_km": 25,
+    "strong_wind_impact_hours": 20,
+    "max_wind_mps_at_closest": 15,
+    "movement_speed_kmh_at_closest": 10
+  },
+  "similarity_method": {
+    "metric_formula": "min(current, historical) / max(current, historical) * 100",
+    "total_formula": "weighted average of the 5 metric similarities",
+    "note_ko": "값이 동일하면 100%, 차이가 커질수록 0%에 가까워집니다."
+  },
+  "benchmarks": [
+    {
+      "id": "INFA_2021",
+      "year": 2021,
+      "number": "2106",
+      "name": "IN-FA",
+      "name_cn": "烟花",
+      "name_ko": "인파(烟花)",
+      "metrics": {
+        "closest_distance_km": 58.0,
+        "wind_radius_34kt_km": 370.0,
+        "strong_wind_impact_hours": 72.0,
+        "max_wind_mps_at_closest": 25.0,
+        "movement_speed_kmh_at_closest": 8.0
+      },
+      "basis_ko": {
+        "closest_distance_km": "JMA 2021-07-26 15 JST 중심좌표와 상하이 중심좌표 거리",
+        "wind_radius_34kt_km": "최접근 시점 상하이 방향 JMA 강풍역 반경",
+        "strong_wind_impact_hours": "과거 경로와 상하이 방향 강풍 영향 범위를 이용한 비교용 대표값(72시간)",
+        "max_wind_mps_at_closest": "JMA 최접근 시점 최대풍속",
+        "movement_speed_kmh_at_closest": "최접근 전후 이동속도의 대표값(약 8 km/h)"
+      },
+      "sources": [
+        "https://www.data.jma.go.jp/typhoon/data/T2106.pdf",
+        "https://swj.sh.gov.cn/cmsres/bb/bb5f11ea99004d60b77cd4eb08c290da/e6a337acd3613ed53029d01174a25f87.pdf"
+      ]
+    },
+    {
+      "id": "DOLPHIN_2026",
+      "year": 2026,
+      "number": "2613",
+      "name": "DOLPHIN",
+      "name_cn": "白海豚",
+      "name_ko": "돌핀(白海豚)",
+      "metrics": {
+        "closest_distance_km": 343.0,
+        "wind_radius_34kt_km": 650.0,
+        "strong_wind_impact_hours": 60.0,
+        "max_wind_mps_at_closest": 35.0,
+        "movement_speed_kmh_at_closest": 18.0
+      },
+      "basis_ko": {
+        "closest_distance_km": "JMA 2026-08-09 21 JST 중심좌표와 상하이 중심좌표 거리",
+        "wind_radius_34kt_km": "최접근 시점 상하이 방향 JMA 강풍역 반경",
+        "strong_wind_impact_hours": "과거 경로와 상하이 방향 강풍 영향 범위를 이용한 비교용 대표값(60시간)",
+        "max_wind_mps_at_closest": "JMA 최접근 시점 최대풍속",
+        "movement_speed_kmh_at_closest": "최접근 부근 대표 이동속도(약 18 km/h)"
+      },
+      "sources": [
+        "https://www.data.jma.go.jp/typhoon/data/T2613.pdf",
+        "https://www.shanghai.gov.cn/nw9820/20260819/71683628aa0945109b2c8f49d94f2229.html"
+      ]
+    }
+  ]
+}

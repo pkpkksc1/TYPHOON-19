@@ -1,0 +1,85 @@
+{
+  "source": "Korea Meteorological Administration (KMA)",
+  "product": "TyphoonInfoService",
+  "parser_version": "2.2",
+  "active_count": 1,
+  "bulletin": {
+    "announceTime": "202608251630",
+    "typhoonSeq": 19,
+    "announceSeq": 14,
+    "title": "[ 태풍정보 ] 제19-14호 / 2026.08.25.16:30 발표 ",
+    "raw_item": {
+      "announceSeq": 14,
+      "announceTime": "202608251630",
+      "typhoonSeq": 19,
+      "title": "[ 태풍정보 ] 제19-14호 / 2026.08.25.16:30 발표 "
+    }
+  },
+  "forecast": [
+    {
+      "forecast_time": "202608260300",
+      "lat": 20.5,
+      "lon": 109.5,
+      "pressure_hpa": 994.0,
+      "max_wind_mps": 21.0,
+      "movement_direction": "NE",
+      "movement_speed_kmh": 16.0,
+      "probability_radius_km": 40.0,
+      "gale_radius_km": 120.0,
+      "storm_radius_km": 0.0,
+      "forecast_text_ko": null,
+      "raw_item": {
+        "dir": "NE",
+        "ed15": "NE",
+        "er15": 50,
+        "ed25": "-",
+        "er25": 0,
+        "fcLocKo": "중국 잔장 남서쪽 약 110 km 부근 해상",
+        "lat": "20.5",
+        "lon": "109.5",
+        "ps": "994",
+        "rad15": "120",
+        "rad25": "0",
+        "radPr": "40",
+        "seq": "19",
+        "sp": "16",
+        "tm": "202608260300",
+        "tmFc": "202608251630",
+        "ws": "21"
+      }
+    },
+    {
+      "forecast_time": "202608261500",
+      "lat": 21.5,
+      "lon": 110.1,
+      "pressure_hpa": 996.0,
+      "max_wind_mps": 15.0,
+      "movement_direction": "NNE",
+      "movement_speed_kmh": 11.0,
+      "probability_radius_km": 80.0,
+      "gale_radius_km": 0.0,
+      "storm_radius_km": 0.0,
+      "forecast_text_ko": null,
+      "raw_item": {
+        "dir": "NNE",
+        "ed15": "-",
+        "er15": 0,
+        "ed25": "-",
+        "er25": 0,
+        "fcLocKo": "중국 잔장 북북서쪽 약 40 km 부근 육상",
+        "lat": "21.5",
+        "lon": "110.1",
+        "ps": "996",
+        "rad15": "0",
+        "rad25": "0",
+        "radPr": "80",
+        "seq": "19",
+        "sp": "11",
+        "tm": "202608261500",
+        "tmFc": "202608251630",
+        "ws": "15"
+      }
+    }
+  ],
+  "generated_at_utc": "2026-08-25T07:27:16.999319+00:00"
+}

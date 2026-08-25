@@ -1,0 +1,153 @@
+{
+  "product": "Typhoon Historical Similarity",
+  "parser_version": "1.1",
+  "status": "PROVISIONAL",
+  "source_mode": "JTWC+JMA",
+  "target_location": {
+    "name_ko": "상하이",
+    "lat": 31.2304,
+    "lon": 121.4737
+  },
+  "current_typhoon": {
+    "number": "2619",
+    "name": "NARRA"
+  },
+  "current_metrics": {
+    "closest_distance_km": 1465.1,
+    "wind_radius_34kt_km": null,
+    "max_wind_mps_at_closest": 10.3,
+    "closest_forecast_hour": 36,
+    "closest_time_utc": "2026-08-26T18:00:00Z",
+    "closest_confirmed": false,
+    "movement_speed_kmh_at_closest": 13.0,
+    "strong_wind_impact_hours": 0.0
+  },
+  "weights_pct": {
+    "closest_distance_km": 30,
+    "wind_radius_34kt_km": 25,
+    "strong_wind_impact_hours": 20,
+    "max_wind_mps_at_closest": 15,
+    "movement_speed_kmh_at_closest": 10
+  },
+  "comparisons": [
+    {
+      "benchmark_id": "DOLPHIN_2026",
+      "benchmark_name": "돌핀(白海豚)",
+      "similarity_pct": 24.9,
+      "available_weight_pct": 75.0,
+      "details": {
+        "closest_distance_km": {
+          "weight_pct": 30.0,
+          "current": 1465.1,
+          "historical": 343.0,
+          "similarity_pct": 23.4
+        },
+        "wind_radius_34kt_km": {
+          "weight_pct": 25.0,
+          "current": null,
+          "historical": 650.0,
+          "similarity_pct": null
+        },
+        "strong_wind_impact_hours": {
+          "weight_pct": 20.0,
+          "current": 0.0,
+          "historical": 60.0,
+          "similarity_pct": 0.0
+        },
+        "max_wind_mps_at_closest": {
+          "weight_pct": 15.0,
+          "current": 10.3,
+          "historical": 35.0,
+          "similarity_pct": 29.4
+        },
+        "movement_speed_kmh_at_closest": {
+          "weight_pct": 10.0,
+          "current": 13.0,
+          "historical": 18.0,
+          "similarity_pct": 72.2
+        }
+      }
+    },
+    {
+      "benchmark_id": "INFA_2021",
+      "benchmark_name": "인파(烟花)",
+      "similarity_pct": 18.0,
+      "available_weight_pct": 75.0,
+      "details": {
+        "closest_distance_km": {
+          "weight_pct": 30.0,
+          "current": 1465.1,
+          "historical": 58.0,
+          "similarity_pct": 4.0
+        },
+        "wind_radius_34kt_km": {
+          "weight_pct": 25.0,
+          "current": null,
+          "historical": 370.0,
+          "similarity_pct": null
+        },
+        "strong_wind_impact_hours": {
+          "weight_pct": 20.0,
+          "current": 0.0,
+          "historical": 72.0,
+          "similarity_pct": 0.0
+        },
+        "max_wind_mps_at_closest": {
+          "weight_pct": 15.0,
+          "current": 10.3,
+          "historical": 25.0,
+          "similarity_pct": 41.2
+        },
+        "movement_speed_kmh_at_closest": {
+          "weight_pct": 10.0,
+          "current": 13.0,
+          "historical": 8.0,
+          "similarity_pct": 61.5
+        }
+      }
+    }
+  ],
+  "most_similar": {
+    "benchmark_id": "DOLPHIN_2026",
+    "benchmark_name": "돌핀(白海豚)",
+    "similarity_pct": 24.9,
+    "available_weight_pct": 75.0,
+    "details": {
+      "closest_distance_km": {
+        "weight_pct": 30.0,
+        "current": 1465.1,
+        "historical": 343.0,
+        "similarity_pct": 23.4
+      },
+      "wind_radius_34kt_km": {
+        "weight_pct": 25.0,
+        "current": null,
+        "historical": 650.0,
+        "similarity_pct": null
+      },
+      "strong_wind_impact_hours": {
+        "weight_pct": 20.0,
+        "current": 0.0,
+        "historical": 60.0,
+        "similarity_pct": 0.0
+      },
+      "max_wind_mps_at_closest": {
+        "weight_pct": 15.0,
+        "current": 10.3,
+        "historical": 35.0,
+        "similarity_pct": 29.4
+      },
+      "movement_speed_kmh_at_closest": {
+        "weight_pct": 10.0,
+        "current": 13.0,
+        "historical": 18.0,
+        "similarity_pct": 72.2
+      }
+    }
+  },
+  "provisional_reasons": [
+    "예보 마지막 지점까지 상하이에 접근 중이거나 JTWC 최접근 확정 전",
+    "JTWC 34kt 상하이 방향 풍권반경 없음"
+  ],
+  "generated_at_utc": "2026-08-25T12:19:29.374341+00:00"
+}
