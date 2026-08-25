@@ -8,29 +8,29 @@
     "name": "NARRA"
   },
   "summary": {
-    "average_difference_km": 42,
-    "max_difference_km": 69,
+    "average_difference_km": 82,
+    "max_difference_km": 118,
     "overall": {
-      "level": "GREEN",
-      "emoji": "🟢",
-      "label_ko": "거의 일치"
+      "level": "YELLOW",
+      "emoji": "🟡",
+      "label_ko": "차이 있음"
     }
   },
   "comparisons": [
     {
-      "forecast_hour": 15,
+      "forecast_hour": 12,
       "jma_time": "2026-08-26T09:00:00+09:00",
       "kma_time": "202608260300",
       "time_gap_hours": 6.0,
       "jma": {
-        "lat": 21.0,
-        "lon": 109.9
+        "lat": 21.1,
+        "lon": 110.3
       },
       "kma": {
         "lat": 20.5,
         "lon": 109.5
       },
-      "difference_km": 69,
+      "difference_km": 107,
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
@@ -38,19 +38,19 @@
       }
     },
     {
-      "forecast_hour": 24,
-      "jma_time": "2026-08-26T18:00:00+09:00",
+      "forecast_hour": 15,
+      "jma_time": "2026-08-26T12:00:00+09:00",
       "kma_time": "202608261500",
       "time_gap_hours": 3.0,
       "jma": {
-        "lat": 21.6,
-        "lon": 110.2
+        "lat": 21.3,
+        "lon": 110.1
       },
       "kma": {
         "lat": 21.5,
         "lon": 110.1
       },
-      "difference_km": 15,
+      "difference_km": 22,
       "status": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -58,7 +58,27 @@
       }
     },
     {
-      "forecast_hour": 39,
+      "forecast_hour": 24,
+      "jma_time": "2026-08-26T21:00:00+09:00",
+      "kma_time": "202608261500",
+      "time_gap_hours": 6.0,
+      "jma": {
+        "lat": 22.4,
+        "lon": 109.5
+      },
+      "kma": {
+        "lat": 21.5,
+        "lon": 110.1
+      },
+      "difference_km": 118,
+      "status": {
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "차이 있음"
+      }
+    },
+    {
+      "forecast_hour": 36,
       "jma_time": "2026-08-27T09:00:00+09:00",
       "status": {
         "level": "NO_DATA",
@@ -68,5 +88,5 @@
       "time_gap_hours": 18.0
     }
   ],
-  "generated_at_utc": "2026-08-25T12:19:03.471875+00:00"
+  "generated_at_utc": "2026-08-25T13:35:47.401854+00:00"
 }
