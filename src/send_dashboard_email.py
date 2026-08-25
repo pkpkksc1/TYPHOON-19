@@ -17,6 +17,7 @@ if not (ROOT / "output").exists():
 OFFLINE_HTML = ROOT / "output" / "typhoon_dashboard_offline.html"
 CAPTURE_PNG = ROOT / "output" / "typhoon_dashboard_capture.png"
 DASHBOARD_JSON = ROOT / "data" / "dashboard.json"
+WEATHER_JSON = ROOT / "data" / "weather.json"
 SUBJECT = "[물류] SBLC 태풍 물류대시보드 | {time}"
 PLAIN_BODY = """안녕하세요.
 
@@ -85,26 +86,9 @@ def load_typhoon_identity() -> tuple[str, str]:
 
 
 
-LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 
-DIRECTION_KO = {
-    "北": "북",
-    "北北東": "북북동",
-    "北東": "북동",
-    "東北東": "동북동",
-    "東": "동",
-    "東南東": "동남동",
-    "南東": "남동",
-    "南南東": "남남동",
-    "南": "남",
-    "南南西": "남남서",
-    "南西": "남서",
-    "西南西": "서남서",
-    "西": "서",
-    "西北西": "서북서",
-    "北西": "북서",
-    "北北西": "북북서",
-}
+NANNING_LAT = 22.8170
+NANNING_LON = 108.3665
 
 
 def load_dashboard() -> dict:
@@ -114,6 +98,16 @@ def load_dashboard() -> dict:
         return json.loads(DASHBOARD_JSON.read_text(encoding="utf-8"))
     except Exception as e:
         print(f"WARNING: Could not read dashboard summary: {e}")
+        return {}
+
+
+def load_weather() -> dict:
+    if not WEATHER_JSON.exists():
+        return {}
+    try:
+        return json.loads(WEATHER_JSON.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"WARNING: Could not read weather data: {e}")
         return {}
 
 
@@ -131,221 +125,261 @@ def fmt_num(value, digits: int = 0, suffix: str = "") -> str:
         return f"{value}{suffix}"
 
 
-def china_time(value) -> str:
-    if not value:
-        return "-"
+def haversine_km(lat1, lon1, lat2, lon2):
     try:
-        dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=ZoneInfo("Asia/Shanghai"))
-        dt = dt.astimezone(ZoneInfo("Asia/Shanghai"))
-        return dt.strftime("%m/%d %H:%M")
+        lat1 = float(lat1)
+        lon1 = float(lon1)
+        lat2 = float(lat2)
+        lon2 = float(lon2)
     except Exception:
-        return str(value)
+        return None
+
+    import math
+
+    radius = 6371.0088
+    p1 = math.radians(lat1)
+    p2 = math.radians(lat2)
+    dp = math.radians(lat2 - lat1)
+    dl = math.radians(lon2 - lon1)
+
+    a = (
+        math.sin(dp / 2) ** 2
+        + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    )
+    return round(2 * radius * math.asin(math.sqrt(a)))
 
 
-def risk_from_score(score) -> tuple[str, str]:
+def distance_score(distance_km) -> int:
+    if distance_km is None:
+        return 0
+    if distance_km <= 200:
+        return 40
+    if distance_km <= 400:
+        return 30
+    if distance_km <= 700:
+        return 20
+    if distance_km <= 1000:
+        return 10
+    return 0
+
+
+def rain_score(rain_mm) -> int:
     try:
-        value = int(score or 0)
+        rain = float(rain_mm or 0)
     except Exception:
-        value = 0
+        rain = 0.0
 
-    if value >= 70:
+    if rain >= 10:
+        return 25
+    if rain >= 5:
+        return 20
+    if rain >= 2:
+        return 15
+    if rain >= 0.5:
+        return 8
+    if rain > 0:
+        return 3
+    return 0
+
+
+def wind_score(wind_mps) -> int:
+    try:
+        wind = float(wind_mps or 0)
+    except Exception:
+        wind = 0.0
+
+    if wind >= 20:
+        return 20
+    if wind >= 15:
+        return 15
+    if wind >= 10:
+        return 10
+    if wind >= 7:
+        return 5
+    return 0
+
+
+def logistics_level(score: int) -> tuple[str, str]:
+    if score >= 70:
         return "🔴", "위험"
-    if value >= 35:
+    if score >= 35:
         return "🟡", "주의"
     return "🟢", "낮음"
 
 
-def typhoon_strength(max_wind_mps) -> tuple[str, str]:
-    """Simple mail-only display rule. Raw wind/pressure are always shown."""
+def build_review_items(distance_km, rain_mm, wind_mps) -> list[str]:
+    items = []
+
     try:
-        wind = float(max_wind_mps)
+        rain = float(rain_mm or 0)
     except Exception:
-        return "⚪", "자료 없음"
+        rain = 0.0
 
-    if wind >= 54:
-        return "🔴", "초강력"
-    if wind >= 44:
-        return "🔴", "매우 강함"
-    if wind >= 33:
-        return "🔴", "강함"
-    if wind >= 25:
-        return "🟡", "중간"
-    if wind >= 17:
-        return "🟢", "약함"
-    return "⚪", "열대저압부 수준"
+    try:
+        wind = float(wind_mps or 0)
+    except Exception:
+        wind = 0.0
 
-
-def route_summary_text(data: dict) -> str:
-    routes = data.get("routes") or []
-    if not routes:
-        return "⚪ 노선 위험도 자료가 없습니다."
-
-    ranked = sorted(
-        routes,
-        key=lambda r: int(r.get("score") or 0),
-        reverse=True,
-    )
-    top_score = int(ranked[0].get("score") or 0)
-
-    if top_score >= 70:
-        names = [
-            str(r.get("name_ko") or r.get("code") or "")
-            for r in ranked
-            if int(r.get("score") or 0) >= 70
-        ][:2]
-        return (
-            f"🔴 {' / '.join(names)} 위험. "
-            "해당 노선의 출고·입고 일정 조정과 우회 가능성을 우선 검토하세요."
-        )
-
-    if top_score >= 35:
-        names = [
-            str(r.get("name_ko") or r.get("code") or "")
-            for r in ranked
-            if int(r.get("score") or 0) >= 35
-        ][:2]
-        return (
-            f"🟡 {' / '.join(names)} 주의. "
-            "해당 노선의 강수·풍속 및 운송 변동을 집중 모니터링하세요."
-        )
-
-    locations = data.get("locations") or {}
-    high_locations = []
-    for code in LOCATION_ORDER:
-        item = locations.get(code) or {}
-        if int(item.get("score") or 0) >= 35:
-            high_locations.append(
-                str(item.get("name_ko") or code)
+    if distance_km is not None:
+        if distance_km <= 200:
+            items.append(
+                f"태풍 중심과 난닝 거리가 약 {distance_km:.0f} km로 매우 가까워 "
+                "육상운송 일정과 도로 통제 가능성을 우선 확인하세요."
+            )
+        elif distance_km <= 400:
+            items.append(
+                f"태풍 중심과 난닝 거리가 약 {distance_km:.0f} km입니다. "
+                "이동 방향 변화와 현지 도로 상황을 집중 확인하세요."
+            )
+        elif distance_km <= 700:
+            items.append(
+                f"태풍 중심과 난닝 거리가 약 {distance_km:.0f} km입니다. "
+                "강수·풍속 변화 여부를 지속 확인하세요."
             )
 
-    if high_locations:
-        return (
-            f"🟡 {' / '.join(high_locations[:2])} 거점 주의. "
-            "해당 거점의 기상 및 연결 노선을 집중 확인하세요."
+    if rain >= 10:
+        items.append(
+            f"현재 난닝 시간당 강수량이 {rain:.1f} mm로 높습니다. "
+            "도로 침수·저속 운행 및 도착 지연 가능성을 검토하세요."
+        )
+    elif rain >= 5:
+        items.append(
+            f"현재 난닝 시간당 강수량이 {rain:.1f} mm입니다. "
+            "강한 비에 따른 차량 운행 지연 가능성을 확인하세요."
+        )
+    elif rain >= 2:
+        items.append(
+            f"현재 난닝 시간당 강수량이 {rain:.1f} mm입니다. "
+            "우천에 따른 육상운송 속도 저하에 주의하세요."
+        )
+    elif rain >= 0.5:
+        items.append(
+            f"현재 난닝에 비가 내리고 있습니다({rain:.1f} mm/h). "
+            "현지 도로 상태를 확인하세요."
         )
 
-    return (
-        "🟢 주요 물류 노선과 6개 거점 모두 위험도 낮음. "
-        "현재 기준 직접적인 태풍 물류 영향은 낮습니다."
-    )
+    if wind >= 20:
+        items.append(
+            f"현재 난닝 풍속이 {wind:.1f} m/s로 매우 강합니다. "
+            "고속도로·차량 운행 제한 가능성을 우선 확인하세요."
+        )
+    elif wind >= 15:
+        items.append(
+            f"현재 난닝 풍속이 {wind:.1f} m/s로 강합니다. "
+            "차량 운행 안전과 현지 통제 여부를 확인하세요."
+        )
+    elif wind >= 10:
+        items.append(
+            f"현재 난닝 풍속이 {wind:.1f} m/s입니다. "
+            "대형차량 운행 시 강풍 영향을 확인하세요."
+        )
+
+    if not items:
+        items.append(
+            "현재 업데이트 시점 기준 난닝의 강수·풍속 영향은 낮습니다. "
+            "쑤저우 → 난닝 육상운송의 특별 기상 검토사항은 없습니다."
+        )
+
+    return items
 
 
-def build_rule_summary(data: dict) -> str:
+def build_logistics_review(data: dict, weather_data: dict) -> str:
     typhoon = data.get("typhoon") or {}
     current = typhoon.get("current") or {}
-    forecast = typhoon.get("forecast_track") or []
-    locations = data.get("locations") or {}
 
-    lat = current.get("lat")
-    lon = current.get("lon")
-    position = (
-        f"{fmt_num(lat, 1)}N / {fmt_num(lon, 1)}E"
-        if lat is not None and lon is not None
-        else "자료 없음"
+    nanning = (
+        (weather_data.get("locations") or {}).get("NANNING")
+        or {}
+    )
+    nanning_current = nanning.get("current") or {}
+
+    rain_mm = nanning_current.get("rain_mm")
+    wind_mps = nanning_current.get("wind_mps")
+    wind_dir = nanning_current.get("wind_dir") or "-"
+    weather_updated = nanning_current.get("last_updated") or "-"
+
+    distance_km = haversine_km(
+        current.get("lat"),
+        current.get("lon"),
+        NANNING_LAT,
+        NANNING_LON,
     )
 
-    direction_raw = str(current.get("movement_direction") or "").strip()
-    direction_ko = DIRECTION_KO.get(direction_raw, direction_raw or "-")
-    speed = current.get("movement_speed_kmh")
-    movement = direction_ko
-    if speed is not None:
-        movement += f" · {fmt_num(speed, 1, ' km/h')}"
-
-    strength_emoji, strength_label = typhoon_strength(
-        current.get("max_wind_mps")
+    score = min(
+        100,
+        distance_score(distance_km)
+        + rain_score(rain_mm)
+        + wind_score(wind_mps),
     )
+    emoji, level = logistics_level(score)
 
-    # Forecast: data-driven only. No place-name guessing.
-    forecast_parts = []
-    for point in forecast[:3]:
-        hour = point.get("forecast_hour")
-        plat = point.get("lat")
-        plon = point.get("lon")
-        if plat is None or plon is None:
-            continue
-        label = f"+{hour}h" if hour is not None else china_time(point.get("time"))
-        forecast_parts.append(
-            f"{label} {fmt_num(plat,1)}N/{fmt_num(plon,1)}E"
+    if not nanning:
+        review_html = (
+            "<div style='color:#ffcf66;font-weight:700;'>"
+            "난닝 기상자료 갱신 대기 · WeatherAPI 업데이트 후 자동 표시"
+            "</div>"
         )
-
-    if forecast_parts:
-        forecast_text = " → ".join(forecast_parts)
-    elif typhoon.get("last_known") or typhoon.get("observation_status") == "LAST_KNOWN":
-        forecast_text = "예보 종료 · 마지막 공식 위치 유지"
     else:
-        forecast_text = "예상경로 자료 없음"
-
-    # Six logistics hubs.
-    rows = []
-    for code in LOCATION_ORDER:
-        item = locations.get(code) or {}
-        name = str(item.get("name_ko") or code)
-        emoji, label = risk_from_score(item.get("score"))
-
-        current_distance = item.get("current_distance_km")
-        closest_distance = item.get("closest_distance_km")
-
-        if typhoon.get("last_known") or typhoon.get("observation_status") == "LAST_KNOWN":
-            distance_text = f"마지막 위치 {fmt_num(current_distance,0,' km')}"
-        else:
-            distance_text = (
-                f"현재 {fmt_num(current_distance,0,' km')} · "
-                f"최접근 {fmt_num(closest_distance,0,' km')}"
-            )
-
-        rows.append(
-            "<tr>"
-            f"<td style='padding:6px 8px;border-bottom:1px solid #294158;color:#ffffff;font-weight:700;'>{html.escape(name)}</td>"
-            f"<td style='padding:6px 8px;border-bottom:1px solid #294158;color:#d6e4f2;'>{emoji} {label}</td>"
-            f"<td style='padding:6px 8px;border-bottom:1px solid #294158;color:#9fb4c8;text-align:right;'>{html.escape(distance_text)}</td>"
-            "</tr>"
+        review_items = build_review_items(
+            distance_km,
+            rain_mm,
+            wind_mps,
+        )
+        review_html = "".join(
+            f"<div style='margin-top:4px;'>• {html.escape(item)}</div>"
+            for item in review_items
         )
 
-    conclusion = route_summary_text(data)
-
-    return f"""
+    return f'''
     <div style="padding:14px;background:#0e2034;border:1px solid #24415c;border-radius:10px;color:#b8c9da;font-size:12px;line-height:1.7;">
-      <div style="font-size:14px;font-weight:900;color:#ffffff;margin-bottom:10px;">■ 자동 핵심 요약 · 위험도 규칙형</div>
-
-      <div style="margin-bottom:9px;">
-        <b style="color:#67b9ff;">① 현재 위치</b><br>
-        <span style="color:#ffffff;font-weight:700;">{html.escape(position)}</span>
-        · 중국시간 {html.escape(china_time(current.get("time")))}
-        · {html.escape(movement)}
+      <div style="font-size:14px;font-weight:900;color:#ffffff;margin-bottom:10px;">
+        ■ 물류 검토사항 · 쑤저우 → 난닝 육상운송
       </div>
 
-      <div style="margin-bottom:9px;">
-        <b style="color:#67b9ff;">② 태풍 세기</b><br>
-        {strength_emoji} <span style="color:#ffffff;font-weight:700;">{html.escape(strength_label)}</span>
-        · 최대풍속 {html.escape(fmt_num(current.get("max_wind_mps"),1," m/s"))}
-        · 중심기압 {html.escape(fmt_num(current.get("pressure_hpa"),0," hPa"))}
-      </div>
+      <div style="display:block;padding:10px 12px;background:#0a1929;border:1px solid #294158;border-radius:8px;">
+        <div style="color:#8198ad;font-size:11px;margin-bottom:7px;">
+          WeatherAPI 업데이트 기준 · {html.escape(str(weather_updated))}
+        </div>
 
-      <div style="margin-bottom:9px;">
-        <b style="color:#67b9ff;">③ 예상 경로</b><br>
-        <span style="color:#d6e4f2;">{html.escape(forecast_text)}</span>
-      </div>
-
-      <div style="margin-bottom:9px;">
-        <b style="color:#67b9ff;">④ 6개 물류거점 영향</b>
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
-               style="margin-top:5px;border-collapse:collapse;background:#0a1929;border:1px solid #294158;border-radius:8px;">
-          {''.join(rows)}
+               style="border-collapse:collapse;">
+          <tr>
+            <td style="padding:5px;color:#9fb4c8;">태풍 ↔ 난닝 현재거리</td>
+            <td style="padding:5px;text-align:right;color:#ffffff;font-weight:800;">
+              {html.escape(fmt_num(distance_km,0," km"))}
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:5px;color:#9fb4c8;">난닝 현재 강수량</td>
+            <td style="padding:5px;text-align:right;color:#ffffff;font-weight:800;">
+              {html.escape(fmt_num(rain_mm,2," mm/h"))}
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:5px;color:#9fb4c8;">난닝 현재 풍속</td>
+            <td style="padding:5px;text-align:right;color:#ffffff;font-weight:800;">
+              {html.escape(fmt_num(wind_mps,1," m/s"))} · {html.escape(str(wind_dir))}
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:5px;color:#9fb4c8;">현재 영향도</td>
+            <td style="padding:5px;text-align:right;color:#ffffff;font-weight:900;">
+              {emoji} {level} · {score}점
+            </td>
+          </tr>
         </table>
       </div>
 
       <div style="margin-top:10px;padding:10px 12px;background:#102942;border:1px solid #315679;border-radius:8px;">
-        <b style="color:#67b9ff;">⑤ 물류 한줄 결론</b><br>
-        <span style="color:#ffffff;font-weight:700;">{html.escape(conclusion)}</span>
+        <b style="color:#67b9ff;">자동 검토사항</b>
+        {review_html}
       </div>
 
       <div style="margin-top:9px;color:#8198ad;font-size:11px;">
-        ※ 위 문구는 AI 생성이 아니라 dashboard.json의 위험점수(0~34 낮음 / 35~69 주의 / 70~100 위험)와 현재 태풍·기상 자료를 기준으로 자동 생성됩니다.
+        ※ 72시간 예보값은 사용하지 않습니다. 난닝의 WeatherAPI 최신 업데이트 시점 강수량·풍속과 현재 태풍 중심거리를 기준으로 자동 판정합니다.
       </div>
     </div>
-"""
+'''
 
 
 
@@ -418,8 +452,12 @@ def main() -> int:
 
     china_now = datetime.now(ZoneInfo("Asia/Shanghai"))
     dashboard_data = load_dashboard()
+    weather_data = load_weather()
     typhoon_label, typhoon_file_label = load_typhoon_identity()
-    rule_summary_html = build_rule_summary(dashboard_data)
+    rule_summary_html = build_logistics_review(
+        dashboard_data,
+        weather_data,
+    )
 
     subject = (
         f"[물류][{typhoon_label}] "

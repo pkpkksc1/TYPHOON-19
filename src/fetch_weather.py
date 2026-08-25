@@ -12,7 +12,7 @@ Output:
     data/weather.json
 
 Locations:
-    SUZHOU / PVG / ICN / MNL / HAN / CRK
+    SUZHOU / PVG / ICN / MNL / HAN / CRK / NANNING
 
 Collects:
     current rain and wind
@@ -38,8 +38,8 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "weather.json"
 
 API_URL = "https://api.weatherapi.com/v1/forecast.json"
-PARSER_VERSION = "5.3"
-USER_AGENT = "sblc-typhoon-dashboard/5.3"
+PARSER_VERSION = "5.4-NANNING"
+USER_AGENT = "sblc-typhoon-dashboard/5.4"
 
 LOCATIONS = {
     "SUZHOU": {
@@ -71,6 +71,11 @@ LOCATIONS = {
         "name_ko": "클락 국제공항",
         "lat": 15.1859,
         "lon": 120.5603,
+    },
+    "NANNING": {
+        "name_ko": "난닝",
+        "lat": 22.8170,
+        "lon": 108.3665,
     },
 }
 
