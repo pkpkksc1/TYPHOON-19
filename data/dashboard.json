@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-08-25T15:54:26.408063+00:00",
+  "generated_at_utc": "2026-08-25T16:16:53.907269+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-08-25T15:54:15.365641+00:00",
+    "jma": "2026-08-25T16:16:53.840393+00:00",
     "weather": "2026-08-25T15:54:26.252588+00:00",
-    "risk": "2026-08-25T15:54:26.314552+00:00"
+    "risk": "2026-08-25T16:08:34.489140+00:00"
   },
   "risk_meta": {
-    "typhoon_reference_time": "2026-08-25T21:00:00+09:00",
-    "jma_updated_at_utc": "2026-08-25T15:54:15.365641+00:00",
+    "typhoon_reference_time": "2026-08-26T00:00:00+09:00",
+    "jma_updated_at_utc": "2026-08-25T16:16:53.840393+00:00",
     "weather_updated_at_utc": "2026-08-25T15:54:26.252588+00:00",
     "impact_updated_at_utc": "2026-08-25T15:54:24.817343+00:00",
-    "risk_updated_at_utc": "2026-08-25T15:54:26.314552+00:00",
+    "risk_updated_at_utc": "2026-08-25T16:08:34.489140+00:00",
     "risk_version": "6.6-CURRENT-DISTANCE"
   },
   "typhoon": {
@@ -21,53 +21,35 @@
     "name": "NARRA",
     "observation_status": "ACTIVE",
     "last_known": false,
-    "last_observation_time": "2026-08-25T21:00:00+09:00",
+    "last_observation_time": "2026-08-26T00:00:00+09:00",
     "retention_note_ko": null,
     "current": {
-      "time": "2026-08-25T21:00:00+09:00",
-      "lat": 20.0,
-      "lon": 108.9,
+      "time": "2026-08-26T00:00:00+09:00",
+      "lat": 20.3,
+      "lon": 109.4,
       "pressure_hpa": 994.0,
       "max_wind_mps": 18.0,
       "movement_direction": "北東",
-      "movement_speed_kmh": 18.5
+      "movement_speed_kmh": 22.2
     },
     "forecast_track": [
       {
         "forecast_hour": 12,
-        "time": "2026-08-26T09:00:00+09:00",
-        "lat": 21.1,
-        "lon": 110.3,
+        "time": "2026-08-26T12:00:00+09:00",
+        "lat": 21.5,
+        "lon": 110.1,
         "pressure_hpa": 998.0,
         "max_wind_mps": 0.0,
-        "movement_direction": "北東"
-      },
-      {
-        "forecast_hour": 15,
-        "time": "2026-08-26T12:00:00+09:00",
-        "lat": 21.3,
-        "lon": 110.1,
-        "pressure_hpa": 994.0,
-        "max_wind_mps": 18.0,
-        "movement_direction": "北東"
+        "movement_direction": "北北東"
       },
       {
         "forecast_hour": 24,
-        "time": "2026-08-26T21:00:00+09:00",
-        "lat": 22.4,
-        "lon": 109.5,
+        "time": "2026-08-27T00:00:00+09:00",
+        "lat": 22.7,
+        "lon": 109.3,
         "pressure_hpa": 998.0,
         "max_wind_mps": 0.0,
         "movement_direction": "北北西"
-      },
-      {
-        "forecast_hour": 36,
-        "time": "2026-08-27T09:00:00+09:00",
-        "lat": 22.7,
-        "lon": 110.8,
-        "pressure_hpa": 996.0,
-        "max_wind_mps": 0.0,
-        "movement_direction": "北北東"
       }
     ]
   },
