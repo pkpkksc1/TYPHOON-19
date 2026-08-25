@@ -152,14 +152,16 @@ def haversine_km(lat1, lon1, lat2, lon2):
 def distance_score(distance_km) -> int:
     if distance_km is None:
         return 0
-    if distance_km <= 200:
-        return 40
-    if distance_km <= 400:
-        return 30
-    if distance_km <= 700:
+    if distance_km <= 150:
+        return 25
+    if distance_km <= 300:
         return 20
-    if distance_km <= 1000:
+    if distance_km <= 500:
+        return 15
+    if distance_km <= 800:
         return 10
+    if distance_km <= 1200:
+        return 5
     return 0
 
 
@@ -169,16 +171,16 @@ def rain_score(rain_mm) -> int:
     except Exception:
         rain = 0.0
 
+    if rain >= 20:
+        return 50
     if rain >= 10:
-        return 25
+        return 35
     if rain >= 5:
         return 20
     if rain >= 2:
-        return 15
+        return 10
     if rain >= 0.5:
-        return 8
-    if rain > 0:
-        return 3
+        return 5
     return 0
 
 
@@ -188,13 +190,13 @@ def wind_score(wind_mps) -> int:
     except Exception:
         wind = 0.0
 
+    if wind >= 25:
+        return 25
     if wind >= 20:
-        return 20
+        return 18
     if wind >= 15:
-        return 15
-    if wind >= 10:
         return 10
-    if wind >= 7:
+    if wind >= 10:
         return 5
     return 0
 
@@ -220,58 +222,77 @@ def build_review_items(distance_km, rain_mm, wind_mps) -> list[str]:
     except Exception:
         wind = 0.0
 
+    # 육상운송용 거리 판단은 태풍 중심과 난닝의 단순 직선거리만 사용.
+    # 강풍반경/폭풍반경은 이 점수에 포함하지 않음.
     if distance_km is not None:
-        if distance_km <= 200:
+        if distance_km <= 150:
             items.append(
-                f"태풍 중심과 난닝 거리가 약 {distance_km:.0f} km로 매우 가까워 "
-                "육상운송 일정과 도로 통제 가능성을 우선 확인하세요."
+                f"태풍 중심과 난닝 거리가 약 {distance_km:.0f} km로 매우 가깝습니다. "
+                "육상운송 일정과 현지 도로 통제 가능성을 우선 확인하세요."
             )
-        elif distance_km <= 400:
+        elif distance_km <= 300:
             items.append(
                 f"태풍 중심과 난닝 거리가 약 {distance_km:.0f} km입니다. "
-                "이동 방향 변화와 현지 도로 상황을 집중 확인하세요."
+                "현지 기상과 도로 상황을 집중 확인하세요."
             )
-        elif distance_km <= 700:
+        elif distance_km <= 500:
             items.append(
                 f"태풍 중심과 난닝 거리가 약 {distance_km:.0f} km입니다. "
-                "강수·풍속 변화 여부를 지속 확인하세요."
+                "난닝 강수·풍속 변화 여부를 확인하세요."
+            )
+        elif distance_km <= 800:
+            items.append(
+                f"태풍 중심과 난닝 거리가 약 {distance_km:.0f} km입니다. "
+                "태풍 이동경로 변화 여부를 모니터링하세요."
             )
 
-    if rain >= 10:
+    # 현재 업데이트 시점의 시간당 강수만 사용.
+    if rain >= 20:
         items.append(
-            f"현재 난닝 시간당 강수량이 {rain:.1f} mm로 높습니다. "
-            "도로 침수·저속 운행 및 도착 지연 가능성을 검토하세요."
+            f"현재 난닝 시간당 강수량이 {rain:.1f} mm로 매우 높습니다. "
+            "도로 침수·저속 운행 및 도착 지연 가능성을 우선 검토하세요."
+        )
+    elif rain >= 10:
+        items.append(
+            f"현재 난닝 시간당 강수량이 {rain:.1f} mm입니다. "
+            "강한 비에 따른 도로 통행 및 차량 운행 지연 가능성을 확인하세요."
         )
     elif rain >= 5:
         items.append(
             f"현재 난닝 시간당 강수량이 {rain:.1f} mm입니다. "
-            "강한 비에 따른 차량 운행 지연 가능성을 확인하세요."
+            "우천에 따른 차량 운행 속도 저하에 주의하세요."
         )
     elif rain >= 2:
         items.append(
             f"현재 난닝 시간당 강수량이 {rain:.1f} mm입니다. "
-            "우천에 따른 육상운송 속도 저하에 주의하세요."
+            "육상운송 중 도로 상태 변화를 확인하세요."
         )
     elif rain >= 0.5:
         items.append(
-            f"현재 난닝에 비가 내리고 있습니다({rain:.1f} mm/h). "
+            f"현재 난닝에 약한 비가 내리고 있습니다({rain:.1f} mm/h). "
             "현지 도로 상태를 확인하세요."
         )
 
-    if wind >= 20:
+    # 육상운송 특성을 반영해 풍속은 완화된 보조 점수로 사용.
+    if wind >= 25:
         items.append(
             f"현재 난닝 풍속이 {wind:.1f} m/s로 매우 강합니다. "
-            "고속도로·차량 운행 제한 가능성을 우선 확인하세요."
+            "차량 운행 제한 및 안전 영향을 우선 확인하세요."
+        )
+    elif wind >= 20:
+        items.append(
+            f"현재 난닝 풍속이 {wind:.1f} m/s로 강합니다. "
+            "대형차량 운행 안전과 현지 통제 여부를 확인하세요."
         )
     elif wind >= 15:
         items.append(
-            f"현재 난닝 풍속이 {wind:.1f} m/s로 강합니다. "
-            "차량 운행 안전과 현지 통제 여부를 확인하세요."
+            f"현재 난닝 풍속이 {wind:.1f} m/s입니다. "
+            "차량 운행 영향 가능성을 확인하세요."
         )
     elif wind >= 10:
         items.append(
             f"현재 난닝 풍속이 {wind:.1f} m/s입니다. "
-            "대형차량 운행 시 강풍 영향을 확인하세요."
+            "풍속 변화 여부를 확인하세요."
         )
 
     if not items:
@@ -281,7 +302,6 @@ def build_review_items(distance_km, rain_mm, wind_mps) -> list[str]:
         )
 
     return items
-
 
 def build_logistics_review(data: dict, weather_data: dict) -> str:
     typhoon = data.get("typhoon") or {}
@@ -376,7 +396,7 @@ def build_logistics_review(data: dict, weather_data: dict) -> str:
       </div>
 
       <div style="margin-top:9px;color:#8198ad;font-size:11px;">
-        ※ 72시간 예보값은 사용하지 않습니다. 난닝의 WeatherAPI 최신 업데이트 시점 강수량·풍속과 현재 태풍 중심거리를 기준으로 자동 판정합니다.
+        ※ 육상운송 기준: 거리 25점 + 현재 강수 50점 + 현재 풍속 25점 = 100점. 강풍반경은 포함하지 않으며 WeatherAPI 최신 업데이트 시점 값을 사용합니다.
       </div>
     </div>
 '''
