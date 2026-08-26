@@ -8,8 +8,8 @@
     "name": "NARRA"
   },
   "summary": {
-    "average_difference_km": 56,
-    "max_difference_km": 56,
+    "average_difference_km": 90,
+    "max_difference_km": 90,
     "overall": {
       "level": "YELLOW",
       "emoji": "🟡",
@@ -19,18 +19,18 @@
   "comparisons": [
     {
       "forecast_hour": 12,
-      "jma_time": "2026-08-26T18:00:00+09:00",
+      "jma_time": "2026-08-26T21:00:00+09:00",
       "kma_time": "202608261500",
-      "time_gap_hours": 3.0,
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 22.0,
-        "lon": 110.1
+        "lat": 22.3,
+        "lon": 110.0
       },
       "kma": {
         "lat": 21.5,
         "lon": 110.1
       },
-      "difference_km": 56,
+      "difference_km": 90,
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
@@ -39,14 +39,14 @@
     },
     {
       "forecast_hour": 24,
-      "jma_time": "2026-08-27T06:00:00+09:00",
+      "jma_time": "2026-08-27T09:00:00+09:00",
       "status": {
         "level": "NO_DATA",
         "emoji": "⚪",
         "label_ko": "KMA 비교자료 없음"
       },
-      "time_gap_hours": 15.0
+      "time_gap_hours": 18.0
     }
   ],
-  "generated_at_utc": "2026-08-25T22:38:33.826685+00:00"
+  "generated_at_utc": "2026-08-26T01:53:08.484581+00:00"
 }
