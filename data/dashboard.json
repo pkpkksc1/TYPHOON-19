@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-08-26T07:56:28.724021+00:00",
+  "generated_at_utc": "2026-08-26T08:21:58.910280+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-26T07:03:43.637062+00:00",
-    "weather": "2026-08-26T07:55:29.170545+00:00",
-    "risk": "2026-08-26T07:55:29.232311+00:00"
+    "weather": "2026-08-26T08:21:58.758929+00:00",
+    "risk": "2026-08-26T08:21:58.820295+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-08-26T07:03:43.637062+00:00",
-    "weather_updated_at_utc": "2026-08-26T07:55:29.170545+00:00",
-    "impact_updated_at_utc": "2026-08-26T07:55:28.202171+00:00",
-    "risk_updated_at_utc": "2026-08-26T07:55:29.232311+00:00",
+    "weather_updated_at_utc": "2026-08-26T08:21:58.758929+00:00",
+    "impact_updated_at_utc": "2026-08-26T08:21:57.680573+00:00",
+    "risk_updated_at_utc": "2026-08-26T08:21:58.820295+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -76,9 +76,9 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 15:45",
+        "last_updated": "2026-08-26 16:15",
         "rain_mm": 0.0,
-        "wind_mps": 2.8
+        "wind_mps": 4.3
       },
       "forecast_72h": {
         "max_rain_mm": 0.06,
@@ -103,7 +103,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 15:45",
+        "last_updated": "2026-08-26 16:15",
         "rain_mm": 0.0,
         "wind_mps": 4.9
       },
@@ -116,7 +116,7 @@
     },
     "ICN": {
       "name_ko": "인천 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -130,9 +130,9 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 16:45",
-        "rain_mm": 0.01,
-        "wind_mps": 3.5
+        "last_updated": "2026-08-26 17:15",
+        "rain_mm": 0.0,
+        "wind_mps": 3.6
       },
       "forecast_72h": {
         "max_rain_mm": 0.02,
@@ -157,7 +157,7 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 15:45",
+        "last_updated": "2026-08-26 16:15",
         "rain_mm": 0.0,
         "wind_mps": 8.9
       },
@@ -170,7 +170,7 @@
     },
     "HAN": {
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 23,
+      "score": 20,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -184,9 +184,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 14:45",
-        "rain_mm": 0.01,
-        "wind_mps": 2.0
+        "last_updated": "2026-08-26 15:15",
+        "rain_mm": 0.0,
+        "wind_mps": 2.2
       },
       "forecast_72h": {
         "max_rain_mm": 1.68,
@@ -211,9 +211,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 15:45",
-        "rain_mm": 0.04,
-        "wind_mps": 6.0
+        "last_updated": "2026-08-26 16:15",
+        "rain_mm": 0.13,
+        "wind_mps": 5.4
       },
       "forecast_72h": {
         "max_rain_mm": 61.82,
@@ -227,17 +227,17 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 23,
+      "score": 20,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -267,7 +267,7 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
