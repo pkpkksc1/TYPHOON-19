@@ -8,45 +8,14 @@
     "name": "NARRA"
   },
   "summary": {
-    "average_difference_km": 112,
-    "max_difference_km": 112,
+    "average_difference_km": null,
+    "max_difference_km": null,
     "overall": {
-      "level": "YELLOW",
-      "emoji": "🟡",
-      "label_ko": "차이 있음"
+      "level": "NO_DATA",
+      "emoji": "⚪",
+      "label_ko": "비교자료 없음"
     }
   },
-  "comparisons": [
-    {
-      "forecast_hour": 9,
-      "jma_time": "2026-08-27T00:00:00+09:00",
-      "kma_time": "202608261500",
-      "time_gap_hours": 9.0,
-      "jma": {
-        "lat": 22.5,
-        "lon": 110.0
-      },
-      "kma": {
-        "lat": 21.5,
-        "lon": 110.1
-      },
-      "difference_km": 112,
-      "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
-      }
-    },
-    {
-      "forecast_hour": 21,
-      "jma_time": "2026-08-27T12:00:00+09:00",
-      "status": {
-        "level": "NO_DATA",
-        "emoji": "⚪",
-        "label_ko": "KMA 비교자료 없음"
-      },
-      "time_gap_hours": 21.0
-    }
-  ],
-  "generated_at_utc": "2026-08-26T07:03:43.820615+00:00"
+  "comparisons": [],
+  "generated_at_utc": "2026-08-26T16:05:16.939106+00:00"
 }
