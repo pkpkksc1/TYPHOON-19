@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-26T21:10:49.107696+00:00",
-    "weather": "2026-08-26T21:10:50.304068+00:00"
+    "impact": "2026-08-26T23:22:58.382813+00:00",
+    "weather": "2026-08-26T23:22:59.387219+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-27 05:00",
+        "current_last_updated": "2026-08-27 07:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.5,
+        "current_wind_mps": 3.9,
         "max_72h_rain_mm": 0.87,
         "max_72h_rain_time": "2026-08-28 08:00",
         "max_72h_wind_mps": 8.2,
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-27 05:00",
-        "current_rain_mm": 0.02,
-        "current_wind_mps": 4.2,
+        "current_last_updated": "2026-08-27 07:15",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 4.6,
         "max_72h_rain_mm": 0.99,
         "max_72h_rain_time": "2026-08-27 22:00",
         "max_72h_wind_mps": 7.9,
@@ -113,7 +113,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-27 06:00",
+        "current_last_updated": "2026-08-27 08:15",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.2,
         "max_72h_rain_mm": 0.72,
@@ -130,7 +130,7 @@
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 8,
+      "score": 13,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -147,9 +147,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-27 05:00",
-        "current_rain_mm": 0.4,
-        "current_wind_mps": 8.1,
+        "current_last_updated": "2026-08-27 07:15",
+        "current_rain_mm": 0.93,
+        "current_wind_mps": 8.3,
         "max_72h_rain_mm": 24.96,
         "max_72h_rain_time": "2026-08-29 04:00",
         "max_72h_wind_mps": 10.9,
@@ -157,14 +157,14 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 8,
         "wind": 5
       }
     },
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 20,
+      "score": 23,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-27 04:00",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 1.0,
+        "current_last_updated": "2026-08-27 06:15",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 1.4,
         "max_72h_rain_mm": 5.97,
         "max_72h_rain_time": "2026-08-29 21:00",
         "max_72h_wind_mps": 5.9,
@@ -191,7 +191,7 @@
       },
       "score_detail": {
         "distance": 20,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     },
@@ -215,9 +215,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-27 05:00",
+        "current_last_updated": "2026-08-27 07:15",
         "current_rain_mm": 0.03,
-        "current_wind_mps": 1.5,
+        "current_wind_mps": 1.4,
         "max_72h_rain_mm": 20.7,
         "max_72h_rain_time": "2026-08-29 07:00",
         "max_72h_wind_mps": 10.0,
@@ -250,7 +250,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 20,
+      "score": 23,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -282,7 +282,7 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 8,
+      "score": 13,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-26T21:10:50.359830+00:00"
+  "generated_at_utc": "2026-08-26T23:22:59.443808+00:00"
 }
