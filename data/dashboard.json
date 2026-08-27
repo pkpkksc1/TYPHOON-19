@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-08-27T20:19:59.961723+00:00",
+  "generated_at_utc": "2026-08-27T22:33:16.241856+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-08-27T20:19:51.283479+00:00",
-    "weather": "2026-08-27T20:19:59.802736+00:00",
-    "risk": "2026-08-27T20:19:59.867826+00:00"
+    "jma": "2026-08-27T22:33:08.783015+00:00",
+    "weather": "2026-08-27T22:33:16.077314+00:00",
+    "risk": "2026-08-27T22:33:16.143297+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
-    "jma_updated_at_utc": "2026-08-27T20:19:51.283479+00:00",
-    "weather_updated_at_utc": "2026-08-27T20:19:59.802736+00:00",
-    "impact_updated_at_utc": "2026-08-27T20:19:57.922059+00:00",
-    "risk_updated_at_utc": "2026-08-27T20:19:59.867826+00:00",
+    "jma_updated_at_utc": "2026-08-27T22:33:08.783015+00:00",
+    "weather_updated_at_utc": "2026-08-27T22:33:16.077314+00:00",
+    "impact_updated_at_utc": "2026-08-27T22:33:14.414621+00:00",
+    "risk_updated_at_utc": "2026-08-27T22:33:16.143297+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -43,7 +43,7 @@
   "locations": {
     "SUZHOU": {
       "name_ko": "쑤저우",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-28 04:15",
-        "rain_mm": 0.03,
-        "wind_mps": 5.1
+        "last_updated": "2026-08-28 06:30",
+        "rain_mm": 0.0,
+        "wind_mps": 5.0
       },
       "forecast_72h": {
         "max_rain_mm": 1.62,
@@ -70,7 +70,7 @@
     },
     "PVG": {
       "name_ko": "푸동 국제공항",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-28 04:00",
-        "rain_mm": 0.14,
-        "wind_mps": 4.9
+        "last_updated": "2026-08-28 06:15",
+        "rain_mm": 1.95,
+        "wind_mps": 5.5
       },
       "forecast_72h": {
         "max_rain_mm": 2.27,
@@ -97,7 +97,7 @@
     },
     "ICN": {
       "name_ko": "인천 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -111,9 +111,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-28 05:00",
-        "rain_mm": 0.0,
-        "wind_mps": 1.0
+        "last_updated": "2026-08-28 07:15",
+        "rain_mm": 0.02,
+        "wind_mps": 1.2
       },
       "forecast_72h": {
         "max_rain_mm": 1.95,
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-28 04:15",
-        "rain_mm": 1.16,
-        "wind_mps": 8.9
+        "last_updated": "2026-08-28 06:30",
+        "rain_mm": 0.57,
+        "wind_mps": 8.7
       },
       "forecast_72h": {
         "max_rain_mm": 32.67,
@@ -165,7 +165,7 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-28 03:00",
+        "last_updated": "2026-08-28 05:15",
         "rain_mm": 0.0,
         "wind_mps": 2.5
       },
@@ -192,9 +192,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-28 04:15",
-        "rain_mm": 0.19,
-        "wind_mps": 1.2
+        "last_updated": "2026-08-28 06:15",
+        "rain_mm": 0.16,
+        "wind_mps": 1.6
       },
       "forecast_72h": {
         "max_rain_mm": 21.72,
@@ -208,12 +208,12 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "SUZHOU_PVG_HAN",
@@ -228,12 +228,12 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "SUZHOU_PVG_MNL",
@@ -248,7 +248,7 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
