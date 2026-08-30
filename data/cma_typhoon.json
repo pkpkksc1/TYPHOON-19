@@ -181,25 +181,25 @@
       "name_cn": "沙德尔",
       "state": "start",
       "current": {
-        "point_id": 3325078,
-        "time_utc": "202608292100",
+        "point_id": 3325228,
+        "time_utc": "202608300000",
         "grade": "TD",
         "grade_ko": "열대저압부",
-        "lon": 112,
-        "lat": 24.7,
+        "lon": 111.8,
+        "lat": 24.4,
         "pressure_hpa": 998,
         "max_wind_mps": 12,
         "movement_direction": "SSW",
         "movement_direction_ko": "남남서",
-        "movement_speed_kmh": 18,
+        "movement_speed_kmh": 20,
         "wind_radii": []
       },
       "forecast": [
         {
           "forecast_hour": 6,
-          "base_time_utc": "202608292100",
-          "lon": 111.7,
-          "lat": 23.8,
+          "base_time_utc": "202608300000",
+          "lon": 111.3,
+          "lat": 23.4,
           "pressure_hpa": 998,
           "max_wind_mps": 12,
           "agency": "BABJ",
@@ -208,19 +208,41 @@
         },
         {
           "forecast_hour": 12,
-          "base_time_utc": "202608292100",
-          "lon": 111.3,
-          "lat": 22.9,
-          "pressure_hpa": 1000,
-          "max_wind_mps": 10,
+          "base_time_utc": "202608300000",
+          "lon": 110.7,
+          "lat": 22.5,
+          "pressure_hpa": 998,
+          "max_wind_mps": 12,
+          "agency": "BABJ",
+          "grade": "TD",
+          "grade_ko": "열대저압부"
+        },
+        {
+          "forecast_hour": 18,
+          "base_time_utc": "202608300000",
+          "lon": 110,
+          "lat": 21.3,
+          "pressure_hpa": 998,
+          "max_wind_mps": 12,
+          "agency": "BABJ",
+          "grade": "TD",
+          "grade_ko": "열대저압부"
+        },
+        {
+          "forecast_hour": 24,
+          "base_time_utc": "202608300000",
+          "lon": 110.1,
+          "lat": 20.3,
+          "pressure_hpa": 998,
+          "max_wind_mps": 12,
           "agency": "BABJ",
           "grade": "TD",
           "grade_ko": "열대저압부"
         }
       ],
-      "raw_point_count": 127
+      "raw_point_count": 128
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-30T00:10:55.645270+00:00"
+  "generated_at_utc": "2026-08-30T00:39:21.008914+00:00"
 }
