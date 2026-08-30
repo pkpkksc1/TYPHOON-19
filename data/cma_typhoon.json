@@ -11,31 +11,31 @@
       "name_cn": "班朗",
       "state": "start",
       "current": {
-        "point_id": 3325849,
-        "time_utc": "202608301800",
+        "point_id": 3325917,
+        "time_utc": "202608302100",
         "grade": "TS",
         "grade_ko": "열대폭풍",
         "lon": 165.4,
-        "lat": 35.7,
+        "lat": 36.2,
         "pressure_hpa": 995,
         "max_wind_mps": 20,
         "movement_direction": "N",
         "movement_direction_ko": "북",
-        "movement_speed_kmh": 25,
+        "movement_speed_kmh": 28,
         "wind_radii": [
           {
             "label": "30KTS",
             "ne_km": 200,
-            "se_km": 200,
-            "sw_km": 100,
-            "nw_km": 120,
+            "se_km": 180,
+            "sw_km": 50,
+            "nw_km": 80,
             "raw": [
               "30KTS",
               200,
-              200,
-              100,
-              120,
-              3325849
+              180,
+              50,
+              80,
+              3325917
             ],
             "meaning_ko": "30kt 풍권"
           }
@@ -44,9 +44,9 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202608301800",
-          "lon": 165.9,
-          "lat": 38.3,
+          "base_time_utc": "202608302100",
+          "lon": 166,
+          "lat": 39.1,
           "pressure_hpa": 998,
           "max_wind_mps": 18,
           "agency": "BABJ",
@@ -55,9 +55,9 @@
         },
         {
           "forecast_hour": 24,
-          "base_time_utc": "202608301800",
-          "lon": 167.5,
-          "lat": 41.7,
+          "base_time_utc": "202608302100",
+          "lon": 167.6,
+          "lat": 42.5,
           "pressure_hpa": 998,
           "max_wind_mps": 18,
           "agency": "BABJ",
@@ -65,7 +65,7 @@
           "grade_ko": "열대폭풍"
         }
       ],
-      "raw_point_count": 21
+      "raw_point_count": 22
     },
     {
       "id": 3319901,
@@ -132,5 +132,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-30T20:58:43.232664+00:00"
+  "generated_at_utc": "2026-08-30T21:29:53.100065+00:00"
 }
