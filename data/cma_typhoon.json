@@ -11,31 +11,31 @@
       "name_cn": "班朗",
       "state": "start",
       "current": {
-        "point_id": 3325503,
-        "time_utc": "202608300600",
+        "point_id": 3325688,
+        "time_utc": "202608301200",
         "grade": "TS",
         "grade_ko": "열대폭풍",
-        "lon": 167.7,
-        "lat": 32.8,
-        "pressure_hpa": 990,
-        "max_wind_mps": 23,
+        "lon": 166.7,
+        "lat": 34.2,
+        "pressure_hpa": 995,
+        "max_wind_mps": 20,
         "movement_direction": "NNW",
         "movement_direction_ko": "북북서",
-        "movement_speed_kmh": 28,
+        "movement_speed_kmh": 26,
         "wind_radii": [
           {
             "label": "30KTS",
-            "ne_km": 180,
-            "se_km": 180,
-            "sw_km": 150,
-            "nw_km": 150,
+            "ne_km": 200,
+            "se_km": 200,
+            "sw_km": 100,
+            "nw_km": 120,
             "raw": [
               "30KTS",
-              180,
-              180,
-              150,
-              150,
-              3325503
+              200,
+              200,
+              100,
+              120,
+              3325688
             ],
             "meaning_ko": "30kt 풍권"
           }
@@ -44,20 +44,20 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202608300600",
-          "lon": 166.1,
-          "lat": 35.4,
-          "pressure_hpa": 995,
-          "max_wind_mps": 20,
+          "base_time_utc": "202608301200",
+          "lon": 166,
+          "lat": 36.9,
+          "pressure_hpa": 998,
+          "max_wind_mps": 18,
           "agency": "BABJ",
           "grade": "TS",
           "grade_ko": "열대폭풍"
         },
         {
           "forecast_hour": 24,
-          "base_time_utc": "202608300600",
-          "lon": 166,
-          "lat": 37.8,
+          "base_time_utc": "202608301200",
+          "lon": 166.8,
+          "lat": 40.3,
           "pressure_hpa": 998,
           "max_wind_mps": 18,
           "agency": "BABJ",
@@ -66,9 +66,9 @@
         },
         {
           "forecast_hour": 36,
-          "base_time_utc": "202608300600",
-          "lon": 166.5,
-          "lat": 40.3,
+          "base_time_utc": "202608301200",
+          "lon": 168.5,
+          "lat": 42.8,
           "pressure_hpa": 998,
           "max_wind_mps": 18,
           "agency": "BABJ",
@@ -76,7 +76,7 @@
           "grade_ko": "열대폭풍"
         }
       ],
-      "raw_point_count": 17
+      "raw_point_count": 19
     },
     {
       "id": 3319901,
@@ -85,12 +85,12 @@
       "name_cn": "艾涛",
       "state": "start",
       "current": {
-        "point_id": 3325535,
-        "time_utc": "202608300600",
+        "point_id": 3325596,
+        "time_utc": "202608300900",
         "grade": "TS",
         "grade_ko": "열대폭풍",
-        "lon": 165.1,
-        "lat": 30.9,
+        "lon": 165.3,
+        "lat": 31,
         "pressure_hpa": 998,
         "max_wind_mps": 18,
         "movement_direction": "NE",
@@ -109,7 +109,7 @@
               300,
               220,
               220,
-              3325535
+              3325596
             ],
             "meaning_ko": "30kt 풍권"
           }
@@ -118,9 +118,9 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202608300600",
-          "lon": 166.2,
-          "lat": 31.7,
+          "base_time_utc": "202608300900",
+          "lon": 166.5,
+          "lat": 31.9,
           "pressure_hpa": 998,
           "max_wind_mps": 18,
           "agency": "BABJ",
@@ -129,9 +129,9 @@
         },
         {
           "forecast_hour": 24,
-          "base_time_utc": "202608300600",
-          "lon": 166.9,
-          "lat": 32.8,
+          "base_time_utc": "202608300900",
+          "lon": 167,
+          "lat": 33.5,
           "pressure_hpa": 999,
           "max_wind_mps": 15,
           "agency": "BABJ",
@@ -139,7 +139,7 @@
           "grade_ko": "열대저압부"
         }
       ],
-      "raw_point_count": 25
+      "raw_point_count": 26
     },
     {
       "id": 3304099,
@@ -200,5 +200,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-30T07:20:41.132355+00:00"
+  "generated_at_utc": "2026-08-30T12:47:54.119681+00:00"
 }
