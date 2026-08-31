@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-08-31T19:58:18.164017+00:00",
+  "generated_at_utc": "2026-08-31T20:21:12.013235+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-31T19:40:45.092259+00:00",
-    "weather": "2026-08-31T19:58:18.052449+00:00",
-    "risk": "2026-08-31T19:58:18.097573+00:00"
+    "weather": "2026-08-31T20:21:11.855306+00:00",
+    "risk": "2026-08-31T20:21:11.919871+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-08-31T19:40:45.092259+00:00",
-    "weather_updated_at_utc": "2026-08-31T19:58:18.052449+00:00",
-    "impact_updated_at_utc": "2026-08-31T19:58:16.434092+00:00",
-    "risk_updated_at_utc": "2026-08-31T19:58:18.097573+00:00",
+    "weather_updated_at_utc": "2026-08-31T20:21:11.855306+00:00",
+    "impact_updated_at_utc": "2026-08-31T20:21:10.443462+00:00",
+    "risk_updated_at_utc": "2026-08-31T20:21:11.919871+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-01 03:45",
+        "last_updated": "2026-09-01 04:15",
         "rain_mm": 0.0,
-        "wind_mps": 2.8
+        "wind_mps": 2.5
       },
       "forecast_72h": {
         "max_rain_mm": 22.77,
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-01 03:45",
-        "rain_mm": 0.02,
-        "wind_mps": 2.2
+        "last_updated": "2026-09-01 04:15",
+        "rain_mm": 0.03,
+        "wind_mps": 2.0
       },
       "forecast_72h": {
         "max_rain_mm": 11.48,
@@ -97,7 +97,7 @@
     },
     "ICN": {
       "name_ko": "인천 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -111,9 +111,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-01 04:45",
-        "rain_mm": 0.07,
-        "wind_mps": 1.0
+        "last_updated": "2026-09-01 05:15",
+        "rain_mm": 0.0,
+        "wind_mps": 1.6
       },
       "forecast_72h": {
         "max_rain_mm": 6.01,
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-01 03:45",
-        "rain_mm": 0.2,
-        "wind_mps": 9.2
+        "last_updated": "2026-09-01 04:15",
+        "rain_mm": 0.16,
+        "wind_mps": 8.8
       },
       "forecast_72h": {
         "max_rain_mm": 1.89,
@@ -165,20 +165,20 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-01 02:45",
+        "last_updated": "2026-09-01 03:15",
         "rain_mm": 0.0,
-        "wind_mps": 2.5
+        "wind_mps": 2.8
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-01 02:45",
+        "max_rain_time": "2026-09-01 03:15",
         "max_wind_mps": 4.5,
         "max_wind_time": "2026-09-01 17:00"
       }
     },
     "CRK": {
       "name_ko": "클락 국제공항",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -192,9 +192,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-01 03:45",
-        "rain_mm": 0.32,
-        "wind_mps": 6.0
+        "last_updated": "2026-09-01 04:15",
+        "rain_mm": 0.77,
+        "wind_mps": 5.8
       },
       "forecast_72h": {
         "max_rain_mm": 0.84,
@@ -228,12 +228,12 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "클락 국제공항 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "SUZHOU_PVG_MNL",
@@ -253,7 +253,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)"
     }
   ],
   "attribution": [
