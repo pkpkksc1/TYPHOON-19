@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-31T05:22:30.291039+00:00",
-    "weather": "2026-08-31T05:22:31.802291+00:00"
+    "impact": "2026-08-31T06:04:10.264402+00:00",
+    "weather": "2026-08-31T06:04:11.472038+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,7 +45,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-31 13:15",
+        "current_last_updated": "2026-08-31 13:45",
         "current_rain_mm": 0.55,
         "current_wind_mps": 3.3,
         "max_72h_rain_mm": 6.95,
@@ -79,7 +79,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-31 13:15",
+        "current_last_updated": "2026-08-31 13:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 5.7,
         "max_72h_rain_mm": 3.93,
@@ -113,7 +113,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-31 14:15",
+        "current_last_updated": "2026-08-31 14:45",
         "current_rain_mm": 0.04,
         "current_wind_mps": 2.4,
         "max_72h_rain_mm": 8.1,
@@ -147,7 +147,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-31 13:15",
+        "current_last_updated": "2026-08-31 13:45",
         "current_rain_mm": 0.02,
         "current_wind_mps": 10.3,
         "max_72h_rain_mm": 0.67,
@@ -181,7 +181,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-31 12:00",
+        "current_last_updated": "2026-08-31 12:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 4.6,
         "max_72h_rain_mm": 0.29,
@@ -198,7 +198,7 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 13,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -215,9 +215,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-31 13:15",
-        "current_rain_mm": 0.87,
-        "current_wind_mps": 8.0,
+        "current_last_updated": "2026-08-31 14:00",
+        "current_rain_mm": 0.45,
+        "current_wind_mps": 7.6,
         "max_72h_rain_mm": 0.91,
         "max_72h_rain_time": "2026-09-01 16:00",
         "max_72h_wind_mps": 11.0,
@@ -225,7 +225,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 8,
+        "rain": 3,
         "wind": 5
       }
     }
@@ -266,13 +266,13 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 13,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "클락 국제공항 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -311,6 +311,6 @@
       ]
     }
   ],
-  "data_changed": false,
-  "generated_at_utc": "2026-08-31T05:55:11.468754+00:00"
+  "data_changed": true,
+  "generated_at_utc": "2026-08-31T06:04:11.537394+00:00"
 }
