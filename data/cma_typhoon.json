@@ -2,7 +2,7 @@
   "source": "CMA / NMC",
   "product": "China Typhoon Track and Forecast",
   "parser_version": "1.1",
-  "active_count": 2,
+  "active_count": 1,
   "typhoons": [
     {
       "id": 3326569,
@@ -132,54 +132,8 @@
         }
       ],
       "raw_point_count": 23
-    },
-    {
-      "id": 3304099,
-      "number": 2618,
-      "name_en": "SAUDEL",
-      "name_cn": "沙德尔",
-      "state": "start",
-      "current": {
-        "point_id": 3330309,
-        "time_utc": "202609030600",
-        "grade": "TD",
-        "grade_ko": "열대저압부",
-        "lon": 116.3,
-        "lat": 24.4,
-        "pressure_hpa": 995,
-        "max_wind_mps": 15,
-        "movement_direction": "WSW",
-        "movement_direction_ko": "서남서",
-        "movement_speed_kmh": 15,
-        "wind_radii": []
-      },
-      "forecast": [
-        {
-          "forecast_hour": 6,
-          "base_time_utc": "202609030600",
-          "lon": 115.4,
-          "lat": 24.4,
-          "pressure_hpa": 995,
-          "max_wind_mps": 15,
-          "agency": "BABJ",
-          "grade": "TD",
-          "grade_ko": "열대저압부"
-        },
-        {
-          "forecast_hour": 12,
-          "base_time_utc": "202609030600",
-          "lon": 114.7,
-          "lat": 23.9,
-          "pressure_hpa": 995,
-          "max_wind_mps": 12,
-          "agency": "BABJ",
-          "grade": "TD",
-          "grade_ko": "열대저압부"
-        }
-      ],
-      "raw_point_count": 194
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-09-03T18:33:34.470805+00:00"
+  "generated_at_utc": "2026-09-03T18:51:26.754002+00:00"
 }
