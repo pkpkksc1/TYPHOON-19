@@ -1,26 +1,26 @@
 {
   "parser_version": "1.0",
-  "generated_at_utc": "2026-09-03T05:03:24.613523Z",
+  "generated_at_utc": "2026-09-03T09:39:43.295718Z",
   "source": "NOAA/NWS public relay of JTWC tropical cyclone warnings",
   "source_note": "JTWC maximum sustained winds are one-minute averages. JTWC wind radii are valid over open water only.",
   "active_count": 1,
   "storms": [
     {
       "bulletin": "WTPN31",
-      "issue_time_utc": "2026-09-03T03:00:00Z",
-      "age_hours": 2.1,
+      "issue_time_utc": "2026-09-03T09:00:00Z",
+      "age_hours": 0.7,
       "jtwc_id": "22W",
       "name": "KROVANH",
       "storm_type": "TROPICAL STORM",
-      "warning_number": 8,
+      "warning_number": 9,
       "source_url": "https://tgftp.nws.noaa.gov/data/raw/wt/wtpn31.pgtw..txt",
       "current": {
-        "valid_time_raw": "030000Z",
-        "lat": 26.1,
-        "lon": 130.2,
-        "movement_degrees": 335,
-        "movement_speed_kt": 14,
-        "movement_speed_kmh": 25.9,
+        "valid_time_raw": "030600Z",
+        "lat": 27.0,
+        "lon": 129.0,
+        "movement_degrees": 315,
+        "movement_speed_kt": 13,
+        "movement_speed_kmh": 24.1,
         "pressure_hpa": 989,
         "max_wind_kt": 40,
         "max_wind_mps": 20.6,
@@ -56,9 +56,9 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "valid_time_raw": "031200Z",
-          "lat": 27.9,
-          "lon": 128.7,
+          "valid_time_raw": "031800Z",
+          "lat": 28.5,
+          "lon": 127.9,
           "max_wind_kt": 40,
           "max_wind_mps": 20.6,
           "gust_kt": 50,
@@ -92,9 +92,9 @@
         },
         {
           "forecast_hour": 24,
-          "valid_time_raw": "040000Z",
-          "lat": 28.9,
-          "lon": 127.9,
+          "valid_time_raw": "040600Z",
+          "lat": 29.0,
+          "lon": 127.1,
           "max_wind_kt": 40,
           "max_wind_mps": 20.6,
           "gust_kt": 50,
@@ -128,9 +128,9 @@
         },
         {
           "forecast_hour": 36,
-          "valid_time_raw": "041200Z",
-          "lat": 28.8,
-          "lon": 127.6,
+          "valid_time_raw": "041800Z",
+          "lat": 28.4,
+          "lon": 127.0,
           "max_wind_kt": 35,
           "max_wind_mps": 18.0,
           "gust_kt": 45,
@@ -164,9 +164,9 @@
         },
         {
           "forecast_hour": 48,
-          "valid_time_raw": "050000Z",
-          "lat": 28.1,
-          "lon": 127.8,
+          "valid_time_raw": "050600Z",
+          "lat": 27.2,
+          "lon": 127.1,
           "max_wind_kt": 35,
           "max_wind_mps": 18.0,
           "gust_kt": 45,
@@ -177,8 +177,8 @@
               "threshold_mps": 17.5,
               "quadrants": {
                 "NE": {
-                  "nm": 125,
-                  "km": 231.5
+                  "nm": 0,
+                  "km": 0.0
                 },
                 "SE": {
                   "nm": 0,
@@ -200,9 +200,9 @@
         },
         {
           "forecast_hour": 60,
-          "valid_time_raw": "051200Z",
-          "lat": 27.2,
-          "lon": 128.1,
+          "valid_time_raw": "051800Z",
+          "lat": 26.1,
+          "lon": 127.6,
           "max_wind_kt": 35,
           "max_wind_mps": 18.0,
           "gust_kt": 45,
@@ -213,8 +213,8 @@
               "threshold_mps": 17.5,
               "quadrants": {
                 "NE": {
-                  "nm": 125,
-                  "km": 231.5
+                  "nm": 0,
+                  "km": 0.0
                 },
                 "SE": {
                   "nm": 0,
@@ -229,15 +229,15 @@
                   "km": 185.2
                 }
               },
-              "max_radius_nm": 125,
-              "max_radius_km": 231.5
+              "max_radius_nm": 100,
+              "max_radius_km": 185.2
             }
           }
         },
         {
           "forecast_hour": 72,
-          "valid_time_raw": "060000Z",
-          "lat": 26.4,
+          "valid_time_raw": "060600Z",
+          "lat": 25.4,
           "lon": 128.7,
           "max_wind_kt": 35,
           "max_wind_mps": 18.0,
@@ -253,28 +253,28 @@
                   "km": 0.0
                 },
                 "SE": {
-                  "nm": 55,
-                  "km": 101.9
+                  "nm": 90,
+                  "km": 166.7
                 },
                 "SW": {
-                  "nm": 80,
-                  "km": 148.2
+                  "nm": 100,
+                  "km": 185.2
                 },
                 "NW": {
-                  "nm": 80,
-                  "km": 148.2
+                  "nm": 70,
+                  "km": 129.6
                 }
               },
-              "max_radius_nm": 80,
-              "max_radius_km": 148.2
+              "max_radius_nm": 100,
+              "max_radius_km": 185.2
             }
           }
         },
         {
           "forecast_hour": 96,
-          "valid_time_raw": "070000Z",
-          "lat": 25.8,
-          "lon": 130.0,
+          "valid_time_raw": "070600Z",
+          "lat": 25.7,
+          "lon": 130.4,
           "max_wind_kt": 35,
           "max_wind_mps": 18.0,
           "gust_kt": 45,
@@ -285,12 +285,12 @@
               "threshold_mps": 17.5,
               "quadrants": {
                 "NE": {
-                  "nm": 100,
-                  "km": 185.2
+                  "nm": 80,
+                  "km": 148.2
                 },
                 "SE": {
-                  "nm": 90,
-                  "km": 166.7
+                  "nm": 100,
+                  "km": 185.2
                 },
                 "SW": {
                   "nm": 90,
@@ -308,9 +308,9 @@
         },
         {
           "forecast_hour": 120,
-          "valid_time_raw": "080000Z",
-          "lat": 26.6,
-          "lon": 130.4,
+          "valid_time_raw": "080600Z",
+          "lat": 26.8,
+          "lon": 131.3,
           "max_wind_kt": 35,
           "max_wind_mps": 18.0,
           "gust_kt": 45,
@@ -325,8 +325,8 @@
                   "km": 185.2
                 },
                 "SE": {
-                  "nm": 85,
-                  "km": 157.4
+                  "nm": 90,
+                  "km": 166.7
                 },
                 "SW": {
                   "nm": 70,
