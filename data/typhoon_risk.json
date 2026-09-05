@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-04T23:57:59.168847+00:00",
-    "weather": "2026-09-04T23:58:01.014048+00:00"
+    "impact": "2026-09-05T01:01:51.695609+00:00",
+    "weather": "2026-09-05T00:13:58.398330+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 07:45",
+        "current_last_updated": "2026-09-05 08:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.4,
+        "current_wind_mps": 4.5,
         "max_72h_rain_mm": 0.18,
         "max_72h_rain_time": "2026-09-06 11:00",
         "max_72h_wind_mps": 6.0,
@@ -79,11 +79,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 07:45",
-        "current_rain_mm": 0.48,
-        "current_wind_mps": 4.3,
+        "current_last_updated": "2026-09-05 08:00",
+        "current_rain_mm": 0.27,
+        "current_wind_mps": 4.5,
         "max_72h_rain_mm": 0.48,
-        "max_72h_rain_time": "2026-09-05 07:45",
+        "max_72h_rain_time": "2026-09-05 07:00",
         "max_72h_wind_mps": 6.1,
         "max_72h_wind_time": "2026-09-07 13:00"
       },
@@ -113,11 +113,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 08:45",
+        "current_last_updated": "2026-09-05 09:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.5,
+        "current_wind_mps": 5.0,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-05 08:45",
+        "max_72h_rain_time": "2026-09-05 09:00",
         "max_72h_wind_mps": 6.2,
         "max_72h_wind_time": "2026-09-05 20:00"
       },
@@ -130,7 +130,7 @@
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 13,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -147,9 +147,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 07:45",
-        "current_rain_mm": 0.94,
-        "current_wind_mps": 7.5,
+        "current_last_updated": "2026-09-05 08:00",
+        "current_rain_mm": 0.33,
+        "current_wind_mps": 7.4,
         "max_72h_rain_mm": 2.88,
         "max_72h_rain_time": "2026-09-05 05:00",
         "max_72h_wind_mps": 8.9,
@@ -157,7 +157,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 8,
+        "rain": 3,
         "wind": 5
       }
     },
@@ -181,7 +181,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 06:45",
+        "current_last_updated": "2026-09-05 07:00",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 0.07,
@@ -198,7 +198,7 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 3,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -215,9 +215,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 07:45",
-        "current_rain_mm": 0.07,
-        "current_wind_mps": 2.0,
+        "current_last_updated": "2026-09-05 08:00",
+        "current_rain_mm": 0.67,
+        "current_wind_mps": 2.4,
         "max_72h_rain_mm": 3.85,
         "max_72h_rain_time": "2026-09-05 11:00",
         "max_72h_wind_mps": 6.4,
@@ -225,7 +225,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 8,
         "wind": 0
       }
     }
@@ -266,13 +266,13 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 3,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "클락 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -282,7 +282,7 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 13,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-09-04T23:58:01.062444+00:00"
+  "generated_at_utc": "2026-09-05T01:15:35.033181+00:00"
 }
