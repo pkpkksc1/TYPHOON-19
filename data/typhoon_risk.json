@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-05T05:48:40.117416+00:00",
-    "weather": "2026-09-05T04:44:46.348502+00:00"
+    "impact": "2026-09-05T06:17:39.012168+00:00",
+    "weather": "2026-09-05T06:17:39.749499+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -28,7 +28,7 @@
     "SUZHOU": {
       "code": "SUZHOU",
       "name_ko": "쑤저우",
-      "score": 3,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -45,8 +45,8 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 12:30",
-        "current_rain_mm": 0.03,
+        "current_last_updated": "2026-09-05 14:00",
+        "current_rain_mm": 0.0,
         "current_wind_mps": 5.6,
         "max_72h_rain_mm": 0.2,
         "max_72h_rain_time": "2026-09-07 16:00",
@@ -55,7 +55,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 0,
         "wind": 0
       }
     },
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 12:30",
-        "current_rain_mm": 0.04,
-        "current_wind_mps": 5.7,
+        "current_last_updated": "2026-09-05 14:00",
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 5.5,
         "max_72h_rain_mm": 0.37,
         "max_72h_rain_time": "2026-09-05 03:00",
         "max_72h_wind_mps": 5.8,
@@ -113,11 +113,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 13:30",
+        "current_last_updated": "2026-09-05 15:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.2,
+        "current_wind_mps": 3.6,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-05 13:30",
+        "max_72h_rain_time": "2026-09-05 15:00",
         "max_72h_wind_mps": 6.1,
         "max_72h_wind_time": "2026-09-05 21:00"
       },
@@ -136,7 +136,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "현재 풍속 10.9 m/s",
+      "reason_ko": "현재 풍속 10.2 m/s",
       "typhoon": {
         "source": "JMA_DISTANCE_FALLBACK",
         "current_distance_km": 1371,
@@ -147,13 +147,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 12:30",
-        "current_rain_mm": 0.02,
-        "current_wind_mps": 10.9,
+        "current_last_updated": "2026-09-05 14:00",
+        "current_rain_mm": 0.09,
+        "current_wind_mps": 10.2,
         "max_72h_rain_mm": 4.99,
         "max_72h_rain_time": "2026-09-07 03:00",
         "max_72h_wind_mps": 10.9,
-        "max_72h_wind_time": "2026-09-05 12:30"
+        "max_72h_wind_time": "2026-09-05 12:00"
       },
       "score_detail": {
         "distance": 0,
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 11:30",
-        "current_rain_mm": 0.02,
-        "current_wind_mps": 2.0,
+        "current_last_updated": "2026-09-05 13:00",
+        "current_rain_mm": 0.03,
+        "current_wind_mps": 3.3,
         "max_72h_rain_mm": 0.17,
         "max_72h_rain_time": "2026-09-07 11:00",
         "max_72h_wind_mps": 4.4,
@@ -215,9 +215,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-05 12:30",
-        "current_rain_mm": 0.46,
-        "current_wind_mps": 4.6,
+        "current_last_updated": "2026-09-05 14:00",
+        "current_rain_mm": 0.42,
+        "current_wind_mps": 3.7,
         "max_72h_rain_mm": 1.19,
         "max_72h_rain_time": "2026-09-07 02:00",
         "max_72h_wind_mps": 5.3,
@@ -240,7 +240,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -272,7 +272,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -288,7 +288,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (현재 풍속 10.9 m/s)",
+      "reason_ko": "마닐라 국제공항 낮음 (현재 풍속 10.2 m/s)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-09-05T06:06:43.495297+00:00"
+  "generated_at_utc": "2026-09-05T06:17:39.810814+00:00"
 }
