@@ -1,26 +1,26 @@
 {
   "parser_version": "1.0",
-  "generated_at_utc": "2026-09-06T00:11:21.819089Z",
+  "generated_at_utc": "2026-09-06T04:26:34.457830Z",
   "source": "NOAA/NWS public relay of JTWC tropical cyclone warnings",
   "source_note": "JTWC maximum sustained winds are one-minute averages. JTWC wind radii are valid over open water only.",
   "active_count": 2,
   "storms": [
     {
       "bulletin": "WTPN31",
-      "issue_time_utc": "2026-09-05T21:00:00Z",
-      "age_hours": 3.2,
+      "issue_time_utc": "2026-09-06T03:00:00Z",
+      "age_hours": 1.4,
       "jtwc_id": "22W",
       "name": "KROVANH",
       "storm_type": "TROPICAL DEPRESSION",
-      "warning_number": 19,
+      "warning_number": 20,
       "source_url": "https://tgftp.nws.noaa.gov/data/raw/wt/wtpn31.pgtw..txt",
       "current": {
-        "valid_time_raw": "051800Z",
-        "lat": 25.4,
-        "lon": 129.4,
-        "movement_degrees": 95,
-        "movement_speed_kt": 11,
-        "movement_speed_kmh": 20.4,
+        "valid_time_raw": "060000Z",
+        "lat": 25.9,
+        "lon": 129.7,
+        "movement_degrees": 40,
+        "movement_speed_kt": 7,
+        "movement_speed_kmh": 13.0,
         "pressure_hpa": null,
         "max_wind_kt": 30,
         "max_wind_mps": 15.4,
@@ -31,45 +31,20 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "valid_time_raw": "060600Z",
-          "lat": 25.3,
+          "valid_time_raw": "061200Z",
+          "lat": 26.1,
           "lon": 130.7,
-          "max_wind_kt": 35,
-          "max_wind_mps": 18.0,
-          "gust_kt": 45,
-          "gust_mps": 23.1,
-          "wind_radii": {
-            "34kt": {
-              "threshold_kt": 34,
-              "threshold_mps": 17.5,
-              "quadrants": {
-                "NE": {
-                  "nm": 0,
-                  "km": 0.0
-                },
-                "SE": {
-                  "nm": 0,
-                  "km": 0.0
-                },
-                "SW": {
-                  "nm": 60,
-                  "km": 111.1
-                },
-                "NW": {
-                  "nm": 0,
-                  "km": 0.0
-                }
-              },
-              "max_radius_nm": 60,
-              "max_radius_km": 111.1
-            }
-          }
+          "max_wind_kt": 30,
+          "max_wind_mps": 15.4,
+          "gust_kt": 40,
+          "gust_mps": 20.6,
+          "wind_radii": {}
         },
         {
           "forecast_hour": 24,
-          "valid_time_raw": "061800Z",
-          "lat": 25.7,
-          "lon": 132.3,
+          "valid_time_raw": "070000Z",
+          "lat": 26.6,
+          "lon": 132.2,
           "max_wind_kt": 30,
           "max_wind_mps": 15.4,
           "gust_kt": 40,
@@ -78,9 +53,9 @@
         },
         {
           "forecast_hour": 36,
-          "valid_time_raw": "070600Z",
-          "lat": 26.7,
-          "lon": 133.0,
+          "valid_time_raw": "071200Z",
+          "lat": 27.7,
+          "lon": 132.9,
           "max_wind_kt": 30,
           "max_wind_mps": 15.4,
           "gust_kt": 40,
@@ -89,9 +64,9 @@
         },
         {
           "forecast_hour": 48,
-          "valid_time_raw": "071800Z",
-          "lat": 28.3,
-          "lon": 133.5,
+          "valid_time_raw": "080000Z",
+          "lat": 29.8,
+          "lon": 133.0,
           "max_wind_kt": 30,
           "max_wind_mps": 15.4,
           "gust_kt": 40,
@@ -100,20 +75,20 @@
         },
         {
           "forecast_hour": 60,
-          "valid_time_raw": "080600Z",
-          "lat": 29.9,
-          "lon": 133.3,
-          "max_wind_kt": 30,
-          "max_wind_mps": 15.4,
-          "gust_kt": 40,
-          "gust_mps": 20.6,
+          "valid_time_raw": "081200Z",
+          "lat": 31.5,
+          "lon": 133.0,
+          "max_wind_kt": 25,
+          "max_wind_mps": 12.9,
+          "gust_kt": 35,
+          "gust_mps": 18.0,
           "wind_radii": {}
         },
         {
           "forecast_hour": 72,
-          "valid_time_raw": "081800Z",
-          "lat": 31.3,
-          "lon": 133.1,
+          "valid_time_raw": "090000Z",
+          "lat": 33.0,
+          "lon": 134.0,
           "max_wind_kt": 25,
           "max_wind_mps": 12.9,
           "gust_kt": 35,
@@ -122,9 +97,9 @@
         },
         {
           "forecast_hour": 96,
-          "valid_time_raw": "091800Z",
-          "lat": 33.1,
-          "lon": 135.3,
+          "valid_time_raw": "100000Z",
+          "lat": 34.1,
+          "lon": 136.0,
           "max_wind_kt": 20,
           "max_wind_mps": 10.3,
           "gust_kt": 30,
@@ -136,7 +111,7 @@
     {
       "bulletin": "WTPN32",
       "issue_time_utc": "2026-09-05T15:00:00Z",
-      "age_hours": 9.2,
+      "age_hours": 13.4,
       "jtwc_id": "23W",
       "name": "TWENTYTHREE",
       "storm_type": "TROPICAL DEPRESSION",
