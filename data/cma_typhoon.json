@@ -11,31 +11,31 @@
       "name_cn": "科罗旺",
       "state": "start",
       "current": {
-        "point_id": 3332731,
-        "time_utc": "202609061800",
+        "point_id": 3332739,
+        "time_utc": "202609062100",
         "grade": "TS",
         "grade_ko": "열대폭풍",
-        "lon": 131.5,
-        "lat": 26,
+        "lon": 131.7,
+        "lat": 26.2,
         "pressure_hpa": 995,
         "max_wind_mps": 18,
-        "movement_direction": "NE",
-        "movement_direction_ko": "북동",
-        "movement_speed_kmh": 12,
+        "movement_direction": "NNE",
+        "movement_direction_ko": "북북동",
+        "movement_speed_kmh": 13,
         "wind_radii": [
           {
             "label": "30KTS",
-            "ne_km": 350,
+            "ne_km": 180,
             "se_km": 200,
             "sw_km": 250,
-            "nw_km": 350,
+            "nw_km": 180,
             "raw": [
               "30KTS",
-              350,
+              180,
               200,
               250,
-              350,
-              3332731
+              180,
+              3332739
             ],
             "meaning_ko": "30kt 풍권"
           }
@@ -44,20 +44,9 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202609061800",
-          "lon": 132.3,
-          "lat": 27,
-          "pressure_hpa": 995,
-          "max_wind_mps": 18,
-          "agency": "BABJ",
-          "grade": "TS",
-          "grade_ko": "열대폭풍"
-        },
-        {
-          "forecast_hour": 24,
-          "base_time_utc": "202609061800",
-          "lon": 132.7,
-          "lat": 28.4,
+          "base_time_utc": "202609062100",
+          "lon": 132.5,
+          "lat": 27.4,
           "pressure_hpa": 998,
           "max_wind_mps": 15,
           "agency": "BABJ",
@@ -65,9 +54,9 @@
           "grade_ko": "열대저압부"
         }
       ],
-      "raw_point_count": 47
+      "raw_point_count": 48
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-09-06T19:04:09.924604+00:00"
+  "generated_at_utc": "2026-09-06T21:16:20.514918+00:00"
 }
