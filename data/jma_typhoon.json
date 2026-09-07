@@ -4,7 +4,7 @@
   "parser_version": "1.4-JMA-CURRENT-LONG-MERGE-LAST-KNOWN",
   "feed_high": "https://www.data.jma.go.jp/developer/xml/feed/extra.xml",
   "feed_long": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
-  "active_count": 2,
+  "active_count": 1,
   "locations": {
     "SUZHOU": {
       "name": "Suzhou",
@@ -50,73 +50,6 @@
     }
   },
   "typhoons": [
-    {
-      "slot": "VPTW61",
-      "event_id": "TC2628",
-      "information_title": "台風解析・予報情報（５日予報）（Ｈ３０）",
-      "feed_updated": "2026-09-07T00:40:22Z",
-      "report_time": "2026-09-07T09:45:00+09:00",
-      "target_time": "2026-09-07T09:00:00+09:00",
-      "source_url": "https://www.data.jma.go.jp/developer/xml/data/20260907004023_0_VPTW61_010000.xml",
-      "typhoon": {
-        "number": "2624",
-        "name": "KROVANH",
-        "kana": "クロヴァン"
-      },
-      "analysis": {
-        "time": "2026-09-07T09:00:00+09:00",
-        "time_type": "実況",
-        "lat": 26.0,
-        "lon": 132.0,
-        "raw_coordinate": "+26.0+132.0/",
-        "area": "熱帯低気圧",
-        "pressure_hpa": 992.0,
-        "max_wind_source_value": null,
-        "max_wind_source_unit": null,
-        "max_wind_mps": null,
-        "gust_source_value": null,
-        "gust_source_unit": null,
-        "gust_mps": null,
-        "movement_direction": "東北東",
-        "movement_speed": null,
-        "movement_speed_unit": null,
-        "movement_speed_kmh": null,
-        "forecast_circle_radius": null,
-        "forecast_circle_radius_unit": null,
-        "forecast_circle_radius_km": null,
-        "radius_details": [],
-        "radius_groups": {
-          "forecast_circle": [],
-          "storm_wind_area": [],
-          "gale_wind_area": [],
-          "storm_warning_area": [],
-          "other": []
-        },
-        "data_quality": {
-          "status": "OK",
-          "issues": []
-        },
-        "distances_km": {
-          "SUZHOU": 1259,
-          "PVG": 1147,
-          "ICN": 1378,
-          "MNL": 1714,
-          "HAN": 2716,
-          "CRK": 1690
-        }
-      },
-      "forecast": [],
-      "forecast_source_report_time": "2026-09-07T09:45:00+09:00",
-      "forecast_source_url": "https://www.data.jma.go.jp/developer/xml/data/20260907004023_0_VPTW61_010000.xml",
-      "forecast_merge_mode": "BEST_AVAILABLE_SHORT",
-      "forecast_max_hour": 0,
-      "forecast_quality": {
-        "status": "SHORT_ONLY",
-        "current_bulletin_horizon_hour": 0,
-        "merged_horizon_hour": 0,
-        "used_previous_output": false
-      }
-    },
     {
       "slot": "VPTW61",
       "event_id": "TC2622",
@@ -191,5 +124,5 @@
     "feed_errors": [],
     "xml_errors": []
   },
-  "generated_at_utc": "2026-09-07T10:09:32.043525+00:00"
+  "generated_at_utc": "2026-09-07T15:47:03.035227+00:00"
 }
