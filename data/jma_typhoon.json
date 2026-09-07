@@ -105,206 +105,15 @@
           "CRK": 1690
         }
       },
-      "forecast": [
-        {
-          "time": "2026-09-07T18:00:00+09:00",
-          "time_type": "予報　１２時間後",
-          "lat": 27.6,
-          "lon": 133.0,
-          "raw_coordinate": "+27.6+133.0/",
-          "area": "熱帯低気圧",
-          "pressure_hpa": 992.0,
-          "max_wind_source_value": 0.0,
-          "max_wind_source_unit": "ノット",
-          "max_wind_mps": 0.0,
-          "gust_source_value": 0.0,
-          "gust_source_unit": "ノット",
-          "gust_mps": 0.0,
-          "movement_direction": "北東",
-          "movement_speed": 10.0,
-          "movement_speed_unit": "ノット",
-          "movement_speed_kmh": 18.5,
-          "forecast_circle_radius": null,
-          "forecast_circle_radius_unit": null,
-          "forecast_circle_radius_km": null,
-          "radius_details": [
-            {
-              "type": "７０パーセント確率半径",
-              "value": 40.0,
-              "unit": "海里",
-              "km": 74.1
-            },
-            {
-              "type": "７０パーセント確率半径",
-              "value": 75.0,
-              "unit": "km",
-              "km": 75.0
-            },
-            {
-              "type": "７０パーセント確率半径",
-              "value": 40.0,
-              "unit": "海里",
-              "km": 74.1
-            },
-            {
-              "type": "７０パーセント確率半径",
-              "value": 75.0,
-              "unit": "km",
-              "km": 75.0
-            }
-          ],
-          "radius_groups": {
-            "forecast_circle": [],
-            "storm_wind_area": [],
-            "gale_wind_area": [],
-            "storm_warning_area": [],
-            "other": [
-              {
-                "type": "７０パーセント確率半径",
-                "value": 40.0,
-                "unit": "海里",
-                "km": 74.1
-              },
-              {
-                "type": "７０パーセント確率半径",
-                "value": 75.0,
-                "unit": "km",
-                "km": 75.0
-              },
-              {
-                "type": "７０パーセント確率半径",
-                "value": 40.0,
-                "unit": "海里",
-                "km": 74.1
-              },
-              {
-                "type": "７０パーセント確率半径",
-                "value": 75.0,
-                "unit": "km",
-                "km": 75.0
-              }
-            ]
-          },
-          "data_quality": {
-            "status": "WARN",
-            "issues": [
-              "forecast_circle_radius_not_found"
-            ]
-          },
-          "forecast_hour": 9,
-          "distances_km": {
-            "SUZHOU": 1270,
-            "PVG": 1153,
-            "ICN": 1256,
-            "MNL": 1912,
-            "HAN": 2837,
-            "CRK": 1885
-          }
-        },
-        {
-          "time": "2026-09-08T06:00:00+09:00",
-          "time_type": "予報　２４時間後",
-          "lat": 29.3,
-          "lon": 132.8,
-          "raw_coordinate": "+29.3+132.8/",
-          "area": "熱帯低気圧",
-          "pressure_hpa": 994.0,
-          "max_wind_source_value": 0.0,
-          "max_wind_source_unit": "ノット",
-          "max_wind_mps": 0.0,
-          "gust_source_value": 0.0,
-          "gust_source_unit": "ノット",
-          "gust_mps": 0.0,
-          "movement_direction": "北",
-          "movement_speed": 9.0,
-          "movement_speed_unit": "ノット",
-          "movement_speed_kmh": 16.7,
-          "forecast_circle_radius": null,
-          "forecast_circle_radius_unit": null,
-          "forecast_circle_radius_km": null,
-          "radius_details": [
-            {
-              "type": "７０パーセント確率半径",
-              "value": 57.0,
-              "unit": "海里",
-              "km": 105.6
-            },
-            {
-              "type": "７０パーセント確率半径",
-              "value": 105.0,
-              "unit": "km",
-              "km": 105.0
-            },
-            {
-              "type": "７０パーセント確率半径",
-              "value": 57.0,
-              "unit": "海里",
-              "km": 105.6
-            },
-            {
-              "type": "７０パーセント確率半径",
-              "value": 105.0,
-              "unit": "km",
-              "km": 105.0
-            }
-          ],
-          "radius_groups": {
-            "forecast_circle": [],
-            "storm_wind_area": [],
-            "gale_wind_area": [],
-            "storm_warning_area": [],
-            "other": [
-              {
-                "type": "７０パーセント確率半径",
-                "value": 57.0,
-                "unit": "海里",
-                "km": 105.6
-              },
-              {
-                "type": "７０パーセント確率半径",
-                "value": 105.0,
-                "unit": "km",
-                "km": 105.0
-              },
-              {
-                "type": "７０パーセント確率半径",
-                "value": 57.0,
-                "unit": "海里",
-                "km": 105.6
-              },
-              {
-                "type": "７０パーセント確率半径",
-                "value": 105.0,
-                "unit": "km",
-                "km": 105.0
-              }
-            ]
-          },
-          "data_quality": {
-            "status": "WARN",
-            "issues": [
-              "forecast_circle_radius_not_found"
-            ]
-          },
-          "forecast_hour": 21,
-          "distances_km": {
-            "SUZHOU": 1193,
-            "PVG": 1075,
-            "ICN": 1082,
-            "MNL": 2042,
-            "HAN": 2851,
-            "CRK": 2009
-          }
-        }
-      ],
-      "forecast_source_report_time": "2026-09-07T06:45:00+09:00",
-      "forecast_source_url": "https://www.data.jma.go.jp/developer/xml/data/20260906214214_0_VPTW61_010000.xml",
+      "forecast": [],
+      "forecast_source_report_time": "2026-09-07T09:45:00+09:00",
+      "forecast_source_url": "https://www.data.jma.go.jp/developer/xml/data/20260907004023_0_VPTW61_010000.xml",
       "forecast_merge_mode": "BEST_AVAILABLE_SHORT",
-      "forecast_max_hour": 21,
+      "forecast_max_hour": 0,
       "forecast_quality": {
         "status": "SHORT_ONLY",
         "current_bulletin_horizon_hour": 0,
-        "merged_horizon_hour": 21,
+        "merged_horizon_hour": 0,
         "used_previous_output": false
       }
     },
@@ -382,5 +191,5 @@
     "feed_errors": [],
     "xml_errors": []
   },
-  "generated_at_utc": "2026-09-07T04:25:31.950343+00:00"
+  "generated_at_utc": "2026-09-07T10:09:32.043525+00:00"
 }
