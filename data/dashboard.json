@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-09-11T19:59:46.238045+00:00",
+  "generated_at_utc": "2026-09-11T21:14:57.119511+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-07T15:47:03.035227+00:00",
-    "weather": "2026-09-11T18:24:10.311792+00:00",
-    "risk": "2026-09-11T18:42:11.173552+00:00"
+    "weather": "2026-09-11T21:14:56.946961+00:00",
+    "risk": "2026-09-11T21:14:57.015894+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-09-07T15:47:03.035227+00:00",
-    "weather_updated_at_utc": "2026-09-11T18:24:10.311792+00:00",
-    "impact_updated_at_utc": "2026-09-11T18:24:08.817011+00:00",
-    "risk_updated_at_utc": "2026-09-11T18:42:11.173552+00:00",
+    "weather_updated_at_utc": "2026-09-11T21:14:56.946961+00:00",
+    "impact_updated_at_utc": "2026-09-11T21:14:54.357412+00:00",
+    "risk_updated_at_utc": "2026-09-11T21:14:57.015894+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 02:15",
+        "last_updated": "2026-09-12 05:00",
         "rain_mm": 0.0,
-        "wind_mps": 2.0
+        "wind_mps": 2.2
       },
       "forecast_72h": {
         "max_rain_mm": 4.66,
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 02:15",
+        "last_updated": "2026-09-12 05:00",
         "rain_mm": 0.0,
-        "wind_mps": 1.4
+        "wind_mps": 1.7
       },
       "forecast_72h": {
         "max_rain_mm": 3.24,
@@ -111,13 +111,13 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 03:15",
+        "last_updated": "2026-09-12 06:00",
         "rain_mm": 0.0,
-        "wind_mps": 1.5
+        "wind_mps": 1.6
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-12 03:15",
+        "max_rain_time": "2026-09-12 06:00",
         "max_wind_mps": 4.3,
         "max_wind_time": "2026-09-14 12:00"
       }
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 02:15",
+        "last_updated": "2026-09-12 05:00",
         "rain_mm": 0.0,
-        "wind_mps": 1.1
+        "wind_mps": 1.7
       },
       "forecast_72h": {
         "max_rain_mm": 2.76,
@@ -165,9 +165,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 01:15",
+        "last_updated": "2026-09-12 04:00",
         "rain_mm": 0.0,
-        "wind_mps": 2.5
+        "wind_mps": 3.2
       },
       "forecast_72h": {
         "max_rain_mm": 0.72,
@@ -178,7 +178,7 @@
     },
     "CRK": {
       "name_ko": "클락 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -192,15 +192,15 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 02:15",
-        "rain_mm": 0.0,
-        "wind_mps": 1.1
+        "last_updated": "2026-09-12 05:00",
+        "rain_mm": 0.09,
+        "wind_mps": 1.0
       },
       "forecast_72h": {
         "max_rain_mm": 2.22,
         "max_rain_time": "2026-09-14 14:00",
-        "max_wind_mps": 2.5,
-        "max_wind_time": "2026-09-12 12:00"
+        "max_wind_mps": 2.3,
+        "max_wind_time": "2026-09-12 19:00"
       }
     }
   },
@@ -228,12 +228,12 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "클락 국제공항 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "SUZHOU_PVG_MNL",
