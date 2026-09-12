@@ -2,8 +2,77 @@
   "source": "CMA / NMC",
   "product": "China Typhoon Track and Forecast",
   "parser_version": "1.1",
-  "active_count": 0,
-  "typhoons": [],
+  "active_count": 1,
+  "typhoons": [
+    {
+      "id": 3332799,
+      "number": "",
+      "name_en": "nameless",
+      "name_cn": "热带低压",
+      "state": "start",
+      "current": {
+        "point_id": 3332800,
+        "time_utc": "202609120000",
+        "grade": "TD",
+        "grade_ko": "열대저압부",
+        "lon": 109.4,
+        "lat": 15.3,
+        "pressure_hpa": 1005,
+        "max_wind_mps": 13,
+        "movement_direction": "NNW",
+        "movement_direction_ko": "북북서",
+        "movement_speed_kmh": 6,
+        "wind_radii": []
+      },
+      "forecast": [
+        {
+          "forecast_hour": 12,
+          "base_time_utc": "202609120000",
+          "lon": 109.1,
+          "lat": 15.8,
+          "pressure_hpa": 1005,
+          "max_wind_mps": 13,
+          "agency": "BABJ",
+          "grade": "TD",
+          "grade_ko": "열대저압부"
+        },
+        {
+          "forecast_hour": 24,
+          "base_time_utc": "202609120000",
+          "lon": 108.7,
+          "lat": 16.3,
+          "pressure_hpa": 1005,
+          "max_wind_mps": 13,
+          "agency": "BABJ",
+          "grade": "TD",
+          "grade_ko": "열대저압부"
+        },
+        {
+          "forecast_hour": 36,
+          "base_time_utc": "202609120000",
+          "lon": 107.9,
+          "lat": 16.9,
+          "pressure_hpa": 1005,
+          "max_wind_mps": 13,
+          "agency": "BABJ",
+          "grade": "TD",
+          "grade_ko": "열대저압부"
+        },
+        {
+          "forecast_hour": 48,
+          "base_time_utc": "202609120000",
+          "lon": 106.1,
+          "lat": 18.2,
+          "pressure_hpa": 1008,
+          "max_wind_mps": 12,
+          "agency": "BABJ",
+          "grade": "TD",
+          "grade_ko": "열대저압부"
+        }
+      ],
+      "raw_point_count": 1
+    }
+  ],
   "errors": [],
-  "generated_at_utc": "2026-09-12T00:10:45.545379+00:00"
+  "generated_at_utc": "2026-09-12T01:30:35.837158+00:00"
 }
