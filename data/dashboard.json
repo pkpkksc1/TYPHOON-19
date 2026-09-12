@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-09-12T13:06:15.962723+00:00",
+  "generated_at_utc": "2026-09-12T14:02:07.381624+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-07T15:47:03.035227+00:00",
-    "weather": "2026-09-12T11:51:27.748868+00:00",
-    "risk": "2026-09-12T13:03:38.262321+00:00"
+    "weather": "2026-09-12T14:02:07.230507+00:00",
+    "risk": "2026-09-12T14:02:07.292380+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-09-07T15:47:03.035227+00:00",
-    "weather_updated_at_utc": "2026-09-12T11:51:27.748868+00:00",
-    "impact_updated_at_utc": "2026-09-12T12:24:59.095593+00:00",
-    "risk_updated_at_utc": "2026-09-12T13:03:38.262321+00:00",
+    "weather_updated_at_utc": "2026-09-12T14:02:07.230507+00:00",
+    "impact_updated_at_utc": "2026-09-12T14:02:05.675735+00:00",
+    "risk_updated_at_utc": "2026-09-12T14:02:07.292380+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 19:45",
+        "last_updated": "2026-09-12 22:00",
         "rain_mm": 0.0,
-        "wind_mps": 2.8
+        "wind_mps": 1.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.01,
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 19:30",
+        "last_updated": "2026-09-12 22:00",
         "rain_mm": 0.0,
-        "wind_mps": 2.0
+        "wind_mps": 1.1
       },
       "forecast_72h": {
         "max_rain_mm": 0.03,
@@ -111,20 +111,20 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 20:45",
+        "last_updated": "2026-09-12 22:45",
         "rain_mm": 0.0,
-        "wind_mps": 1.9
+        "wind_mps": 1.0
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-12 20:45",
+        "max_rain_time": "2026-09-12 22:45",
         "max_wind_mps": 5.2,
         "max_wind_time": "2026-09-14 17:00"
       }
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 19:45",
-        "rain_mm": 0.02,
-        "wind_mps": 3.4
+        "last_updated": "2026-09-12 22:00",
+        "rain_mm": 1.64,
+        "wind_mps": 3.2
       },
       "forecast_72h": {
         "max_rain_mm": 3.14,
@@ -165,9 +165,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 18:30",
+        "last_updated": "2026-09-12 20:45",
         "rain_mm": 0.0,
-        "wind_mps": 2.7
+        "wind_mps": 1.9
       },
       "forecast_72h": {
         "max_rain_mm": 10.59,
@@ -178,7 +178,7 @@
     },
     "CRK": {
       "name_ko": "클락 국제공항",
-      "score": 8,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -192,9 +192,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-12 19:45",
-        "rain_mm": 0.53,
-        "wind_mps": 1.2
+        "last_updated": "2026-09-12 22:00",
+        "rain_mm": 0.21,
+        "wind_mps": 1.8
       },
       "forecast_72h": {
         "max_rain_mm": 4.51,
@@ -228,7 +228,7 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 8,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -238,7 +238,7 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
