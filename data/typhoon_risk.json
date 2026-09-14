@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-14T19:34:38.767770+00:00",
-    "weather": "2026-09-14T20:59:35.556938+00:00"
+    "impact": "2026-09-14T22:44:20.932712+00:00",
+    "weather": "2026-09-14T22:44:21.751166+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,13 +45,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 04:45",
+        "current_last_updated": "2026-09-15 06:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.6,
-        "max_72h_rain_mm": 0.02,
-        "max_72h_rain_time": "2026-09-17 18:00",
-        "max_72h_wind_mps": 4.6,
-        "max_72h_wind_time": "2026-09-15 15:00"
+        "current_wind_mps": 2.2,
+        "max_72h_rain_mm": 0.12,
+        "max_72h_rain_time": "2026-09-17 22:00",
+        "max_72h_wind_mps": 4.3,
+        "max_72h_wind_time": "2026-09-15 09:00"
       },
       "score_detail": {
         "distance": 0,
@@ -79,13 +79,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 04:45",
+        "current_last_updated": "2026-09-15 06:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.5,
-        "max_72h_rain_mm": 0.17,
-        "max_72h_rain_time": "2026-09-17 09:00",
-        "max_72h_wind_mps": 5.0,
-        "max_72h_wind_time": "2026-09-15 11:00"
+        "current_wind_mps": 2.9,
+        "max_72h_rain_mm": 0.1,
+        "max_72h_rain_time": "2026-09-17 16:00",
+        "max_72h_wind_mps": 4.9,
+        "max_72h_wind_time": "2026-09-15 10:00"
       },
       "score_detail": {
         "distance": 0,
@@ -113,11 +113,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 05:45",
+        "current_last_updated": "2026-09-15 07:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.5,
+        "current_wind_mps": 1.6,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-15 05:45",
+        "max_72h_rain_time": "2026-09-15 07:30",
         "max_72h_wind_mps": 4.2,
         "max_72h_wind_time": "2026-09-15 15:00"
       },
@@ -147,13 +147,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 04:45",
+        "current_last_updated": "2026-09-15 06:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.1,
-        "max_72h_rain_mm": 2.41,
+        "current_wind_mps": 2.5,
+        "max_72h_rain_mm": 2.34,
         "max_72h_rain_time": "2026-09-15 14:00",
-        "max_72h_wind_mps": 4.0,
-        "max_72h_wind_time": "2026-09-17 21:00"
+        "max_72h_wind_mps": 3.8,
+        "max_72h_wind_time": "2026-09-15 08:00"
       },
       "score_detail": {
         "distance": 0,
@@ -164,13 +164,13 @@
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 28,
+      "score": 35,
       "risk": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "낮음"
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "주의"
       },
-      "reason_ko": "태풍 최접근 436 km",
+      "reason_ko": "태풍 최접근 436 km / 현재 시간당 강수 2.8 mm",
       "typhoon": {
         "source": "JMA_DISTANCE_FALLBACK",
         "current_distance_km": 436,
@@ -181,17 +181,17 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 03:45",
-        "current_rain_mm": 1.48,
-        "current_wind_mps": 3.7,
-        "max_72h_rain_mm": 10.7,
-        "max_72h_rain_time": "2026-09-15 09:00",
-        "max_72h_wind_mps": 3.9,
-        "max_72h_wind_time": "2026-09-15 06:00"
+        "current_last_updated": "2026-09-15 05:30",
+        "current_rain_mm": 2.8,
+        "current_wind_mps": 3.5,
+        "max_72h_rain_mm": 18.7,
+        "max_72h_rain_time": "2026-09-15 07:00",
+        "max_72h_wind_mps": 5.8,
+        "max_72h_wind_time": "2026-09-15 08:00"
       },
       "score_detail": {
         "distance": 20,
-        "rain": 8,
+        "rain": 15,
         "wind": 0
       }
     },
@@ -215,12 +215,12 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 04:45",
+        "current_last_updated": "2026-09-15 06:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.0,
-        "max_72h_rain_mm": 4.69,
-        "max_72h_rain_time": "2026-09-15 18:00",
-        "max_72h_wind_mps": 2.5,
+        "current_wind_mps": 1.2,
+        "max_72h_rain_mm": 4.19,
+        "max_72h_rain_time": "2026-09-17 19:00",
+        "max_72h_wind_mps": 2.8,
         "max_72h_wind_time": "2026-09-15 11:00"
       },
       "score_detail": {
@@ -250,13 +250,13 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 28,
+      "score": 35,
       "risk": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "낮음"
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "주의"
       },
-      "reason_ko": "하노이 노이바이 국제공항 낮음 (태풍 최접근 436 km)",
+      "reason_ko": "하노이 노이바이 국제공항 주의 (태풍 최접근 436 km / 현재 시간당 강수 2.8 mm)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-09-14T22:42:44.040451+00:00"
+  "generated_at_utc": "2026-09-14T22:44:21.914593+00:00"
 }
