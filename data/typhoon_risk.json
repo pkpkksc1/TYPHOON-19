@@ -7,7 +7,7 @@
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
     "impact": "2026-09-14T19:34:38.767770+00:00",
-    "weather": "2026-09-14T19:34:39.592770+00:00"
+    "weather": "2026-09-14T20:59:35.556938+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 03:15",
+        "current_last_updated": "2026-09-15 04:45",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.5,
+        "current_wind_mps": 2.6,
         "max_72h_rain_mm": 0.02,
         "max_72h_rain_time": "2026-09-17 18:00",
         "max_72h_wind_mps": 4.6,
@@ -79,7 +79,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 03:30",
+        "current_last_updated": "2026-09-15 04:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 3.5,
         "max_72h_rain_mm": 0.17,
@@ -113,11 +113,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 04:15",
+        "current_last_updated": "2026-09-15 05:45",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.1,
+        "current_wind_mps": 1.5,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-15 04:15",
+        "max_72h_rain_time": "2026-09-15 05:45",
         "max_72h_wind_mps": 4.2,
         "max_72h_wind_time": "2026-09-15 15:00"
       },
@@ -130,7 +130,7 @@
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -147,9 +147,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 03:30",
-        "current_rain_mm": 0.09,
-        "current_wind_mps": 1.7,
+        "current_last_updated": "2026-09-15 04:45",
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 2.1,
         "max_72h_rain_mm": 2.41,
         "max_72h_rain_time": "2026-09-15 14:00",
         "max_72h_wind_mps": 4.0,
@@ -157,20 +157,20 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 0,
         "wind": 0
       }
     },
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 40,
+      "score": 28,
       "risk": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "주의"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 436 km / 현재 시간당 강수 5.22 mm",
+      "reason_ko": "태풍 최접근 436 km",
       "typhoon": {
         "source": "JMA_DISTANCE_FALLBACK",
         "current_distance_km": 436,
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 02:30",
-        "current_rain_mm": 5.22,
-        "current_wind_mps": 3.2,
+        "current_last_updated": "2026-09-15 03:45",
+        "current_rain_mm": 1.48,
+        "current_wind_mps": 3.7,
         "max_72h_rain_mm": 10.7,
         "max_72h_rain_time": "2026-09-15 09:00",
         "max_72h_wind_mps": 3.9,
@@ -191,7 +191,7 @@
       },
       "score_detail": {
         "distance": 20,
-        "rain": 20,
+        "rain": 8,
         "wind": 0
       }
     },
@@ -215,7 +215,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-15 03:30",
+        "current_last_updated": "2026-09-15 04:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 4.69,
@@ -250,13 +250,13 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 40,
+      "score": 28,
       "risk": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "주의"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
       },
-      "reason_ko": "하노이 노이바이 국제공항 주의 (태풍 최접근 436 km / 현재 시간당 강수 5.22 mm)",
+      "reason_ko": "하노이 노이바이 국제공항 낮음 (태풍 최접근 436 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -282,13 +282,13 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 3,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-09-14T19:34:39.652589+00:00"
+  "generated_at_utc": "2026-09-14T22:42:44.040451+00:00"
 }
