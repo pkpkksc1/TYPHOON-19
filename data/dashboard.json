@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-09-16T17:43:26.118707+00:00",
+  "generated_at_utc": "2026-09-16T18:08:44.745273+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-16T17:43:20.616363+00:00",
-    "weather": "2026-09-16T17:43:25.988245+00:00",
-    "risk": "2026-09-16T17:43:26.043180+00:00"
+    "weather": "2026-09-16T18:08:44.588715+00:00",
+    "risk": "2026-09-16T18:08:44.653236+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-09-16T17:43:20.616363+00:00",
-    "weather_updated_at_utc": "2026-09-16T17:43:25.988245+00:00",
-    "impact_updated_at_utc": "2026-09-16T17:43:25.177794+00:00",
-    "risk_updated_at_utc": "2026-09-16T17:43:26.043180+00:00",
+    "weather_updated_at_utc": "2026-09-16T18:08:44.588715+00:00",
+    "impact_updated_at_utc": "2026-09-16T18:08:42.967233+00:00",
+    "risk_updated_at_utc": "2026-09-16T18:08:44.653236+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 01:30",
+        "last_updated": "2026-09-17 02:00",
         "rain_mm": 0.0,
-        "wind_mps": 2.3
+        "wind_mps": 1.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.16,
@@ -84,7 +84,7 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 01:30",
+        "last_updated": "2026-09-17 02:00",
         "rain_mm": 0.0,
         "wind_mps": 1.0
       },
@@ -111,20 +111,20 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 02:30",
+        "last_updated": "2026-09-17 03:00",
         "rain_mm": 0.0,
-        "wind_mps": 1.6
+        "wind_mps": 1.7
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-17 02:30",
+        "max_rain_time": "2026-09-17 03:00",
         "max_wind_mps": 5.3,
         "max_wind_time": "2026-09-18 21:00"
       }
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 8,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 01:30",
-        "rain_mm": 0.69,
-        "wind_mps": 1.1
+        "last_updated": "2026-09-17 02:00",
+        "rain_mm": 0.0,
+        "wind_mps": 1.0
       },
       "forecast_72h": {
         "max_rain_mm": 2.85,
@@ -165,7 +165,7 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 00:30",
+        "last_updated": "2026-09-17 01:00",
         "rain_mm": 0.05,
         "wind_mps": 1.5
       },
@@ -178,7 +178,7 @@
     },
     "CRK": {
       "name_ko": "클락 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -192,8 +192,8 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 01:30",
-        "rain_mm": 0.18,
+        "last_updated": "2026-09-17 02:00",
+        "rain_mm": 0.0,
         "wind_mps": 1.0
       },
       "forecast_72h": {
@@ -228,22 +228,22 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "클락 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 8,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "ICN_PVG",
