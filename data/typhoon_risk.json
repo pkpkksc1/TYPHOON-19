@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-15T22:08:05.421850+00:00",
-    "weather": "2026-09-15T22:08:07.471604+00:00"
+    "impact": "2026-09-15T22:17:14.683436+00:00",
+    "weather": "2026-09-15T23:52:45.307628+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-16 06:00",
+        "current_last_updated": "2026-09-16 07:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.5,
+        "current_wind_mps": 1.4,
         "max_72h_rain_mm": 0.11,
         "max_72h_rain_time": "2026-09-17 19:00",
         "max_72h_wind_mps": 3.6,
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-16 06:00",
+        "current_last_updated": "2026-09-16 07:45",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.6,
+        "current_wind_mps": 1.9,
         "max_72h_rain_mm": 0.2,
         "max_72h_rain_time": "2026-09-17 12:00",
         "max_72h_wind_mps": 4.2,
@@ -113,11 +113,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-16 07:00",
+        "current_last_updated": "2026-09-16 08:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.6,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-16 07:00",
+        "max_72h_rain_time": "2026-09-16 08:45",
         "max_72h_wind_mps": 4.9,
         "max_72h_wind_time": "2026-09-18 20:00"
       },
@@ -147,7 +147,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-16 06:00",
+        "current_last_updated": "2026-09-16 07:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.5,
         "max_72h_rain_mm": 3.01,
@@ -164,13 +164,13 @@
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 35,
+      "score": 28,
       "risk": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "주의"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 436 km / 현재 시간당 강수 2.24 mm",
+      "reason_ko": "태풍 최접근 436 km",
       "typhoon": {
         "source": "JMA_DISTANCE_FALLBACK",
         "current_distance_km": 436,
@@ -181,17 +181,17 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-16 05:00",
-        "current_rain_mm": 2.24,
-        "current_wind_mps": 3.3,
+        "current_last_updated": "2026-09-16 06:45",
+        "current_rain_mm": 1.81,
+        "current_wind_mps": 3.4,
         "max_72h_rain_mm": 4.14,
         "max_72h_rain_time": "2026-09-16 00:00",
         "max_72h_wind_mps": 3.4,
-        "max_72h_wind_time": "2026-09-16 06:00"
+        "max_72h_wind_time": "2026-09-16 06:45"
       },
       "score_detail": {
         "distance": 20,
-        "rain": 15,
+        "rain": 8,
         "wind": 0
       }
     },
@@ -215,7 +215,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-16 06:00",
+        "current_last_updated": "2026-09-16 07:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 4.21,
@@ -250,13 +250,13 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 35,
+      "score": 28,
       "risk": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "주의"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
       },
-      "reason_ko": "하노이 노이바이 국제공항 주의 (태풍 최접근 436 km / 현재 시간당 강수 2.24 mm)",
+      "reason_ko": "하노이 노이바이 국제공항 낮음 (태풍 최접근 436 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-09-15T22:08:07.532128+00:00"
+  "generated_at_utc": "2026-09-16T00:40:24.459266+00:00"
 }
