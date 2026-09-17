@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-09-17T10:23:31.588127+00:00",
+  "generated_at_utc": "2026-09-17T11:32:57.226066+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-17T10:23:31.531339+00:00",
-    "weather": "2026-09-17T06:37:07.178042+00:00",
-    "risk": "2026-09-17T07:54:55.534231+00:00"
+    "weather": "2026-09-17T11:32:57.064881+00:00",
+    "risk": "2026-09-17T11:32:57.129945+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-09-17T10:23:31.531339+00:00",
-    "weather_updated_at_utc": "2026-09-17T06:37:07.178042+00:00",
-    "impact_updated_at_utc": "2026-09-17T06:37:05.674626+00:00",
-    "risk_updated_at_utc": "2026-09-17T07:54:55.534231+00:00",
+    "weather_updated_at_utc": "2026-09-17T11:32:57.064881+00:00",
+    "impact_updated_at_utc": "2026-09-17T11:32:55.415705+00:00",
+    "risk_updated_at_utc": "2026-09-17T11:32:57.129945+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 14:15",
+        "last_updated": "2026-09-17 19:15",
         "rain_mm": 0.06,
-        "wind_mps": 2.3
+        "wind_mps": 2.5
       },
       "forecast_72h": {
         "max_rain_mm": 0.15,
@@ -70,7 +70,7 @@
     },
     "PVG": {
       "name_ko": "푸동 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 14:30",
-        "rain_mm": 0.04,
-        "wind_mps": 4.2
+        "last_updated": "2026-09-17 19:15",
+        "rain_mm": 0.0,
+        "wind_mps": 2.5
       },
       "forecast_72h": {
         "max_rain_mm": 0.21,
@@ -111,20 +111,20 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 15:30",
+        "last_updated": "2026-09-17 20:15",
         "rain_mm": 0.0,
-        "wind_mps": 1.9
+        "wind_mps": 1.5
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-17 15:30",
+        "max_rain_time": "2026-09-17 20:15",
         "max_wind_mps": 5.2,
         "max_wind_time": "2026-09-18 20:00"
       }
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 14:30",
-        "rain_mm": 0.15,
-        "wind_mps": 1.3
+        "last_updated": "2026-09-17 19:30",
+        "rain_mm": 1.77,
+        "wind_mps": 3.7
       },
       "forecast_72h": {
         "max_rain_mm": 2.77,
@@ -156,7 +156,7 @@
         "emoji": "🟡",
         "label_ko": "주의"
       },
-      "reason_ko": "태풍 최접근 436 km / 현재 시간당 강수 2.73 mm",
+      "reason_ko": "태풍 최접근 436 km / 현재 시간당 강수 3.21 mm",
       "current_distance_km": 436,
       "closest_distance_km": 436,
       "closest_time": "2026-08-26T15:00:00+09:00",
@@ -165,25 +165,25 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 13:30",
-        "rain_mm": 2.73,
-        "wind_mps": 1.0
+        "last_updated": "2026-09-17 18:15",
+        "rain_mm": 3.21,
+        "wind_mps": 1.7
       },
       "forecast_72h": {
-        "max_rain_mm": 4.09,
-        "max_rain_time": "2026-09-17 11:00",
-        "max_wind_mps": 3.6,
+        "max_rain_mm": 21.89,
+        "max_rain_time": "2026-09-17 12:00",
+        "max_wind_mps": 3.3,
         "max_wind_time": "2026-09-19 18:00"
       }
     },
     "CRK": {
       "name_ko": "클락 국제공항",
-      "score": 3,
+      "score": 15,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "특이 위험요소 낮음",
+      "reason_ko": "현재 시간당 강수 2.85 mm",
       "current_distance_km": 1289,
       "closest_distance_km": 1289,
       "closest_time": "2026-08-26T15:00:00+09:00",
@@ -192,9 +192,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-17 14:30",
-        "rain_mm": 0.38,
-        "wind_mps": 2.0
+        "last_updated": "2026-09-17 19:30",
+        "rain_mm": 2.85,
+        "wind_mps": 1.6
       },
       "forecast_72h": {
         "max_rain_mm": 4.89,
@@ -223,37 +223,37 @@
         "emoji": "🟡",
         "label_ko": "주의"
       },
-      "reason_ko": "하노이 노이바이 국제공항 주의 (태풍 최접근 436 km / 현재 시간당 강수 2.73 mm)"
+      "reason_ko": "하노이 노이바이 국제공항 주의 (태풍 최접근 436 km / 현재 시간당 강수 3.21 mm)"
     },
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 3,
+      "score": 15,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "클락 국제공항 낮음 (현재 시간당 강수 2.85 mm)"
     },
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 3,
+      "score": 8,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "마닐라 국제공항 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)"
     }
   ],
   "attribution": [
