@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-18T11:48:26.157338+00:00",
-    "weather": "2026-09-18T11:48:27.298390+00:00"
+    "impact": "2026-09-18T14:23:52.518328+00:00",
+    "weather": "2026-09-18T14:23:54.123783+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -28,7 +28,7 @@
     "SUZHOU": {
       "code": "SUZHOU",
       "name_ko": "쑤저우",
-      "score": 3,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -45,24 +45,24 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 19:30",
-        "current_rain_mm": 0.04,
+        "current_last_updated": "2026-09-18 22:15",
+        "current_rain_mm": 0.0,
         "current_wind_mps": 2.4,
-        "max_72h_rain_mm": 0.51,
-        "max_72h_rain_time": "2026-09-19 10:00",
-        "max_72h_wind_mps": 4.8,
-        "max_72h_wind_time": "2026-09-20 18:00"
+        "max_72h_rain_mm": 0.17,
+        "max_72h_rain_time": "2026-09-19 17:00",
+        "max_72h_wind_mps": 4.7,
+        "max_72h_wind_time": "2026-09-19 20:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 0,
         "wind": 0
       }
     },
     "PVG": {
       "code": "PVG",
       "name_ko": "푸동 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -79,17 +79,17 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 19:30",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 3.0,
-        "max_72h_rain_mm": 0.61,
-        "max_72h_rain_time": "2026-09-19 07:00",
-        "max_72h_wind_mps": 4.7,
-        "max_72h_wind_time": "2026-09-19 15:00"
+        "current_last_updated": "2026-09-18 22:15",
+        "current_rain_mm": 0.03,
+        "current_wind_mps": 2.7,
+        "max_72h_rain_mm": 0.37,
+        "max_72h_rain_time": "2026-09-19 09:00",
+        "max_72h_wind_mps": 4.6,
+        "max_72h_wind_time": "2026-09-20 16:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     },
@@ -113,11 +113,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 20:30",
+        "current_last_updated": "2026-09-18 23:15",
         "current_rain_mm": 0.0,
         "current_wind_mps": 4.4,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-18 20:30",
+        "max_72h_rain_time": "2026-09-18 23:15",
         "max_72h_wind_mps": 5.3,
         "max_72h_wind_time": "2026-09-18 09:00"
       },
@@ -147,13 +147,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 19:30",
-        "current_rain_mm": 0.65,
-        "current_wind_mps": 3.2,
-        "max_72h_rain_mm": 2.45,
-        "max_72h_rain_time": "2026-09-19 16:00",
-        "max_72h_wind_mps": 4.7,
-        "max_72h_wind_time": "2026-09-19 18:00"
+        "current_last_updated": "2026-09-18 22:15",
+        "current_rain_mm": 0.6,
+        "current_wind_mps": 3.4,
+        "max_72h_rain_mm": 2.21,
+        "max_72h_rain_time": "2026-09-19 19:00",
+        "max_72h_wind_mps": 4.3,
+        "max_72h_wind_time": "2026-09-20 19:00"
       },
       "score_detail": {
         "distance": 0,
@@ -164,7 +164,7 @@
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 28,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -181,24 +181,24 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 18:30",
-        "current_rain_mm": 0.66,
-        "current_wind_mps": 2.5,
-        "max_72h_rain_mm": 1.11,
-        "max_72h_rain_time": "2026-09-18 14:00",
+        "current_last_updated": "2026-09-18 21:15",
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 2.2,
+        "max_72h_rain_mm": 1.25,
+        "max_72h_rain_time": "2026-09-18 17:00",
         "max_72h_wind_mps": 3.7,
         "max_72h_wind_time": "2026-09-18 14:00"
       },
       "score_detail": {
         "distance": 20,
-        "rain": 8,
+        "rain": 0,
         "wind": 0
       }
     },
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -215,17 +215,17 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 19:30",
-        "current_rain_mm": 0.43,
+        "current_last_updated": "2026-09-18 22:15",
+        "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
-        "max_72h_rain_mm": 3.44,
-        "max_72h_rain_time": "2026-09-19 18:00",
-        "max_72h_wind_mps": 3.0,
-        "max_72h_wind_time": "2026-09-19 19:00"
+        "max_72h_rain_mm": 4.66,
+        "max_72h_rain_time": "2026-09-20 13:00",
+        "max_72h_wind_mps": 2.6,
+        "max_72h_wind_time": "2026-09-19 11:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 0,
         "wind": 0
       }
     }
@@ -240,7 +240,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -250,7 +250,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 28,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -272,7 +272,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -298,13 +298,13 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "ICN",
         "PVG"
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-09-18T11:48:27.345455+00:00"
+  "generated_at_utc": "2026-09-18T14:23:54.166508+00:00"
 }
