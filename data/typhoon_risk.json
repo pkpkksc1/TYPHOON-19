@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-17T23:30:56.313819+00:00",
-    "weather": "2026-09-17T23:30:57.773200+00:00"
+    "impact": "2026-09-18T00:24:03.710389+00:00",
+    "weather": "2026-09-18T00:33:34.026912+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,11 +45,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 07:15",
-        "current_rain_mm": 0.03,
+        "current_last_updated": "2026-09-18 08:30",
+        "current_rain_mm": 0.21,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 0.21,
-        "max_72h_rain_time": "2026-09-18 08:00",
+        "max_72h_rain_time": "2026-09-18 08:30",
         "max_72h_wind_mps": 5.0,
         "max_72h_wind_time": "2026-09-19 15:00"
       },
@@ -62,7 +62,7 @@
     "PVG": {
       "code": "PVG",
       "name_ko": "푸동 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 07:15",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 1.7,
+        "current_last_updated": "2026-09-18 08:30",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 2.7,
         "max_72h_rain_mm": 0.27,
         "max_72h_rain_time": "2026-09-19 13:00",
         "max_72h_wind_mps": 4.9,
@@ -89,7 +89,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     },
@@ -113,11 +113,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 08:15",
+        "current_last_updated": "2026-09-18 09:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.6,
+        "current_wind_mps": 5.2,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-18 08:15",
+        "max_72h_rain_time": "2026-09-18 09:30",
         "max_72h_wind_mps": 5.8,
         "max_72h_wind_time": "2026-09-18 10:00"
       },
@@ -147,9 +147,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 07:15",
+        "current_last_updated": "2026-09-18 08:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.5,
+        "current_wind_mps": 2.2,
         "max_72h_rain_mm": 1.96,
         "max_72h_rain_time": "2026-09-20 17:00",
         "max_72h_wind_mps": 4.1,
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 06:15",
-        "current_rain_mm": 0.13,
-        "current_wind_mps": 1.0,
+        "current_last_updated": "2026-09-18 07:15",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 1.3,
         "max_72h_rain_mm": 1.75,
         "max_72h_rain_time": "2026-09-18 15:00",
         "max_72h_wind_mps": 3.7,
@@ -215,7 +215,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-18 07:15",
+        "current_last_updated": "2026-09-18 08:30",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 4.89,
@@ -298,13 +298,13 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "ICN",
         "PVG"
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-09-17T23:30:57.833225+00:00"
+  "generated_at_utc": "2026-09-18T00:37:51.425390+00:00"
 }
