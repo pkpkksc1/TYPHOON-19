@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-09-19T11:29:26.562551+00:00",
+  "generated_at_utc": "2026-09-19T11:30:25.842029+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-19T10:49:52.921926+00:00",
-    "weather": "2026-09-19T10:50:01.064397+00:00",
-    "risk": "2026-09-19T11:20:42.756472+00:00"
+    "weather": "2026-09-19T11:30:25.689205+00:00",
+    "risk": "2026-09-19T11:30:25.751135+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-09-19T10:49:52.921926+00:00",
-    "weather_updated_at_utc": "2026-09-19T10:50:01.064397+00:00",
-    "impact_updated_at_utc": "2026-09-19T10:49:59.519018+00:00",
-    "risk_updated_at_utc": "2026-09-19T11:20:42.756472+00:00",
+    "weather_updated_at_utc": "2026-09-19T11:30:25.689205+00:00",
+    "impact_updated_at_utc": "2026-09-19T11:30:24.167940+00:00",
+    "risk_updated_at_utc": "2026-09-19T11:30:25.751135+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -43,7 +43,7 @@
   "locations": {
     "SUZHOU": {
       "name_ko": "쑤저우",
-      "score": 8,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-19 18:45",
-        "rain_mm": 0.56,
-        "wind_mps": 2.9
+        "last_updated": "2026-09-19 19:15",
+        "rain_mm": 0.21,
+        "wind_mps": 3.1
       },
       "forecast_72h": {
         "max_rain_mm": 0.61,
@@ -70,7 +70,7 @@
     },
     "PVG": {
       "name_ko": "푸동 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-19 18:30",
-        "rain_mm": 0.04,
-        "wind_mps": 3.5
+        "last_updated": "2026-09-19 19:15",
+        "rain_mm": 0.0,
+        "wind_mps": 3.1
       },
       "forecast_72h": {
         "max_rain_mm": 0.76,
@@ -111,25 +111,25 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-19 19:30",
+        "last_updated": "2026-09-19 20:15",
         "rain_mm": 0.0,
-        "wind_mps": 1.1
+        "wind_mps": 2.1
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-19 19:30",
+        "max_rain_time": "2026-09-19 20:15",
         "max_wind_mps": 5.0,
         "max_wind_time": "2026-09-20 15:00"
       }
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 8,
+      "score": 15,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "특이 위험요소 낮음",
+      "reason_ko": "현재 시간당 강수 2.24 mm",
       "current_distance_km": 1371,
       "closest_distance_km": 1371,
       "closest_time": "2026-08-26T15:00:00+09:00",
@@ -138,20 +138,20 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-19 18:30",
-        "rain_mm": 0.73,
-        "wind_mps": 2.7
+        "last_updated": "2026-09-19 19:15",
+        "rain_mm": 2.24,
+        "wind_mps": 2.3
       },
       "forecast_72h": {
         "max_rain_mm": 2.24,
-        "max_rain_time": "2026-09-19 19:00",
+        "max_rain_time": "2026-09-19 19:15",
         "max_wind_mps": 5.4,
         "max_wind_time": "2026-09-21 17:00"
       }
     },
     "HAN": {
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 28,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -165,9 +165,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-19 17:30",
-        "rain_mm": 0.74,
-        "wind_mps": 2.5
+        "last_updated": "2026-09-19 18:15",
+        "rain_mm": 0.2,
+        "wind_mps": 2.8
       },
       "forecast_72h": {
         "max_rain_mm": 0.83,
@@ -178,12 +178,12 @@
     },
     "CRK": {
       "name_ko": "클락 국제공항",
-      "score": 8,
+      "score": 15,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "특이 위험요소 낮음",
+      "reason_ko": "현재 시간당 강수 2.23 mm",
       "current_distance_km": 1289,
       "closest_distance_km": 1289,
       "closest_time": "2026-08-26T15:00:00+09:00",
@@ -192,8 +192,8 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-19 18:45",
-        "rain_mm": 0.88,
+        "last_updated": "2026-09-19 19:30",
+        "rain_mm": 2.23,
         "wind_mps": 1.6
       },
       "forecast_72h": {
@@ -208,7 +208,7 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 8,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -218,7 +218,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 28,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -228,32 +228,32 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 8,
+      "score": 15,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "클락 국제공항 낮음 (현재 시간당 강수 2.23 mm)"
     },
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 8,
+      "score": 15,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "마닐라 국제공항 낮음 (현재 시간당 강수 2.24 mm)"
     },
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)"
     }
   ],
   "attribution": [
