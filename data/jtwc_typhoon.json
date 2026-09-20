@@ -1,284 +1,236 @@
 {
   "parser_version": "1.0",
-  "generated_at_utc": "2026-09-20T01:34:36.602213Z",
+  "generated_at_utc": "2026-09-20T06:05:57.293908Z",
   "source": "NOAA/NWS public relay of JTWC tropical cyclone warnings",
   "source_note": "JTWC maximum sustained winds are one-minute averages. JTWC wind radii are valid over open water only.",
   "active_count": 1,
   "storms": [
     {
       "bulletin": "WTPN31",
-      "issue_time_utc": "2026-09-19T21:00:00Z",
-      "age_hours": 4.6,
+      "issue_time_utc": "2026-09-20T03:00:00Z",
+      "age_hours": 3.1,
       "jtwc_id": "24W",
       "name": "DUJUAN",
-      "storm_type": "TYPHOON",
-      "warning_number": 18,
+      "storm_type": "TROPICAL STORM",
+      "warning_number": 19,
       "source_url": "https://tgftp.nws.noaa.gov/data/raw/wt/wtpn31.pgtw..txt",
       "current": {
-        "valid_time_raw": "191800Z",
-        "lat": 28.5,
-        "lon": 137.7,
-        "movement_degrees": 325,
-        "movement_speed_kt": 9,
-        "movement_speed_kmh": 16.7,
-        "pressure_hpa": null,
-        "max_wind_kt": 65,
-        "max_wind_mps": 33.4,
-        "gust_kt": 80,
-        "gust_mps": 41.2,
+        "valid_time_raw": "200000Z",
+        "lat": 28.7,
+        "lon": 137.5,
+        "movement_degrees": 335,
+        "movement_speed_kt": 4,
+        "movement_speed_kmh": 7.4,
+        "pressure_hpa": 978,
+        "max_wind_kt": 60,
+        "max_wind_mps": 30.9,
+        "gust_kt": 75,
+        "gust_mps": 38.6,
         "wind_radii": {
-          "64kt": {
-            "threshold_kt": 64,
-            "threshold_mps": 32.9,
-            "quadrants": {
-              "NE": {
-                "nm": 15,
-                "km": 27.8
-              },
-              "SE": {
-                "nm": 15,
-                "km": 27.8
-              },
-              "SW": {
-                "nm": 15,
-                "km": 27.8
-              },
-              "NW": {
-                "nm": 15,
-                "km": 27.8
-              }
-            },
-            "max_radius_nm": 15,
-            "max_radius_km": 27.8
-          },
           "50kt": {
             "threshold_kt": 50,
             "threshold_mps": 25.7,
             "quadrants": {
               "NE": {
-                "nm": 50,
-                "km": 92.6
-              },
-              "SE": {
-                "nm": 30,
-                "km": 55.6
-              },
-              "SW": {
-                "nm": 30,
-                "km": 55.6
-              },
-              "NW": {
                 "nm": 40,
                 "km": 74.1
+              },
+              "SE": {
+                "nm": 40,
+                "km": 74.1
+              },
+              "SW": {
+                "nm": 40,
+                "km": 74.1
+              },
+              "NW": {
+                "nm": 35,
+                "km": 64.8
               }
             },
-            "max_radius_nm": 50,
-            "max_radius_km": 92.6
+            "max_radius_nm": 40,
+            "max_radius_km": 74.1
           },
           "34kt": {
             "threshold_kt": 34,
             "threshold_mps": 17.5,
             "quadrants": {
               "NE": {
-                "nm": 220,
-                "km": 407.4
+                "nm": 200,
+                "km": 370.4
               },
               "SE": {
                 "nm": 140,
                 "km": 259.3
               },
               "SW": {
-                "nm": 120,
-                "km": 222.2
+                "nm": 140,
+                "km": 259.3
               },
               "NW": {
-                "nm": 220,
-                "km": 407.4
+                "nm": 180,
+                "km": 333.4
               }
             },
-            "max_radius_nm": 220,
-            "max_radius_km": 407.4
+            "max_radius_nm": 200,
+            "max_radius_km": 370.4
           }
         }
       },
       "forecast": [
         {
           "forecast_hour": 12,
-          "valid_time_raw": "200600Z",
-          "lat": 29.9,
-          "lon": 137.3,
-          "max_wind_kt": 65,
-          "max_wind_mps": 33.4,
-          "gust_kt": 80,
-          "gust_mps": 41.2,
+          "valid_time_raw": "201200Z",
+          "lat": 30.2,
+          "lon": 137.5,
+          "max_wind_kt": 60,
+          "max_wind_mps": 30.9,
+          "gust_kt": 75,
+          "gust_mps": 38.6,
           "wind_radii": {
-            "64kt": {
-              "threshold_kt": 64,
-              "threshold_mps": 32.9,
-              "quadrants": {
-                "NE": {
-                  "nm": 15,
-                  "km": 27.8
-                },
-                "SE": {
-                  "nm": 15,
-                  "km": 27.8
-                },
-                "SW": {
-                  "nm": 15,
-                  "km": 27.8
-                },
-                "NW": {
-                  "nm": 15,
-                  "km": 27.8
-                }
-              },
-              "max_radius_nm": 15,
-              "max_radius_km": 27.8
-            },
             "50kt": {
               "threshold_kt": 50,
               "threshold_mps": 25.7,
               "quadrants": {
                 "NE": {
-                  "nm": 50,
-                  "km": 92.6
+                  "nm": 40,
+                  "km": 74.1
                 },
                 "SE": {
-                  "nm": 30,
-                  "km": 55.6
+                  "nm": 40,
+                  "km": 74.1
                 },
                 "SW": {
-                  "nm": 30,
-                  "km": 55.6
+                  "nm": 40,
+                  "km": 74.1
                 },
                 "NW": {
                   "nm": 40,
                   "km": 74.1
                 }
               },
-              "max_radius_nm": 50,
-              "max_radius_km": 92.6
+              "max_radius_nm": 40,
+              "max_radius_km": 74.1
             },
             "34kt": {
               "threshold_kt": 34,
               "threshold_mps": 17.5,
               "quadrants": {
                 "NE": {
-                  "nm": 220,
-                  "km": 407.4
+                  "nm": 200,
+                  "km": 370.4
                 },
                 "SE": {
-                  "nm": 170,
-                  "km": 314.8
+                  "nm": 180,
+                  "km": 333.4
                 },
                 "SW": {
-                  "nm": 140,
-                  "km": 259.3
-                },
-                "NW": {
-                  "nm": 210,
-                  "km": 388.9
-                }
-              },
-              "max_radius_nm": 220,
-              "max_radius_km": 407.4
-            }
-          }
-        },
-        {
-          "forecast_hour": 24,
-          "valid_time_raw": "201800Z",
-          "lat": 31.7,
-          "lon": 137.7,
-          "max_wind_kt": 65,
-          "max_wind_mps": 33.4,
-          "gust_kt": 80,
-          "gust_mps": 41.2,
-          "wind_radii": {
-            "64kt": {
-              "threshold_kt": 64,
-              "threshold_mps": 32.9,
-              "quadrants": {
-                "NE": {
-                  "nm": 15,
-                  "km": 27.8
-                },
-                "SE": {
-                  "nm": 15,
-                  "km": 27.8
-                },
-                "SW": {
-                  "nm": 15,
-                  "km": 27.8
-                },
-                "NW": {
-                  "nm": 15,
-                  "km": 27.8
-                }
-              },
-              "max_radius_nm": 15,
-              "max_radius_km": 27.8
-            },
-            "50kt": {
-              "threshold_kt": 50,
-              "threshold_mps": 25.7,
-              "quadrants": {
-                "NE": {
-                  "nm": 50,
-                  "km": 92.6
-                },
-                "SE": {
-                  "nm": 50,
-                  "km": 92.6
-                },
-                "SW": {
-                  "nm": 30,
-                  "km": 55.6
-                },
-                "NW": {
-                  "nm": 40,
-                  "km": 74.1
-                }
-              },
-              "max_radius_nm": 50,
-              "max_radius_km": 92.6
-            },
-            "34kt": {
-              "threshold_kt": 34,
-              "threshold_mps": 17.5,
-              "quadrants": {
-                "NE": {
-                  "nm": 210,
-                  "km": 388.9
-                },
-                "SE": {
-                  "nm": 170,
-                  "km": 314.8
-                },
-                "SW": {
-                  "nm": 140,
-                  "km": 259.3
+                  "nm": 160,
+                  "km": 296.3
                 },
                 "NW": {
                   "nm": 180,
                   "km": 333.4
                 }
               },
-              "max_radius_nm": 210,
-              "max_radius_km": 388.9
+              "max_radius_nm": 200,
+              "max_radius_km": 370.4
+            }
+          }
+        },
+        {
+          "forecast_hour": 24,
+          "valid_time_raw": "210000Z",
+          "lat": 32.3,
+          "lon": 138.5,
+          "max_wind_kt": 65,
+          "max_wind_mps": 33.4,
+          "gust_kt": 80,
+          "gust_mps": 41.2,
+          "wind_radii": {
+            "64kt": {
+              "threshold_kt": 64,
+              "threshold_mps": 32.9,
+              "quadrants": {
+                "NE": {
+                  "nm": 20,
+                  "km": 37.0
+                },
+                "SE": {
+                  "nm": 20,
+                  "km": 37.0
+                },
+                "SW": {
+                  "nm": 0,
+                  "km": 0.0
+                },
+                "NW": {
+                  "nm": 0,
+                  "km": 0.0
+                }
+              },
+              "max_radius_nm": 20,
+              "max_radius_km": 37.0
+            },
+            "50kt": {
+              "threshold_kt": 50,
+              "threshold_mps": 25.7,
+              "quadrants": {
+                "NE": {
+                  "nm": 40,
+                  "km": 74.1
+                },
+                "SE": {
+                  "nm": 50,
+                  "km": 92.6
+                },
+                "SW": {
+                  "nm": 40,
+                  "km": 74.1
+                },
+                "NW": {
+                  "nm": 40,
+                  "km": 74.1
+                }
+              },
+              "max_radius_nm": 50,
+              "max_radius_km": 92.6
+            },
+            "34kt": {
+              "threshold_kt": 34,
+              "threshold_mps": 17.5,
+              "quadrants": {
+                "NE": {
+                  "nm": 190,
+                  "km": 351.9
+                },
+                "SE": {
+                  "nm": 180,
+                  "km": 333.4
+                },
+                "SW": {
+                  "nm": 160,
+                  "km": 296.3
+                },
+                "NW": {
+                  "nm": 160,
+                  "km": 296.3
+                }
+              },
+              "max_radius_nm": 190,
+              "max_radius_km": 351.9
             }
           }
         },
         {
           "forecast_hour": 36,
-          "valid_time_raw": "210600Z",
-          "lat": 33.9,
-          "lon": 139.7,
-          "max_wind_kt": 65,
-          "max_wind_mps": 33.4,
-          "gust_kt": 80,
-          "gust_mps": 41.2,
+          "valid_time_raw": "211200Z",
+          "lat": 34.8,
+          "lon": 141.5,
+          "max_wind_kt": 70,
+          "max_wind_mps": 36.0,
+          "gust_kt": 85,
+          "gust_mps": 43.7,
           "wind_radii": {
             "64kt": {
               "threshold_kt": 64,
@@ -313,40 +265,40 @@
                   "km": 92.6
                 },
                 "SE": {
-                  "nm": 60,
-                  "km": 111.1
+                  "nm": 70,
+                  "km": 129.6
                 },
                 "SW": {
-                  "nm": 40,
-                  "km": 74.1
+                  "nm": 60,
+                  "km": 111.1
                 },
                 "NW": {
                   "nm": 40,
                   "km": 74.1
                 }
               },
-              "max_radius_nm": 60,
-              "max_radius_km": 111.1
+              "max_radius_nm": 70,
+              "max_radius_km": 129.6
             },
             "34kt": {
               "threshold_kt": 34,
               "threshold_mps": 17.5,
               "quadrants": {
                 "NE": {
+                  "nm": 150,
+                  "km": 277.8
+                },
+                "SE": {
                   "nm": 180,
                   "km": 333.4
                 },
-                "SE": {
-                  "nm": 170,
-                  "km": 314.8
-                },
                 "SW": {
-                  "nm": 140,
-                  "km": 259.3
+                  "nm": 180,
+                  "km": 333.4
                 },
                 "NW": {
-                  "nm": 140,
-                  "km": 259.3
+                  "nm": 130,
+                  "km": 240.8
                 }
               },
               "max_radius_nm": 180,
@@ -356,9 +308,9 @@
         },
         {
           "forecast_hour": 48,
-          "valid_time_raw": "211800Z",
-          "lat": 36.5,
-          "lon": 143.6,
+          "valid_time_raw": "220000Z",
+          "lat": 37.5,
+          "lon": 146.5,
           "max_wind_kt": 70,
           "max_wind_mps": 36.0,
           "gust_kt": 85,
@@ -377,8 +329,8 @@
                   "km": 74.1
                 },
                 "SW": {
-                  "nm": 30,
-                  "km": 55.6
+                  "nm": 20,
+                  "km": 37.0
                 },
                 "NW": {
                   "nm": 0,
@@ -417,168 +369,144 @@
               "threshold_mps": 17.5,
               "quadrants": {
                 "NE": {
-                  "nm": 160,
-                  "km": 296.3
+                  "nm": 120,
+                  "km": 222.2
                 },
                 "SE": {
-                  "nm": 170,
-                  "km": 314.8
+                  "nm": 180,
+                  "km": 333.4
                 },
                 "SW": {
-                  "nm": 170,
-                  "km": 314.8
+                  "nm": 200,
+                  "km": 370.4
                 },
                 "NW": {
-                  "nm": 140,
-                  "km": 259.3
+                  "nm": 130,
+                  "km": 240.8
                 }
               },
-              "max_radius_nm": 170,
-              "max_radius_km": 314.8
+              "max_radius_nm": 200,
+              "max_radius_km": 370.4
             }
           }
         },
         {
           "forecast_hour": 60,
-          "valid_time_raw": "220600Z",
-          "lat": 39.1,
-          "lon": 149.3,
-          "max_wind_kt": 70,
-          "max_wind_mps": 36.0,
-          "gust_kt": 85,
-          "gust_mps": 43.7,
+          "valid_time_raw": "221200Z",
+          "lat": 39.9,
+          "lon": 153.2,
+          "max_wind_kt": 60,
+          "max_wind_mps": 30.9,
+          "gust_kt": 75,
+          "gust_mps": 38.6,
           "wind_radii": {
-            "64kt": {
-              "threshold_kt": 64,
-              "threshold_mps": 32.9,
-              "quadrants": {
-                "NE": {
-                  "nm": 20,
-                  "km": 37.0
-                },
-                "SE": {
-                  "nm": 40,
-                  "km": 74.1
-                },
-                "SW": {
-                  "nm": 30,
-                  "km": 55.6
-                },
-                "NW": {
-                  "nm": 0,
-                  "km": 0.0
-                }
-              },
-              "max_radius_nm": 40,
-              "max_radius_km": 74.1
-            },
             "50kt": {
               "threshold_kt": 50,
               "threshold_mps": 25.7,
               "quadrants": {
                 "NE": {
-                  "nm": 40,
-                  "km": 74.1
-                },
-                "SE": {
-                  "nm": 80,
-                  "km": 148.2
-                },
-                "SW": {
-                  "nm": 60,
-                  "km": 111.1
-                },
-                "NW": {
                   "nm": 30,
                   "km": 55.6
+                },
+                "SE": {
+                  "nm": 70,
+                  "km": 129.6
+                },
+                "SW": {
+                  "nm": 50,
+                  "km": 92.6
+                },
+                "NW": {
+                  "nm": 20,
+                  "km": 37.0
                 }
               },
-              "max_radius_nm": 80,
-              "max_radius_km": 148.2
+              "max_radius_nm": 70,
+              "max_radius_km": 129.6
             },
             "34kt": {
               "threshold_kt": 34,
               "threshold_mps": 17.5,
               "quadrants": {
                 "NE": {
-                  "nm": 130,
-                  "km": 240.8
+                  "nm": 110,
+                  "km": 203.7
                 },
                 "SE": {
-                  "nm": 170,
-                  "km": 314.8
+                  "nm": 190,
+                  "km": 351.9
                 },
                 "SW": {
-                  "nm": 180,
-                  "km": 333.4
+                  "nm": 200,
+                  "km": 370.4
                 },
                 "NW": {
-                  "nm": 140,
-                  "km": 259.3
+                  "nm": 130,
+                  "km": 240.8
                 }
               },
-              "max_radius_nm": 180,
-              "max_radius_km": 333.4
+              "max_radius_nm": 200,
+              "max_radius_km": 370.4
             }
           }
         },
         {
           "forecast_hour": 72,
-          "valid_time_raw": "221800Z",
-          "lat": 41.3,
-          "lon": 156.4,
-          "max_wind_kt": 55,
-          "max_wind_mps": 28.3,
-          "gust_kt": 70,
-          "gust_mps": 36.0,
+          "valid_time_raw": "230000Z",
+          "lat": 42.0,
+          "lon": 161.0,
+          "max_wind_kt": 50,
+          "max_wind_mps": 25.7,
+          "gust_kt": 65,
+          "gust_mps": 33.4,
           "wind_radii": {
             "50kt": {
               "threshold_kt": 50,
               "threshold_mps": 25.7,
               "quadrants": {
                 "NE": {
-                  "nm": 40,
-                  "km": 74.1
+                  "nm": 0,
+                  "km": 0.0
                 },
                 "SE": {
-                  "nm": 80,
-                  "km": 148.2
+                  "nm": 70,
+                  "km": 129.6
                 },
                 "SW": {
-                  "nm": 60,
-                  "km": 111.1
+                  "nm": 40,
+                  "km": 74.1
                 },
                 "NW": {
                   "nm": 0,
                   "km": 0.0
                 }
               },
-              "max_radius_nm": 80,
-              "max_radius_km": 148.2
+              "max_radius_nm": 70,
+              "max_radius_km": 129.6
             },
             "34kt": {
               "threshold_kt": 34,
               "threshold_mps": 17.5,
               "quadrants": {
                 "NE": {
-                  "nm": 120,
-                  "km": 222.2
+                  "nm": 90,
+                  "km": 166.7
                 },
                 "SE": {
-                  "nm": 190,
-                  "km": 351.9
+                  "nm": 200,
+                  "km": 370.4
                 },
                 "SW": {
-                  "nm": 190,
-                  "km": 351.9
+                  "nm": 220,
+                  "km": 407.4
                 },
                 "NW": {
                   "nm": 120,
                   "km": 222.2
                 }
               },
-              "max_radius_nm": 190,
-              "max_radius_km": 351.9
+              "max_radius_nm": 220,
+              "max_radius_km": 407.4
             }
           }
         }
