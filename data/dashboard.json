@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-09-20T00:21:00.754812+00:00",
+  "generated_at_utc": "2026-09-20T01:00:06.246206+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-09-19T22:28:11.628274+00:00",
-    "weather": "2026-09-19T23:29:13.835900+00:00",
-    "risk": "2026-09-19T23:29:13.887675+00:00"
+    "jma": "2026-09-20T00:59:57.423024+00:00",
+    "weather": "2026-09-20T01:00:06.101728+00:00",
+    "risk": "2026-09-20T01:00:06.160980+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
-    "jma_updated_at_utc": "2026-09-19T22:28:11.628274+00:00",
-    "weather_updated_at_utc": "2026-09-19T23:29:13.835900+00:00",
-    "impact_updated_at_utc": "2026-09-19T23:29:12.620434+00:00",
-    "risk_updated_at_utc": "2026-09-19T23:29:13.887675+00:00",
+    "jma_updated_at_utc": "2026-09-20T00:59:57.423024+00:00",
+    "weather_updated_at_utc": "2026-09-20T01:00:06.101728+00:00",
+    "impact_updated_at_utc": "2026-09-20T01:00:04.302515+00:00",
+    "risk_updated_at_utc": "2026-09-20T01:00:06.160980+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -43,7 +43,7 @@
   "locations": {
     "SUZHOU": {
       "name_ko": "쑤저우",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-20 07:15",
-        "rain_mm": 0.01,
-        "wind_mps": 2.1
+        "last_updated": "2026-09-20 08:45",
+        "rain_mm": 0.0,
+        "wind_mps": 2.2
       },
       "forecast_72h": {
         "max_rain_mm": 0.09,
@@ -84,13 +84,13 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-20 07:15",
+        "last_updated": "2026-09-20 08:45",
         "rain_mm": 0.0,
-        "wind_mps": 2.6
+        "wind_mps": 3.1
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-20 07:15",
+        "max_rain_time": "2026-09-20 08:45",
         "max_wind_mps": 4.7,
         "max_wind_time": "2026-09-21 15:00"
       }
@@ -111,20 +111,20 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-20 08:15",
+        "last_updated": "2026-09-20 09:45",
         "rain_mm": 0.0,
         "wind_mps": 1.7
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-20 08:15",
+        "max_rain_time": "2026-09-20 09:45",
         "max_wind_mps": 4.9,
         "max_wind_time": "2026-09-20 16:00"
       }
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-20 07:15",
-        "rain_mm": 0.28,
-        "wind_mps": 1.9
+        "last_updated": "2026-09-20 08:45",
+        "rain_mm": 0.0,
+        "wind_mps": 1.2
       },
       "forecast_72h": {
         "max_rain_mm": 2.02,
@@ -165,13 +165,13 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-20 06:15",
+        "last_updated": "2026-09-20 07:45",
         "rain_mm": 0.0,
         "wind_mps": 1.0
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-20 06:15",
+        "max_rain_time": "2026-09-20 07:45",
         "max_wind_mps": 3.5,
         "max_wind_time": "2026-09-22 20:00"
       }
@@ -192,7 +192,7 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-20 07:15",
+        "last_updated": "2026-09-20 08:45",
         "rain_mm": 0.0,
         "wind_mps": 1.0
       },
@@ -208,7 +208,7 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -228,7 +228,7 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -238,7 +238,7 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
