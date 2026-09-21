@@ -11,17 +11,17 @@
       "name_cn": "杜鹃",
       "state": "start",
       "current": {
-        "point_id": 3336730,
-        "time_utc": "202609210300",
-        "grade": "STS",
-        "grade_ko": "강한 열대폭풍",
-        "lon": 138.9,
-        "lat": 33,
-        "pressure_hpa": 980,
-        "max_wind_mps": 30,
-        "movement_direction": "NE",
-        "movement_direction_ko": "북동",
-        "movement_speed_kmh": 37,
+        "point_id": 3336803,
+        "time_utc": "202609210900",
+        "grade": "TY",
+        "grade_ko": "태풍",
+        "lon": 140.5,
+        "lat": 34.5,
+        "pressure_hpa": 970,
+        "max_wind_mps": 33,
+        "movement_direction": "ENE",
+        "movement_direction_ko": "동북동",
+        "movement_speed_kmh": 57,
         "wind_radii": [
           {
             "label": "30KTS",
@@ -35,7 +35,7 @@
               300,
               300,
               400,
-              3336730
+              3336803
             ],
             "meaning_ko": "30kt 풍권"
           },
@@ -51,7 +51,7 @@
               100,
               100,
               100,
-              3336730
+              3336803
             ],
             "meaning_ko": "50kt 폭풍권"
           }
@@ -60,9 +60,9 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202609210300",
-          "lon": 142.5,
-          "lat": 35.6,
+          "base_time_utc": "202609210900",
+          "lon": 146.9,
+          "lat": 37.7,
           "pressure_hpa": 980,
           "max_wind_mps": 30,
           "agency": "BABJ",
@@ -71,9 +71,9 @@
         },
         {
           "forecast_hour": 24,
-          "base_time_utc": "202609210300",
-          "lon": 148.3,
-          "lat": 38.3,
+          "base_time_utc": "202609210900",
+          "lon": 154,
+          "lat": 40.3,
           "pressure_hpa": 985,
           "max_wind_mps": 25,
           "agency": "BABJ",
@@ -81,9 +81,9 @@
           "grade_ko": "강한 열대폭풍"
         }
       ],
-      "raw_point_count": 38
+      "raw_point_count": 40
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-09-21T06:11:56.380592+00:00"
+  "generated_at_utc": "2026-09-21T11:04:07.163200+00:00"
 }
