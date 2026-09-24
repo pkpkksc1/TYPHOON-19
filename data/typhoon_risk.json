@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-24T17:56:50.272547+00:00",
-    "weather": "2026-09-24T17:56:51.884104+00:00"
+    "impact": "2026-09-24T19:02:42.705550+00:00",
+    "weather": "2026-09-24T19:02:44.327604+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-25 01:45",
+        "current_last_updated": "2026-09-25 03:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.4,
+        "current_wind_mps": 3.1,
         "max_72h_rain_mm": 0.38,
         "max_72h_rain_time": "2026-09-26 16:00",
         "max_72h_wind_mps": 4.5,
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-25 01:45",
+        "current_last_updated": "2026-09-25 03:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.4,
+        "current_wind_mps": 2.3,
         "max_72h_rain_mm": 0.43,
         "max_72h_rain_time": "2026-09-27 10:00",
         "max_72h_wind_mps": 4.2,
@@ -113,9 +113,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-25 02:45",
+        "current_last_updated": "2026-09-25 03:45",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.4,
+        "current_wind_mps": 1.0,
         "max_72h_rain_mm": 0.82,
         "max_72h_rain_time": "2026-09-25 21:00",
         "max_72h_wind_mps": 5.2,
@@ -147,9 +147,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-25 01:45",
-        "current_rain_mm": 1.2,
-        "current_wind_mps": 2.2,
+        "current_last_updated": "2026-09-25 02:45",
+        "current_rain_mm": 0.99,
+        "current_wind_mps": 2.0,
         "max_72h_rain_mm": 1.74,
         "max_72h_rain_time": "2026-09-25 20:00",
         "max_72h_wind_mps": 6.7,
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-25 00:45",
+        "current_last_updated": "2026-09-25 02:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.8,
+        "current_wind_mps": 1.5,
         "max_72h_rain_mm": 1.48,
         "max_72h_rain_time": "2026-09-27 16:00",
         "max_72h_wind_mps": 4.3,
@@ -198,13 +198,13 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 15,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "현재 시간당 강수 2.96 mm",
+      "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
         "source": "JMA_DISTANCE_FALLBACK",
         "current_distance_km": 1289,
@@ -215,17 +215,17 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-25 01:45",
-        "current_rain_mm": 2.96,
+        "current_last_updated": "2026-09-25 02:45",
+        "current_rain_mm": 0.75,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 2.96,
-        "max_72h_rain_time": "2026-09-25 01:45",
+        "max_72h_rain_time": "2026-09-25 01:00",
         "max_72h_wind_mps": 2.9,
         "max_72h_wind_time": "2026-09-27 15:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 15,
+        "rain": 8,
         "wind": 0
       }
     }
@@ -266,13 +266,13 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 15,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "클락 국제공항 낮음 (현재 시간당 강수 2.96 mm)",
+      "reason_ko": "클락 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-09-24T17:56:51.931745+00:00"
+  "generated_at_utc": "2026-09-24T19:02:44.378939+00:00"
 }
