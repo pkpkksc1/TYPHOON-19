@@ -54,21 +54,21 @@
       "slot": "VPTW61",
       "event_id": "TC2632",
       "information_title": "台風解析・予報情報（５日予報）（Ｈ３０）",
-      "feed_updated": "2026-09-24T21:40:38Z",
-      "report_time": "2026-09-25T06:45:00+09:00",
-      "target_time": "2026-09-25T06:00:00+09:00",
-      "source_url": "https://www.data.jma.go.jp/developer/xml/data/20260924214039_0_VPTW61_010000.xml",
+      "feed_updated": "2026-09-25T00:40:25Z",
+      "report_time": "2026-09-25T09:45:00+09:00",
+      "target_time": "2026-09-25T09:00:00+09:00",
+      "source_url": "https://www.data.jma.go.jp/developer/xml/data/20260925004026_0_VPTW61_010000.xml",
       "typhoon": {
         "number": "2626",
         "name": "SURIGAE",
         "kana": "スリゲ"
       },
       "analysis": {
-        "time": "2026-09-25T06:00:00+09:00",
+        "time": "2026-09-25T09:00:00+09:00",
         "time_type": "実況",
-        "lat": 19.4,
-        "lon": 131.2,
-        "raw_coordinate": "+19.4+131.2/",
+        "lat": 19.9,
+        "lon": 130.3,
+        "raw_coordinate": "+19.9+130.3/",
         "area": "熱帯低気圧",
         "pressure_hpa": 1000.0,
         "max_wind_source_value": 40.0,
@@ -78,9 +78,9 @@
         "gust_source_unit": "ノット",
         "gust_mps": 30.9,
         "movement_direction": "西北西",
-        "movement_speed": 10.0,
+        "movement_speed": 12.0,
         "movement_speed_unit": "ノット",
-        "movement_speed_kmh": 18.5,
+        "movement_speed_kmh": 22.2,
         "forecast_circle_radius": null,
         "forecast_circle_radius_unit": null,
         "forecast_circle_radius_km": null,
@@ -195,33 +195,33 @@
           "issues": []
         },
         "distances_km": {
-          "SUZHOU": 1697,
-          "PVG": 1610,
-          "ICN": 2061,
-          "MNL": 1211,
-          "HAN": 2653,
-          "CRK": 1223
+          "SUZHOU": 1597,
+          "PVG": 1512,
+          "ICN": 1988,
+          "MNL": 1153,
+          "HAN": 2552,
+          "CRK": 1158
         }
       },
       "forecast": [
         {
-          "time": "2026-09-25T18:00:00+09:00",
+          "time": "2026-09-25T21:00:00+09:00",
           "time_type": "予報　１２時間後",
-          "lat": 20.6,
-          "lon": 129.0,
-          "raw_coordinate": "+20.6+129.0/",
+          "lat": 20.8,
+          "lon": 128.8,
+          "raw_coordinate": "+20.8+128.8/",
           "area": "熱帯低気圧",
-          "pressure_hpa": 998.0,
-          "max_wind_source_value": 45.0,
+          "pressure_hpa": 996.0,
+          "max_wind_source_value": 50.0,
           "max_wind_source_unit": "ノット",
-          "max_wind_mps": 23.1,
-          "gust_source_value": 65.0,
+          "max_wind_mps": 25.7,
+          "gust_source_value": 70.0,
           "gust_source_unit": "ノット",
-          "gust_mps": 33.4,
+          "gust_mps": 36.0,
           "movement_direction": "西北西",
-          "movement_speed": 12.0,
+          "movement_speed": 8.0,
           "movement_speed_unit": "ノット",
-          "movement_speed_kmh": 22.2,
+          "movement_speed_kmh": 14.8,
           "forecast_circle_radius": null,
           "forecast_circle_radius_unit": null,
           "forecast_circle_radius_km": null,
@@ -291,32 +291,32 @@
           },
           "forecast_hour": 12,
           "distances_km": {
-            "SUZHOU": 1456,
-            "PVG": 1375,
-            "ICN": 1891,
-            "MNL": 1083,
-            "HAN": 2408,
-            "CRK": 1077
+            "SUZHOU": 1426,
+            "PVG": 1345,
+            "ICN": 1866,
+            "MNL": 1081,
+            "HAN": 2385,
+            "CRK": 1072
           }
         },
         {
-          "time": "2026-09-26T06:00:00+09:00",
+          "time": "2026-09-26T09:00:00+09:00",
           "time_type": "予報　２４時間後",
-          "lat": 21.6,
-          "lon": 127.5,
-          "raw_coordinate": "+21.6+127.5/",
+          "lat": 21.8,
+          "lon": 127.4,
+          "raw_coordinate": "+21.8+127.4/",
           "area": "熱帯低気圧",
-          "pressure_hpa": 992.0,
-          "max_wind_source_value": 50.0,
+          "pressure_hpa": 990.0,
+          "max_wind_source_value": 55.0,
           "max_wind_source_unit": "ノット",
-          "max_wind_mps": 25.7,
-          "gust_source_value": 70.0,
+          "max_wind_mps": 28.3,
+          "gust_source_value": 80.0,
           "gust_source_unit": "ノット",
-          "gust_mps": 36.0,
+          "gust_mps": 41.2,
           "movement_direction": "北西",
-          "movement_speed": 9.0,
+          "movement_speed": 8.0,
           "movement_speed_unit": "ノット",
-          "movement_speed_kmh": 16.7,
+          "movement_speed_kmh": 14.8,
           "forecast_circle_radius": null,
           "forecast_circle_radius_unit": null,
           "forecast_circle_radius_km": null,
@@ -332,6 +332,18 @@
               "value": 120.0,
               "unit": "km",
               "km": 120.0
+            },
+            {
+              "type": "半径",
+              "value": 95.0,
+              "unit": "海里",
+              "km": 175.9
+            },
+            {
+              "type": "半径",
+              "value": 175.0,
+              "unit": "km",
+              "km": 175.0
             },
             {
               "type": "７０パーセント確率半径",
@@ -363,6 +375,18 @@
                 "value": 120.0,
                 "unit": "km",
                 "km": 120.0
+              },
+              {
+                "type": "半径",
+                "value": 95.0,
+                "unit": "海里",
+                "km": 175.9
+              },
+              {
+                "type": "半径",
+                "value": 175.0,
+                "unit": "km",
+                "km": 175.0
               },
               {
                 "type": "７０パーセント確率半径",
@@ -386,20 +410,20 @@
           },
           "forecast_hour": 24,
           "distances_km": {
-            "SUZHOU": 1279,
-            "PVG": 1203,
-            "ICN": 1767,
-            "MNL": 1044,
-            "HAN": 2244,
-            "CRK": 1022
+            "SUZHOU": 1254,
+            "PVG": 1178,
+            "ICN": 1744,
+            "MNL": 1054,
+            "HAN": 2233,
+            "CRK": 1030
           }
         },
         {
-          "time": "2026-09-27T03:00:00+09:00",
-          "time_type": "予報　４５時間後",
-          "lat": 23.1,
-          "lon": 126.9,
-          "raw_coordinate": "+23.1+126.9/",
+          "time": "2026-09-27T09:00:00+09:00",
+          "time_type": "予報　４８時間後",
+          "lat": 23.8,
+          "lon": 127.5,
+          "raw_coordinate": "+23.8+127.5/",
           "area": "熱帯低気圧",
           "pressure_hpa": 975.0,
           "max_wind_source_value": 70.0,
@@ -408,7 +432,7 @@
           "gust_source_value": 100.0,
           "gust_source_unit": "ノット",
           "gust_mps": 51.4,
-          "movement_direction": "北北西",
+          "movement_direction": "北",
           "movement_speed": null,
           "movement_speed_unit": null,
           "movement_speed_kmh": null,
@@ -430,15 +454,15 @@
             },
             {
               "type": "半径",
-              "value": 150.0,
+              "value": 145.0,
               "unit": "海里",
-              "km": 277.8
+              "km": 268.5
             },
             {
               "type": "半径",
-              "value": 280.0,
+              "value": 270.0,
               "unit": "km",
-              "km": 280.0
+              "km": 270.0
             },
             {
               "type": "７０パーセント確率半径",
@@ -473,15 +497,15 @@
               },
               {
                 "type": "半径",
-                "value": 150.0,
+                "value": 145.0,
                 "unit": "海里",
-                "km": 277.8
+                "km": 268.5
               },
               {
                 "type": "半径",
-                "value": 280.0,
+                "value": 270.0,
                 "unit": "km",
-                "km": 280.0
+                "km": 270.0
               },
               {
                 "type": "７０パーセント確率半径",
@@ -503,22 +527,22 @@
               "forecast_circle_radius_not_found"
             ]
           },
-          "forecast_hour": 45,
+          "forecast_hour": 48,
           "distances_km": {
-            "SUZHOU": 1104,
-            "PVG": 1026,
-            "ICN": 1597,
-            "MNL": 1138,
-            "HAN": 2180,
-            "CRK": 1103
+            "SUZHOU": 1076,
+            "PVG": 991,
+            "ICN": 1522,
+            "MNL": 1237,
+            "HAN": 2245,
+            "CRK": 1202
           }
         },
         {
-          "time": "2026-09-28T03:00:00+09:00",
-          "time_type": "予報　６９時間後",
-          "lat": 25.2,
-          "lon": 128.3,
-          "raw_coordinate": "+25.2+128.3/",
+          "time": "2026-09-28T09:00:00+09:00",
+          "time_type": "予報　７２時間後",
+          "lat": 25.6,
+          "lon": 129.2,
+          "raw_coordinate": "+25.6+129.2/",
           "area": "熱帯低気圧",
           "pressure_hpa": 960.0,
           "max_wind_source_value": 80.0,
@@ -527,7 +551,7 @@
           "gust_source_value": 115.0,
           "gust_source_unit": "ノット",
           "gust_mps": 59.2,
-          "movement_direction": "北北東",
+          "movement_direction": "北東",
           "movement_speed": 6.0,
           "movement_speed_unit": "ノット",
           "movement_speed_kmh": 11.1,
@@ -537,39 +561,39 @@
           "radius_details": [
             {
               "type": "７０パーセント確率半径",
-              "value": 120.0,
+              "value": 140.0,
               "unit": "海里",
-              "km": 222.2
+              "km": 259.3
             },
             {
               "type": "７０パーセント確率半径",
-              "value": 220.0,
+              "value": 260.0,
               "unit": "km",
-              "km": 220.0
+              "km": 260.0
             },
             {
               "type": "半径",
-              "value": 170.0,
+              "value": 190.0,
               "unit": "海里",
-              "km": 314.8
+              "km": 351.9
             },
             {
               "type": "半径",
-              "value": 310.0,
+              "value": 350.0,
               "unit": "km",
-              "km": 310.0
+              "km": 350.0
             },
             {
               "type": "７０パーセント確率半径",
-              "value": 120.0,
+              "value": 140.0,
               "unit": "海里",
-              "km": 222.2
+              "km": 259.3
             },
             {
               "type": "７０パーセント確率半径",
-              "value": 220.0,
+              "value": 260.0,
               "unit": "km",
-              "km": 220.0
+              "km": 260.0
             }
           ],
           "radius_groups": {
@@ -580,39 +604,39 @@
             "other": [
               {
                 "type": "７０パーセント確率半径",
-                "value": 120.0,
+                "value": 140.0,
                 "unit": "海里",
-                "km": 222.2
+                "km": 259.3
               },
               {
                 "type": "７０パーセント確率半径",
-                "value": 220.0,
+                "value": 260.0,
                 "unit": "km",
-                "km": 220.0
+                "km": 260.0
               },
               {
                 "type": "半径",
-                "value": 170.0,
+                "value": 190.0,
                 "unit": "海里",
-                "km": 314.8
+                "km": 351.9
               },
               {
                 "type": "半径",
-                "value": 310.0,
+                "value": 350.0,
                 "unit": "km",
-                "km": 310.0
+                "km": 350.0
               },
               {
                 "type": "７０パーセント確率半径",
-                "value": 120.0,
+                "value": 140.0,
                 "unit": "海里",
-                "km": 222.2
+                "km": 259.3
               },
               {
                 "type": "７０パーセント確率半径",
-                "value": 220.0,
+                "value": 260.0,
                 "unit": "km",
-                "km": 220.0
+                "km": 260.0
               }
             ]
           },
@@ -622,22 +646,22 @@
               "forecast_circle_radius_not_found"
             ]
           },
-          "forecast_hour": 69,
+          "forecast_hour": 72,
           "distances_km": {
-            "SUZHOU": 1015,
-            "PVG": 917,
-            "ICN": 1375,
-            "MNL": 1411,
-            "HAN": 2338,
-            "CRK": 1375
+            "SUZHOU": 1053,
+            "PVG": 950,
+            "ICN": 1344,
+            "MNL": 1499,
+            "HAN": 2433,
+            "CRK": 1466
           }
         },
         {
-          "time": "2026-09-29T03:00:00+09:00",
-          "time_type": "予報　９３時間後",
-          "lat": 25.9,
-          "lon": 130.2,
-          "raw_coordinate": "+25.9+130.2/",
+          "time": "2026-09-29T09:00:00+09:00",
+          "time_type": "予報　９６時間後",
+          "lat": 26.6,
+          "lon": 131.0,
+          "raw_coordinate": "+26.6+131.0/",
           "area": "熱帯低気圧",
           "pressure_hpa": 955.0,
           "max_wind_source_value": 80.0,
@@ -656,39 +680,39 @@
           "radius_details": [
             {
               "type": "７０パーセント確率半径",
-              "value": 150.0,
+              "value": 175.0,
               "unit": "海里",
-              "km": 277.8
+              "km": 324.1
             },
             {
               "type": "７０パーセント確率半径",
-              "value": 280.0,
+              "value": 320.0,
               "unit": "km",
-              "km": 280.0
+              "km": 320.0
             },
             {
               "type": "半径",
-              "value": 210.0,
+              "value": 235.0,
               "unit": "海里",
-              "km": 388.9
+              "km": 435.2
             },
             {
               "type": "半径",
-              "value": 390.0,
+              "value": 440.0,
               "unit": "km",
-              "km": 390.0
+              "km": 440.0
             },
             {
               "type": "７０パーセント確率半径",
-              "value": 150.0,
+              "value": 175.0,
               "unit": "海里",
-              "km": 277.8
+              "km": 324.1
             },
             {
               "type": "７０パーセント確率半径",
-              "value": 280.0,
+              "value": 320.0,
               "unit": "km",
-              "km": 280.0
+              "km": 320.0
             }
           ],
           "radius_groups": {
@@ -699,39 +723,39 @@
             "other": [
               {
                 "type": "７０パーセント確率半径",
-                "value": 150.0,
+                "value": 175.0,
                 "unit": "海里",
-                "km": 277.8
+                "km": 324.1
               },
               {
                 "type": "７０パーセント確率半径",
-                "value": 280.0,
+                "value": 320.0,
                 "unit": "km",
-                "km": 280.0
+                "km": 320.0
               },
               {
                 "type": "半径",
-                "value": 210.0,
+                "value": 235.0,
                 "unit": "海里",
-                "km": 388.9
+                "km": 435.2
               },
               {
                 "type": "半径",
-                "value": 390.0,
+                "value": 440.0,
                 "unit": "km",
-                "km": 390.0
+                "km": 440.0
               },
               {
                 "type": "７０パーセント確率半径",
-                "value": 150.0,
+                "value": 175.0,
                 "unit": "海里",
-                "km": 277.8
+                "km": 324.1
               },
               {
                 "type": "７０パーセント確率半径",
-                "value": 280.0,
+                "value": 320.0,
                 "unit": "km",
-                "km": 280.0
+                "km": 320.0
               }
             ]
           },
@@ -741,22 +765,22 @@
               "forecast_circle_radius_not_found"
             ]
           },
-          "forecast_hour": 93,
+          "forecast_hour": 96,
           "distances_km": {
-            "SUZHOU": 1113,
-            "PVG": 1006,
-            "ICN": 1333,
-            "MNL": 1587,
-            "HAN": 2536,
-            "CRK": 1556
+            "SUZHOU": 1139,
+            "PVG": 1027,
+            "ICN": 1281,
+            "MNL": 1697,
+            "HAN": 2625,
+            "CRK": 1668
           }
         },
         {
-          "time": "2026-09-30T03:00:00+09:00",
-          "time_type": "予報　１１７時間後",
-          "lat": 26.4,
-          "lon": 130.8,
-          "raw_coordinate": "+26.4+130.8/",
+          "time": "2026-09-30T09:00:00+09:00",
+          "time_type": "予報　１２０時間後",
+          "lat": 27.8,
+          "lon": 132.0,
+          "raw_coordinate": "+27.8+132.0/",
           "area": "熱帯低気圧",
           "pressure_hpa": 965.0,
           "max_wind_source_value": 75.0,
@@ -765,7 +789,7 @@
           "gust_source_value": 105.0,
           "gust_source_unit": "ノット",
           "gust_mps": 54.0,
-          "movement_direction": null,
+          "movement_direction": "北東",
           "movement_speed": null,
           "movement_speed_unit": null,
           "movement_speed_kmh": null,
@@ -775,39 +799,39 @@
           "radius_details": [
             {
               "type": "７０パーセント確率半径",
-              "value": 215.0,
+              "value": 250.0,
               "unit": "海里",
-              "km": 398.2
+              "km": 463.0
             },
             {
               "type": "７０パーセント確率半径",
-              "value": 400.0,
+              "value": 460.0,
               "unit": "km",
-              "km": 400.0
+              "km": 460.0
             },
             {
               "type": "半径",
-              "value": 275.0,
+              "value": 310.0,
               "unit": "海里",
-              "km": 509.3
+              "km": 574.1
             },
             {
               "type": "半径",
-              "value": 510.0,
+              "value": 570.0,
               "unit": "km",
-              "km": 510.0
+              "km": 570.0
             },
             {
               "type": "７０パーセント確率半径",
-              "value": 215.0,
+              "value": 250.0,
               "unit": "海里",
-              "km": 398.2
+              "km": 463.0
             },
             {
               "type": "７０パーセント確率半径",
-              "value": 400.0,
+              "value": 460.0,
               "unit": "km",
-              "km": 400.0
+              "km": 460.0
             }
           ],
           "radius_groups": {
@@ -818,39 +842,39 @@
             "other": [
               {
                 "type": "７０パーセント確率半径",
-                "value": 215.0,
+                "value": 250.0,
                 "unit": "海里",
-                "km": 398.2
+                "km": 463.0
               },
               {
                 "type": "７０パーセント確率半径",
-                "value": 400.0,
+                "value": 460.0,
                 "unit": "km",
-                "km": 400.0
+                "km": 460.0
               },
               {
                 "type": "半径",
-                "value": 275.0,
+                "value": 310.0,
                 "unit": "海里",
-                "km": 509.3
+                "km": 574.1
               },
               {
                 "type": "半径",
-                "value": 510.0,
+                "value": 570.0,
                 "unit": "km",
-                "km": 510.0
+                "km": 570.0
               },
               {
                 "type": "７０パーセント確率半径",
-                "value": 215.0,
+                "value": 250.0,
                 "unit": "海里",
-                "km": 398.2
+                "km": 463.0
               },
               {
                 "type": "７０パーセント確率半径",
-                "value": 400.0,
+                "value": 460.0,
                 "unit": "km",
-                "km": 400.0
+                "km": 460.0
               }
             ]
           },
@@ -860,25 +884,25 @@
               "forecast_circle_radius_not_found"
             ]
           },
-          "forecast_hour": 117,
+          "forecast_hour": 120,
           "distances_km": {
-            "SUZHOU": 1133,
-            "PVG": 1022,
-            "ICN": 1296,
-            "MNL": 1668,
-            "HAN": 2602,
-            "CRK": 1638
+            "SUZHOU": 1170,
+            "PVG": 1054,
+            "ICN": 1193,
+            "MNL": 1863,
+            "HAN": 2743,
+            "CRK": 1833
           }
         }
       ],
-      "forecast_source_report_time": "2026-09-25T06:45:00+09:00",
-      "forecast_source_url": "https://www.data.jma.go.jp/developer/xml/data/20260924214039_0_VPTW61_010000.xml",
+      "forecast_source_report_time": "2026-09-25T09:45:00+09:00",
+      "forecast_source_url": "https://www.data.jma.go.jp/developer/xml/data/20260925004026_0_VPTW61_010000.xml",
       "forecast_merge_mode": "CURRENT_FETCH",
-      "forecast_max_hour": 117,
+      "forecast_max_hour": 120,
       "forecast_quality": {
         "status": "OK",
-        "current_bulletin_horizon_hour": 117,
-        "merged_horizon_hour": 117,
+        "current_bulletin_horizon_hour": 120,
+        "merged_horizon_hour": 120,
         "used_previous_output": false
       }
     },
@@ -956,5 +980,5 @@
     "feed_errors": [],
     "xml_errors": []
   },
-  "generated_at_utc": "2026-09-24T21:45:44.945402+00:00"
+  "generated_at_utc": "2026-09-25T00:46:02.722921+00:00"
 }
