@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-09-26T21:30:07.331047+00:00",
+  "generated_at_utc": "2026-09-26T22:10:51.513618+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-09-26T19:48:26.991620+00:00",
-    "weather": "2026-09-26T20:01:01.759130+00:00",
-    "risk": "2026-09-26T20:03:32.351799+00:00"
+    "jma": "2026-09-26T22:10:43.414188+00:00",
+    "weather": "2026-09-26T22:10:51.331643+00:00",
+    "risk": "2026-09-26T22:10:51.402129+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
-    "jma_updated_at_utc": "2026-09-26T19:48:26.991620+00:00",
-    "weather_updated_at_utc": "2026-09-26T20:01:01.759130+00:00",
-    "impact_updated_at_utc": "2026-09-26T19:48:36.587888+00:00",
-    "risk_updated_at_utc": "2026-09-26T20:03:32.351799+00:00",
+    "jma_updated_at_utc": "2026-09-26T22:10:43.414188+00:00",
+    "weather_updated_at_utc": "2026-09-26T22:10:51.331643+00:00",
+    "impact_updated_at_utc": "2026-09-26T22:10:49.642444+00:00",
+    "risk_updated_at_utc": "2026-09-26T22:10:51.402129+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -43,7 +43,7 @@
   "locations": {
     "SUZHOU": {
       "name_ko": "쑤저우",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -57,15 +57,15 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-27 03:45",
-        "rain_mm": 0.0,
-        "wind_mps": 1.9
+        "last_updated": "2026-09-27 06:00",
+        "rain_mm": 0.41,
+        "wind_mps": 1.2
       },
       "forecast_72h": {
-        "max_rain_mm": 1.39,
-        "max_rain_time": "2026-09-27 06:00",
-        "max_wind_mps": 5.7,
-        "max_wind_time": "2026-09-28 09:00"
+        "max_rain_mm": 4.99,
+        "max_rain_time": "2026-09-27 22:00",
+        "max_wind_mps": 6.6,
+        "max_wind_time": "2026-09-28 19:00"
       }
     },
     "PVG": {
@@ -84,15 +84,15 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-27 03:45",
-        "rain_mm": 0.96,
-        "wind_mps": 1.5
+        "last_updated": "2026-09-27 06:00",
+        "rain_mm": 0.58,
+        "wind_mps": 2.0
       },
       "forecast_72h": {
-        "max_rain_mm": 3.18,
+        "max_rain_mm": 1.14,
         "max_rain_time": "2026-09-27 04:00",
-        "max_wind_mps": 5.5,
-        "max_wind_time": "2026-09-28 09:00"
+        "max_wind_mps": 4.8,
+        "max_wind_time": "2026-09-28 21:00"
       }
     },
     "ICN": {
@@ -111,15 +111,15 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-27 04:45",
+        "last_updated": "2026-09-27 07:00",
         "rain_mm": 0.0,
-        "wind_mps": 1.7
+        "wind_mps": 1.5
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-27 04:45",
-        "max_wind_mps": 4.6,
-        "max_wind_time": "2026-09-28 15:00"
+        "max_rain_time": "2026-09-27 07:00",
+        "max_wind_mps": 4.5,
+        "max_wind_time": "2026-09-27 15:00"
       }
     },
     "MNL": {
@@ -138,20 +138,20 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-27 04:00",
-        "rain_mm": 0.9,
-        "wind_mps": 1.0
+        "last_updated": "2026-09-27 06:00",
+        "rain_mm": 0.62,
+        "wind_mps": 1.7
       },
       "forecast_72h": {
-        "max_rain_mm": 1.01,
-        "max_rain_time": "2026-09-28 10:00",
-        "max_wind_mps": 4.7,
+        "max_rain_mm": 3.31,
+        "max_rain_time": "2026-09-27 00:00",
+        "max_wind_mps": 4.6,
         "max_wind_time": "2026-09-27 17:00"
       }
     },
     "HAN": {
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 20,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -165,15 +165,15 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-27 02:45",
-        "rain_mm": 0.0,
-        "wind_mps": 2.3
+        "last_updated": "2026-09-27 05:00",
+        "rain_mm": 0.01,
+        "wind_mps": 1.7
       },
       "forecast_72h": {
-        "max_rain_mm": 0.93,
+        "max_rain_mm": 2.21,
         "max_rain_time": "2026-09-29 20:00",
-        "max_wind_mps": 4.8,
-        "max_wind_time": "2026-09-29 20:00"
+        "max_wind_mps": 4.7,
+        "max_wind_time": "2026-09-27 19:00"
       }
     },
     "CRK": {
@@ -192,15 +192,15 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-27 04:00",
+        "last_updated": "2026-09-27 06:00",
         "rain_mm": 0.0,
         "wind_mps": 1.0
       },
       "forecast_72h": {
-        "max_rain_mm": 4.3,
-        "max_rain_time": "2026-09-28 20:00",
-        "max_wind_mps": 2.0,
-        "max_wind_time": "2026-09-27 10:00"
+        "max_rain_mm": 4.39,
+        "max_rain_time": "2026-09-28 21:00",
+        "max_wind_mps": 2.7,
+        "max_wind_time": "2026-09-29 01:00"
       }
     }
   },
@@ -218,7 +218,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 20,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
