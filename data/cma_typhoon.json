@@ -11,17 +11,17 @@
       "name_cn": "舒力基",
       "state": "start",
       "current": {
-        "point_id": 3341897,
-        "time_utc": "202609290600",
-        "grade": "STS",
-        "grade_ko": "강한 열대폭풍",
-        "lon": 135,
-        "lat": 28.9,
-        "pressure_hpa": 985,
-        "max_wind_mps": 25,
-        "movement_direction": "ENE",
-        "movement_direction_ko": "동북동",
-        "movement_speed_kmh": 18,
+        "point_id": 3341949,
+        "time_utc": "202609291200",
+        "grade": "TS",
+        "grade_ko": "열대폭풍",
+        "lon": 135.7,
+        "lat": 29.3,
+        "pressure_hpa": 990,
+        "max_wind_mps": 23,
+        "movement_direction": "NE",
+        "movement_direction_ko": "북동",
+        "movement_speed_kmh": 28,
         "wind_radii": [
           {
             "label": "30KTS",
@@ -35,7 +35,7 @@
               250,
               200,
               200,
-              3341897
+              3341949
             ],
             "meaning_ko": "30kt 풍권"
           }
@@ -44,30 +44,19 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202609290600",
-          "lon": 136.9,
-          "lat": 29.9,
+          "base_time_utc": "202609291200",
+          "lon": 137.8,
+          "lat": 30.6,
           "pressure_hpa": 990,
           "max_wind_mps": 23,
           "agency": "BABJ",
           "grade": "TS",
           "grade_ko": "열대폭풍"
-        },
-        {
-          "forecast_hour": 24,
-          "base_time_utc": "202609290600",
-          "lon": 138.8,
-          "lat": 31.5,
-          "pressure_hpa": 995,
-          "max_wind_mps": 20,
-          "agency": "BABJ",
-          "grade": "TS",
-          "grade_ko": "열대폭풍"
         }
       ],
-      "raw_point_count": 46
+      "raw_point_count": 48
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-09-29T08:21:40.491532+00:00"
+  "generated_at_utc": "2026-09-29T14:19:18.480746+00:00"
 }
