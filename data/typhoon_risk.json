@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-10-02T09:38:43.118933+00:00",
-    "weather": "2026-10-02T12:57:01.215203+00:00"
+    "impact": "2026-10-02T14:06:43.250908+00:00",
+    "weather": "2026-10-02T14:06:48.359764+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -28,7 +28,7 @@
     "SUZHOU": {
       "code": "SUZHOU",
       "name_ko": "쑤저우",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-02 20:45",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 2.6,
+        "current_last_updated": "2026-10-02 22:00",
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 2.3,
         "max_72h_rain_mm": 2.06,
         "max_72h_rain_time": "2026-10-04 00:00",
         "max_72h_wind_mps": 6.4,
@@ -55,7 +55,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     },
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-02 20:45",
+        "current_last_updated": "2026-10-02 22:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.8,
+        "current_wind_mps": 2.4,
         "max_72h_rain_mm": 2.01,
         "max_72h_rain_time": "2026-10-04 03:00",
         "max_72h_wind_mps": 5.3,
@@ -113,9 +113,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-02 21:45",
+        "current_last_updated": "2026-10-02 23:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.1,
+        "current_wind_mps": 2.0,
         "max_72h_rain_mm": 0.63,
         "max_72h_rain_time": "2026-10-04 23:00",
         "max_72h_wind_mps": 5.7,
@@ -147,9 +147,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-02 20:45",
-        "current_rain_mm": 1.64,
-        "current_wind_mps": 2.5,
+        "current_last_updated": "2026-10-02 22:00",
+        "current_rain_mm": 1.14,
+        "current_wind_mps": 2.0,
         "max_72h_rain_mm": 3.15,
         "max_72h_rain_time": "2026-10-04 20:00",
         "max_72h_wind_mps": 4.8,
@@ -164,7 +164,7 @@
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 20,
+      "score": 23,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-02 19:45",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 5.3,
+        "current_last_updated": "2026-10-02 21:00",
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 4.9,
         "max_72h_rain_mm": 11.7,
         "max_72h_rain_time": "2026-10-04 22:00",
         "max_72h_wind_mps": 7.0,
@@ -191,7 +191,7 @@
       },
       "score_detail": {
         "distance": 20,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     },
@@ -215,8 +215,8 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-02 20:45",
-        "current_rain_mm": 0.67,
+        "current_last_updated": "2026-10-02 22:00",
+        "current_rain_mm": 0.7,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 5.98,
         "max_72h_rain_time": "2026-10-02 14:00",
@@ -234,7 +234,7 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -250,7 +250,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 20,
+      "score": 23,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-10-02T12:59:27.569293+00:00"
+  "generated_at_utc": "2026-10-02T14:06:48.424825+00:00"
 }
