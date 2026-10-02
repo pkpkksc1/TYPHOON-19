@@ -54,21 +54,21 @@
       "slot": "VPTW60",
       "event_id": "TC2633",
       "information_title": "台風解析・予報情報（５日予報）（Ｈ３０）",
-      "feed_updated": "2026-10-02T18:41:05Z",
-      "report_time": "2026-10-03T03:45:00+09:00",
-      "target_time": "2026-10-03T03:00:00+09:00",
-      "source_url": "https://www.data.jma.go.jp/developer/xml/data/20261002184106_0_VPTW60_010000.xml",
+      "feed_updated": "2026-10-02T21:41:12Z",
+      "report_time": "2026-10-03T06:45:00+09:00",
+      "target_time": "2026-10-03T06:00:00+09:00",
+      "source_url": "https://www.data.jma.go.jp/developer/xml/data/20261002214112_0_VPTW60_010000.xml",
       "typhoon": {
         "number": "2627",
         "name": "CHOI-WAN",
         "kana": "チョーイワン"
       },
       "analysis": {
-        "time": "2026-10-03T03:00:00+09:00",
+        "time": "2026-10-03T06:00:00+09:00",
         "time_type": "実況",
-        "lat": 17.9,
-        "lon": 144.8,
-        "raw_coordinate": "+17.9+144.8/",
+        "lat": 18.1,
+        "lon": 144.9,
+        "raw_coordinate": "+18.1+144.9/",
         "area": "熱帯低気圧",
         "pressure_hpa": 970.0,
         "max_wind_source_value": 65.0,
@@ -77,7 +77,7 @@
         "gust_source_value": 95.0,
         "gust_source_unit": "ノット",
         "gust_mps": 48.9,
-        "movement_direction": "北",
+        "movement_direction": "北北東",
         "movement_speed": 7.0,
         "movement_speed_unit": "ノット",
         "movement_speed_kmh": 13.0,
@@ -219,21 +219,21 @@
           "issues": []
         },
         "distances_km": {
-          "SUZHOU": 2855,
-          "PVG": 2744,
-          "ICN": 2817,
-          "MNL": 2565,
-          "HAN": 4092,
-          "CRK": 2599
+          "SUZHOU": 2851,
+          "PVG": 2739,
+          "ICN": 2805,
+          "MNL": 2578,
+          "HAN": 4098,
+          "CRK": 2611
         }
       },
       "forecast": [
         {
-          "time": "2026-10-04T03:00:00+09:00",
+          "time": "2026-10-04T06:00:00+09:00",
           "time_type": "予報　２４時間後",
-          "lat": 21.0,
-          "lon": 146.3,
-          "raw_coordinate": "+21.0+146.3/",
+          "lat": 21.3,
+          "lon": 146.4,
+          "raw_coordinate": "+21.3+146.4/",
           "area": "熱帯低気圧",
           "pressure_hpa": 945.0,
           "max_wind_source_value": 85.0,
@@ -339,17 +339,17 @@
           },
           "forecast_hour": 24,
           "distances_km": {
-            "SUZHOU": 2801,
-            "PVG": 2685,
-            "ICN": 2647,
-            "MNL": 2769,
-            "HAN": 4189,
-            "CRK": 2793
+            "SUZHOU": 2794,
+            "PVG": 2678,
+            "ICN": 2629,
+            "MNL": 2786,
+            "HAN": 4194,
+            "CRK": 2808
           }
         },
         {
           "time": "2026-10-05T03:00:00+09:00",
-          "time_type": "予報　４８時間後",
+          "time_type": "予報　４５時間後",
           "lat": 24.1,
           "lon": 146.3,
           "raw_coordinate": "+24.1+146.3/",
@@ -456,7 +456,7 @@
               "forecast_circle_radius_not_found"
             ]
           },
-          "forecast_hour": 48,
+          "forecast_hour": 45,
           "distances_km": {
             "SUZHOU": 2648,
             "PVG": 2530,
@@ -468,7 +468,7 @@
         },
         {
           "time": "2026-10-06T03:00:00+09:00",
-          "time_type": "予報　７２時間後",
+          "time_type": "予報　６９時間後",
           "lat": 28.1,
           "lon": 144.8,
           "raw_coordinate": "+28.1+144.8/",
@@ -575,7 +575,7 @@
               "forecast_circle_radius_not_found"
             ]
           },
-          "forecast_hour": 72,
+          "forecast_hour": 69,
           "distances_km": {
             "SUZHOU": 2361,
             "PVG": 2244,
@@ -587,7 +587,7 @@
         },
         {
           "time": "2026-10-07T03:00:00+09:00",
-          "time_type": "予報　９６時間後",
+          "time_type": "予報　９３時間後",
           "lat": 36.6,
           "lon": 148.7,
           "raw_coordinate": "+36.6+148.7/",
@@ -718,7 +718,7 @@
               "forecast_circle_radius_not_found"
             ]
           },
-          "forecast_hour": 96,
+          "forecast_hour": 93,
           "distances_km": {
             "SUZHOU": 2649,
             "PVG": 2547,
@@ -730,7 +730,7 @@
         },
         {
           "time": "2026-10-08T03:00:00+09:00",
-          "time_type": "予報　１２０時間後",
+          "time_type": "予報　１１７時間後",
           "lat": 49.4,
           "lon": 165.9,
           "raw_coordinate": "+49.4+165.9/",
@@ -861,7 +861,7 @@
               "forecast_circle_radius_not_found"
             ]
           },
-          "forecast_hour": 120,
+          "forecast_hour": 117,
           "distances_km": {
             "SUZHOU": 4252,
             "PVG": 4176,
@@ -872,14 +872,14 @@
           }
         }
       ],
-      "forecast_source_report_time": "2026-10-03T03:45:00+09:00",
-      "forecast_source_url": "https://www.data.jma.go.jp/developer/xml/data/20261002184106_0_VPTW60_010000.xml",
+      "forecast_source_report_time": "2026-10-03T06:45:00+09:00",
+      "forecast_source_url": "https://www.data.jma.go.jp/developer/xml/data/20261002214112_0_VPTW60_010000.xml",
       "forecast_merge_mode": "CURRENT_FETCH",
-      "forecast_max_hour": 120,
+      "forecast_max_hour": 117,
       "forecast_quality": {
         "status": "OK",
-        "current_bulletin_horizon_hour": 120,
-        "merged_horizon_hour": 120,
+        "current_bulletin_horizon_hour": 117,
+        "merged_horizon_hour": 117,
         "used_previous_output": false
       }
     },
@@ -957,5 +957,5 @@
     "feed_errors": [],
     "xml_errors": []
   },
-  "generated_at_utc": "2026-10-02T19:29:20.248586+00:00"
+  "generated_at_utc": "2026-10-02T22:31:14.315931+00:00"
 }
