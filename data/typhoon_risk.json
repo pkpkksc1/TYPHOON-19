@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-10-03T02:17:52.797787+00:00",
-    "weather": "2026-10-03T02:17:55.620203+00:00"
+    "impact": "2026-10-03T06:25:40.714344+00:00",
+    "weather": "2026-10-03T06:25:43.067981+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-03 10:00",
-        "current_rain_mm": 1.02,
-        "current_wind_mps": 5.0,
+        "current_last_updated": "2026-10-03 14:15",
+        "current_rain_mm": 0.98,
+        "current_wind_mps": 4.2,
         "max_72h_rain_mm": 2.76,
         "max_72h_rain_time": "2026-10-03 13:00",
         "max_72h_wind_mps": 6.4,
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-03 10:15",
-        "current_rain_mm": 1.13,
-        "current_wind_mps": 2.8,
+        "current_last_updated": "2026-10-03 14:15",
+        "current_rain_mm": 1.72,
+        "current_wind_mps": 3.1,
         "max_72h_rain_mm": 3.23,
         "max_72h_rain_time": "2026-10-03 15:00",
         "max_72h_wind_mps": 5.8,
@@ -113,9 +113,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-03 11:00",
+        "current_last_updated": "2026-10-03 15:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.0,
+        "current_wind_mps": 3.5,
         "max_72h_rain_mm": 1.59,
         "max_72h_rain_time": "2026-10-04 20:00",
         "max_72h_wind_mps": 7.2,
@@ -130,7 +130,7 @@
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 0,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -147,9 +147,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-03 10:15",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 1.0,
+        "current_last_updated": "2026-10-03 14:15",
+        "current_rain_mm": 0.89,
+        "current_wind_mps": 2.0,
         "max_72h_rain_mm": 2.02,
         "max_72h_rain_time": "2026-10-05 01:00",
         "max_72h_wind_mps": 4.6,
@@ -157,14 +157,14 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 8,
         "wind": 0
       }
     },
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 23,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-03 09:00",
-        "current_rain_mm": 0.05,
-        "current_wind_mps": 4.3,
+        "current_last_updated": "2026-10-03 13:15",
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 2.8,
         "max_72h_rain_mm": 16.69,
         "max_72h_rain_time": "2026-10-05 02:00",
         "max_72h_wind_mps": 8.0,
@@ -191,14 +191,14 @@
       },
       "score_detail": {
         "distance": 20,
-        "rain": 3,
+        "rain": 0,
         "wind": 0
       }
     },
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 3,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -215,9 +215,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-03 10:00",
-        "current_rain_mm": 0.01,
-        "current_wind_mps": 1.2,
+        "current_last_updated": "2026-10-03 14:15",
+        "current_rain_mm": 0.87,
+        "current_wind_mps": 1.7,
         "max_72h_rain_mm": 2.56,
         "max_72h_rain_time": "2026-10-05 00:00",
         "max_72h_wind_mps": 2.1,
@@ -225,7 +225,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 8,
         "wind": 0
       }
     }
@@ -250,7 +250,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 23,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-10-03T02:17:55.680134+00:00"
+  "generated_at_utc": "2026-10-03T06:25:43.134365+00:00"
 }
