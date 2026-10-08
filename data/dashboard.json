@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-10-08T08:50:22.491972+00:00",
+  "generated_at_utc": "2026-10-08T09:26:05.409956+00:00",
   "source_updated_at_utc": {
     "jma": "2026-10-08T08:50:14.312433+00:00",
-    "weather": "2026-10-08T08:50:22.313839+00:00",
-    "risk": "2026-10-08T08:50:22.384316+00:00"
+    "weather": "2026-10-08T09:26:05.247943+00:00",
+    "risk": "2026-10-08T09:26:05.312824+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-10-08T08:50:14.312433+00:00",
-    "weather_updated_at_utc": "2026-10-08T08:50:22.313839+00:00",
-    "impact_updated_at_utc": "2026-10-08T08:50:20.705280+00:00",
-    "risk_updated_at_utc": "2026-10-08T08:50:22.384316+00:00",
+    "weather_updated_at_utc": "2026-10-08T09:26:05.247943+00:00",
+    "impact_updated_at_utc": "2026-10-08T09:26:03.865481+00:00",
+    "risk_updated_at_utc": "2026-10-08T09:26:05.312824+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-08 16:45",
+        "last_updated": "2026-10-08 17:15",
         "rain_mm": 0.0,
-        "wind_mps": 2.8
+        "wind_mps": 2.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.15,
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-08 16:45",
+        "last_updated": "2026-10-08 17:15",
         "rain_mm": 0.0,
-        "wind_mps": 3.7
+        "wind_mps": 3.4
       },
       "forecast_72h": {
         "max_rain_mm": 0.1,
@@ -111,20 +111,20 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-08 17:45",
+        "last_updated": "2026-10-08 18:15",
         "rain_mm": 0.0,
-        "wind_mps": 3.2
+        "wind_mps": 2.7
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-10-08 17:45",
+        "max_rain_time": "2026-10-08 18:15",
         "max_wind_mps": 3.6,
         "max_wind_time": "2026-10-08 16:00"
       }
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 8,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -138,15 +138,15 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-08 16:30",
-        "rain_mm": 0.64,
-        "wind_mps": 5.0
+        "last_updated": "2026-10-08 17:15",
+        "rain_mm": 0.0,
+        "wind_mps": 4.7
       },
       "forecast_72h": {
         "max_rain_mm": 1.38,
         "max_rain_time": "2026-10-08 12:00",
         "max_wind_mps": 5.0,
-        "max_wind_time": "2026-10-08 16:30"
+        "max_wind_time": "2026-10-08 16:00"
       }
     },
     "HAN": {
@@ -165,7 +165,7 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-08 15:30",
+        "last_updated": "2026-10-08 16:15",
         "rain_mm": 0.0,
         "wind_mps": 1.0
       },
@@ -192,9 +192,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-08 16:45",
-        "rain_mm": 1.62,
-        "wind_mps": 1.5
+        "last_updated": "2026-10-08 17:15",
+        "rain_mm": 1.82,
+        "wind_mps": 1.4
       },
       "forecast_72h": {
         "max_rain_mm": 1.95,
@@ -238,12 +238,12 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 8,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "ICN_PVG",
