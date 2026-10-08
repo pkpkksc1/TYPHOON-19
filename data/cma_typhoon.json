@@ -11,17 +11,17 @@
       "name_cn": "小熊\n",
       "state": "start",
       "current": {
-        "point_id": 3353252,
-        "time_utc": "202610080000",
+        "point_id": 3353785,
+        "time_utc": "202610080600",
         "grade": "STS",
         "grade_ko": "강한 열대폭풍",
-        "lon": 161.3,
-        "lat": 16.8,
-        "pressure_hpa": 982,
-        "max_wind_mps": 28,
-        "movement_direction": "W",
-        "movement_direction_ko": "서",
-        "movement_speed_kmh": 19,
+        "lon": 160.2,
+        "lat": 17.3,
+        "pressure_hpa": 980,
+        "max_wind_mps": 30,
+        "movement_direction": "WNW",
+        "movement_direction_ko": "서북서",
+        "movement_speed_kmh": 22,
         "wind_radii": [
           {
             "label": "30KTS",
@@ -35,7 +35,7 @@
               200,
               180,
               150,
-              3353252
+              3353785
             ],
             "meaning_ko": "30kt 풍권"
           },
@@ -51,7 +51,7 @@
               50,
               50,
               30,
-              3353252
+              3353785
             ],
             "meaning_ko": "50kt 폭풍권"
           }
@@ -60,9 +60,9 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202610080000",
-          "lon": 159.2,
-          "lat": 17.1,
+          "base_time_utc": "202610080600",
+          "lon": 157.8,
+          "lat": 17.9,
           "pressure_hpa": 970,
           "max_wind_mps": 35,
           "agency": "BABJ",
@@ -71,20 +71,9 @@
         },
         {
           "forecast_hour": 24,
-          "base_time_utc": "202610080000",
-          "lon": 156.9,
-          "lat": 18,
-          "pressure_hpa": 955,
-          "max_wind_mps": 42,
-          "agency": "BABJ",
-          "grade": "STY",
-          "grade_ko": "강한 태풍"
-        },
-        {
-          "forecast_hour": 36,
-          "base_time_utc": "202610080000",
-          "lon": 154.6,
-          "lat": 19.1,
+          "base_time_utc": "202610080600",
+          "lon": 155.4,
+          "lat": 18.8,
           "pressure_hpa": 945,
           "max_wind_mps": 48,
           "agency": "BABJ",
@@ -92,10 +81,10 @@
           "grade_ko": "강한 태풍"
         },
         {
-          "forecast_hour": 48,
-          "base_time_utc": "202610080000",
-          "lon": 152.4,
-          "lat": 20.3,
+          "forecast_hour": 36,
+          "base_time_utc": "202610080600",
+          "lon": 153.1,
+          "lat": 19.9,
           "pressure_hpa": 935,
           "max_wind_mps": 52,
           "agency": "BABJ",
@@ -103,10 +92,21 @@
           "grade_ko": "초강력 태풍"
         },
         {
+          "forecast_hour": 48,
+          "base_time_utc": "202610080600",
+          "lon": 151.1,
+          "lat": 21.3,
+          "pressure_hpa": 930,
+          "max_wind_mps": 55,
+          "agency": "BABJ",
+          "grade": "SuperTY",
+          "grade_ko": "초강력 태풍"
+        },
+        {
           "forecast_hour": 60,
-          "base_time_utc": "202610080000",
-          "lon": 150.4,
-          "lat": 21.7,
+          "base_time_utc": "202610080600",
+          "lon": 149.6,
+          "lat": 22.6,
           "pressure_hpa": 930,
           "max_wind_mps": 55,
           "agency": "BABJ",
@@ -115,39 +115,39 @@
         },
         {
           "forecast_hour": 72,
-          "base_time_utc": "202610080000",
-          "lon": 148.9,
-          "lat": 22.8,
-          "pressure_hpa": 930,
-          "max_wind_mps": 55,
+          "base_time_utc": "202610080600",
+          "lon": 148.2,
+          "lat": 23.8,
+          "pressure_hpa": 925,
+          "max_wind_mps": 58,
           "agency": "BABJ",
           "grade": "SuperTY",
           "grade_ko": "초강력 태풍"
         },
         {
           "forecast_hour": 96,
-          "base_time_utc": "202610080000",
-          "lon": 146.6,
-          "lat": 25.3,
-          "pressure_hpa": 945,
-          "max_wind_mps": 48,
+          "base_time_utc": "202610080600",
+          "lon": 146.1,
+          "lat": 26.6,
+          "pressure_hpa": 935,
+          "max_wind_mps": 52,
           "agency": "BABJ",
-          "grade": "STY",
-          "grade_ko": "강한 태풍"
+          "grade": "SuperTY",
+          "grade_ko": "초강력 태풍"
         },
         {
           "forecast_hour": 120,
-          "base_time_utc": "202610080000",
-          "lon": 146.4,
-          "lat": 29,
-          "pressure_hpa": 970,
-          "max_wind_mps": 35,
+          "base_time_utc": "202610080600",
+          "lon": 146.7,
+          "lat": 31.2,
+          "pressure_hpa": 955,
+          "max_wind_mps": 42,
           "agency": "BABJ",
-          "grade": "TY",
-          "grade_ko": "태풍"
+          "grade": "STY",
+          "grade_ko": "강한 태풍"
         }
       ],
-      "raw_point_count": 25
+      "raw_point_count": 27
     },
     {
       "id": 3346168,
@@ -156,17 +156,17 @@
       "name_cn": "诺洛",
       "state": "start",
       "current": {
-        "point_id": 3353338,
-        "time_utc": "202610080000",
+        "point_id": 3353649,
+        "time_utc": "202610080600",
         "grade": "STS",
         "grade_ko": "강한 열대폭풍",
-        "lon": 155.9,
-        "lat": 26.7,
-        "pressure_hpa": 982,
-        "max_wind_mps": 28,
+        "lon": 154.3,
+        "lat": 27.1,
+        "pressure_hpa": 980,
+        "max_wind_mps": 30,
         "movement_direction": "WNW",
         "movement_direction_ko": "서북서",
-        "movement_speed_kmh": 27,
+        "movement_speed_kmh": 28,
         "wind_radii": [
           {
             "label": "30KTS",
@@ -180,7 +180,7 @@
               250,
               240,
               260,
-              3353338
+              3353649
             ],
             "meaning_ko": "30kt 풍권"
           },
@@ -196,7 +196,7 @@
               60,
               60,
               60,
-              3353338
+              3353649
             ],
             "meaning_ko": "50kt 폭풍권"
           }
@@ -205,31 +205,9 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202610080000",
-          "lon": 152.8,
-          "lat": 27.5,
-          "pressure_hpa": 982,
-          "max_wind_mps": 28,
-          "agency": "BABJ",
-          "grade": "STS",
-          "grade_ko": "강한 열대폭풍"
-        },
-        {
-          "forecast_hour": 24,
-          "base_time_utc": "202610080000",
-          "lon": 150.3,
-          "lat": 28.4,
-          "pressure_hpa": 982,
-          "max_wind_mps": 28,
-          "agency": "BABJ",
-          "grade": "STS",
-          "grade_ko": "강한 열대폭풍"
-        },
-        {
-          "forecast_hour": 36,
-          "base_time_utc": "202610080000",
-          "lon": 148.7,
-          "lat": 29.5,
+          "base_time_utc": "202610080600",
+          "lon": 151.1,
+          "lat": 28,
           "pressure_hpa": 980,
           "max_wind_mps": 30,
           "agency": "BABJ",
@@ -237,10 +215,32 @@
           "grade_ko": "강한 열대폭풍"
         },
         {
+          "forecast_hour": 24,
+          "base_time_utc": "202610080600",
+          "lon": 149.2,
+          "lat": 28.9,
+          "pressure_hpa": 975,
+          "max_wind_mps": 33,
+          "agency": "BABJ",
+          "grade": "TY",
+          "grade_ko": "태풍"
+        },
+        {
+          "forecast_hour": 36,
+          "base_time_utc": "202610080600",
+          "lon": 148,
+          "lat": 30.1,
+          "pressure_hpa": 975,
+          "max_wind_mps": 33,
+          "agency": "BABJ",
+          "grade": "TY",
+          "grade_ko": "태풍"
+        },
+        {
           "forecast_hour": 48,
-          "base_time_utc": "202610080000",
-          "lon": 148.1,
-          "lat": 31.1,
+          "base_time_utc": "202610080600",
+          "lon": 147.8,
+          "lat": 32,
           "pressure_hpa": 980,
           "max_wind_mps": 30,
           "agency": "BABJ",
@@ -249,9 +249,9 @@
         },
         {
           "forecast_hour": 60,
-          "base_time_utc": "202610080000",
-          "lon": 148.5,
-          "lat": 32.8,
+          "base_time_utc": "202610080600",
+          "lon": 149.1,
+          "lat": 34,
           "pressure_hpa": 995,
           "max_wind_mps": 20,
           "agency": "BABJ",
@@ -260,9 +260,9 @@
         },
         {
           "forecast_hour": 72,
-          "base_time_utc": "202610080000",
-          "lon": 150.2,
-          "lat": 34.5,
+          "base_time_utc": "202610080600",
+          "lon": 151.3,
+          "lat": 35.4,
           "pressure_hpa": 998,
           "max_wind_mps": 18,
           "agency": "BABJ",
@@ -270,9 +270,9 @@
           "grade_ko": "열대폭풍"
         }
       ],
-      "raw_point_count": 25
+      "raw_point_count": 27
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-10-08T02:14:46.842819+00:00"
+  "generated_at_utc": "2026-10-08T08:50:18.611965+00:00"
 }
