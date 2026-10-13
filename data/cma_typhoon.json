@@ -2,72 +2,8 @@
   "source": "CMA / NMC",
   "product": "China Typhoon Track and Forecast",
   "parser_version": "1.1",
-  "active_count": 1,
-  "typhoons": [
-    {
-      "id": 3346033,
-      "number": 2629,
-      "name_en": "KOGUMA",
-      "name_cn": "小熊\n",
-      "state": "start",
-      "current": {
-        "point_id": 3359079,
-        "time_utc": "202610130900",
-        "grade": "TS",
-        "grade_ko": "열대폭풍",
-        "lon": 154.5,
-        "lat": 36,
-        "pressure_hpa": 990,
-        "max_wind_mps": 23,
-        "movement_direction": "NE",
-        "movement_direction_ko": "북동",
-        "movement_speed_kmh": 37,
-        "wind_radii": [
-          {
-            "label": "30KTS",
-            "ne_km": 200,
-            "se_km": 180,
-            "sw_km": 130,
-            "nw_km": 160,
-            "raw": [
-              "30KTS",
-              200,
-              180,
-              130,
-              160,
-              3359079
-            ],
-            "meaning_ko": "30kt 풍권"
-          }
-        ]
-      },
-      "forecast": [
-        {
-          "forecast_hour": 12,
-          "base_time_utc": "202610130900",
-          "lon": 157.9,
-          "lat": 38.9,
-          "pressure_hpa": 995,
-          "max_wind_mps": 20,
-          "agency": "BABJ",
-          "grade": "TS",
-          "grade_ko": "열대폭풍"
-        },
-        {
-          "forecast_hour": 24,
-          "base_time_utc": "202610130900",
-          "lon": 161.4,
-          "lat": 40.9,
-          "pressure_hpa": 998,
-          "max_wind_mps": 18,
-          "agency": "BABJ",
-          "grade": "TS",
-          "grade_ko": "열대폭풍"
-        }
-      ],
-      "raw_point_count": 68
-    }
-  ],
+  "active_count": 0,
+  "typhoons": [],
   "errors": [],
-  "generated_at_utc": "2026-10-13T21:10:49.758259+00:00"
+  "generated_at_utc": "2026-10-13T23:24:52.903152+00:00"
 }
