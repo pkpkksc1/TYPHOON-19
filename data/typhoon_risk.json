@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-10-16T07:29:34.704653+00:00",
-    "weather": "2026-10-16T07:29:36.636987+00:00"
+    "impact": "2026-10-16T12:18:57.326420+00:00",
+    "weather": "2026-10-16T12:19:02.398541+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-16 15:15",
+        "current_last_updated": "2026-10-16 20:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 6.0,
+        "current_wind_mps": 6.2,
         "max_72h_rain_mm": 0.23,
         "max_72h_rain_time": "2026-10-18 20:00",
         "max_72h_wind_mps": 7.3,
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-16 15:15",
+        "current_last_updated": "2026-10-16 20:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.8,
+        "current_wind_mps": 3.8,
         "max_72h_rain_mm": 0.1,
         "max_72h_rain_time": "2026-10-16 09:00",
         "max_72h_wind_mps": 6.6,
@@ -113,13 +113,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-16 16:15",
+        "current_last_updated": "2026-10-16 21:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.0,
-        "max_72h_rain_mm": 14.56,
-        "max_72h_rain_time": "2026-10-18 15:00",
-        "max_72h_wind_mps": 10.6,
-        "max_72h_wind_time": "2026-10-18 15:00"
+        "current_wind_mps": 1.0,
+        "max_72h_rain_mm": 38.76,
+        "max_72h_rain_time": "2026-10-18 14:00",
+        "max_72h_wind_mps": 12.5,
+        "max_72h_wind_time": "2026-10-18 13:00"
       },
       "score_detail": {
         "distance": 0,
@@ -130,7 +130,7 @@
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 5,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -147,18 +147,18 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-16 15:15",
+        "current_last_updated": "2026-10-16 20:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 7.1,
+        "current_wind_mps": 4.5,
         "max_72h_rain_mm": 0.35,
         "max_72h_rain_time": "2026-10-18 13:00",
         "max_72h_wind_mps": 7.1,
-        "max_72h_wind_time": "2026-10-16 15:15"
+        "max_72h_wind_time": "2026-10-16 15:00"
       },
       "score_detail": {
         "distance": 0,
         "rain": 0,
-        "wind": 5
+        "wind": 0
       }
     },
     "HAN": {
@@ -181,13 +181,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-16 14:15",
+        "current_last_updated": "2026-10-16 19:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.5,
-        "max_72h_rain_mm": 0.26,
+        "current_wind_mps": 5.5,
+        "max_72h_rain_mm": 0.33,
         "max_72h_rain_time": "2026-10-18 02:00",
-        "max_72h_wind_mps": 6.0,
-        "max_72h_wind_time": "2026-10-16 17:00"
+        "max_72h_wind_mps": 6.2,
+        "max_72h_wind_time": "2026-10-16 18:00"
       },
       "score_detail": {
         "distance": 20,
@@ -215,13 +215,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-16 15:15",
+        "current_last_updated": "2026-10-16 20:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 5.7,
-        "max_72h_rain_mm": 1.06,
+        "current_wind_mps": 1.8,
+        "max_72h_rain_mm": 0.04,
         "max_72h_rain_time": "2026-10-18 17:00",
-        "max_72h_wind_mps": 5.7,
-        "max_72h_wind_time": "2026-10-16 15:15"
+        "max_72h_wind_mps": 5.6,
+        "max_72h_wind_time": "2026-10-16 15:00"
       },
       "score_detail": {
         "distance": 0,
@@ -282,13 +282,13 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 5,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-10-16T07:29:36.683353+00:00"
+  "generated_at_utc": "2026-10-16T12:19:02.463049+00:00"
 }
