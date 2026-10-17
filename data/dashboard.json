@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-10-17T04:56:17.758387+00:00",
+  "generated_at_utc": "2026-10-17T06:07:16.448409+00:00",
   "source_updated_at_utc": {
     "jma": "2026-10-17T04:13:40.949540+00:00",
-    "weather": "2026-10-17T04:13:51.081142+00:00",
-    "risk": "2026-10-17T04:49:47.528695+00:00"
+    "weather": "2026-10-17T06:07:16.335550+00:00",
+    "risk": "2026-10-17T06:07:16.380367+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-10-17T04:13:40.949540+00:00",
-    "weather_updated_at_utc": "2026-10-17T04:13:51.081142+00:00",
-    "impact_updated_at_utc": "2026-10-17T04:35:15.058858+00:00",
-    "risk_updated_at_utc": "2026-10-17T04:49:47.528695+00:00",
+    "weather_updated_at_utc": "2026-10-17T06:07:16.335550+00:00",
+    "impact_updated_at_utc": "2026-10-17T06:07:14.449648+00:00",
+    "risk_updated_at_utc": "2026-10-17T06:07:16.380367+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-17 12:00",
+        "last_updated": "2026-10-17 14:00",
         "rain_mm": 0.0,
-        "wind_mps": 6.7
+        "wind_mps": 6.4
       },
       "forecast_72h": {
         "max_rain_mm": 0.18,
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-17 12:00",
+        "last_updated": "2026-10-17 14:00",
         "rain_mm": 0.0,
-        "wind_mps": 5.9
+        "wind_mps": 6.2
       },
       "forecast_72h": {
         "max_rain_mm": 0.1,
@@ -111,9 +111,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-17 13:00",
+        "last_updated": "2026-10-17 15:00",
         "rain_mm": 0.0,
-        "wind_mps": 6.0
+        "wind_mps": 5.8
       },
       "forecast_72h": {
         "max_rain_mm": 10.35,
@@ -124,7 +124,7 @@
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-17 12:00",
-        "rain_mm": 0.01,
-        "wind_mps": 3.7
+        "last_updated": "2026-10-17 14:00",
+        "rain_mm": 0.0,
+        "wind_mps": 4.3
       },
       "forecast_72h": {
         "max_rain_mm": 0.03,
@@ -151,7 +151,7 @@
     },
     "HAN": {
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 23,
+      "score": 20,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -165,8 +165,8 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-17 11:00",
-        "rain_mm": 0.02,
+        "last_updated": "2026-10-17 13:00",
+        "rain_mm": 0.0,
         "wind_mps": 2.8
       },
       "forecast_72h": {
@@ -192,9 +192,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-17 12:00",
+        "last_updated": "2026-10-17 14:00",
         "rain_mm": 0.0,
-        "wind_mps": 1.6
+        "wind_mps": 1.5
       },
       "forecast_72h": {
         "max_rain_mm": 0.22,
@@ -218,7 +218,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 23,
+      "score": 20,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -238,12 +238,12 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "ICN_PVG",
