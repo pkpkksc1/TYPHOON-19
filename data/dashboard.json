@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-10-18T05:46:16.403859+00:00",
+  "generated_at_utc": "2026-10-18T06:33:11.443567+00:00",
   "source_updated_at_utc": {
     "jma": "2026-10-18T04:21:04.940419+00:00",
-    "weather": "2026-10-18T05:46:15.540194+00:00",
-    "risk": "2026-10-18T05:46:15.878188+00:00"
+    "weather": "2026-10-18T06:33:11.265264+00:00",
+    "risk": "2026-10-18T06:33:11.336619+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-10-18T04:21:04.940419+00:00",
-    "weather_updated_at_utc": "2026-10-18T05:46:15.540194+00:00",
-    "impact_updated_at_utc": "2026-10-18T05:46:14.154464+00:00",
-    "risk_updated_at_utc": "2026-10-18T05:46:15.878188+00:00",
+    "weather_updated_at_utc": "2026-10-18T06:33:11.265264+00:00",
+    "impact_updated_at_utc": "2026-10-18T06:33:09.685814+00:00",
+    "risk_updated_at_utc": "2026-10-18T06:33:11.336619+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -43,7 +43,7 @@
   "locations": {
     "SUZHOU": {
       "name_ko": "쑤저우",
-      "score": 5,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -57,15 +57,15 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-18 13:30",
-        "rain_mm": 0.0,
-        "wind_mps": 7.1
+        "last_updated": "2026-10-18 14:30",
+        "rain_mm": 0.01,
+        "wind_mps": 5.7
       },
       "forecast_72h": {
         "max_rain_mm": 0.85,
         "max_rain_time": "2026-10-20 23:00",
         "max_wind_mps": 7.1,
-        "max_wind_time": "2026-10-18 13:30"
+        "max_wind_time": "2026-10-18 13:00"
       }
     },
     "PVG": {
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-18 13:30",
+        "last_updated": "2026-10-18 14:15",
         "rain_mm": 0.01,
-        "wind_mps": 4.1
+        "wind_mps": 4.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.49,
@@ -97,12 +97,12 @@
     },
     "ICN": {
       "name_ko": "인천 국제공항",
-      "score": 35,
+      "score": 13,
       "risk": {
-        "emoji": "🟡",
-        "label_ko": "주의"
+        "emoji": "🟢",
+        "label_ko": "낮음"
       },
-      "reason_ko": "현재 시간당 강수 12.64 mm / 현재 풍속 10.6 m/s",
+      "reason_ko": "특이 위험요소 낮음",
       "current_distance_km": 2420,
       "closest_distance_km": 2420,
       "closest_time": "2026-08-26T15:00:00+09:00",
@@ -111,9 +111,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-18 14:30",
-        "rain_mm": 12.64,
-        "wind_mps": 10.6
+        "last_updated": "2026-10-18 15:15",
+        "rain_mm": 1.71,
+        "wind_mps": 9.1
       },
       "forecast_72h": {
         "max_rain_mm": 14.64,
@@ -124,7 +124,7 @@
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-18 13:30",
-        "rain_mm": 0.02,
-        "wind_mps": 3.0
+        "last_updated": "2026-10-18 14:15",
+        "rain_mm": 0.0,
+        "wind_mps": 3.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.22,
@@ -165,9 +165,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-18 12:30",
-        "rain_mm": 0.04,
-        "wind_mps": 2.3
+        "last_updated": "2026-10-18 13:15",
+        "rain_mm": 0.01,
+        "wind_mps": 2.2
       },
       "forecast_72h": {
         "max_rain_mm": 0.18,
@@ -192,9 +192,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-18 13:30",
+        "last_updated": "2026-10-18 14:30",
         "rain_mm": 0.0,
-        "wind_mps": 2.0
+        "wind_mps": 1.1
       },
       "forecast_72h": {
         "max_rain_mm": 1.87,
@@ -208,12 +208,12 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 35,
+      "score": 13,
       "risk": {
-        "emoji": "🟡",
-        "label_ko": "주의"
+        "emoji": "🟢",
+        "label_ko": "낮음"
       },
-      "reason_ko": "인천 국제공항 주의 (현재 시간당 강수 12.64 mm / 현재 풍속 10.6 m/s)"
+      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "SUZHOU_PVG_HAN",
@@ -228,7 +228,7 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 5,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -238,7 +238,7 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 5,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -248,12 +248,12 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 35,
+      "score": 13,
       "risk": {
-        "emoji": "🟡",
-        "label_ko": "주의"
+        "emoji": "🟢",
+        "label_ko": "낮음"
       },
-      "reason_ko": "인천 국제공항 주의 (현재 시간당 강수 12.64 mm / 현재 풍속 10.6 m/s)"
+      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)"
     }
   ],
   "attribution": [
