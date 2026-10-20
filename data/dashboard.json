@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-10-20T01:13:21.951042+00:00",
+  "generated_at_utc": "2026-10-20T01:16:21.441127+00:00",
   "source_updated_at_utc": {
     "jma": "2026-10-20T01:13:21.883466+00:00",
-    "weather": "2026-10-20T00:15:15.291156+00:00",
-    "risk": "2026-10-20T00:15:15.358164+00:00"
+    "weather": "2026-10-20T01:16:21.255086+00:00",
+    "risk": "2026-10-20T01:16:21.346098+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-10-20T01:13:21.883466+00:00",
-    "weather_updated_at_utc": "2026-10-20T00:15:15.291156+00:00",
-    "impact_updated_at_utc": "2026-10-20T00:15:12.980896+00:00",
-    "risk_updated_at_utc": "2026-10-20T00:15:15.358164+00:00",
+    "weather_updated_at_utc": "2026-10-20T01:16:21.255086+00:00",
+    "impact_updated_at_utc": "2026-10-20T01:16:19.130244+00:00",
+    "risk_updated_at_utc": "2026-10-20T01:16:21.346098+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-20 08:00",
+        "last_updated": "2026-10-20 09:00",
         "rain_mm": 0.01,
-        "wind_mps": 1.1
+        "wind_mps": 1.0
       },
       "forecast_72h": {
         "max_rain_mm": 1.54,
@@ -70,7 +70,7 @@
     },
     "PVG": {
       "name_ko": "푸동 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-20 08:00",
-        "rain_mm": 0.0,
-        "wind_mps": 1.5
+        "last_updated": "2026-10-20 09:00",
+        "rain_mm": 0.01,
+        "wind_mps": 1.8
       },
       "forecast_72h": {
         "max_rain_mm": 2.54,
@@ -111,9 +111,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-20 09:00",
+        "last_updated": "2026-10-20 10:00",
         "rain_mm": 0.0,
-        "wind_mps": 1.5
+        "wind_mps": 1.1
       },
       "forecast_72h": {
         "max_rain_mm": 0.64,
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-20 08:00",
+        "last_updated": "2026-10-20 09:15",
         "rain_mm": 0.0,
-        "wind_mps": 1.6
+        "wind_mps": 1.3
       },
       "forecast_72h": {
         "max_rain_mm": 0.49,
@@ -151,7 +151,7 @@
     },
     "HAN": {
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 20,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -165,9 +165,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-20 07:00",
-        "rain_mm": 0.0,
-        "wind_mps": 1.6
+        "last_updated": "2026-10-20 08:00",
+        "rain_mm": 0.01,
+        "wind_mps": 1.8
       },
       "forecast_72h": {
         "max_rain_mm": 0.08,
@@ -192,9 +192,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-20 08:00",
+        "last_updated": "2026-10-20 09:00",
         "rain_mm": 0.0,
-        "wind_mps": 1.0
+        "wind_mps": 1.7
       },
       "forecast_72h": {
         "max_rain_mm": 1.91,
@@ -218,7 +218,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 20,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -248,12 +248,12 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)"
     }
   ],
   "attribution": [
