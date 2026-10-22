@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-10-22T00:37:58.644127+00:00",
+  "generated_at_utc": "2026-10-22T01:48:02.272812+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-10-21T21:57:35.856546+00:00",
-    "weather": "2026-10-21T23:12:23.954238+00:00",
-    "risk": "2026-10-22T00:06:13.009555+00:00"
+    "jma": "2026-10-22T01:47:56.800238+00:00",
+    "weather": "2026-10-22T01:48:02.106033+00:00",
+    "risk": "2026-10-22T01:48:02.171642+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
-    "jma_updated_at_utc": "2026-10-21T21:57:35.856546+00:00",
-    "weather_updated_at_utc": "2026-10-21T23:12:23.954238+00:00",
-    "impact_updated_at_utc": "2026-10-21T23:42:29.841731+00:00",
-    "risk_updated_at_utc": "2026-10-22T00:06:13.009555+00:00",
+    "jma_updated_at_utc": "2026-10-22T01:47:56.800238+00:00",
+    "weather_updated_at_utc": "2026-10-22T01:48:02.106033+00:00",
+    "impact_updated_at_utc": "2026-10-22T01:48:01.519231+00:00",
+    "risk_updated_at_utc": "2026-10-22T01:48:02.171642+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-22 07:00",
+        "last_updated": "2026-10-22 09:45",
         "rain_mm": 0.0,
-        "wind_mps": 2.7
+        "wind_mps": 4.3
       },
       "forecast_72h": {
         "max_rain_mm": 9.52,
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-22 07:00",
+        "last_updated": "2026-10-22 09:30",
         "rain_mm": 0.0,
-        "wind_mps": 3.3
+        "wind_mps": 4.6
       },
       "forecast_72h": {
         "max_rain_mm": 7.36,
@@ -111,13 +111,13 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-22 08:00",
+        "last_updated": "2026-10-22 10:30",
         "rain_mm": 0.0,
-        "wind_mps": 3.7
+        "wind_mps": 3.5
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-10-22 08:00",
+        "max_rain_time": "2026-10-22 10:30",
         "max_wind_mps": 4.6,
         "max_wind_time": "2026-10-22 01:00"
       }
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-22 07:00",
-        "rain_mm": 0.02,
-        "wind_mps": 1.0
+        "last_updated": "2026-10-22 09:30",
+        "rain_mm": 0.01,
+        "wind_mps": 3.5
       },
       "forecast_72h": {
         "max_rain_mm": 1.61,
@@ -151,7 +151,7 @@
     },
     "HAN": {
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 20,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -165,9 +165,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-22 06:00",
-        "rain_mm": 0.0,
-        "wind_mps": 1.4
+        "last_updated": "2026-10-22 08:30",
+        "rain_mm": 0.01,
+        "wind_mps": 1.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.17,
@@ -178,7 +178,7 @@
     },
     "CRK": {
       "name_ko": "클락 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -192,8 +192,8 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-22 07:00",
-        "rain_mm": 0.0,
+        "last_updated": "2026-10-22 09:45",
+        "rain_mm": 0.01,
         "wind_mps": 1.0
       },
       "forecast_72h": {
@@ -218,7 +218,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 20,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -228,12 +228,12 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "클락 국제공항 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "SUZHOU_PVG_MNL",
