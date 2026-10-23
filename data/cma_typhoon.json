@@ -11,31 +11,31 @@
       "name_cn": "蔷琵",
       "state": "start",
       "current": {
-        "point_id": 3368042,
-        "time_utc": "202610230400",
+        "point_id": 3368308,
+        "time_utc": "202610230700",
         "grade": "STY",
         "grade_ko": "강한 태풍",
-        "lon": 123.5,
-        "lat": 23.4,
+        "lon": 123.2,
+        "lat": 23.9,
         "pressure_hpa": 950,
         "max_wind_mps": 45,
         "movement_direction": "NW",
         "movement_direction_ko": "북서",
-        "movement_speed_kmh": 17,
+        "movement_speed_kmh": 14,
         "wind_radii": [
           {
             "label": "30KTS",
             "ne_km": 500,
-            "se_km": 450,
+            "se_km": 480,
             "sw_km": 350,
             "nw_km": 480,
             "raw": [
               "30KTS",
               500,
-              450,
+              480,
               350,
               480,
-              3368042
+              3368308
             ],
             "meaning_ko": "30kt 풍권"
           },
@@ -51,7 +51,7 @@
               200,
               150,
               180,
-              3368042
+              3368308
             ],
             "meaning_ko": "50kt 폭풍권"
           },
@@ -67,16 +67,105 @@
               85,
               80,
               85,
-              3368042
+              3368308
             ],
             "meaning_ko": "64kt 매우 강한 폭풍권"
           }
         ]
       },
-      "forecast": [],
-      "raw_point_count": 77
+      "forecast": [
+        {
+          "forecast_hour": 6,
+          "base_time_utc": "202610230700",
+          "lon": 122.7167,
+          "lat": 24.0833,
+          "pressure_hpa": 960,
+          "max_wind_mps": 42,
+          "agency": "BABJ",
+          "grade": "STY",
+          "grade_ko": "강한 태풍"
+        },
+        {
+          "forecast_hour": 12,
+          "base_time_utc": "202610230700",
+          "lon": 122.3167,
+          "lat": 24.5833,
+          "pressure_hpa": 970,
+          "max_wind_mps": 38,
+          "agency": "BABJ",
+          "grade": "TY",
+          "grade_ko": "태풍"
+        },
+        {
+          "forecast_hour": 18,
+          "base_time_utc": "202610230700",
+          "lon": 122.4,
+          "lat": 25.1,
+          "pressure_hpa": 975,
+          "max_wind_mps": 35,
+          "agency": "BABJ",
+          "grade": "TY",
+          "grade_ko": "태풍"
+        },
+        {
+          "forecast_hour": 24,
+          "base_time_utc": "202610230700",
+          "lon": 122.3833,
+          "lat": 25.6917,
+          "pressure_hpa": 980,
+          "max_wind_mps": 33,
+          "agency": "BABJ",
+          "grade": "TY",
+          "grade_ko": "태풍"
+        },
+        {
+          "forecast_hour": 36,
+          "base_time_utc": "202610230700",
+          "lon": 122.2333,
+          "lat": 26.8333,
+          "pressure_hpa": 982,
+          "max_wind_mps": 28,
+          "agency": "BABJ",
+          "grade": "STS",
+          "grade_ko": "강한 열대폭풍"
+        },
+        {
+          "forecast_hour": 48,
+          "base_time_utc": "202610230700",
+          "lon": 122.7417,
+          "lat": 28.45,
+          "pressure_hpa": 990,
+          "max_wind_mps": 25,
+          "agency": "BABJ",
+          "grade": "STS",
+          "grade_ko": "강한 열대폭풍"
+        },
+        {
+          "forecast_hour": 60,
+          "base_time_utc": "202610230700",
+          "lon": 124.65,
+          "lat": 30.25,
+          "pressure_hpa": 998,
+          "max_wind_mps": 18,
+          "agency": "BABJ",
+          "grade": "TS",
+          "grade_ko": "열대폭풍"
+        },
+        {
+          "forecast_hour": 72,
+          "base_time_utc": "202610230700",
+          "lon": 128.85,
+          "lat": 32.05,
+          "pressure_hpa": 1000,
+          "max_wind_mps": 14,
+          "agency": "BABJ",
+          "grade": "TD",
+          "grade_ko": "열대저압부"
+        }
+      ],
+      "raw_point_count": 80
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-10-23T04:36:38.510740+00:00"
+  "generated_at_utc": "2026-10-23T07:54:31.825348+00:00"
 }
