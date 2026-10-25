@@ -1,64 +1,64 @@
 {
   "parser_version": "1.0",
-  "generated_at_utc": "2026-10-25T18:56:49.097049Z",
+  "generated_at_utc": "2026-10-25T21:12:06.976264Z",
   "source": "NOAA/NWS public relay of JTWC tropical cyclone warnings",
   "source_note": "JTWC maximum sustained winds are one-minute averages. JTWC wind radii are valid over open water only.",
   "active_count": 2,
   "storms": [
     {
       "bulletin": "WTPN32",
-      "issue_time_utc": "2026-10-25T15:00:00Z",
-      "age_hours": 3.9,
+      "issue_time_utc": "2026-10-25T21:00:00Z",
+      "age_hours": 0.2,
       "jtwc_id": "29W",
       "name": "CHAMPI",
       "storm_type": "TROPICAL STORM",
-      "warning_number": 45,
+      "warning_number": 46,
       "source_url": "https://tgftp.nws.noaa.gov/data/raw/wt/wtpn32.pgtw..txt",
       "current": {
-        "valid_time_raw": "251200Z",
-        "lat": 30.7,
-        "lon": 126.3,
-        "movement_degrees": 50,
-        "movement_speed_kt": 9,
-        "movement_speed_kmh": 16.7,
-        "pressure_hpa": 999,
-        "max_wind_kt": 40,
-        "max_wind_mps": 20.6,
-        "gust_kt": 50,
-        "gust_mps": 25.7,
+        "valid_time_raw": "251800Z",
+        "lat": 31.2,
+        "lon": 127.4,
+        "movement_degrees": 60,
+        "movement_speed_kt": 11,
+        "movement_speed_kmh": 20.4,
+        "pressure_hpa": 1002,
+        "max_wind_kt": 35,
+        "max_wind_mps": 18.0,
+        "gust_kt": 45,
+        "gust_mps": 23.1,
         "wind_radii": {
           "34kt": {
             "threshold_kt": 34,
             "threshold_mps": 17.5,
             "quadrants": {
               "NE": {
-                "nm": 150,
-                "km": 277.8
+                "nm": 85,
+                "km": 157.4
               },
               "SE": {
                 "nm": 0,
                 "km": 0.0
               },
               "SW": {
-                "nm": 150,
-                "km": 277.8
+                "nm": 95,
+                "km": 175.9
               },
               "NW": {
                 "nm": 80,
                 "km": 148.2
               }
             },
-            "max_radius_nm": 150,
-            "max_radius_km": 277.8
+            "max_radius_nm": 95,
+            "max_radius_km": 175.9
           }
         }
       },
       "forecast": [
         {
           "forecast_hour": 12,
-          "valid_time_raw": "260000Z",
-          "lat": 31.5,
-          "lon": 129.0,
+          "valid_time_raw": "260600Z",
+          "lat": 31.9,
+          "lon": 130.5,
           "max_wind_kt": 35,
           "max_wind_mps": 18.0,
           "gust_kt": 45,
@@ -69,43 +69,104 @@
               "threshold_mps": 17.5,
               "quadrants": {
                 "NE": {
-                  "nm": 70,
-                  "km": 129.6
+                  "nm": 60,
+                  "km": 111.1
                 },
                 "SE": {
                   "nm": 0,
                   "km": 0.0
                 },
                 "SW": {
-                  "nm": 90,
-                  "km": 166.7
+                  "nm": 40,
+                  "km": 74.1
                 },
                 "NW": {
                   "nm": 60,
                   "km": 111.1
                 }
               },
-              "max_radius_nm": 90,
-              "max_radius_km": 166.7
+              "max_radius_nm": 60,
+              "max_radius_km": 111.1
             }
           }
         },
         {
           "forecast_hour": 24,
-          "valid_time_raw": "261200Z",
-          "lat": 32.2,
-          "lon": 132.6,
+          "valid_time_raw": "261800Z",
+          "lat": 32.6,
+          "lon": 135.0,
           "max_wind_kt": 30,
           "max_wind_mps": 15.4,
           "gust_kt": 40,
           "gust_mps": 20.6,
-          "wind_radii": {}
+          "wind_radii": {
+            "34kt": {
+              "threshold_kt": 34,
+              "threshold_mps": 17.5,
+              "quadrants": {
+                "NE": {
+                  "nm": 85,
+                  "km": 157.4
+                },
+                "SE": {
+                  "nm": 0,
+                  "km": 0.0
+                },
+                "SW": {
+                  "nm": 95,
+                  "km": 175.9
+                },
+                "NW": {
+                  "nm": 80,
+                  "km": 148.2
+                }
+              },
+              "max_radius_nm": 95,
+              "max_radius_km": 175.9
+            }
+          }
         },
         {
-          "forecast_hour": 36,
-          "valid_time_raw": "270000Z",
-          "lat": 33.0,
-          "lon": 136.2,
+          "forecast_hour": 12,
+          "valid_time_raw": "260600Z",
+          "lat": 31.9,
+          "lon": 130.5,
+          "max_wind_kt": 35,
+          "max_wind_mps": 18.0,
+          "gust_kt": 45,
+          "gust_mps": 23.1,
+          "wind_radii": {
+            "34kt": {
+              "threshold_kt": 34,
+              "threshold_mps": 17.5,
+              "quadrants": {
+                "NE": {
+                  "nm": 60,
+                  "km": 111.1
+                },
+                "SE": {
+                  "nm": 0,
+                  "km": 0.0
+                },
+                "SW": {
+                  "nm": 40,
+                  "km": 74.1
+                },
+                "NW": {
+                  "nm": 60,
+                  "km": 111.1
+                }
+              },
+              "max_radius_nm": 60,
+              "max_radius_km": 111.1
+            }
+          }
+        },
+        {
+          "forecast_hour": 24,
+          "valid_time_raw": "261800Z",
+          "lat": 32.6,
+          "lon": 135.0,
           "max_wind_kt": 30,
           "max_wind_mps": 15.4,
           "gust_kt": 40,
@@ -117,7 +178,7 @@
     {
       "bulletin": "WTPN31",
       "issue_time_utc": "2026-10-25T15:00:00Z",
-      "age_hours": 3.9,
+      "age_hours": 6.2,
       "jtwc_id": "30W",
       "name": "IN-FA",
       "storm_type": "TYPHOON",

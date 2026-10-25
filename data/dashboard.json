@@ -2,18 +2,18 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.71.0-NARRA-NO-FLIGHT",
-  "generated_at_utc": "2026-10-25T20:45:11.907128+00:00",
+  "generated_at_utc": "2026-10-25T21:12:10.972405+00:00",
   "source_updated_at_utc": {
     "jma": "2026-10-25T18:56:44.190554+00:00",
-    "weather": "2026-10-25T19:49:14.013530+00:00",
-    "risk": "2026-10-25T19:51:42.652507+00:00"
+    "weather": "2026-10-25T21:12:10.801170+00:00",
+    "risk": "2026-10-25T21:12:10.868803+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T15:00:00+09:00",
     "jma_updated_at_utc": "2026-10-25T18:56:44.190554+00:00",
-    "weather_updated_at_utc": "2026-10-25T19:49:14.013530+00:00",
-    "impact_updated_at_utc": "2026-10-25T18:56:51.343976+00:00",
-    "risk_updated_at_utc": "2026-10-25T19:51:42.652507+00:00",
+    "weather_updated_at_utc": "2026-10-25T21:12:10.801170+00:00",
+    "impact_updated_at_utc": "2026-10-25T21:12:09.401483+00:00",
+    "risk_updated_at_utc": "2026-10-25T21:12:10.868803+00:00",
     "risk_version": "6.7-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -57,9 +57,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-26 03:30",
+        "last_updated": "2026-10-26 05:00",
         "rain_mm": 0.0,
-        "wind_mps": 3.0
+        "wind_mps": 2.3
       },
       "forecast_72h": {
         "max_rain_mm": 0.06,
@@ -84,9 +84,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-26 03:45",
+        "last_updated": "2026-10-26 05:00",
         "rain_mm": 0.0,
-        "wind_mps": 3.8
+        "wind_mps": 2.8
       },
       "forecast_72h": {
         "max_rain_mm": 0.07,
@@ -97,7 +97,7 @@
     },
     "ICN": {
       "name_ko": "인천 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -111,9 +111,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-26 04:30",
-        "rain_mm": 0.0,
-        "wind_mps": 3.1
+        "last_updated": "2026-10-26 06:00",
+        "rain_mm": 0.07,
+        "wind_mps": 3.0
       },
       "forecast_72h": {
         "max_rain_mm": 0.29,
@@ -138,9 +138,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-26 03:45",
+        "last_updated": "2026-10-26 05:00",
         "rain_mm": 0.0,
-        "wind_mps": 1.6
+        "wind_mps": 1.1
       },
       "forecast_72h": {
         "max_rain_mm": 1.15,
@@ -151,7 +151,7 @@
     },
     "HAN": {
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 20,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -165,9 +165,9 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-26 02:45",
-        "rain_mm": 0.0,
-        "wind_mps": 2.3
+        "last_updated": "2026-10-26 04:00",
+        "rain_mm": 0.37,
+        "wind_mps": 1.4
       },
       "forecast_72h": {
         "max_rain_mm": 1.35,
@@ -192,7 +192,7 @@
       "trend_ko": "마지막 위치",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-10-26 03:45",
+        "last_updated": "2026-10-26 05:00",
         "rain_mm": 0.0,
         "wind_mps": 1.0
       },
@@ -208,17 +208,17 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)"
+      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)"
     },
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 20,
+      "score": 23,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -248,7 +248,7 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
