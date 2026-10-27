@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-10-27T10:25:02.208491+00:00",
-    "weather": "2026-10-27T10:25:03.932081+00:00"
+    "impact": "2026-10-27T13:32:13.650737+00:00",
+    "weather": "2026-10-27T13:32:18.716477+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-27 18:15",
+        "current_last_updated": "2026-10-27 21:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 5.0,
+        "current_wind_mps": 3.4,
         "max_72h_rain_mm": 0.35,
         "max_72h_rain_time": "2026-10-29 05:00",
         "max_72h_wind_mps": 7.4,
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-27 18:15",
+        "current_last_updated": "2026-10-27 21:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.6,
+        "current_wind_mps": 3.6,
         "max_72h_rain_mm": 0.27,
         "max_72h_rain_time": "2026-10-29 20:00",
         "max_72h_wind_mps": 6.9,
@@ -96,7 +96,7 @@
     "ICN": {
       "code": "ICN",
       "name_ko": "인천 국제공항",
-      "score": 5,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -113,9 +113,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-27 19:15",
+        "current_last_updated": "2026-10-27 22:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 7.0,
+        "current_wind_mps": 6.6,
         "max_72h_rain_mm": 0.47,
         "max_72h_rain_time": "2026-10-29 21:00",
         "max_72h_wind_mps": 8.7,
@@ -124,7 +124,7 @@
       "score_detail": {
         "distance": 0,
         "rain": 0,
-        "wind": 5
+        "wind": 0
       }
     },
     "MNL": {
@@ -147,9 +147,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-27 18:15",
+        "current_last_updated": "2026-10-27 21:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 5.5,
+        "current_wind_mps": 3.3,
         "max_72h_rain_mm": 0.47,
         "max_72h_rain_time": "2026-10-29 14:00",
         "max_72h_wind_mps": 5.8,
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-27 17:15",
+        "current_last_updated": "2026-10-27 20:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.9,
+        "current_wind_mps": 3.5,
         "max_72h_rain_mm": 1.64,
         "max_72h_rain_time": "2026-10-29 17:00",
         "max_72h_wind_mps": 4.5,
@@ -215,9 +215,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-10-27 18:15",
+        "current_last_updated": "2026-10-27 21:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.3,
+        "current_wind_mps": 1.3,
         "max_72h_rain_mm": 1.13,
         "max_72h_rain_time": "2026-10-27 16:00",
         "max_72h_wind_mps": 3.2,
@@ -234,13 +234,13 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 5,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "인천 국제공항 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -298,7 +298,7 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 5,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -311,6 +311,6 @@
       ]
     }
   ],
-  "data_changed": false,
-  "generated_at_utc": "2026-10-27T10:47:15.105801+00:00"
+  "data_changed": true,
+  "generated_at_utc": "2026-10-27T13:32:18.776991+00:00"
 }
