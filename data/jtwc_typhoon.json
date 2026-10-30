@@ -1,6 +1,6 @@
 {
   "parser_version": "1.0",
-  "generated_at_utc": "2026-10-30T14:00:44.357144Z",
+  "generated_at_utc": "2026-10-30T18:49:20.115951Z",
   "source": "NOAA/NWS public relay of JTWC tropical cyclone warnings",
   "source_note": "JTWC maximum sustained winds are one-minute averages. JTWC wind radii are valid over open water only.",
   "active_count": 1,
@@ -8,7 +8,7 @@
     {
       "bulletin": "WTPN31",
       "issue_time_utc": "2026-10-30T15:00:00Z",
-      "age_hours": -1.0,
+      "age_hours": 3.8,
       "jtwc_id": "30W",
       "name": "IN-FA",
       "storm_type": "TYPHOON",
@@ -779,16 +779,12 @@
   ],
   "errors": [
     {
-      "bulletin": "WTPN32",
-      "error": "The read operation timed out"
-    },
-    {
       "bulletin": "WTPN36",
       "error": "HTTP Error 404: Not Found"
     },
     {
       "bulletin": "WTPN37",
-      "error": "The read operation timed out"
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "bulletin": "WTPN38",
