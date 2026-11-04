@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-11-03T20:55:36.987867+00:00",
-    "weather": "2026-11-03T20:55:38.845802+00:00"
+    "impact": "2026-11-04T00:51:46.187950+00:00",
+    "weather": "2026-11-04T00:51:47.900179+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,9 +45,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-04 04:45",
-        "current_rain_mm": 0.65,
-        "current_wind_mps": 4.2,
+        "current_last_updated": "2026-11-04 08:45",
+        "current_rain_mm": 1.87,
+        "current_wind_mps": 5.1,
         "max_72h_rain_mm": 8.11,
         "max_72h_rain_time": "2026-11-04 03:00",
         "max_72h_wind_mps": 8.5,
@@ -68,7 +68,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "현재 시간당 강수 3.91 mm",
+      "reason_ko": "현재 시간당 강수 4.11 mm",
       "typhoon": {
         "source": "JMA_DISTANCE_FALLBACK",
         "current_distance_km": 1630,
@@ -79,9 +79,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-04 04:45",
-        "current_rain_mm": 3.91,
-        "current_wind_mps": 4.1,
+        "current_last_updated": "2026-11-04 08:45",
+        "current_rain_mm": 4.11,
+        "current_wind_mps": 4.2,
         "max_72h_rain_mm": 6.5,
         "max_72h_rain_time": "2026-11-04 07:00",
         "max_72h_wind_mps": 6.1,
@@ -113,9 +113,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-04 05:45",
+        "current_last_updated": "2026-11-04 09:45",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.8,
+        "current_wind_mps": 2.6,
         "max_72h_rain_mm": 0.33,
         "max_72h_rain_time": "2026-11-05 20:00",
         "max_72h_wind_mps": 8.0,
@@ -130,7 +130,7 @@
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -147,8 +147,8 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-04 04:45",
-        "current_rain_mm": 0.02,
+        "current_last_updated": "2026-11-04 08:45",
+        "current_rain_mm": 0.0,
         "current_wind_mps": 3.1,
         "max_72h_rain_mm": 0.68,
         "max_72h_rain_time": "2026-11-04 02:00",
@@ -157,7 +157,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 0,
         "wind": 0
       }
     },
@@ -181,9 +181,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-04 03:45",
+        "current_last_updated": "2026-11-04 07:45",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.8,
+        "current_wind_mps": 1.2,
         "max_72h_rain_mm": 1.93,
         "max_72h_rain_time": "2026-11-06 08:00",
         "max_72h_wind_mps": 5.0,
@@ -198,7 +198,7 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -215,9 +215,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-04 04:45",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 1.1,
+        "current_last_updated": "2026-11-04 08:45",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 1.0,
         "max_72h_rain_mm": 0.04,
         "max_72h_rain_time": "2026-11-04 09:00",
         "max_72h_wind_mps": 3.9,
@@ -225,7 +225,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     }
@@ -240,7 +240,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (현재 시간당 강수 3.91 mm)",
+      "reason_ko": "푸동 국제공항 낮음 (현재 시간당 강수 4.11 mm)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -272,7 +272,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (현재 시간당 강수 3.91 mm)",
+      "reason_ko": "푸동 국제공항 낮음 (현재 시간당 강수 4.11 mm)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -288,7 +288,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (현재 시간당 강수 3.91 mm)",
+      "reason_ko": "푸동 국제공항 낮음 (현재 시간당 강수 4.11 mm)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -304,13 +304,13 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (현재 시간당 강수 3.91 mm)",
+      "reason_ko": "푸동 국제공항 낮음 (현재 시간당 강수 4.11 mm)",
       "locations": [
         "ICN",
         "PVG"
       ]
     }
   ],
-  "data_changed": false,
-  "generated_at_utc": "2026-11-03T23:34:08.696227+00:00"
+  "data_changed": true,
+  "generated_at_utc": "2026-11-04T00:51:47.949891+00:00"
 }
