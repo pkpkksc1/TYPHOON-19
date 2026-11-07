@@ -2,14 +2,138 @@
   "source": "CMA / NMC",
   "product": "China Typhoon Track and Forecast",
   "parser_version": "1.1",
-  "active_count": 0,
-  "typhoons": [],
-  "errors": [
+  "active_count": 1,
+  "typhoons": [
     {
       "id": 3382203,
+      "number": 2632,
       "name_en": "CEMPAKA",
-      "error": "HTTP Error 403: Forbidden"
+      "name_cn": "查帕卡",
+      "state": "start",
+      "current": {
+        "point_id": 3382471,
+        "time_utc": "202611070900",
+        "grade": "TS",
+        "grade_ko": "열대폭풍",
+        "lon": 142.7,
+        "lat": 20,
+        "pressure_hpa": 990,
+        "max_wind_mps": 23,
+        "movement_direction": "WNW",
+        "movement_direction_ko": "서북서",
+        "movement_speed_kmh": 30,
+        "wind_radii": [
+          {
+            "label": "30KTS",
+            "ne_km": 200,
+            "se_km": 150,
+            "sw_km": 150,
+            "nw_km": 250,
+            "raw": [
+              "30KTS",
+              200,
+              150,
+              150,
+              250,
+              3382471
+            ],
+            "meaning_ko": "30kt 풍권"
+          }
+        ]
+      },
+      "forecast": [
+        {
+          "forecast_hour": 12,
+          "base_time_utc": "202611070900",
+          "lon": 139.5,
+          "lat": 21.3,
+          "pressure_hpa": 980,
+          "max_wind_mps": 30,
+          "agency": "BABJ",
+          "grade": "STS",
+          "grade_ko": "강한 열대폭풍"
+        },
+        {
+          "forecast_hour": 24,
+          "base_time_utc": "202611070900",
+          "lon": 136.7,
+          "lat": 22.1,
+          "pressure_hpa": 970,
+          "max_wind_mps": 35,
+          "agency": "BABJ",
+          "grade": "TY",
+          "grade_ko": "태풍"
+        },
+        {
+          "forecast_hour": 36,
+          "base_time_utc": "202611070900",
+          "lon": 134.7,
+          "lat": 22.9,
+          "pressure_hpa": 955,
+          "max_wind_mps": 42,
+          "agency": "BABJ",
+          "grade": "STY",
+          "grade_ko": "강한 태풍"
+        },
+        {
+          "forecast_hour": 48,
+          "base_time_utc": "202611070900",
+          "lon": 134.6,
+          "lat": 23.4,
+          "pressure_hpa": 935,
+          "max_wind_mps": 52,
+          "agency": "BABJ",
+          "grade": "SuperTY",
+          "grade_ko": "초강력 태풍"
+        },
+        {
+          "forecast_hour": 60,
+          "base_time_utc": "202611070900",
+          "lon": 136.2,
+          "lat": 23.8,
+          "pressure_hpa": 945,
+          "max_wind_mps": 48,
+          "agency": "BABJ",
+          "grade": "STY",
+          "grade_ko": "강한 태풍"
+        },
+        {
+          "forecast_hour": 72,
+          "base_time_utc": "202611070900",
+          "lon": 139.4,
+          "lat": 24.1,
+          "pressure_hpa": 960,
+          "max_wind_mps": 40,
+          "agency": "BABJ",
+          "grade": "TY",
+          "grade_ko": "태풍"
+        },
+        {
+          "forecast_hour": 96,
+          "base_time_utc": "202611070900",
+          "lon": 146.4,
+          "lat": 25.7,
+          "pressure_hpa": 975,
+          "max_wind_mps": 33,
+          "agency": "BABJ",
+          "grade": "TY",
+          "grade_ko": "태풍"
+        },
+        {
+          "forecast_hour": 120,
+          "base_time_utc": "202611070900",
+          "lon": 150,
+          "lat": 25.6,
+          "pressure_hpa": 990,
+          "max_wind_mps": 23,
+          "agency": "BABJ",
+          "grade": "TS",
+          "grade_ko": "열대폭풍"
+        }
+      ],
+      "raw_point_count": 2
     }
   ],
-  "generated_at_utc": "2026-11-07T07:44:18.997626+00:00"
+  "errors": [],
+  "generated_at_utc": "2026-11-07T09:55:54.706724+00:00"
 }
