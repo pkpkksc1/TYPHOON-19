@@ -11,63 +11,63 @@
       "name_cn": "查帕卡",
       "state": "start",
       "current": {
-        "point_id": 3384684,
-        "time_utc": "202611100600",
-        "grade": "STY",
-        "grade_ko": "강한 태풍",
-        "lon": 139.7,
-        "lat": 25.4,
-        "pressure_hpa": 955,
-        "max_wind_mps": 42,
+        "point_id": 3384846,
+        "time_utc": "202611101500",
+        "grade": "TY",
+        "grade_ko": "태풍",
+        "lon": 143,
+        "lat": 26.4,
+        "pressure_hpa": 970,
+        "max_wind_mps": 35,
         "movement_direction": "ENE",
         "movement_direction_ko": "동북동",
-        "movement_speed_kmh": 39,
+        "movement_speed_kmh": 43,
         "wind_radii": [
           {
             "label": "30KTS",
             "ne_km": 200,
-            "se_km": 150,
-            "sw_km": 200,
-            "nw_km": 250,
+            "se_km": 250,
+            "sw_km": 250,
+            "nw_km": 200,
             "raw": [
               "30KTS",
               200,
-              150,
-              200,
               250,
-              3384684
+              250,
+              200,
+              3384846
             ],
             "meaning_ko": "30kt 풍권"
           },
           {
             "label": "50KTS",
-            "ne_km": 80,
+            "ne_km": 70,
             "se_km": 80,
             "sw_km": 80,
-            "nw_km": 80,
+            "nw_km": 70,
             "raw": [
               "50KTS",
+              70,
               80,
               80,
-              80,
-              80,
-              3384684
+              70,
+              3384846
             ],
             "meaning_ko": "50kt 폭풍권"
           },
           {
             "label": "64KTS",
-            "ne_km": 50,
-            "se_km": 50,
-            "sw_km": 50,
-            "nw_km": 50,
+            "ne_km": 30,
+            "se_km": 40,
+            "sw_km": 40,
+            "nw_km": 30,
             "raw": [
               "64KTS",
-              50,
-              50,
-              50,
-              50,
-              3384684
+              30,
+              40,
+              40,
+              30,
+              3384846
             ],
             "meaning_ko": "64kt 매우 강한 폭풍권"
           }
@@ -76,41 +76,41 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202611100600",
-          "lon": 144.1,
-          "lat": 26.8,
-          "pressure_hpa": 960,
-          "max_wind_mps": 40,
+          "base_time_utc": "202611101500",
+          "lon": 147.9,
+          "lat": 27.8,
+          "pressure_hpa": 980,
+          "max_wind_mps": 30,
           "agency": "BABJ",
-          "grade": "TY",
-          "grade_ko": "태풍"
+          "grade": "STS",
+          "grade_ko": "강한 열대폭풍"
         },
         {
           "forecast_hour": 24,
-          "base_time_utc": "202611100600",
-          "lon": 149.3,
-          "lat": 28.5,
-          "pressure_hpa": 970,
-          "max_wind_mps": 35,
-          "agency": "BABJ",
-          "grade": "TY",
-          "grade_ko": "태풍"
-        },
-        {
-          "forecast_hour": 36,
-          "base_time_utc": "202611100600",
-          "lon": 155.1,
-          "lat": 28.5,
+          "base_time_utc": "202611101500",
+          "lon": 153.9,
+          "lat": 29.4,
           "pressure_hpa": 982,
           "max_wind_mps": 28,
           "agency": "BABJ",
           "grade": "STS",
           "grade_ko": "강한 열대폭풍"
+        },
+        {
+          "forecast_hour": 36,
+          "base_time_utc": "202611101500",
+          "lon": 160.3,
+          "lat": 31,
+          "pressure_hpa": 990,
+          "max_wind_mps": 23,
+          "agency": "BABJ",
+          "grade": "TS",
+          "grade_ko": "열대폭풍"
         }
       ],
-      "raw_point_count": 25
+      "raw_point_count": 28
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-11-10T08:18:44.826762+00:00"
+  "generated_at_utc": "2026-11-10T16:58:37.024586+00:00"
 }
