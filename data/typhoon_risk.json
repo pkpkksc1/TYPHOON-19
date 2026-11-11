@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-11-11T00:52:21.252859+00:00",
-    "weather": "2026-11-11T00:52:22.573864+00:00"
+    "impact": "2026-11-11T02:43:15.682622+00:00",
+    "weather": "2026-11-11T02:43:17.353171+00:00"
   },
   "typhoon": {
     "number": "2619",
@@ -45,13 +45,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-11 08:45",
+        "current_last_updated": "2026-11-11 10:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.0,
-        "max_72h_rain_mm": 0.5,
-        "max_72h_rain_time": "2026-11-13 13:00",
-        "max_72h_wind_mps": 2.4,
-        "max_72h_wind_time": "2026-11-11 18:00"
+        "current_wind_mps": 1.8,
+        "max_72h_rain_mm": 0.4,
+        "max_72h_rain_time": "2026-11-12 18:00",
+        "max_72h_wind_mps": 2.5,
+        "max_72h_wind_time": "2026-11-11 16:00"
       },
       "score_detail": {
         "distance": 0,
@@ -79,12 +79,12 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-11 08:45",
+        "current_last_updated": "2026-11-11 10:30",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
-        "max_72h_rain_mm": 0.43,
-        "max_72h_rain_time": "2026-11-12 23:00",
-        "max_72h_wind_mps": 2.8,
+        "max_72h_rain_mm": 0.32,
+        "max_72h_rain_time": "2026-11-13 05:00",
+        "max_72h_wind_mps": 2.4,
         "max_72h_wind_time": "2026-11-11 17:00"
       },
       "score_detail": {
@@ -113,12 +113,12 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-11 09:45",
+        "current_last_updated": "2026-11-11 11:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.6,
+        "current_wind_mps": 1.0,
         "max_72h_rain_mm": 0.02,
         "max_72h_rain_time": "2026-11-12 15:00",
-        "max_72h_wind_mps": 4.1,
+        "max_72h_wind_mps": 3.9,
         "max_72h_wind_time": "2026-11-12 15:00"
       },
       "score_detail": {
@@ -130,7 +130,7 @@
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -147,17 +147,17 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-11 08:45",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 3.4,
-        "max_72h_rain_mm": 0.14,
-        "max_72h_rain_time": "2026-11-12 12:00",
-        "max_72h_wind_mps": 5.5,
-        "max_72h_wind_time": "2026-11-11 11:00"
+        "current_last_updated": "2026-11-11 10:30",
+        "current_rain_mm": 0.18,
+        "current_wind_mps": 5.0,
+        "max_72h_rain_mm": 0.27,
+        "max_72h_rain_time": "2026-11-11 11:00",
+        "max_72h_wind_mps": 5.9,
+        "max_72h_wind_time": "2026-11-11 12:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     },
@@ -181,13 +181,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-11 07:30",
+        "current_last_updated": "2026-11-11 09:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.0,
-        "max_72h_rain_mm": 1.46,
-        "max_72h_rain_time": "2026-11-12 20:00",
-        "max_72h_wind_mps": 3.0,
-        "max_72h_wind_time": "2026-11-12 12:00"
+        "current_wind_mps": 2.1,
+        "max_72h_rain_mm": 0.99,
+        "max_72h_rain_time": "2026-11-12 05:00",
+        "max_72h_wind_mps": 2.7,
+        "max_72h_wind_time": "2026-11-13 05:00"
       },
       "score_detail": {
         "distance": 20,
@@ -198,7 +198,7 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -215,17 +215,17 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-11-11 08:45",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 2.2,
+        "current_last_updated": "2026-11-11 10:30",
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 3.8,
         "max_72h_rain_mm": 0.19,
         "max_72h_rain_time": "2026-11-11 14:00",
-        "max_72h_wind_mps": 4.1,
+        "max_72h_wind_mps": 4.4,
         "max_72h_wind_time": "2026-11-11 11:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     }
@@ -266,13 +266,13 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "클락 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -282,13 +282,13 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "마닐라 국제공항 낮음 (특이 위험요소 낮음)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -312,5 +312,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-11-11T00:52:22.639259+00:00"
+  "generated_at_utc": "2026-11-11T02:43:17.401390+00:00"
 }
