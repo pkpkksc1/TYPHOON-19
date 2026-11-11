@@ -2,77 +2,8 @@
   "source": "CMA / NMC",
   "product": "China Typhoon Track and Forecast",
   "parser_version": "1.1",
-  "active_count": 1,
-  "typhoons": [
-    {
-      "id": 3382203,
-      "number": 2632,
-      "name_en": "CEMPAKA",
-      "name_cn": "查帕卡",
-      "state": "start",
-      "current": {
-        "point_id": 3385053,
-        "time_utc": "202611110900",
-        "grade": "TY",
-        "grade_ko": "태풍",
-        "lon": 151.4,
-        "lat": 29.2,
-        "pressure_hpa": 975,
-        "max_wind_mps": 33,
-        "movement_direction": "ENE",
-        "movement_direction_ko": "동북동",
-        "movement_speed_kmh": 66,
-        "wind_radii": [
-          {
-            "label": "30KTS",
-            "ne_km": 300,
-            "se_km": 280,
-            "sw_km": 220,
-            "nw_km": 300,
-            "raw": [
-              "30KTS",
-              300,
-              280,
-              220,
-              300,
-              3385053
-            ],
-            "meaning_ko": "30kt 풍권"
-          },
-          {
-            "label": "50KTS",
-            "ne_km": 80,
-            "se_km": 60,
-            "sw_km": 120,
-            "nw_km": 100,
-            "raw": [
-              "50KTS",
-              80,
-              60,
-              120,
-              100,
-              3385053
-            ],
-            "meaning_ko": "50kt 폭풍권"
-          }
-        ]
-      },
-      "forecast": [
-        {
-          "forecast_hour": 12,
-          "base_time_utc": "202611110900",
-          "lon": 158.9,
-          "lat": 32,
-          "pressure_hpa": 982,
-          "max_wind_mps": 28,
-          "agency": "BABJ",
-          "grade": "STS",
-          "grade_ko": "강한 열대폭풍"
-        }
-      ],
-      "raw_point_count": 33
-    }
-  ],
+  "active_count": 0,
+  "typhoons": [],
   "errors": [],
-  "generated_at_utc": "2026-11-11T18:37:10.703788+00:00"
+  "generated_at_utc": "2026-11-11T23:01:12.912844+00:00"
 }
