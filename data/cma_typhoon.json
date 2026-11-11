@@ -11,47 +11,47 @@
       "name_cn": "查帕卡",
       "state": "start",
       "current": {
-        "point_id": 3385029,
-        "time_utc": "202611110600",
+        "point_id": 3385053,
+        "time_utc": "202611110900",
         "grade": "TY",
         "grade_ko": "태풍",
-        "lon": 149.9,
-        "lat": 28.7,
+        "lon": 151.4,
+        "lat": 29.2,
         "pressure_hpa": 975,
         "max_wind_mps": 33,
         "movement_direction": "ENE",
         "movement_direction_ko": "동북동",
-        "movement_speed_kmh": 45,
+        "movement_speed_kmh": 66,
         "wind_radii": [
           {
             "label": "30KTS",
-            "ne_km": 200,
-            "se_km": 250,
-            "sw_km": 250,
-            "nw_km": 200,
+            "ne_km": 300,
+            "se_km": 280,
+            "sw_km": 220,
+            "nw_km": 300,
             "raw": [
               "30KTS",
-              200,
-              250,
-              250,
-              200,
-              3385029
+              300,
+              280,
+              220,
+              300,
+              3385053
             ],
             "meaning_ko": "30kt 풍권"
           },
           {
             "label": "50KTS",
-            "ne_km": 70,
-            "se_km": 80,
-            "sw_km": 80,
-            "nw_km": 70,
+            "ne_km": 80,
+            "se_km": 60,
+            "sw_km": 120,
+            "nw_km": 100,
             "raw": [
               "50KTS",
-              70,
               80,
-              80,
-              70,
-              3385029
+              60,
+              120,
+              100,
+              3385053
             ],
             "meaning_ko": "50kt 폭풍권"
           }
@@ -60,9 +60,9 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202611110600",
-          "lon": 155.1,
-          "lat": 30.4,
+          "base_time_utc": "202611110900",
+          "lon": 158.9,
+          "lat": 32,
           "pressure_hpa": 982,
           "max_wind_mps": 28,
           "agency": "BABJ",
@@ -70,9 +70,9 @@
           "grade_ko": "강한 열대폭풍"
         }
       ],
-      "raw_point_count": 32
+      "raw_point_count": 33
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-11-11T08:20:18.461018+00:00"
+  "generated_at_utc": "2026-11-11T10:44:09.383729+00:00"
 }
